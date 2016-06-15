@@ -30,6 +30,7 @@ class PracticalsController < ApplicationController
 
 	/ Edit Action /
 	def edit
+		render layout: "form"
 	end
 
 	/ Update Action /
