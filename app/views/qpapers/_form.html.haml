@@ -1,0 +1,14 @@
+=simple_form_for(@qpaper,html:{multipart: true}) do |f|
+
+	=f.input :examname, label: "Title",placeholder:"What is your qpaper About?"
+	=f.input :date, label: "Date"
+	=f.input :description, label: "Description", placeholder:"Describe your qpaper !"
+	%h2 Images
+
+	#tasks
+	=f.simple_fields_for :qimages do |qimage|
+		=render "qimage_fields", f: qimage
+	.links
+		=link_to_add_association "Add Images",f, :qimages, class:"btn btn-success"
+	%br
+	=f.submit class:"btn btn-primary"

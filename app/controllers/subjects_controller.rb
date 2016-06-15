@@ -1,2 +1,53 @@
 class SubjectsController < ApplicationController
+	before_action :get_subject,only: [:show,:edit,:update,:destroy]
+
+	def index
+		@subjects = Subject.all.order("created_at desc")
+	end
+
+	def show
+	end
+
+	def new
+		@subject = Subject.new
+		render layout: "form"
+	end
+
+	def create
+		@subject = Subject.new(subject_params)
+		if @subject.save
+			redirect_to @subject,notice:"Successfully Created Your Subject"
+		else
+			render layout: "form"
+			render "new"
+		end
+	end
+
+	def edit
+		render layout: "form"
+	end
+
+	def update
+		if @subject.update(subject_params)
+			redirect_to @subject,notice:"Successfully updated your Subject"
+		else
+			render layout: "form"
+			render "edit"
+		end
+	end
+
+	def destroy
+		@subject.destroy
+		redirect_to root_path,notice:"Successfully Destroyed your Subject"
+	end
+
+
+	private
+		def get_subject
+			@subject = Subject.find(params[:id])
+		end
+
+		def subject_params
+			params.require(:subject).permit(:topic,:description,:college_id,:subject_id)
+		end
 end

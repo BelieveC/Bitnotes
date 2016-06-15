@@ -1,0 +1,13 @@
+=simple_form_for(@examnote,html:{multipart: true}) do |f|
+
+	=f.input :topic, label: "Title",placeholder:"What is your examnote About?"
+	=f.input :description, label: "Description", placeholder:"Describe your examnote"
+	%h2 Images
+
+	#tasks
+	=f.simple_fields_for :eimages do |eimage|
+		=render "eimage_fields", f: eimage
+	.links
+		=link_to_add_association "Add Images",f, :eimages, class:"btn btn-success"
+	%br
+	=f.submit class:"btn btn-primary"

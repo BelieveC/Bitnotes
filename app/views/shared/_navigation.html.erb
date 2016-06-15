@@ -7,7 +7,9 @@
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
 	          </button>
-	          <a class="navbar-brand" href="index.html"><h1><%= image_tag("logo",alt:"Bitnotes") %></h1></a>
+	          <%= link_to root_path,class:"navbar-brand" do %>
+				<h1><%= image_tag("logo",alt:"Bitnotes") %></h1>
+	          <% end %>
 	        </div>
 	        <div id="navbar" class="navbar-collapse collapse">
 				<div class="top-search">
@@ -211,7 +213,7 @@
 					  			<span class="glyphicon glyphicon-home glyphicon-blackboard" aria-hidden="true"></span>Practicals
 					  		<% end %>
 					  	</li>
-					  	<li><%=link_to practicals_path,class:"sub-icon" do %>
+					  	<li><%=link_to assignments_path,class:"sub-icon" do %>
 					  			<span class="glyphicon glyphicon-home glyphicon-hourglass" aria-hidden="true"></span>Assignments
 					  		<% end %>
 					  	</li>
@@ -250,11 +252,11 @@
 								});
 								});
 							</script>
-						<li><%=link_to practicals_path,class:"song-icon" do %>
-					  			<span class="glyphicon glyphicon-music" aria-hidden="true"></span>Colleges
+						<li><%=link_to colleges_path,class:"song-icon" do %>
+					  			<span class="glyphicon glyphicon-music" aria-hidden="true"></span>Institutes
 					  		<% end %>
 					  	</li>
-					  	<li><%=link_to practicals_path,class:"news-icon" do %>
+					  	<li><%=link_to subjects_path,class:"news-icon" do %>
 					  			<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>Subjects
 					  		<% end %>
 					  	</li>
@@ -270,8 +272,8 @@
 						<div class="side-bottom">
 							<div class="side-bottom-icons">
 								<ul class="nav2">
-									<li><a href="#" class="facebook"> </a></li>
-									<li><a href="#" class="facebook twitter"> </a></li>
+									<li><a href="https://twitter.com/BitnotesFamily " class="facebook"> </a></li>
+									<li><a href="https://www.facebook.com/BitNotes4U/" class="facebook twitter"> </a></li>
 									<li><a href="#" class="facebook chrome"> </a></li>
 									<li><a href="#" class="facebook dribbble"> </a></li>
 								</ul>
