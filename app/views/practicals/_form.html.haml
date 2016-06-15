@@ -1,0 +1,14 @@
+=simple_form_for(@practical,html:{multipart: true}) do |f|
+
+	=f.input :title, label: "Title",placeholder:"What is your Practical About?"
+	=f.input :aim, label: "Aim", placeholder:"What is Aim of the Practical?"
+	=f.input :description, label: "Description", placeholder:"Describe your Practical"
+	%h2 Images
+
+	#tasks
+	=f.simple_fields_for :pimages do |pimage|
+		=render "pimage_fields", f: pimage
+	.links
+		=link_to_add_association "Add Images",f, :pimages, class:"btn btn-success"
+	%br
+	=f.submit class:"btn btn-primary"
