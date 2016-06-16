@@ -20,8 +20,23 @@
 				</div> 
 				<div class="header-top-right">
 					<div class="file" id="upload-btn">
-						<a href="">Upload</a>
+						<a href="#small-dialog9" class="play-icon popup-with-zoom-anim">Upload</a>
 					</div>	
+					<div id="small-dialog9" class="mfp-hide">
+						<h3>New Upload</h3> 
+						<div class="social-sits">
+							<%=link_to "Institute",new_college_path,  class:"btn btn-primary"%>
+							<%= link_to "Subject",new_subject_path,class:"btn btn-primary"%>
+							<%= link_to "Request",new_request_path,class:"btn btn-primary"%>
+							<%= link_to "Paper", new_qpaper_path,class:"btn btn-primary"%>
+						</div>
+						<div class="signup">
+							<%= link_to "Practical", new_practical_path,class:"btn btn-primary"%>
+							<%= link_to "Assignment", new_assignment_path,class:"btn btn-primary"%>
+							<%= link_to "Examnote", new_examnote_path,class:"btn btn-primary"%>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
 					<div class="signin">
 						<a href="#small-dialog2" class="play-icon popup-with-zoom-anim">Sign Up</a>
 						<!-- pop-up-box -->
