@@ -62,6 +62,10 @@ form.navbar-form.navbar-right {
 .header-top-right {
   float: right;
 }
+#upload-btn{
+  float: left;
+  margin: 1.1em 0 0 0;
+}
 .file {
   float: none;
   margin: 1.1em auto 1.1em auto;
