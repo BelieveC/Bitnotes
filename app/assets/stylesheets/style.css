@@ -63,8 +63,8 @@ form.navbar-form.navbar-right {
   float: right;
 }
 .file {
-  float: left;
-  margin: 1.1em 0 0 0;
+  float: none;
+  margin: 1.1em auto 1.1em auto;
 }
 .file input[type="text"] {
   width: 60%;
