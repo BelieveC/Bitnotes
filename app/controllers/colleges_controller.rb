@@ -3,7 +3,7 @@ class CollegesController < ApplicationController
 	before_action :get_college,only: [:show,:edit,:update,:destroy]
 
 	def index
-		@colleges = College.all.order("created_at desc")
+		@recentColleges = College.all.order("created_at desc").limit(3)
 	end
 
 	def show
@@ -49,6 +49,6 @@ class CollegesController < ApplicationController
 		end
 
 		def college_params
-			params.require(:college).permit()
+			params.require(:college).permit(:name,:address,cimages_attributes: [:id,:image,:_destroy])
 		end
 end

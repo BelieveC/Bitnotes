@@ -2,7 +2,7 @@ class QpapersController < ApplicationController
 	before_action :get_qpaper,only: [:show,:edit,:update,:destroy]
 
 	def index
-		@qpapers = Qpaper.all.order("created_at desc")
+		@recentQpapers = Qpaper.all.order("created_at desc").limit(3)
 	end
 
 	def show
@@ -48,6 +48,6 @@ class QpapersController < ApplicationController
 		end
 
 		def qpaper_params
-			params.require(:qpaper).permit(:topic,:description,:college_id,:subject_id)
+			params.require(:qpaper).permit(:topic,:description,:college_id,:subject_id,qimages_attributes: [:id,:image,:_destroy])
 		end
 end

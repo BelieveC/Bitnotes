@@ -2,7 +2,7 @@ class ExamnotesController < ApplicationController
 	before_action :get_examnote,only: [:show,:edit,:update,:destroy]
 
 	def index
-		@examnotes = Examnote.all.order("created_at desc")
+		@recentExamnotes = Examnote.all.order("created_at desc").limit(3)
 	end
 
 	def show
@@ -48,6 +48,6 @@ class ExamnotesController < ApplicationController
 		end
 
 		def examnote_params
-			params.require(:examnote).permit(:topic,:description,:college_id,:subject_id)
+			params.require(:examnote).permit(:topic,:description,:college_id,:subject_id,eimages_attributes: [:id,:image,:_destroy])
 		end
 end

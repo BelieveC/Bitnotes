@@ -3,7 +3,7 @@ class AssignmentsController < ApplicationController
 	before_action :get_assignment,only: [:show,:edit,:update,:destroy]
 
 	def index
-		@assignments = Assignment.all.order("created_at desc")
+		@recentAssignments = Assignment.all.order("created_at desc").limit(3)
 	end
 
 	def show
@@ -49,6 +49,6 @@ class AssignmentsController < ApplicationController
 		end
 
 		def assignment_params
-			params.require(:assignment).permit(:topic,:description,:college_id,:subject_id)
+			params.require(:assignment).permit(:topic,:description,:college_id,:subject_id,aimages_attributes: [:id,:image,:_destroy])
 		end
 end

@@ -6,6 +6,7 @@ class PracticalsController < ApplicationController
 
 	/ Index Page Action/
 	def index
+		@recentPracticals = Practical.all.order("created_at DESC").limit(3);
 	end
 
 	/ Show Page Action/

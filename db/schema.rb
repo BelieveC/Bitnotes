@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160615135258) do
+ActiveRecord::Schema.define(version: 20160617152440) do
 
   create_table "aimages", force: :cascade do |t|
     t.datetime "created_at",         null: false
@@ -37,6 +37,18 @@ ActiveRecord::Schema.define(version: 20160615135258) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "cimages", force: :cascade do |t|
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "college_id"
+  end
+
+  add_index "cimages", ["college_id"], name: "index_cimages_on_college_id"
 
   create_table "colleges", force: :cascade do |t|
     t.string   "name"
@@ -138,6 +150,18 @@ ActiveRecord::Schema.define(version: 20160615135258) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "simages", force: :cascade do |t|
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "subject_id"
+  end
+
+  add_index "simages", ["subject_id"], name: "index_simages_on_subject_id"
 
   create_table "subjects", force: :cascade do |t|
     t.string   "name"

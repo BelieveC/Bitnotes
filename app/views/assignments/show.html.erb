@@ -3,10 +3,14 @@
 		<div class="col-sm-8 single-left">
 			<div class="song">
 				<div class="song-info">
-					<h3>Etiam molestie nisl eget consequat pharetra</h3>	
+					<h3><%= @assignment.topic %></h3>	
 			</div>
 				<div class="video-grid">
-					<iframe src="https://www.youtube.com/embed/oYiT-vLjhC4" allowfullscreen></iframe>
+					<% if @assignment.aimages.count > 0 %>
+						<% @assignment.aimages.each do |aimage| %>
+							<%=image_tag(aimage.image.url,alt: @assignment.topic,class: "img-thumbnail",height:"140px",width:"140px") %>
+						<% end %>
+					<% end %>
 				</div>
 			</div>
 			<div class="song-grid-right">

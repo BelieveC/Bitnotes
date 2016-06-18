@@ -5,12 +5,16 @@ Rails.application.routes.draw do
 
 
 / Resources /
-  resources :abouts
+  resources :abouts do
+  	member do
+  		get 'us'
+  	end
+  end
   resources :practicals
   resources :assignments
   resources :examnotes
   resources :qpapers
-  resources :subjects
+  resources :subjects	
   resources :colleges
   resources :requests
 

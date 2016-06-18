@@ -6,7 +6,11 @@
 					<h3>Etiam molestie nisl eget consequat pharetra</h3>	
 			</div>
 				<div class="video-grid">
-					<iframe src="https://www.youtube.com/embed/oYiT-vLjhC4" allowfullscreen></iframe>
+					<% if @qpaper.qimages.count > 0 %>
+						<% @qpaper.qimages.each do |qimage| %>
+							<%=image_tag(qimage.image.url,alt: @qpaper.examname,class: "img-thumbnail",height:"140px",width:"140px") %>
+						<% end %>
+					<% end %>
 				</div>
 			</div>
 			<div class="song-grid-right">

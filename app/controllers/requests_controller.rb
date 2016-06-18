@@ -2,7 +2,7 @@ class RequestsController < ApplicationController
 	before_action :get_request,only: [:show,:edit,:update,:destroy]
 
 	def index
-		@requests = Request.all.order("created_at desc")
+		@recentRequests = Request.all.order("created_at desc").limit(3)
 	end
 
 	def show

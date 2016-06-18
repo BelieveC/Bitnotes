@@ -25,15 +25,17 @@
 					<div id="small-dialog9" class="mfp-hide">
 						<h3>New Upload</h3> 
 						<div class="social-sits">
-							<%=link_to "Institute",new_college_path,  class:"btn btn-primary"%>
-							<%= link_to "Subject",new_subject_path,class:"btn btn-primary"%>
-							<%= link_to "Request",new_request_path,class:"btn btn-primary"%>
-							<%= link_to "Paper", new_qpaper_path,class:"btn btn-primary"%>
+							<%=link_to "Institute",new_college_path,  class:"btn btn-info"%>
+							<%= link_to "Subject",new_subject_path,class:"btn btn-success"%>
+							<%= link_to "Request",new_request_path,class:"btn btn-danger"%>
+							<%= link_to "Paper", new_qpaper_path,class:"btn btn-warning"%>
+							<br><br><br>
 						</div>
 						<div class="signup">
-							<%= link_to "Practical", new_practical_path,class:"btn btn-primary"%>
-							<%= link_to "Assignment", new_assignment_path,class:"btn btn-primary"%>
-							<%= link_to "Examnote", new_examnote_path,class:"btn btn-primary"%>
+							<%= link_to "Practical", new_practical_path,class:"btn btn-danger"%>
+							<%= link_to "Assignment", new_assignment_path,class:"btn btn-success"%>
+							<%= link_to "Examnote", new_examnote_path,class:"btn btn-info"%>
+							<br><br><br>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -220,7 +222,7 @@
 				</div>
 					<div class="drop-navigation drop-navigation">
 					  <ul class="nav nav-sidebar">
-					  	<li><%=link_to practicals_path,class:"home-icon" do %>
+					  	<li><%=link_to abouts_path,class:"home-icon" do %>
 					  			<span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home
 					  		<% end %>
 					  	</li>
@@ -232,41 +234,14 @@
 					  			<span class="glyphicon glyphicon-home glyphicon-hourglass" aria-hidden="true"></span>Assignments
 					  		<% end %>
 					  	</li>
-					  	<li><%=link_to "#",class:"menu1" do %>
-					  			<span class="glyphicon glyphicon-film" aria-hidden="true"></span>Papers<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
-					  		<% end %>
-					  	</li>
-							<ul class="cl-effect-2">
-								<li><a href="movies.html">English</a></li>                                             
-								<li><a href="movies.html">Chinese</a></li>
-								<li><a href="movies.html">Hindi</a></li> 
-							</ul>
-							<!-- script-for-menu -->
-							<script>
-								$( "li a.menu1" ).click(function() {
-								$( "ul.cl-effect-2" ).slideToggle( 300, function() {
-								// Animation complete.
-								});
-								});
-							</script>
-						<li><%=link_to "#",class:"menu" do %>
-					  			<span class="glyphicon glyphicon-film glyphicon-king" aria-hidden="true"></span>Examnotes<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
-					  		<% end %>
-					  	</li>
-							<ul class="cl-effect-1">
-								<li><a href="sports.html">Football</a></li>                                             
-								<li><a href="sports.html">Cricket</a></li>
-								<li><a href="sports.html">Tennis</a></li> 
-								<li><a href="sports.html">Shattil</a></li>  
-							</ul>
-							<!-- script-for-menu -->
-							<script>
-								$( "li a.menu" ).click(function() {
-								$( "ul.cl-effect-1" ).slideToggle( 300, function() {
-								// Animation complete.
-								});
-								});
-							</script>
+						<li><%=link_to qpapers_path,class:"song-icon" do %>
+							<span class="glyphicon glyphicon-home" aria-hidden="true"></span>  Qpapers
+							<% end %>
+						</li>
+						<li><%=link_to examnotes_path,class:"sub-icon" do %>
+							<span class="glyphicon glyphicon-home" aria-hidden="true"></span>  Examnote
+							<% end %>
+						</li>
 						<li><%=link_to colleges_path,class:"song-icon" do %>
 					  			<span class="glyphicon glyphicon-music" aria-hidden="true"></span>Institutes
 					  		<% end %>

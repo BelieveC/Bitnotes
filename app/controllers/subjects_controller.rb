@@ -1,8 +1,9 @@
 class SubjectsController < ApplicationController
+	
 	before_action :get_subject,only: [:show,:edit,:update,:destroy]
 
 	def index
-		@subjects = Subject.all.order("created_at desc")
+		@recentSubjects = Subject.all.order("created_at desc").limit(3)
 	end
 
 	def show
@@ -48,6 +49,6 @@ class SubjectsController < ApplicationController
 		end
 
 		def subject_params
-			params.require(:subject).permit(:topic,:description,:college_id,:subject_id)
+			params.require(:subject).permit(:name,:description,:college_id,:subject_id,simages_attributes: [:id,:image,:_destroy])
 		end
 end
