@@ -6,11 +6,13 @@
 					<h3><%= @assignment.topic %></h3>	
 			</div>
 				<div class="video-grid">
-					<% if @assignment.aimages.count > 0 %>
-						<% @assignment.aimages.each do |aimage| %>
-							<%=image_tag(aimage.image.url,alt: @assignment.topic,class: "img-thumbnail",height:"140px",width:"140px") %>
+					<ul class="docs-pictures">
+						<% if @assignment.aimages.count > 0 %>
+							<% @assignment.aimages.each do |aimage| %>
+								<li><%=image_tag(aimage.image.url,alt: @assignment.topic,class: "img-thumbnail",height:"140px",width:"140px",data:{original: aimage.image.url}) %></li>
+							<% end %>
 						<% end %>
-					<% end %>
+					</ul>
 				</div>
 			</div>
 			<div class="song-grid-right">

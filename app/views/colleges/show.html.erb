@@ -6,11 +6,13 @@
 					<h3>Etiam molestie nisl eget consequat pharetra</h3>	
 			</div>
 				<div class="video-grid">
-					<% if @college.cimages.count > 0 %>
-						<% @college.cimages.each do |cimage| %>
-							<%=image_tag(cimage.image.url,alt: @college.name,class: "img-thumbnail",height:"140px",width:"140px") %>
+					<ul class="docs-pictures">
+						<% if @college.cimages.count > 0 %>
+							<% @college.cimages.each do |cimage| %>
+								<li><%=image_tag(cimage.image.url,alt: @college.name,class: "img-thumbnail",height:"140px",width:"140px",data:{original: cimage.image.url}) %></li>
+							<% end %>
 						<% end %>
-					<% end %>
+					</ul>
 				</div>
 			</div>
 			<div class="song-grid-right">

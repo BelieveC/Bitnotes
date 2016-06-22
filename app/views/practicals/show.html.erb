@@ -6,13 +6,18 @@
 					<h3>Etiam molestie nisl eget consequat pharetra</h3>	
 			</div>
 				<div class="video-grid">
-					<% if @practical.pimages.count > 0 %>
-						<% @practical.pimages.each do |pimage| %>
-							<%=image_tag(pimage.image.url,alt: @practical.title,class: "img-thumbnail",height:"140px",width:"140px") %>
-						<% end %>
-					<% end %>
+          				<ul class="docs-pictures">
+							<% if @practical.pimages.count > 0 %>
+								<% @practical.pimages.each do |pimage| %>
+									<li><%=image_tag(pimage.image.url,alt: @practical.title,class: "img-thumbnail",height:"140px",width:"140px",data:{original: pimage.image.url}) %></li>
+								<% end %>
+							<% end %>
+						</ul>
 				</div>
 			</div>
+			<%=javascript_include_tag "viewer",'data-turbolinks-track' => true %>
+			<%=javascript_include_tag "main",'data-turbolinks-track' => true %>
+
 			<div class="song-grid-right">
 				<div class="share">
 					<h5>Share this</h5>

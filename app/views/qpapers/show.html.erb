@@ -6,11 +6,13 @@
 					<h3>Etiam molestie nisl eget consequat pharetra</h3>	
 			</div>
 				<div class="video-grid">
-					<% if @qpaper.qimages.count > 0 %>
-						<% @qpaper.qimages.each do |qimage| %>
-							<%=image_tag(qimage.image.url,alt: @qpaper.examname,class: "img-thumbnail",height:"140px",width:"140px") %>
+					<ul class="docs-pictures">
+						<% if @qpaper.qimages.count > 0 %>
+							<% @qpaper.qimages.each do |qimage| %>
+								<li><%=image_tag(qimage.image.url,alt: @qpaper.examname,class: "img-thumbnail",height:"140px",width:"140px",data:{original: qimage.image.url}) %></li>
+							<% end %>
 						<% end %>
-					<% end %>
+					</ul>
 				</div>
 			</div>
 			<div class="song-grid-right">

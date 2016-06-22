@@ -6,11 +6,13 @@
 					<h3>Etiam molestie nisl eget consequat pharetra</h3>	
 			</div>
 				<div class="video-grid">
-					<% if @examnote.eimages.count > 0 %>
-						<% @examnote.eimages.each do |eimage| %>
-							<%=image_tag(eimage.image.url,alt: @examnote.topic,class: "img-thumbnail",height:"140px",width:"140px") %>
+					<ul class="docs-pictures">
+						<% if @examnote.eimages.count > 0 %>
+							<% @examnote.eimages.each do |eimage| %>
+								<li><%=image_tag(eimage.image.url,alt: @examnote.topic,class: "img-thumbnail",height:"140px",width:"140px",data:{original: eimage.image.url}) %></li>
+							<% end %>
 						<% end %>
-					<% end %>
+					</ul>
 				</div>
 			</div>
 			<div class="song-grid-right">

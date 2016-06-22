@@ -6,11 +6,13 @@
 					<h3>Etiam molestie nisl eget consequat pharetra</h3>	
 			</div>
 				<div class="video-grid">
-					<% if @subject.simages.count > 0 %>
-						<% @subject.simages.each do |simage| %>
-							<%=image_tag(simage.image.url,alt: @subject.name,class: "img-thumbnail",height:"140px",width:"140px") %>
+					<ul class="docs-pictures">
+						<% if @subject.simages.count > 0 %>
+							<li><% @subject.simages.each do |simage| %>
+								<%=image_tag(simage.image.url,alt: @subject.name,class: "img-thumbnail",height:"140px",width:"140px",data:{original:simage.image.url}) %></li>
+							<% end %>
 						<% end %>
-					<% end %>
+					</ul>
 				</div>
 			</div>
 			<div class="song-grid-right">
