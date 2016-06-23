@@ -2,7 +2,7 @@
 
 	=f.input :examname, label: "Title",placeholder:"What is your qpaper About?"
 	=f.input :date, label: "Date"
-	=f.input :description, label: "Description", placeholder:"Describe your qpaper !"
+	=f.input :description, label: "Description", placeholder:"Describe your qpaper !",input_html:{class:'tinymce'}
 	%h2 Images
 
 	#tasks
@@ -12,3 +12,4 @@
 		=link_to_add_association "Add Images",f, :qimages, class:"btn btn-success"
 	%br
 	=f.submit class:"btn btn-primary"
+=tinymce

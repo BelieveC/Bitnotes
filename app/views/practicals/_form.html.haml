@@ -2,7 +2,7 @@
 
 	=f.input :title, label: "Title",placeholder:"What is your Practical About?"
 	=f.input :aim, label: "Aim", placeholder:"What is Aim of the Practical?"
-	=f.input :description, label: "Description", placeholder:"Describe your Practical"
+	=f.input :description, label: "Description", placeholder:"Describe your Practical",input_html:{class:'tinymce'}
 	%h2 Images
 
 	#tasks
@@ -12,3 +12,4 @@
 		=link_to_add_association "Add Images",f, :pimages, class:"btn btn-success"
 	%br
 	=f.submit class:"btn btn-primary"
+=tinymce

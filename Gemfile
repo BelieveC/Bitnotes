@@ -22,6 +22,7 @@ gem 'haml'
 gem 'simple_form'
 gem 'paperclip', '~> 4.3.6'
 gem 'omniauth-facebook'
+gem "omniauth-google-oauth2", "~> 0.2.1"
 gem 'acts_as_votable'
 gem 'aws-sdk', '~> 1.66.0'
 gem 'foreman'

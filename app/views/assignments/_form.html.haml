@@ -1,7 +1,7 @@
 =simple_form_for(@assignment,html:{multipart: true}) do |f|
 
 	=f.input :topic, label: "Title",placeholder:"What is your Assignment About?"
-	=f.input :description, label: "Description", placeholder:"Describe your Assignment"
+	=f.input :description, label: "Description", placeholder:"Describe your Assignment",input_html:{class:'tinymce'}
 	%h2 Images
 
 	#tasks
@@ -11,3 +11,4 @@
 		=link_to_add_association "Add Images",f, :aimages, class:"btn btn-success"
 	%br
 	=f.submit class:"btn btn-success"
+=tinymce

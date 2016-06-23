@@ -1,0 +1,10 @@
+/* Basic */
+
+.docs-pictures > li > img {
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
+}
+.docs-pictures > li {
+	list-style: none;
+	 float: left;
+}
