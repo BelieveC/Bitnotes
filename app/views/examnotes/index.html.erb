@@ -8,7 +8,7 @@
 						<div class="col-md-4 resent-grid recommended-grid slider-top-grids">
 							<% if examnote.eimages.count > 0 %>
 								<div class="resent-grid-img recommended-grid-img">
-									<%=link_to image_tag(examnote.eimages.first.image.url,alt: examnote.topic),examnote %>
+									<%=link_to image_tag(examnote.eimages.first.image.url(:thumb),alt: examnote.topic),examnote %>
 									<div class="time">
 										<p>3:04</p>
 									</div>

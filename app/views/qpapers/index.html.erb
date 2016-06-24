@@ -8,7 +8,7 @@
 						<div class="col-md-4 resent-grid recommended-grid slider-top-grids">
 							<% if paper.qimages.count > 0 %>
 								<div class="resent-grid-img recommended-grid-img">
-									<%=link_to image_tag(paper.qimages.first.image.url,alt: paper.examname),paper %>
+									<%=link_to image_tag(paper.qimages.first.image.url(:thumb),alt: paper.examname),paper %>
 									<div class="time">
 										<p><%= paper.qimages.count %></p>
 									</div>

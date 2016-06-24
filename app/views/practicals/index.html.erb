@@ -9,7 +9,7 @@
 						<div class="col-md-4 resent-grid recommended-grid slider-top-grids">
 							<div class="resent-grid-img recommended-grid-img">
 								<% if practical.pimages.count > 0  %>
-									<%= link_to image_tag(practical.pimages.first.image.url,alt: practical.title),practical %>
+									<%= link_to image_tag(practical.pimages.first.image.url(:thumb),alt: practical.title),practical %>
 									<div class="time">
 										<p><%=practical.pimages.count%></p>
 									</div>
@@ -19,7 +19,7 @@
 								<% end %>
 							</div>
 							<div class="resent-grid-info recommended-grid-info">
-								<h3><a href="single.html" class="title title-info"><%= practical.title %></a></h3>
+								<h3><%=link_to practical.title,practical,class:"title title-info" %></h3>
 								<ul>
 									<li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
 									<li class="right-list"><p class="views views-info">2,114,200 views</p></li>

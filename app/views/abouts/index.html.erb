@@ -456,7 +456,7 @@
 							<div class="col-md-3 resent-grid recommended-grid">
 								<div class="resent-grid-img recommended-grid-img">
 								<% if examnote.eimages.count > 0 %>
-									<%= link_to image_tag(examnote.eimages.first.image.url,alt: examnote.topic),examnote %>
+									<%= link_to image_tag(examnote.eimages.first.image.url(:thumb),alt: examnote.topic),examnote %>
 								<%else %>
 									<%= link_to image_tag("we1",alt: examnote.topic),examnote %>
 								<% end %>
@@ -563,7 +563,7 @@
 							<div class="col-md-3 resent-grid recommended-grid">
 								<div class="resent-grid-img recommended-grid-img">
 								<% if assignment.aimages.count > 0 %>
-									<%= link_to image_tag(assignment.aimages.first.image.url,alt: assignment.topic),assignment %>
+									<%= link_to image_tag(assignment.aimages.first.image.url(:thumb),alt: assignment.topic),assignment %>
 								<%else %>
 									<%= link_to image_tag("we1",alt: assignment.topic),assignment %>
 								<% end %>

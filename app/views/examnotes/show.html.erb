@@ -9,7 +9,7 @@
 					<ul class="docs-pictures">
 						<% if @examnote.eimages.count > 0 %>
 							<% @examnote.eimages.each do |eimage| %>
-								<li><%=image_tag(eimage.image.url,alt: @examnote.topic,class: "img-thumbnail",height:"140px",width:"140px",data:{original: eimage.image.url}) %></li>
+								<li><%=image_tag(eimage.image.url(:thumb),alt: @examnote.topic,class: "img-thumbnail",height:"140px",width:"140px",data:{original: eimage.image.url}) %></li>
 							<% end %>
 						<% end %>
 					</ul>

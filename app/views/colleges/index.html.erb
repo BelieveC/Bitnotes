@@ -8,7 +8,7 @@
 						<div class="col-md-4 resent-grid recommended-grid slider-top-grids">
 							<% if college.cimages.count > 0 %>
 								<div class="resent-grid-img recommended-grid-img">
-									<%= link_to image_tag(college.cimages.first.image.url,alt:college.name),college %>
+									<%= link_to image_tag(college.cimages.first.image.url(:thumb),alt:college.name),college %>
 									<div class="time">
 										<p><%=college.cimages.count %></p>
 									</div>

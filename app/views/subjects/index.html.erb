@@ -8,7 +8,7 @@
 						<div class="col-md-4 resent-grid recommended-grid slider-top-grids">
 							<% if subject.simages.count > 0 %>
 								<div class="resent-grid-img recommended-grid-img">
-									<%=link_to image_tag(subject.simages.first.image.url,alt: subject.name),subject %>
+									<%=link_to image_tag(subject.simages.first.image.url(:thumb),alt: subject.name),subject %>
 									<div class="time">
 										<p>3:04</p>
 									</div>
