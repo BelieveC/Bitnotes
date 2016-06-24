@@ -8,7 +8,7 @@
 						<div class="col-md-4 resent-grid recommended-grid slider-top-grids">
 							<% if assignment.aimages.count > 0 %>
 								<div class="resent-grid-img recommended-grid-img">
-									<%= link_to image_tag(assignment.aimages.first.image.url,alt: assignment.topic),assignment %>
+									<%= link_to image_tag(assignment.aimages.first.image.url(:thumb),alt: assignment.topic),assignment %>
 									<div class="time">
 										<p><%= assignment.aimages.count %></p>
 									</div>
