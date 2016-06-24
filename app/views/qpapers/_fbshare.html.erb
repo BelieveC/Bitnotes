@@ -1,0 +1,9 @@
+<script>
+document.getElementById('shareBtn').onclick = function() {
+  FB.ui({
+    method: 'share',
+    display: 'popup',
+    href: '<%= url_for([@qpaper,{only_path: false} ]) %>',
+  }, function(response){});
+}
+</script>
