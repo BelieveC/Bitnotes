@@ -9,7 +9,7 @@
 					<ul class="docs-pictures">
 						<% if @assignment.aimages.count > 0 %>
 							<% @assignment.aimages.each do |aimage| %>
-								<li><%=image_tag(aimage.image.url,alt: @assignment.topic,class: "img-thumbnail",height:"140px",width:"140px",data:{original: aimage.image.url}) %></li>
+								<li><%=image_tag(aimage.image.url(:thumb),alt: @assignment.topic,class: "img-thumbnail",height:"140px",width:"140px",data:{original: aimage.image.url}) %></li>
 							<% end %>
 						<% end %>
 					</ul>
