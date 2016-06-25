@@ -711,6 +711,7 @@ a.btn.btn-primary.btn-lg.see-button.hvr-shutter-out-horizontal {
 .footer-top-nav ul li a{
 	color: black;
 	font-size:14px;
+  font-weight: bold;
 	text-decoration:none;
 }
 .footer-top-nav ul li a:hover{
@@ -727,6 +728,7 @@ a.btn.btn-primary.btn-lg.see-button.hvr-shutter-out-horizontal {
 .footer-bottom-nav ul li a{
 color: black;
   font-size: 12px;
+  font-weight: bold;
   text-decoration: none;
 }
 .footer-bottom-nav ul li a:focus {
@@ -759,12 +761,13 @@ color: black;
 }
 .footer-bottom ul li.languages select.form-control {
     cursor: pointer;
-    color: #B3B3B3;
+    color: black;
     border: none;
     background: url("select-arrow") no-repeat 95% center;
     border: solid 1px #B3B3B3;
     border-radius: 3px;
     font-size: 12px;
+    font-weight: bold;
     height: 32px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -783,9 +786,10 @@ color: black;
 }
 .footer-bottom ul li a.f-history{
     background: url("12") no-repeat 11px 8px;
-    color: #B3B3B3;
+    color: black;
     text-decoration: none;
     font-size: 12px;
+    font-weight: bold;
     padding: .52em 1em .52em 3em;
     border: none;
     border: solid 1px #B3B3B3;
@@ -1686,14 +1690,15 @@ background: url("social") no-repeat 0px 0px;
     color: black;
     margin: 0;
     font-size: 13px;
+    font-weight: bold;
     text-align: center;
 }
 .copyright p a{
-	color:#BBBBBB;
+	color:#21DEEF;
 	text-decoration:none;
 }
 .copyright p a:hover{
-	color:#FFFFFF;
+	color:black;
 }
 .top-navigation{
 	display:none;
