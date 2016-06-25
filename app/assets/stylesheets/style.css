@@ -867,26 +867,11 @@ select.form-control.bfh-countries:hover {
 .share li a.fb-icon{
     background: url("fb") no-repeat 0px 0px;
 }
-.share li a.rss-icon{
-    background: url("rss") no-repeat 0px 0px;
-}
-.share li a.dribbble-icon{
-    background: url("dribbble") no-repeat 0px 0px;
-}
 .share li a.twitter-icon{
     background: url("twitter") no-repeat 0px 0px;
 }
 .share li a.pinterest-icon{
     background: url("pinterest") no-repeat 0px 0px;
-}
-.share li a.behance-icon{
-    background: url("behance") no-repeat 0px 0px;
-}
-.share li a.whatsapp-icon{
-    background: url("whatsapp") no-repeat 0px 0px;
-}
-.share li a.comment-icon{
-    background: url("comment") no-repeat 0px 0px;
 }
 .share li.view{
     background: url("view") no-repeat 0px 0px;
@@ -1201,35 +1186,6 @@ width:100%;
     text-decoration: none;
     color: #272C2E;
     background: #E2E2E2;
-}
-.all-comments-buttons {
-  margin: 3em 0 1em;
-}
-.all-comments-buttons ul{
-	margin:0;
-	padding:0;
-}
-.all-comments-buttons ul li{
-  display: inline-block;
-  margin: 0 1em;
-}
-.all-comments-buttons ul li:nth-child(1){
-	margin-left:0;
-}
-.all-comments-buttons ul li a.top{
-    color: #000;
-    font-size: 13px;
-    padding: .5em 1.3em;
-    background: #E2E2E2;
-    border-radius: 3px;
-    text-decoration: none;
-}
-.all-comments-buttons ul li a.newest{
-	position:relative;
-}
-.all-comments-buttons ul li a.top:hover{
-    color: #FFFFFF;
-    background: #21DEEF;
 }
 .media-grids{
 	margin-top:4em;
