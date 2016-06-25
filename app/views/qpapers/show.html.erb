@@ -9,7 +9,7 @@
 					<ul class="docs-pictures">
 						<% if @qpaper.qimages.count > 0 %>
 							<% @qpaper.qimages.each do |qimage| %>
-								<li><%=image_tag(qimage.image.url(:thumb),alt: @qpaper.examname,class: "img-thumbnail",height:"140px",width:"140px",data:{original: qimage.image.url}) %></li>
+								<li><%=image_tag(qimage.image.url(:medium),alt: @qpaper.examname,class: "img-thumbnail",height:"140px",width:"140px",data:{original: qimage.image.url(:thumb)}) %></li>
 							<% end %>
 						<% end %>
 					</ul>
