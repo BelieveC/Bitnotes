@@ -21,7 +21,7 @@ nav.navbar.navbar-inverse.navbar-fixed-top {
 }
 .sidebar {
     top: 80px;
-    background: #272c2e;
+    background: #F7F7F7;
     border: none;
     padding: 0 20px 20px 20px;
 }
@@ -130,11 +130,11 @@ form.navbar-form.navbar-right {
     padding: 5em 0 0 0;
 }
 ul.nav.nav-sidebar li.active a{
-    background-color: #232323 !important;
-    color: #21DEEF;
+    background-color: #21deff !important;
+    color: white;
 }
 ul.nav.nav-sidebar li a{
-    color: #BBBBBB;
+    color: black;
     font-size: 13px;
     font-weight: 600;
     padding: .8em 0 .8em 3em;
@@ -143,8 +143,8 @@ ul.nav.nav-sidebar li a{
   padding: 0 0 1em 1em;
 }
 .sidebar ul.nav-sidebar li a:hover{
-    background-color: #232323 !important;
-    color: #21DEEF;
+    background-color: #21deff !important;
+    color: white;
 }
 .sidebar ul.nav-sidebar li.active{
     background-color: #232323 !important;
@@ -697,7 +697,7 @@ a.btn.btn-primary.btn-lg.see-button.hvr-shutter-out-horizontal {
 }
 /*-- footer --*/
 .footer{
-    background: #3B4142;
+    background: #f7f7f7;
     padding: 2em 3em;
 }
 .footer-top-nav ul{
@@ -709,12 +709,12 @@ a.btn.btn-primary.btn-lg.see-button.hvr-shutter-out-horizontal {
 	margin:0 1em;
 }
 .footer-top-nav ul li a{
-	color:#FFF;
+	color: black;
 	font-size:14px;
 	text-decoration:none;
 }
 .footer-top-nav ul li a:hover{
-  color: rgba(255, 255, 255, 0.48);
+  color: #21DEEF;
 }
 .footer-bottom-nav ul{
     padding: 1em 0 0 0;
@@ -725,7 +725,7 @@ a.btn.btn-primary.btn-lg.see-button.hvr-shutter-out-horizontal {
 	margin:0 1em;
 }
 .footer-bottom-nav ul li a{
-color: rgba(255, 255, 255, 0.54);
+color: black;
   font-size: 12px;
   text-decoration: none;
 }
@@ -733,7 +733,7 @@ color: rgba(255, 255, 255, 0.54);
     outline: none;
 }
 .footer-bottom-nav ul li a:hover{
-	color:#FFF;
+	color:#21deef;
 }
 .footer-bottom-nav ul li{
   font-size: 12px;
@@ -1683,7 +1683,7 @@ background: url("social") no-repeat 0px 0px;
 	opacity:.5;
 }
 .copyright p{
-    color: #BBBBBB;
+    color: black;
     margin: 0;
     font-size: 13px;
     text-align: center;
@@ -1943,7 +1943,7 @@ background: url("social") no-repeat 0px 0px;
 		padding: 20px;
 		cursor: pointer;
 		font-size: 2em;
-		color: #FFF;
+		color: black;
 		position: relative;
 		text-align: center;
 		margin: 0 auto;
