@@ -9,7 +9,7 @@
           				<ul class="docs-pictures">
 							<% if @practical.pimages.count > 0 %>
 								<% @practical.pimages.each do |pimage| %>
-									<li><%=image_tag(pimage.image.url(:thumb),alt: @practical.title,class: "img-thumbnail",height:"140px",width:"140px",data:{original: pimage.image.url}) %></li>
+									<li><%=image_tag(pimage.image.url(:medium),alt: @practical.title,class: "img-thumbnail",height:"140px",width:"140px",data:{original: pimage.image.url(:thumb)}) %></li>
 								<% end %>
 							<% end %>
 						</ul><br>
