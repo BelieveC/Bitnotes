@@ -1,5 +1,5 @@
 class QpapersController < ApplicationController
-	before_action :get_qpaper,only: [:show,:edit,:update,:destroy]
+	before_action :get_qpaper,only: [:show,:edit,:update,:destroy,:upvote]
 
 	def index
 		@recentQpapers = Qpaper.all.order("created_at desc").limit(3)
@@ -41,6 +41,10 @@ class QpapersController < ApplicationController
 		redirect_to root_path,notice:"Successfully Destroyed your Qpaper"
 	end
 
+	def upvote
+		@qpaper.upvote_by current_user
+		redirect_to :back
+	end
 
 	private
 		def get_qpaper

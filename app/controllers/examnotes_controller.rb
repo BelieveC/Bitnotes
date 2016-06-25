@@ -1,5 +1,5 @@
 class ExamnotesController < ApplicationController
-	before_action :get_examnote,only: [:show,:edit,:update,:destroy]
+	before_action :get_examnote,only: [:show,:edit,:update,:destroy,:upvote]
 
 	def index
 		@recentExamnotes = Examnote.all.order("created_at desc").limit(3)
@@ -41,6 +41,10 @@ class ExamnotesController < ApplicationController
 		redirect_to root_path,notice:"Successfully Destroyed your Examnote"
 	end
 
+	def upvote
+		@examnote.upvote_by current_user
+		redirect_to :back
+	end
 
 	private
 		def get_examnote

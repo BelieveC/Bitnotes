@@ -2,7 +2,7 @@ class PracticalsController < ApplicationController
 
 
 	/ Before Performing below action Get Practical /
-	before_action :get_practical, only: [:show,:update,:edit,:destroy]
+	before_action :get_practical, only: [:show,:update,:edit,:destroy,:upvote]
 
 	/ Index Page Action/
 	def index
@@ -49,8 +49,13 @@ class PracticalsController < ApplicationController
 		redirect_to root_path,notice:"Successfully Removed your Practical"
 	end
 
+	def upvote
+		@practical.upvote_by current_user
+		redirect_to :back
+	end
+
 	private
-		/ Params for Rails 4+  /
+		/ Strong Params for Rails 4+  /
 		def practical_params
 			params.require(:practical).permit(:title,:aim,:description,:subject_id,:college_id,pimages_attributes: [:id,:image,:_destroy])
 		end

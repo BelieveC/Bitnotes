@@ -15,12 +15,40 @@ Rails.application.routes.draw do
   		get 'us'
   	end
   end
-  resources :practicals
-  resources :assignments
-  resources :examnotes
-  resources :qpapers
-  resources :subjects	
-  resources :colleges
-  resources :requests
+  resources :practicals do
+    member do
+      put "like"=>"practicals#upvote"
+    end
+  end
+  resources :assignments do
+    member do
+      put "like"=>"assignments#upvote"
+    end
+  end
+  resources :examnotes do
+    member do
+      put "like"=>"examnotes#upvote"
+    end
+  end
+  resources :qpapers do
+    member do
+      put "like"=>"qpapers#upvote"
+    end
+  end
+  resources :subjects do
+    member do
+      put "like"=>"subjects#upvote"
+    end
+  end
+  resources :colleges do
+    member do
+      put "like"=>"colleges#upvote"
+    end
+  end
+  resources :requests do
+    member do
+      put "like"=>"requests#upvote"
+    end
+  end
 
 end

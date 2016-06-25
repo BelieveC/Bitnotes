@@ -1,6 +1,6 @@
 class AssignmentsController < ApplicationController
 	
-	before_action :get_assignment,only: [:show,:edit,:update,:destroy]
+	before_action :get_assignment,only: [:show,:edit,:update,:destroy,:upvote]
 
 	def index
 		@recentAssignments = Assignment.all.order("created_at desc").limit(3)
@@ -42,7 +42,10 @@ class AssignmentsController < ApplicationController
 		redirect_to root_path,notice:"Successfully Destroyed your Assignment"
 	end
 
-
+	def upvote
+		@assignment.upvote_by current_user
+		redirect_to :back
+	end
 	private
 		def get_assignment
 			@assignment = Assignment.find(params[:id])

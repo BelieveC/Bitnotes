@@ -1,6 +1,6 @@
 class CollegesController < ApplicationController
 
-	before_action :get_college,only: [:show,:edit,:update,:destroy]
+	before_action :get_college,only: [:show,:edit,:update,:destroy,:upvote]
 
 	def index
 		@recentColleges = College.all.order("created_at desc").limit(3)
@@ -42,6 +42,10 @@ class CollegesController < ApplicationController
 		redirect_to root_path,notice:"Successfully Destroyed your college"
 	end
 
+	def upvote
+		@college.upvote_by current_user
+		redirect_to :back
+	end
 
 	private
 		def get_college

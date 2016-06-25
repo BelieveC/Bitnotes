@@ -26,7 +26,7 @@
 						<li><a href="https://twitter.com/intent/tweet?text= <%= @practical.title%>" target="_blank" class="icon twitter-icon">Twitter</a></li>
 						<li><a href="#" class="icon pinterest-icon">Pinterest</a></li>
 						<br><br>
-						<li><a href="#" class="icon like">Like</a></li>
+						<li><%=link_to @practical.get_upvotes.size ,like_practical_path(@practical),method: :put,class:"icon like" %></li>
 						<li class="view">200 views</li>
 					</ul>
 				</div>

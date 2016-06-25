@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-	before_action :get_request,only: [:show,:edit,:update,:destroy]
+	before_action :get_request,only: [:show,:edit,:update,:destroy,:upvote]
 
 	def index
 		@recentRequests = Request.all.order("created_at desc").limit(3)
@@ -41,6 +41,10 @@ class RequestsController < ApplicationController
 		redirect_to root_path,notice:"Successfully Destroyed your Request"
 	end
 
+	def upvote
+		@request.upvote_by current_user
+		redirect_to :back
+	end
 
 	private
 		def get_request

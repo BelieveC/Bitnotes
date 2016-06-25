@@ -23,7 +23,7 @@
 						<li><a href="https://twitter.com/intent/tweet?text= <%= @assignment.topic%>" target="_blank" class="icon twitter-icon">Twitter</a></li>
 						<li><a href="#" class="icon pinterest-icon">Pinterest</a></li>
 						<br><br>
-						<li><a href="#" class="icon like">Like</a></li>
+						<li><%=link_to @assignment.get_upvotes.size ,like_assignment_path(@assignment),method: :put,class:"icon like" %></li>
 						<li class="view">200 Views</li>
 					</ul>
 				</div>
