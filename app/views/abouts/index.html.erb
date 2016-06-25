@@ -37,7 +37,7 @@
 							<div class="col-md-3 resent-grid recommended-grid">
 								<div class="resent-grid-img recommended-grid-img">
 								<% if examnote.eimages.count > 0 %>
-									<%= link_to image_tag(examnote.eimages.first.image.url(:medium),alt: examnote.topic),examnote %>
+									<%= link_to image_tag(examnote.eimages.first.image.url(:small),alt: examnote.topic),examnote %>
 								<%else %>
 									<%= link_to image_tag("we1",alt: examnote.topic),examnote %>
 								<% end %>
@@ -69,7 +69,7 @@
 							<div class="col-md-3 resent-grid recommended-grid">
 								<div class="resent-grid-img recommended-grid-img">
 								<% if assignment.aimages.count > 0 %>
-									<%= link_to image_tag(assignment.aimages.first.image.url(:medium),alt: assignment.topic),assignment %>
+									<%= link_to image_tag(assignment.aimages.first.image.url(:small),alt: assignment.topic),assignment %>
 								<%else %>
 									<%= link_to image_tag("we1",alt: assignment.topic),assignment %>
 								<% end %>
@@ -101,7 +101,7 @@
 							<div class="col-md-3 resent-grid recommended-grid">
 								<div class="resent-grid-img recommended-grid-img">
 								<% if qpaper.qimages.count > 0 %>
-									<%= link_to image_tag(qpaper.qimages.first.image.url(:medium),alt: qpaper.examname),qpaper %>
+									<%= link_to image_tag(qpaper.qimages.first.image.url(:small),alt: qpaper.examname),qpaper %>
 								<%else %>
 									<%= link_to image_tag("we1",alt: qpaper.examname),qpaper %>
 								<% end %>
