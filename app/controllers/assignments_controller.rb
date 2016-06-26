@@ -17,7 +17,7 @@ class AssignmentsController < ApplicationController
 	def create
 		@assignment = Assignment.new(assignment_params)
 		if @assignment.save
-			redirect_to @assignment,notice:"Successfully Created Your Assignment"
+			redirect_to @assignment,notice:"Created Your Assignment."
 		else
 			render layout: "form"
 			render "new"
@@ -30,7 +30,7 @@ class AssignmentsController < ApplicationController
 
 	def update
 		if @assignment.update(assignment_params)
-			redirect_to @assignment,notice:"Successfully updated your assignment"
+			redirect_to @assignment,notice:"Updated your Assignment."
 		else
 			render layout: "form"
 			render "edit"
@@ -39,7 +39,7 @@ class AssignmentsController < ApplicationController
 
 	def destroy
 		@assignment.destroy
-		redirect_to root_path,notice:"Successfully Destroyed your Assignment"
+		redirect_to root_path,notice:"Destroyed your Assignment."
 	end
 
 	def upvote

@@ -726,7 +726,7 @@ a.btn.btn-primary.btn-lg.see-button.hvr-shutter-out-horizontal {
 	margin:0 1em;
 }
 .footer-bottom-nav ul li a{
-color: black;
+  color: black;
   font-size: 12px;
   font-weight: bold;
   text-decoration: none;
@@ -740,6 +740,10 @@ color: black;
 .footer-bottom-nav ul li{
   font-size: 12px;
   color: rgba(255, 255, 255, 0.54);
+}
+.footer-bottom-nav ul li p{
+  color:black;
+  font-weight: bold;
 }
 .footer-top{
 	padding-bottom: 2em;
@@ -2122,6 +2126,10 @@ background: url("social") no-repeat 0px 0px;
 	.footer-bottom ul li.languages {
 		width: 21%;
 	}
+  .footer-bottom-nav ul li p{
+    color: black;
+    font-weight: bold;
+  }
 }
 @media (max-width: 767px) {
 	.sidebar {

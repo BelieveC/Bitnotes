@@ -1,4 +1,10 @@
  <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+ 			<% if flash.any? %>
+				<div class="alert alert-success alert-dismissible" role="alert">
+				   	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true	">&times;</span></button>
+				   	<h4><strong>Success!</strong> <%= flash[:notice]%></h4>
+				</div>
+			<% end %>
 			<div class="main-grids">
 				<div class="top-grids">
 					<div class="recommended-info">
@@ -18,7 +24,7 @@
 								<% end %>
 							</div>
 							<div class="resent-grid-info recommended-grid-info">
-								<h3><%=link_to practical.title,practical,class:"title title-info" %></h3>
+								<h3><%=link_to practical.title,practical,class:"title title-info" %><br><small>Submitted <strong> <%=time_ago_in_words(practical.created_at) %> ago</strong></small></h3>
 								<ul>
 									<li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
 									<li class="right-list"><p class="views views-info">2,114,200 views</p></li>
@@ -49,7 +55,7 @@
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info video-info-grid">
-									<h5><%= link_to examnote.topic,examnote,class:"title"%></h5>
+									<h5><%= link_to examnote.topic,examnote,class:"title"%><br><small>Submitted <strong> <%=time_ago_in_words(examnote.created_at) %> ago</strong></small></h5>
 									<ul>
 										<li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
 										<li class="right-list"><p class="views views-info">2,114,200 views</p></li>
@@ -81,7 +87,7 @@
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info video-info-grid">
-									<h5><%= link_to assignment.topic,assignment,class:"title"%></h5>
+									<h5><%= link_to assignment.topic,assignment,class:"title"%><br><small>Submitted <strong> <%=time_ago_in_words(assignment.created_at) %> ago</strong></small></h5>
 									<ul>
 										<li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
 										<li class="right-list"><p class="views views-info">2,114,200 views</p></li>
@@ -113,7 +119,7 @@
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info video-info-grid">
-									<h5><%= link_to qpaper.examname,qpaper,class:"title"%></h5>
+									<h5><%= link_to qpaper.examname,qpaper,class:"title"%><br><small>Submitted <strong> <%=time_ago_in_words(qpaper.created_at) %> ago</strong></small></h5>
 									<ul>
 										<li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
 										<li class="right-list"><p class="views views-info">2,114,200 views</p></li>

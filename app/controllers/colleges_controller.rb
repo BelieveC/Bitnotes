@@ -1,5 +1,5 @@
 class CollegesController < ApplicationController
-
+	
 	before_action :get_college,only: [:show,:edit,:update,:destroy,:upvote]
 
 	def index
