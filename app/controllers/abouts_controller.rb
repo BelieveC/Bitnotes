@@ -11,6 +11,7 @@ class AboutsController < ApplicationController
 			@qpapers = Qpaper.search(params[:search])
 			@examnotes = Examnote.search(params[:search])
 			@totalResult = @practicals.count + @assignments.count + @qpapers.count + @examnotes.count
+			@query = params[:search]
 		end
 
 	end
