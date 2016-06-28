@@ -30,6 +30,7 @@ gem 'puma'
 gem 'omniauth'
 gem 'jquery-turbolinks', '~> 2.1'
 gem 'rack-mini-profiler', '~> 0.10.1'
+gem 'execjs', '~> 2.7'
 group :development, :test do
   gem 'byebug'
 end

@@ -232,6 +232,7 @@ DEPENDENCIES
   cocoon
   coffee-rails (~> 4.1.0)
   coffee-script-source (= 1.8.0)
+  execjs (~> 2.7)
   foreman
   haml
   jbuilder (~> 2.0)
