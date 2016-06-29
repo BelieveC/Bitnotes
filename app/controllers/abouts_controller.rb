@@ -16,9 +16,26 @@ class AboutsController < ApplicationController
 
 	end
 
-	def test
+	def privacy
+		
 	end
 
-	def show
+	def terms
 	end
+
+	def creators
+		render layout: "form"
+	end
+
+	def copyright
+	end
+
+	def about
+	end
+
+	def try
+		render layout: "form"
+	end
+
+
 end

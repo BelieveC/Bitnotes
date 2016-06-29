@@ -3,6 +3,13 @@ Rails.application.routes.draw do
 / Root path /  
  root "abouts#index"
 
+  get '/privacy'=>'abouts#privacy',as:"privacy"
+  get '/about'=>'abouts#about', as: "about"
+  get '/terms'=>'abouts#terms', as:"terms"
+  get '/creators'=>'abouts#creators', as:"creators"
+  get '/copyright'=>'abouts#copyright', as:"copyright"
+  get '/try'=>'abouts#try', as:"try"
+
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
   match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
