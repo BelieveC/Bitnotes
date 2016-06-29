@@ -516,7 +516,7 @@ button::-moz-focus-inner {
 .login input[type="text"],.login input[type="password"]{
 	width:90%;
 	padding:5px;
-	margin:3px 0;x
+	margin:3px 0;
 	border: 1px solid #a63d56;
 	outline: none !important;
 }
@@ -868,7 +868,7 @@ button::-moz-focus-inner {
   text-align: center;
 }
 .video-information-text p{
-	color: ##525254;
+	color: #525254;
 	margin: 1em 0;
 	font-size: 14px;
 	line-height: 1.8em;	
