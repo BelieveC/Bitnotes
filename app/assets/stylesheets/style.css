@@ -1673,19 +1673,19 @@ span.glyphicon.glyphicon-user {
 	margin:0 .3em;
 }
 .side-bottom-icons ul li a.facebook{
-background: url("social") no-repeat 0px 0px;
+background: url("social.png") no-repeat 0px 0px;
     width: 30px;
     height: 30px;
     display: block;
 }
 .side-bottom-icons ul li a.twitter{
-    background: url("social") no-repeat -30px 0px;
+    background: url("social.png") no-repeat -30px 0px;
 }
 .side-bottom-icons ul li a.chrome{
-    background: url("social") no-repeat -60px 0px;
+    background: url("social.png") no-repeat -60px 0px;
 }
 .side-bottom-icons ul li a.dribbble{
-    background: url("social") no-repeat -90px 0px;
+    background: url("social.png") no-repeat -90px 0px;
 }
 .side-bottom-icons ul li a.facebook:hover{
 	opacity:.5;

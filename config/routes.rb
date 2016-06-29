@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 / Resources /
   resources :abouts do
   	member do
-  		get 'us'
+  		get 'test'
   	end
   end
   resources :practicals do
