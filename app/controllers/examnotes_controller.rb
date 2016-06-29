@@ -6,6 +6,10 @@ class ExamnotesController < ApplicationController
 	end
 
 	def show
+		@recentAssignments = Assignment.all.order("created_at desc").limit(4)
+		@recentPracticals = Practical.all.order("created_at desc").limit(4)
+		@recentQpapers = Qpaper.all.order("created_at desc").limit(4)
+		@recentExamnotes = Examnote.all.order("created_at desc").limit(4)
 	end
 
 	def new
