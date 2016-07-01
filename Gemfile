@@ -5,6 +5,7 @@ group :development do
 end
 group :production do
 	gem 'pg'
+	gem 'rails_12factor'
 end
 gem 'searchkick'
 gem 'cocoon'
