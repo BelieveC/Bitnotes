@@ -1,4 +1,6 @@
 class ExamnotesController < ApplicationController
+	
+	impressionist actions: [:show]
 	before_action :get_examnote,only: [:show,:edit,:update,:destroy,:upvote]
 
 	def index

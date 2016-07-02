@@ -30,7 +30,7 @@
 						<li><a href="#" class="icon pinterest-icon">Pinterest</a></li>
 						<br><br>
 						<li><%=link_to @qpaper.get_upvotes.size ,like_qpaper_path(@qpaper),method: :put,class:"icon like" %></li>
-						<li class="view">200 Views</li>
+						<li class="view"><%= @qpaper.impressionist_count %> Views</li>
 					</ul>
 				</div>
 			</div>
@@ -95,7 +95,7 @@
 						<div class="col-md-8 single-right-grid-right">
 							<%= link_to qpaper.examname,qpaper,class:"title"%>
 							<p class="author"><a href="#" class="author">John Maniya</a></p>
-							<p class="views">2,114,200 views</p>
+							<p class="views"><%= qpaper.impressionist_count %> views</p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -110,7 +110,7 @@
 						<div class="col-md-8 single-right-grid-right">
 							<%= link_to practical.title,practical,class:"title"%>
 							<p class="author"><a href="#" class="author">John Maniya</a></p>
-							<p class="views">2,114,200 views</p>
+							<p class="views"><%= practical.impressionist_count %> views</p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -125,7 +125,7 @@
 						<div class="col-md-8 single-right-grid-right">
 							<%= link_to assignment.topic,assignment,class:"title"%>
 							<p class="author"><a href="#" class="author">John Maniya</a></p>
-							<p class="views">2,114,200 views</p>
+							<p class="views"><%= assignment.impressionist_count %> views</p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -140,7 +140,7 @@
 						<div class="col-md-8 single-right-grid-right">
 							<%= link_to examnote.topic,examnote,class:"title"%>
 							<p class="author"><a href="#" class="author">John Maniya</a></p>
-							<p class="views">2,114,200 views</p>
+							<p class="views"><%= examnote.impressionist_count %> views</p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>

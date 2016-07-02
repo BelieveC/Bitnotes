@@ -1,6 +1,6 @@
 class PracticalsController < ApplicationController
 
-
+	impressionist actions: [:show]
 	/ Before Performing below action Get Practical /
 	before_action :get_practical, only: [:show,:update,:edit,:destroy,:upvote]
 

@@ -1,4 +1,6 @@
 class RequestsController < ApplicationController
+	
+	impressionist actions: [:show]
 	before_action :get_request,only: [:show,:edit,:update,:destroy,:upvote]
 
 	def index

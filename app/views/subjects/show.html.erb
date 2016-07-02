@@ -30,7 +30,7 @@
 						<li><a href="#" class="icon pinterest-icon">Pinterest</a></li>
 						<br><br>
 						<li><%=link_to @subject.get_upvotes.size ,like_subject_path(@subject),method: :put,class:"icon like" %></li>
-						<li class="view">200 Views</li>
+						<li class="view"><%=@subject.impressionist_count %> Views</li>
 					</ul>
 				</div>
 			</div>

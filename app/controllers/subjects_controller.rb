@@ -1,5 +1,6 @@
 class SubjectsController < ApplicationController
 	
+	impressionist actions: [:show]
 	before_action :get_subject,only: [:show,:edit,:update,:destroy,:upvote]
 
 	def index

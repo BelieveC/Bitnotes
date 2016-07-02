@@ -1,4 +1,5 @@
 class Practical < ActiveRecord::Base
+	is_impressionable
 	searchkick
 	acts_as_votable
 	has_many :pimages

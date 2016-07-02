@@ -21,7 +21,7 @@
 								<h3><%=link_to qpaper.examname, qpaper,class:"title title-info" %><br><small>Submitted <strong> <%=time_ago_in_words(qpaper.created_at) %> ago</strong></small></h3>
 								<ul>
 									<li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
-									<li class="right-list"><p class="views views-info">2,114,200 views</p></li>
+									<li class="right-list"><p class="views views-info"><%= qpaper.impressionist_count %> views</p></li>
 								</ul>
 							</div>
 						</div>
@@ -50,7 +50,7 @@
 									<h5><%=link_to qpaper.examname,qpaper, class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(qpaper.created_at) %> ago</strong></small></h5>
 									<ul>
 										<li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
-										<li class="right-list"><p class="views views-info">2,114,200 views</p></li>
+										<li class="right-list"><p class="views views-info"><%= qpaper.impressionist_count %> views</p></li>
 									</ul>
 								</div>
 							</div>
@@ -80,7 +80,7 @@
 									<h5><%=link_to qpaper.examname,qpaper, class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(qpaper.created_at) %> ago</strong></small></h5>
 									<ul>
 										<li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
-										<li class="right-list"><p class="views views-info">2,114,200 views</p></li>
+										<li class="right-list"><p class="views views-info"><%= qpaper.impressionist_count %>views</p></li>
 									</ul>
 								</div>
 							</div>

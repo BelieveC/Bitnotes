@@ -87,7 +87,11 @@ GEM
     haml (4.0.7)
       tilt
     hashie (3.4.4)
+    httpclient (2.8.0)
     i18n (0.7.0)
+    impressionist (1.5.1)
+      httpclient (~> 2.2)
+      nokogiri (~> 1.5)
     jbuilder (2.5.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -240,6 +244,7 @@ DEPENDENCIES
   execjs (~> 2.7)
   foreman
   haml
+  impressionist
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks (~> 2.1)

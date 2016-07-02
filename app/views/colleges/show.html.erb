@@ -30,7 +30,7 @@
 						<li><a href="#" class="icon pinterest-icon">Pinterest</a></li>
 						<br><br>
 						<li><%=link_to @college.get_upvotes.size ,like_college_path(@college),method: :put,class:"icon like" %></li>
-						<li class="view">200 Views</li>
+						<li class="view"><%= @college.impressionist_count %> views</li>
 					</ul>
 				</div>
 			</div>
