@@ -8,7 +8,7 @@
     var disqus_config = function () {
         shortname = "Bitnotes"
         this.page.url = '<%= url_for([@subject,{only_path: false}]) %>';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = <%= @subject.id %>; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.identifier = "subjects/"+<%= @subject.id %>; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     
     (function() {  // DON'T EDIT BELOW THIS LINE

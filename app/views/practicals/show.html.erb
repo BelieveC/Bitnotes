@@ -33,7 +33,7 @@
 						<li><a href="https://twitter.com/intent/tweet?text= <%= @practical.title%>" target="_blank" class="icon twitter-icon">Twitter</a></li>
 						<li><a href="#" class="icon pinterest-icon">Pinterest</a></li>
 						<br><br>
-						<li><%=link_to @practical.get_upvotes.size ,like_practical_path(@practical),method: :put,class:"icon like" %></li>
+						<li><%=link_to @practical.get_upvotes.size ,like_practical_path(@practical),method: :put,class:"icon like",remote: true%></li>
 						<li class="view"><%= @practical.impressionist_count %> views</li>
 					</ul>
 				</div>
