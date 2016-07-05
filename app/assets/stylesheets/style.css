@@ -12,7 +12,10 @@ body a {
 }
 a.navbar-brand {
    padding: 0 0 0 1em;
+   font-family: impact;
+
 }
+
 nav.navbar.navbar-inverse.navbar-fixed-top {
     padding: 1.5em 0;
     background: #FFF;
@@ -27,6 +30,11 @@ nav.navbar.navbar-inverse.navbar-fixed-top {
 }
 a.navbar-brand h1 {
     margin: 0;
+    color: #21deef;
+    transition: all 1s;
+}
+a.navbar-brand h1:hover{
+  color: black;
 }
 form.navbar-form.navbar-right {
     margin-right: 1em;
@@ -1441,11 +1449,12 @@ span.glyphicon.glyphicon-user {
   width: 60%;
 }
 .developers-info h3{
-    color: #FFF;
+    color: #21deef;
     font-size: 36px;
+    font-weight: bold;
     margin: 0;
 }
-.developers-info p{
+.developers-info p {
     color: #FFF;
     font-size: 17px;
     line-height: 1.8em;
