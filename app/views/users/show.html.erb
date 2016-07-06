@@ -1,11 +1,11 @@
 <div class="developers">
-			<div class="phouse-banner" style="background: url(<%=@user.cover.url %>) no-repeat -118px 0px !important">
+			<div class="phouse-banner" style="background: url(<%=@user.cover.url(:thumb) %>) no-repeat -118px 0px !important">
 				<!-- container -->
 				<div class="container">
 					<div class="phouse-short-info">
             <%= image_tag(@user.avatar.url(:medium),width:"150em",height:"150em",alt:@user.name) %>
-						<h3>Publishing house name and the cover photo</h3>
-						<p>A very short description of it.</p>
+						<h3><%= @user.phname %></h3>
+						<p><%= @user.intro %></p>
 					</div>
 				</div>
 				<!-- //container -->
@@ -18,9 +18,9 @@
   							<a href="#">Details</a>
   							<p>
   							<ul>
-  							<li><p>About House:</p></li>
+  							<li><p>Description: <%= @user.description %></p></li>
   							<li><p>Statistics(Total Views):</p></li>
-  							<li><p>Start Date:</p></li>
+  							<li><p>Started on: <%=@user.created_at.strftime("%d %B %Y") %></p></li>
   							<li><p>Subscriber Count:</p></li>
   							<li><p>Links to There Social Pages:</p></li>
   							<li><p>Links to There Social Pages:some space is left here intentionally in case more details are to be added at a later stage, otherwise the right side column can be adjusted. some sample text is used to fill this space to make this container of the same height as the right side bar.some sample text is used to fill this space to make this container of the same height as the right side bar.some sample text is used to fill this space to make this container of the same height as the right side bar.some sample text is used to fill this space to make this container of the same height as the right side bar.</p></li>

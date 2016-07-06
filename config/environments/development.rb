@@ -39,5 +39,14 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_protocol => 'http',
+    :s3_credentials => {
+      :bucket => "cwaybitnotes",
+      :access_key_id =>"AKIAIT2FFKMXGD3AGIBA",
+      :secret_access_key => "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"
+    }
+  }
   Paperclip.options[:command_path] = 'C:\Program Files (x86)\GnuWin32\bin'
 end

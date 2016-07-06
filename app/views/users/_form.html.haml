@@ -1,5 +1,8 @@
 = simple_form_for(@user, html:{multipart: true}) do |f|
   =f.input :name
+  =f.input :phname
   =f.input :avatar, input_html:{class:"btn btn-success"}
   =f.input :cover, input_html:{class:"btn btn-success"}
+  =f.input :intro
+  =f.input :description
   =f.submit class:"btn btn-primary"

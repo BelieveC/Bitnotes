@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160706134019) do
+ActiveRecord::Schema.define(version: 20160706170711) do
 
   create_table "aimages", force: :cascade do |t|
     t.datetime "created_at",         null: false
@@ -212,6 +212,9 @@ ActiveRecord::Schema.define(version: 20160706134019) do
     t.string   "cover_content_type"
     t.integer  "cover_file_size"
     t.datetime "cover_updated_at"
+    t.text     "description"
+    t.string   "phname"
+    t.text     "intro"
   end
 
   create_table "votes", force: :cascade do |t|
