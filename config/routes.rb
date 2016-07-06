@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-/ Root path /  
+/ Root path /
  root "abouts#index"
 
   get '/privacy'=>'abouts#privacy',as:"privacy"
@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create, :destroy]
 
 / Resources /
+
+  resources :users
+  
   resources :abouts do
   	member do
   		get 'test'

@@ -1,4 +1,4 @@
-=simple_form_for(@subject) do |f|
+=simple_form_for(@subject,html:{multipart: true}) do |f|
 	=f.input :name,placeholder:"What is name of Subject?"
 	%h2 Images
 
