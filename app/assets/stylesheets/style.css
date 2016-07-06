@@ -5,7 +5,7 @@ body{
 }
 body a {
   transition: 0.5s all;
-  -webkit-transition: 0.5s all;																																												
+  -webkit-transition: 0.5s all;
   -o-transition: 0.5s all;
   -moz-transition: 0.5s all;
   -ms-transition: 0.5s all;
@@ -194,7 +194,7 @@ ul.cl-effect-1,ul.cl-effect-2 {
 }
 .glyphicon-film{
 	margin: 0 2em 0 0;
-    font-size: 16px !important;	
+    font-size: 16px !important;
 }
 .glyphicon-home {
 	margin: 0 2em 0 0;
@@ -819,7 +819,7 @@ a.btn.btn-primary.btn-lg.see-button.hvr-shutter-out-horizontal {
 }
 select.form-control.bfh-countries:hover {
    transition: 0.5s all;
-  -webkit-transition: 0.5s all;																																												
+  -webkit-transition: 0.5s all;
   -o-transition: 0.5s all;
   -moz-transition: 0.5s all;
   -ms-transition: 0.5s all;
@@ -1077,7 +1077,7 @@ select.form-control.bfh-countries:hover {
 #myList ul{
 margin:0;
 }
-#myList li{ 
+#myList li{
 	display:none;
 	list-style-type:none;
 }
@@ -1133,7 +1133,7 @@ width:100%;
 	color: #9E9E9E;
 	margin:0;
 	line-height: 1.8em;
-}	
+}
 .load-grid a{
     font-size: 14px;
     color: #0076CC;
@@ -1254,7 +1254,7 @@ width:100%;
 }
 .single-right-grids {
   margin: 0 0 1.5em 0;
-}	
+}
 .single-right-grid-left a img{
 	width:100%;
 }
@@ -1519,7 +1519,7 @@ span.glyphicon.glyphicon-user {
 }
 .creators-bottom-grids{
 	margin: 6em 0 0 0;
-}	
+}
 .creators-bottom-grid{
 	text-align:center;
 }
@@ -2696,4 +2696,38 @@ background: url("social") no-repeat 0px 0px;
 	.footer-bottom ul li a.f-history {
 		padding: .52em 1em .52em 3em;
 	}
+}
+
+.phouse-short-info {
+  width: 60%;
+}
+.phouse-short-info h3{
+    color: #FFF;
+    font-size: 36px;
+    margin-left:25%;
+}
+.phouse-short-info p{
+    color: #FFF;
+    font-size: 17px;
+    line-height: 1.8em;
+    margin-left:25%;
+}
+.phouse-short-info img{
+
+position:relative;
+float: left;
+z-index:999;
+border-style:solid;
+border-width:4px;
+border-color:#FFFFFF;
+
+}
+.slider-top-grids-phouse{
+  width:100% !important;
+  float:left !important;
+}
+.phouse-banner{
+    background: url("phouse") no-repeat -118px 0px !important;
+    background-size: cover !important;
+    padding: 3em 0;
 }
