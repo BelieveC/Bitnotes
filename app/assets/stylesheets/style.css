@@ -1778,6 +1778,7 @@ background: url("social") no-repeat 0px 0px;
 		margin: .5em 0;
 	}
 	.sidebar {
+    top: 0px;
 		padding: 0 10px 20px 10px;
 	}
 	.time {
@@ -2142,6 +2143,7 @@ background: url("social") no-repeat 0px 0px;
 }
 @media (max-width: 767px) {
 	.sidebar {
+    top:0px;
 		display: block;
 	}
 	.navbar-inverse .navbar-toggle {
@@ -2173,6 +2175,7 @@ background: url("social") no-repeat 0px 0px;
 }
 @media (max-width: 640px) {
 	.sidebar {
+    top:0px;
 		display: block;
 	}
 	.navbar-inverse .navbar-toggle {
