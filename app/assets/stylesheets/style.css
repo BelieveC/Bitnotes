@@ -680,6 +680,21 @@ a.btn.btn-primary.btn-lg.see-button.hvr-shutter-out-horizontal {
     float: left;
     margin: .5em 0 0 3em;
 }
+#suggestion_subscribe_btn{
+  padding: 4px 8px;
+  background: #21DEEF;
+  color: #FFF;
+  font-size: 10px;
+  text-decoration: none;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  display: inline-block;
+  margin-bottom: -10px !important;
+
+}
 .heading-right a{
     padding: 8px 20px;
     background: #21DEEF;
@@ -945,15 +960,17 @@ select.form-control.bfh-countries:hover {
 }
 .show-right-grids ul li a{
     font-size: 13px;
-    color: #9E9E9E;
-    margin: 1em 0;
+    font-weight: bold;
+    color: black;
 }
 .show-right-grids ul li a:hover{
     text-decoration: underline;
     color: #21DEEF;
 }
 .show-right-grids ul li a img {
-	width: 100%;
+	width: 50px;
+  height: 50px;
+  border-radius: 2px;
 }
 /*-- history --*/
 .recommended-info p.history-text {
