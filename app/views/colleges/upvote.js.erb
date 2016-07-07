@@ -1,1 +1,1 @@
-$(".likecount").text(<%= @college.get_upvotes.size %>)
+$(".likecount").hide().text(<%= @college.get_upvotes.size %>).fadeIn();

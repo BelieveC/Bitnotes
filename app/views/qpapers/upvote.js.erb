@@ -1,1 +1,1 @@
-$(".likecount").text(<%= @qpaper.get_upvotes.size %>)
+$(".likecount").hide().text(<%= @qpaper.get_upvotes.size %>).fadeIn();

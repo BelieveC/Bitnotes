@@ -1,1 +1,1 @@
-$(".likecount").text(<%= @examnote.get_upvotes.size %>)
+$(".likecount").hide().text(<%= @examnote.get_upvotes.size %>).fadeIn();
