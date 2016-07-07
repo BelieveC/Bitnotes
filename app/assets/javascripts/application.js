@@ -20,7 +20,7 @@
 //= require turbolinks
 //= require_tree .
 
-
+//Coookie.js For hiding the Google translator top Bar
 (function(factory){if(typeof define==='function'&&define.amd){define(['jquery'],factory);}else{factory(jQuery);}}(function($){var pluses=/\+/g;function encode(s){return config.raw?s:encodeURIComponent(s);}
 function decode(s){return config.raw?s:decodeURIComponent(s);}
 function stringifyCookieValue(value){return encode(config.json?JSON.stringify(value):String(value));}
