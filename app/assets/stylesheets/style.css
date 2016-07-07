@@ -31,7 +31,11 @@ nav.navbar.navbar-inverse.navbar-fixed-top {
 a.navbar-brand h1 {
     margin: 0;
     color: #21deef;
-    transition: all 1s;
+    -webkit-transition: 1s all;
+    -o-transition: 1s all;
+    -moz-transition: 1s all;
+    -ms-transition: 1s all;
+    transition: 1s all;
 }
 a.navbar-brand h1:hover{
   color: black;
@@ -104,7 +108,11 @@ form.navbar-form.navbar-right {
     -o-border-radius: 3px;
     -ms-border-radius: 3px;
     text-decoration: none;
-    transition: all 0.6s;
+    -webkit-transition: 0.6s all;
+    -o-transition: 0.6s all;
+    -moz-transition: 0.6s all;
+    -ms-transition: 0.6s all;
+    transition: 0.6s all;
 }
 .file a:hover {
   background: #21deef;
