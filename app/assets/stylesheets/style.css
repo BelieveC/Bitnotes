@@ -1133,21 +1133,48 @@ margin:0;
 .blog-grid img{
 width:100%;
 }
+#showLess{
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 13px;
+  border-radius: 4px;
+  transition: .5s all;
+  -webkit-transition: .5s all;
+  -moz-transition: .5s all;
+  -o-transition: .5s all;
+  -ms-transition: .5s all;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  margin: 1em auto 0 auto;
+  padding: .5em 0;
+  background: #21DEEF;
+  width: 8em;
+}
 
 #loadMore {
 	color: #FFFFFF;
-    font-size: 16px;
-    transition: .5s all;
-    -webkit-transition: .5s all;
-    -moz-transition: .5s all;
-    -o-transition: .5s all;
-    -ms-transition: .5s all;
-    cursor: pointer;
-    text-align: center;
-    margin: 2em auto 0 auto;
-    padding: .5em 0;
-    background: #21DEEF;
-    width: 19%;
+  font-weight: bold;
+  font-size: 13px;
+  border-radius: 4px;
+  transition: .5s all;
+  -webkit-transition: .5s all;
+  -moz-transition: .5s all;
+  -o-transition: .5s all;
+  -ms-transition: .5s all;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  margin: 1em auto 0 auto;
+  padding: .5em 0;
+  background: #21DEEF;
+  width: 8em;
 }
 #loadMore:hover {
   color: #FFFFFF;
