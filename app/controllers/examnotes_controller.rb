@@ -49,7 +49,10 @@ class ExamnotesController < ApplicationController
 
 	def upvote
 		@examnote.upvote_by current_user
-		redirect_to :back
+		respond_to do |format|
+			format.html{redirect_to :back}
+			format.js
+		end
 	end
 
 	private

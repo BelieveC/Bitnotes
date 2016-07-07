@@ -35,7 +35,10 @@
 					<li><a href="#" class="icon fb-icon" id="shareBtn">Facebook</a></li>
 					<li><a href="https://twitter.com/intent/tweet?text= <%= @college.name%>" target="_blank" class="icon twitter-icon">Twitter</a></li>
 					<li><a href="#" class="icon pinterest-icon">Pinterest</a></li>
-					<li><%=link_to @college.get_upvotes.size ,like_college_path(@college),method: :put,class:"icon like" %></li>
+					<li><%=link_to like_college_path(@college),method: :put,remote: true,class:"icon like" do %>
+							<span class="likecount"><%= @college.get_upvotes.size %></span>
+						<%end %>
+					</li>
 					<li class="view"><%= @college.impressionist_count %> views</li>
 				</ul>
 				<%= render"fbshare" %>

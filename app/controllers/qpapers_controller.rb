@@ -49,7 +49,10 @@ class QpapersController < ApplicationController
 
 	def upvote
 		@qpaper.upvote_by current_user
-		redirect_to :back
+		respond_to do |format|
+			format.html{redirect_to :back}
+			format.js
+		end
 	end
 
 	private
