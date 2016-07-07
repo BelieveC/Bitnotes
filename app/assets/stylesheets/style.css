@@ -2748,3 +2748,13 @@ border-color:#FFFFFF;
     background-size: cover !important;
     padding: 3em 0;
 }
+.phpage_detail_title{
+  font-weight: bold;
+  color: #21deef;
+}
+#phpage_detail ul{
+  list-style: none;
+}
+#phpage-detail{
+  border-radius: 5px;
+}

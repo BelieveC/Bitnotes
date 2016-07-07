@@ -1,124 +1,120 @@
 <div class="developers">
-			<div class="phouse-banner" style="background: url(<%=@user.cover.url(:thumb) %>) no-repeat 0px 0px !important">
-				<!-- container -->
-				<div class="container">
-					<div class="phouse-short-info">
-            <%= image_tag(@user.avatar.url,width:"150em",height:"200em",alt:@user.name) %>
-						<h3><%= @user.phname %></h3>
-						<p><%= @user.intro %></p>
-					</div>
-				</div>
-				<!-- //container -->
+	<div class="phouse-banner" style="background: url(<%=@user.cover.url(:thumb) %>) no-repeat 0px 0px !important">
+	   <!-- container -->
+		<div class="container">
+			<div class="phouse-short-info">
+                <%= image_tag(@user.avatar.url,width:"150em",height:"200em",alt:@user.name) %>
+				<h3><strong><%= @user.phname %></strong></h3>
+				<p>"<em><%= @user.intro %></em>"</p>
 			</div>
-      <div class="container">
+		</div>
+		<!-- //container -->
+	</div>
+    <div class="container">
         <div class="developers-grids">
-          <div class="show-top-grids">
-  			   <div class="col-sm-8 show-grid-left main-grids">
-              <div class="creators-grid">
-  							<a href="#">Details</a>
-  							<p>
-  							<ul>
-  							<li><p>Description: <%= @user.description %></p></li>
-  							<li><p>Statistics(Total Views):</p></li>
-  							<li><p>Started on: <%=@user.created_at.strftime("%d %B %Y") %></p></li>
-  							<li><p>Subscriber Count:</p></li>
-  							<li><p>Links to There Social Pages:</p></li>
-  							<li><p>Links to There Social Pages:some space is left here intentionally in case more details are to be added at a later stage, otherwise the right side column can be adjusted. some sample text is used to fill this space to make this container of the same height as the right side bar.some sample text is used to fill this space to make this container of the same height as the right side bar.some sample text is used to fill this space to make this container of the same height as the right side bar.some sample text is used to fill this space to make this container of the same height as the right side bar.</p></li>
-  							</ul>
-  							</p>
-  						</div>
-
-              <div class="recommended">
-    						<div class="recommended-grids">
-    							<div class="recommended-info">
-    								<div class="heading">
-    									<h3>Chinese</h3>
-    								</div>
-    								<div class="heading-right">
-    									<a  href="#small-dialog8" class="play-icon popup-with-zoom-anim">Subscribe</a>
-    								</div>
-    								<div class="clearfix"> </div>
-    							</div>
-    							<div class="col-md-3 resent-grid recommended-grid movie-video-grid">
-    								<div class="resent-grid-img recommended-grid-img">
-    									<a href="single.html"><img src="images/ch1.jpg" alt="" /></a>
-    									<div class="time small-time show-time movie-time">
-    										<p>2:34</p>
-    									</div>
-    									<div class="clck movie-clock">
-    										<span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-    									</div>
-    								</div>
-    								<div class="resent-grid-info recommended-grid-info recommended-grid-movie-info">
-    									<h5><a href="single.html" class="title">Varius sit sed viverra Nullam interdum metus</a></h5>
-    									<ul>
-    										<li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
-    										<li class="right-list"><p class="views views-info">2,114,200 views</p></li>
-    									</ul>
-    								</div>
-    							</div>
-    							<div class="col-md-3 resent-grid recommended-grid movie-video-grid">
-    								<div class="resent-grid-img recommended-grid-img">
-    									<a href="single.html"><img src="images/ch2.jpg" alt="" /></a>
-    									<div class="time small-time show-time movie-time">
-    										<p>3:45</p>
-    									</div>
-    									<div class="clck movie-clock">
-    										<span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-    									</div>
-    								</div>
-    								<div class="resent-grid-info recommended-grid-info recommended-grid-movie-info">
-    									<h5><a href="single.html" class="title">Varius sit sed viverra Nullam interdum metus</a></h5>
-    									<ul>
-    										<li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
-    										<li class="right-list"><p class="views views-info">2,114,200 views</p></li>
-    									</ul>
-    								</div>
-    							</div>
-    							<div class="col-md-3 resent-grid recommended-grid movie-video-grid">
-    								<div class="resent-grid-img recommended-grid-img">
-    									<a href="single.html"><img src="images/ch3.jpg" alt="" /></a>
-    									<div class="time small-time show-time movie-time">
-    										<p>7:34</p>
-    									</div>
-    									<div class="clck movie-clock">
-    										<span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-    									</div>
-    								</div>
-    								<div class="resent-grid-info recommended-grid-info recommended-grid-movie-info">
-    									<h5><a href="single.html" class="title">Varius sit sed viverra Nullam interdum metus</a></h5>
-    									<ul>
-    										<li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
-    										<li class="right-list"><p class="views views-info">2,114,200 views</p></li>
-    									</ul>
-    								</div>
-    							</div>
-    							<div class="col-md-3 resent-grid recommended-grid movie-video-grid">
-    								<div class="resent-grid-img recommended-grid-img">
-    									<a href="single.html"><img src="images/ch4.jpg" alt="" /></a>
-    									<div class="time small-time show-time movie-time">
-    										<p>6:30</p>
-    									</div>
-    									<div class="clck movie-clock">
-    										<span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-    									</div>
-    								</div>
-    								<div class="resent-grid-info recommended-grid-info recommended-grid-movie-info">
-    									<h5><a href="single.html" class="title">Varius sit sed viverra Nullam interdum metus</a></h5>
-    									<ul>
-    										<li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
-    										<li class="right-list"><p class="views views-info">2,114,200 views</p></li>
-    									</ul>
-    								</div>
-    							</div>
-    							<div class="clearfix"> </div>
+            <div class="show-top-grids">
+  			    <div class="col-sm-8 show-grid-left main-grids">
+                    <div class="creators-grid" id="phpage_detail">
+  						<a href="#" class="phpage_detail_title">Details</a>
+						<p>
+						<ul>
+						<li><p><span class="phpage_detail_title">Description:</span> <%= @user.description %></p></li>
+						<li><p><span class="phpage_detail_title">Total Views:</span></p></li>
+						<li><p><span class="phpage_detail_title">Started on:</span>  <%=@user.created_at.strftime("%d %B %Y") %></p></li>
+						<li><p><span class="phpage_detail_title">Subscribers Count:</span></p></li>
+						<li><p><span class="phpage_detail_title">Social Links:</span></p></li>
+						</ul>
+						</p>
+					</div>
+                    <div class="recommended">
+						<div class="recommended-grids">
+							<div class="recommended-info">
+								<div class="heading">
+									<h3>Chinese</h3>
+								</div>
+								<div class="heading-right">
+									<a  href="#small-dialog8" class="play-icon popup-with-zoom-anim">Subscribe</a>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="col-md-3 resent-grid recommended-grid movie-video-grid">
+								<div class="resent-grid-img recommended-grid-img">
+									<a href="single.html"><img src="images/ch1.jpg" alt="" /></a>
+									<div class="time small-time show-time movie-time">
+										<p>2:34</p>
+									</div>
+									<div class="clck movie-clock">
+										<span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+									</div>
+								</div>
+								<div class="resent-grid-info recommended-grid-info recommended-grid-movie-info">
+									<h5><a href="single.html" class="title">Varius sit sed viverra Nullam interdum metus</a></h5>
+									<ul>
+										<li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
+										<li class="right-list"><p class="views views-info">2,114,200 views</p></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-3 resent-grid recommended-grid movie-video-grid">
+								<div class="resent-grid-img recommended-grid-img">
+									<a href="single.html"><img src="images/ch2.jpg" alt="" /></a>
+									<div class="time small-time show-time movie-time">
+										<p>3:45</p>
+									</div>
+									<div class="clck movie-clock">
+										<span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+									</div>
+								</div>
+								<div class="resent-grid-info recommended-grid-info recommended-grid-movie-info">
+									<h5><a href="single.html" class="title">Varius sit sed viverra Nullam interdum metus</a></h5>
+									<ul>
+										<li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
+										<li class="right-list"><p class="views views-info">2,114,200 views</p></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-3 resent-grid recommended-grid movie-video-grid">
+								<div class="resent-grid-img recommended-grid-img">
+									<a href="single.html"><img src="images/ch3.jpg" alt="" /></a>
+									<div class="time small-time show-time movie-time">
+										<p>7:34</p>
+									</div>
+									<div class="clck movie-clock">
+										<span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+									</div>
+								</div>
+								<div class="resent-grid-info recommended-grid-info recommended-grid-movie-info">
+									<h5><a href="single.html" class="title">Varius sit sed viverra Nullam interdum metus</a></h5>
+									<ul>
+										<li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
+										<li class="right-list"><p class="views views-info">2,114,200 views</p></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-3 resent-grid recommended-grid movie-video-grid">
+								<div class="resent-grid-img recommended-grid-img">
+									<a href="single.html"><img src="images/ch4.jpg" alt="" /></a>
+									<div class="time small-time show-time movie-time">
+										<p>6:30</p>
+									</div>
+									<div class="clck movie-clock">
+										<span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+									</div>
+								</div>
+								<div class="resent-grid-info recommended-grid-info recommended-grid-movie-info">
+									<h5><a href="single.html" class="title">Varius sit sed viverra Nullam interdum metus</a></h5>
+									<ul>
+										<li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
+										<li class="right-list"><p class="views views-info">2,114,200 views</p></li>
+									</ul>
+								</div>
+							</div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            </div>
-            <div class="col-sm-1"></div>
-            <div class="col-md-3  show-grid-right">
-    					<h3>Similar Publishing House</h3>
+                <div class="col-sm-1"></div>
+                <div class="col-md-3  show-grid-right">
+    					<h3><span class="phpage_detail_title">Similar Publishing House</span></h3>
     					<div class="show-right-grids">
     						<ul>
     							<li class=""><%= link_to image_tag(@user.avatar.url,alt:"logo",height: "50px") %></li>
@@ -199,8 +195,7 @@
     						</ul>
     					</div>
     				</div>
-    				<div class="clearfix"> </div>
+    			<div class="clearfix"> </div>
           </div>
         </div>
       </div>
-    </div>
