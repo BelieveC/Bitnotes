@@ -878,39 +878,42 @@ select.form-control.bfh-countries:hover {
     font-size: 20px;
     color: #525254;
 }
-.share ul{
+.social_response ul{
 	margin: 2em 0 0 0;
-    padding: 0;
-    list-style: none;
+  padding: 0;
+  list-style: none;
 }
-.share li{
-    display: block;
+.social_response li{
+    display: inline-block;
     margin: 1em 0;
-	color: #A8A8A8;
+	  color: #A8A8A8;
     font-size: 14px;
 }
-.share li a{
+.social_response li a{
     color: #A8A8A8;
     font-size: 14px;
     text-decoration: none;
     padding-left: 3em;
     line-height: 2em;
 }
-.share li a.icon{
+.social_response li a.icon{
     background: url("like") no-repeat 0px 0px;
     height: 34px;
     display: block;
 }
-.share li a.fb-icon{
+.social_response li a.fb-icon{
     background: url("fb") no-repeat 0px 0px;
+    text-indent: -999px;
 }
-.share li a.twitter-icon{
+.social_response li a.twitter-icon{
     background: url("twitter") no-repeat 0px 0px;
+    text-indent: -999px;
 }
-.share li a.pinterest-icon{
+.social_response li a.pinterest-icon{
     background: url("pinterest") no-repeat 0px 0px;
+    text-indent: -999px;
 }
-.share li.view{
+.social_response li.view{
     background: url("view") no-repeat 0px 0px;
     height: 34px;
     display: block;
@@ -1080,6 +1083,21 @@ select.form-control.bfh-countries:hover {
 }
 .song-info-left {
   float: left;
+}
+/*social_response */
+.social_response{
+  margin: -5em 0 0 2em;
+  padding-left: 0;
+  background: #ffffff;
+  padding: 1em;
+}
+.social_response > ul{
+  list-style: none;
+  font-size: 15px;
+}
+.social_response > ul li{
+  float: left;
+  padding: 3px;
 }
 /*-- published --*/
 .published{

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160706170711) do
+ActiveRecord::Schema.define(version: 20160707073807) do
 
   create_table "aimages", force: :cascade do |t|
     t.datetime "created_at",         null: false
@@ -34,9 +34,18 @@ ActiveRecord::Schema.define(version: 20160706170711) do
     t.string   "college"
     t.integer  "user_id"
     t.string   "user_name"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "cached_votes_total", default: 0
+    t.integer  "cached_votes_score", default: 0
+    t.integer  "cached_votes_up",    default: 0
+    t.integer  "cached_votes_down",  default: 0
   end
+
+  add_index "assignments", ["cached_votes_down"], name: "index_assignments_on_cached_votes_down"
+  add_index "assignments", ["cached_votes_score"], name: "index_assignments_on_cached_votes_score"
+  add_index "assignments", ["cached_votes_total"], name: "index_assignments_on_cached_votes_total"
+  add_index "assignments", ["cached_votes_up"], name: "index_assignments_on_cached_votes_up"
 
   create_table "cimages", force: :cascade do |t|
     t.datetime "created_at",         null: false
@@ -55,9 +64,18 @@ ActiveRecord::Schema.define(version: 20160706170711) do
     t.string   "address"
     t.string   "user_name"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "cached_votes_total", default: 0
+    t.integer  "cached_votes_score", default: 0
+    t.integer  "cached_votes_up",    default: 0
+    t.integer  "cached_votes_down",  default: 0
   end
+
+  add_index "colleges", ["cached_votes_down"], name: "index_colleges_on_cached_votes_down"
+  add_index "colleges", ["cached_votes_score"], name: "index_colleges_on_cached_votes_score"
+  add_index "colleges", ["cached_votes_total"], name: "index_colleges_on_cached_votes_total"
+  add_index "colleges", ["cached_votes_up"], name: "index_colleges_on_cached_votes_up"
 
   create_table "eimages", force: :cascade do |t|
     t.datetime "created_at",         null: false
@@ -80,9 +98,18 @@ ActiveRecord::Schema.define(version: 20160706170711) do
     t.string   "college"
     t.integer  "user_id"
     t.string   "user_name"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "cached_votes_total", default: 0
+    t.integer  "cached_votes_score", default: 0
+    t.integer  "cached_votes_up",    default: 0
+    t.integer  "cached_votes_down",  default: 0
   end
+
+  add_index "examnotes", ["cached_votes_down"], name: "index_examnotes_on_cached_votes_down"
+  add_index "examnotes", ["cached_votes_score"], name: "index_examnotes_on_cached_votes_score"
+  add_index "examnotes", ["cached_votes_total"], name: "index_examnotes_on_cached_votes_total"
+  add_index "examnotes", ["cached_votes_up"], name: "index_examnotes_on_cached_votes_up"
 
   create_table "impressions", force: :cascade do |t|
     t.string   "impressionable_type"
@@ -131,10 +158,18 @@ ActiveRecord::Schema.define(version: 20160706170711) do
     t.integer  "user_id"
     t.string   "subject"
     t.string   "college"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "cached_votes_total", default: 0
+    t.integer  "cached_votes_score", default: 0
+    t.integer  "cached_votes_up",    default: 0
+    t.integer  "cached_votes_down",  default: 0
   end
 
+  add_index "practicals", ["cached_votes_down"], name: "index_practicals_on_cached_votes_down"
+  add_index "practicals", ["cached_votes_score"], name: "index_practicals_on_cached_votes_score"
+  add_index "practicals", ["cached_votes_total"], name: "index_practicals_on_cached_votes_total"
+  add_index "practicals", ["cached_votes_up"], name: "index_practicals_on_cached_votes_up"
   add_index "practicals", ["user_id"], name: "index_practicals_on_user_id"
 
   create_table "qimages", force: :cascade do |t|
@@ -159,9 +194,18 @@ ActiveRecord::Schema.define(version: 20160706170711) do
     t.string   "college"
     t.integer  "user_id"
     t.string   "user_name"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "cached_votes_total", default: 0
+    t.integer  "cached_votes_score", default: 0
+    t.integer  "cached_votes_up",    default: 0
+    t.integer  "cached_votes_down",  default: 0
   end
+
+  add_index "qpapers", ["cached_votes_down"], name: "index_qpapers_on_cached_votes_down"
+  add_index "qpapers", ["cached_votes_score"], name: "index_qpapers_on_cached_votes_score"
+  add_index "qpapers", ["cached_votes_total"], name: "index_qpapers_on_cached_votes_total"
+  add_index "qpapers", ["cached_votes_up"], name: "index_qpapers_on_cached_votes_up"
 
   create_table "requests", force: :cascade do |t|
     t.string   "topic"
@@ -172,9 +216,18 @@ ActiveRecord::Schema.define(version: 20160706170711) do
     t.string   "college"
     t.integer  "user_id"
     t.string   "user_name"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "cached_votes_total", default: 0
+    t.integer  "cached_votes_score", default: 0
+    t.integer  "cached_votes_up",    default: 0
+    t.integer  "cached_votes_down",  default: 0
   end
+
+  add_index "requests", ["cached_votes_down"], name: "index_requests_on_cached_votes_down"
+  add_index "requests", ["cached_votes_score"], name: "index_requests_on_cached_votes_score"
+  add_index "requests", ["cached_votes_total"], name: "index_requests_on_cached_votes_total"
+  add_index "requests", ["cached_votes_up"], name: "index_requests_on_cached_votes_up"
 
   create_table "simages", force: :cascade do |t|
     t.datetime "created_at",         null: false
@@ -192,9 +245,18 @@ ActiveRecord::Schema.define(version: 20160706170711) do
     t.string   "name"
     t.integer  "user_id"
     t.string   "user_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "cached_votes_total", default: 0
+    t.integer  "cached_votes_score", default: 0
+    t.integer  "cached_votes_up",    default: 0
+    t.integer  "cached_votes_down",  default: 0
   end
+
+  add_index "subjects", ["cached_votes_down"], name: "index_subjects_on_cached_votes_down"
+  add_index "subjects", ["cached_votes_score"], name: "index_subjects_on_cached_votes_score"
+  add_index "subjects", ["cached_votes_total"], name: "index_subjects_on_cached_votes_total"
+  add_index "subjects", ["cached_votes_up"], name: "index_subjects_on_cached_votes_up"
 
   create_table "users", force: :cascade do |t|
     t.string   "provider"
