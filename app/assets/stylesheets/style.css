@@ -977,6 +977,11 @@ select.form-control.bfh-countries:hover {
 	width: 50px;
   height: 50px;
   border-radius: 2px;
+  border: 2px solid #ffffff;
+  -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -moz-border-radius: 2px;
 }
 /*-- history --*/
 .recommended-info p.history-text {
@@ -2736,13 +2741,17 @@ background: url("social") no-repeat 0px 0px;
     margin-left:25%;
 }
 .phouse-short-info img{
-
-position:relative;
-float: left;
-z-index:999;
-border-style:solid;
-border-width:4px;
-border-color:#FFFFFF;
+  position:relative;
+  float: left;
+  z-index:999;
+  border-style:solid;
+  border-radius: 4px;
+  border-width:1px;
+  border-color:#FFFFFF;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
 
 }
 .slider-top-grids-phouse{
