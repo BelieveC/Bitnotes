@@ -16,6 +16,7 @@
   			    <div class="col-sm-8 show-grid-left main-grids">
                     <div class="creators-grid" id="phpage_detail">
   						<a href="#" class="phpage_detail_title">Details</a>
+                        <%= link_to "Edit Profile",edit_user_path(@user),id:"edit_profile_btn"%>
 						<p>
 						<ul>
 						<li><p><span class="phpage_detail_title">Description:</span> <%= @user.description %></p></li>
