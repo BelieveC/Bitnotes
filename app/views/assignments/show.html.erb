@@ -21,22 +21,24 @@
 					</ul>
 				</div>
 			</div>
-			<div class="song-grid-right">
-				<div class="share">
-					<h5>Share this</h5>
-					<ul>
-						<li><a href="#" class="icon fb-icon" id="shareBtn">Facebook</a></li>
-						<li><a href="https://twitter.com/intent/tweet?text= <%= @assignment.topic%>" target="_blank" class="icon twitter-icon">Twitter</a></li>
-						<li><a href="#" class="icon pinterest-icon">Pinterest</a></li>
-						<br><br>
-						<li><%=link_to @assignment.get_upvotes.size ,like_assignment_path(@assignment),method: :put,class:"icon like" %></li>
-						<li class="view"><%= @assignment.impressionist_count %> Views</li>
-					</ul>
-				</div>
+			<div class="clearfix"> </div>
+			<div class="show-right-grids">
+				<ul>
+					<li class=""><%= link_to image_tag("#",alt:"logo",height: "50px") %></li>
+					<li><a href="#">English Movies</a><br><a href="#small-dialog8" id="suggestion_subscribe_btn" class="play-icon popup-with-zoom-anim">Subscribe</a></li>
+                    <br>
+				</ul>
 			</div>
-			
-			<%= render "fbshare" %>
-
+			<div class="social_response">
+				<ul>
+					<li><a href="#" class="icon fb-icon" id="shareBtn">Facebook</a></li>
+					<li><a href="https://twitter.com/intent/tweet?text= <%= @assignment.topic%>" target="_blank" class="icon twitter-icon">Twitter</a></li>
+					<li><a href="#" class="icon pinterest-icon">Pinterest</a></li>
+					<li><%=link_to @assignment.get_upvotes.size ,like_assignment_path(@assignment),method: :put,class:"icon like" %></li>
+					<li class="view"><%= @assignment.impressionist_count %> Views</li>
+				</ul>
+				<%= render "fbshare" %>
+			</div>
 			<div class="clearfix"> </div>
 			<div class="published">
 				<script src="jquery.min.js"></script>
