@@ -567,14 +567,21 @@ button::-moz-focus-inner {
   margin-top: 3em;
 }
 .button-bottom p{
-	  color: #333;
-	  font-size:14px;
+	color: #333;
+ 	font-size:14px;
 }
 .button-bottom p a{
-  color: #DF2229;
+	color: #DF2229;
+	font-weight: bold;
+	transition: 0.4s all;
+	-webkit-transition: 0.3s all;
+	-moz-transition: 0.3s all;
+	-o-transition: 0.3s all;
+	-ms-transition: 0.3s all;
 }
 .button-bottom p a:hover{
-	color:#C7C7C7;	
+	color:#21deef;
+	text-decoration: none;	
 }
 .continue-button a {
     padding: .5em 2em;
@@ -751,11 +758,31 @@ button::-moz-focus-inner {
 		background: url("fb1") no-repeat 8px 9px #3b5998 !important;
 		padding: .5em .5em .5em 2em !important;
 		font-size: 13px !important;
+		transition: 0.3s all;
+		-webkit-transition: 0.3s all;
+	    -moz-transition: 0.3s all;
+	    -o-transition: 0.3s all;
+	    -ms-transition: 0.3s all;
+	}
+	.facebook-button a:hover{
+		color: white;
+		font-size: 14px !important;
+		text-decoration: none;
 	}
 	.chrome-button a {
 		background: url("ch1.png") no-repeat 8px 9px #dd4b39 !important;
 		font-size: 13px !important;
 		padding: .5em .5em .5em 2em !important;
+		transition: 0.3s all;
+		-webkit-transition: 0.3s all;
+	    -moz-transition: 0.3s all;
+	    -o-transition: 0.3s all;
+	    -ms-transition: 0.3s all;
+	}
+	.chrome-button a:hover{
+		text-decoration: none;
+		color: white;
+		font-size: 14px;
 	}
 	.social-sits ul li a {
 		padding: .5em 1em;
@@ -801,6 +828,16 @@ button::-moz-focus-inner {
     padding: 1em 1em 1em 3em;
     text-decoration: none;
     font-size: 14px;
+    transition: 0.3s all;
+    -webkit-transition: 0.3s all;
+    -moz-transition: 0.3s all;
+    -o-transition: 0.3s all;
+    -ms-transition: 0.3s all;
+}
+.facebook-button a:hover{
+	color: white;
+	text-decoration: none;
+	font-size: 15px;
 }
 .chrome-button a{
     background: url("ch1.png") no-repeat 14px 15px #dd4b39;
@@ -808,6 +845,16 @@ button::-moz-focus-inner {
     font-size: 14px;
     padding: 1em 1em 1em 3em;
     text-decoration: none;
+    transition: 0.3s all;
+    -webkit-transition: 0.3s all;
+    -moz-transition: 0.3s all;
+    -o-transition: 0.3s all;
+    -ms-transition: 0.3s all;
+}
+.chrome-button a:hover{
+	color: white;
+	text-decoration: none;
+	font-size: 15px;
 }
 .social-sits p{
   color: #7e7f84;
