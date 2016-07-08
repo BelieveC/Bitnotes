@@ -21,7 +21,7 @@ class CollegesController < ApplicationController
 		@college.user_id = current_user.id
 		@college.user_name = current_user.phname
 		if @college.save
-			redirect_to @college,notice:"Successfully Created Your College"
+			redirect_to @college,notice:"Successfully created your College."
 		else
 			render layout: "form"
 			render "new"
@@ -32,7 +32,7 @@ class CollegesController < ApplicationController
 		if session[:user_id] == @college.user_id
 			render layout: "form"
 		else
-			redirect_to root_path,notice:"Sorry!, You don't have access to edit this College."
+			redirect_to root_path,notice:"Gotcha!, You don't have access to edit this College."
 		end
 	end
 
@@ -45,7 +45,7 @@ class CollegesController < ApplicationController
 				render "edit"
 			end
 		else
-			redirect_to root_path,notice:"Sorry!, You don't have access to edit this College."
+			redirect_to root_path,notice:"Gotcha!, You don't have access to edit this College."
 		end
 	end
 
@@ -54,7 +54,7 @@ class CollegesController < ApplicationController
 			@college.destroy
 			redirect_to root_path,notice:"Successfully Destroyed your college"
 		else
-			redirect_to root_path,notice:"Sorry! You don't have rights to destroy this Assignment"
+			redirect_to root_path,notice:"Gotcha! You don't have rights to destroy this College"
 		end
 	end
 

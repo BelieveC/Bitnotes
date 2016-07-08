@@ -25,7 +25,7 @@ class QpapersController < ApplicationController
 		@qpaper.user_id = current_user.id
 		@qpaper.user_name = current_user.phname
 		if @qpaper.save
-			redirect_to @qpaper,notice:"Successfully Created Your Paper!"
+			redirect_to @qpaper,notice:"Successfully created your Paper!"
 		else
 			render layout: "form"
 			render "new"
@@ -43,7 +43,7 @@ class QpapersController < ApplicationController
 	def update
 		if session[:user_id] == @qpaper.user_id
 			if @qpaper.update(qpaper_params)
-				redirect_to @qpaper,notice: "Successfully Updated Your Paper"
+				redirect_to @qpaper,notice: "Successfully updated your Paper"
 			else
 				render "edit"
 			end
@@ -55,7 +55,7 @@ class QpapersController < ApplicationController
 	def destroy
 		if session[:user_id] == @qpaper.user_id
 			@qpaper.destroy
-			redirect_to root_path,notice:"Successfully Destroyed your Qpaper"
+			redirect_to root_path,notice:"Successfully destroyed your Paper"
 		else
 			redirect_to root_path,notice:"Gotcha!, You don't have right to delete this Paper."
 		end

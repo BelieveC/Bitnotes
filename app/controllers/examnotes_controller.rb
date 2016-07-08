@@ -25,7 +25,7 @@ class ExamnotesController < ApplicationController
 		@examnote.user_id = current_user.id
 		@examnote.user_name = current_user.phname
 		if @examnote.save
-			redirect_to @examnote,notice:"Successfully Created Your Examnote"
+			redirect_to @examnote,notice:"Successfully created your Examnote"
 		else
 			render layout: "form"
 			render "new"
@@ -57,7 +57,7 @@ class ExamnotesController < ApplicationController
 	def destroy
 		if session[:user_id] == @examnote.user_id
 			@examnote.destroy
-			redirect_to root_path,notice:"Successfully Destroyed your Examnote"
+			redirect_to root_path,notice:"Successfully destroyed your Examnote"
 		else
 			redirect_to root_path,notice:"Sorry!, You don't have rights to Delete this Examnote."
 		end

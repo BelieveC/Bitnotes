@@ -25,7 +25,7 @@ class PracticalsController < ApplicationController
 		@practical.user_id = current_user.id
 		@practical.user_name = current_user.phname
 		if @practical.save
-			redirect_to @practical,notice: "Successfully Created your Practical!"
+			redirect_to @practical,notice: "Successfully created your Practical!"
 		else
 			render 'new'
 		end
@@ -42,7 +42,7 @@ class PracticalsController < ApplicationController
 	def update
 		if session[:user_id] == @practical.user_id
 			if @practical.update(practical_params)
-				redirect_to @practical,notice: "Successfully Updated Your Practical"
+				redirect_to @practical,notice: "Successfully Updated your Practical"
 			else
 				render "edit"
 			end

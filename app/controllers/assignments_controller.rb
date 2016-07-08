@@ -25,7 +25,7 @@ class AssignmentsController < ApplicationController
 		@assignment.user_id = current_user.id
 		@assignment.user_name = current_user.phname
 		if @assignment.save
-			redirect_to @assignment,notice:"Created Your Assignment."
+			redirect_to @assignment,notice:"Successfully created your Assignment."
 		else
 			render layout: "form"
 			render "new"
@@ -43,7 +43,7 @@ class AssignmentsController < ApplicationController
 	def update
 		if session[:user_id] = @assignment.user_id
 			if @assignment.update(assignment_params)
-				redirect_to @assignment,notice:"Updated your Assignment."
+				redirect_to @assignment,notice:"Successfully updated your Assignment."
 			else
 				render layout: "form"
 				render "edit"
