@@ -39,6 +39,10 @@
 						<% end %>
 					</li>
 					<li class="view"><%= @qpaper.impressionist_count %> Views</li>
+					<% if session[:user_id] == @qpaper.user_id %>
+						<li><%=link_to "Edit",edit_qpaper_path(@qpaper),id:"edit_profile_btn" %></li>
+						<li><%=link_to "Delete",@qpaper,method: :delete,confirm:"Are you sure?",id:"edit_profile_btn" %></li>
+					<% end %>
 				</ul>
 				<%= render "fbshare" %>
 			</div>
