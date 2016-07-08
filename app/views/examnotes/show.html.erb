@@ -40,6 +40,10 @@
 						<% end %>
 					</li>
 					<li class="view"><%= @examnote.impressionist_count %> Views</li>
+					<% if session[:user_id] == @examnote.user_id %>
+						<li><%=link_to "Edit",edit_examnote_path(@examnote),id:"edit_profile_btn" %></li>
+						<li><%=link_to "Delete",@examnote,method: :delete,confirm:"Are you sure?",id:"edit_profile_btn" %></li>
+					<% end %>
 				</ul>
 				<%=render "fbshare" %>
 			</div>

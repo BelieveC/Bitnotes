@@ -39,6 +39,10 @@
 						<% end %>
 					</li>
 					<li class="view"><%= @assignment.impressionist_count %> Views</li>
+					<% if session[:user_id] == @assignment.user_id %>
+						<li><%=link_to "Edit",edit_assignment_path(@assignment),id:"edit_profile_btn" %></li>
+						<li><%=link_to "Delete",@assignment,method: :delete,confirm:"Are you sure?",id:"edit_profile_btn" %></li>
+					<% end %>
 				</ul>
 				<%= render "fbshare" %>
 			</div>

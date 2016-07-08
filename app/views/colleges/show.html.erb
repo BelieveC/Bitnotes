@@ -40,6 +40,10 @@
 						<%end %>
 					</li>
 					<li class="view"><%= @college.impressionist_count %> views</li>
+					<% if session[:user_id] == @college.user_id %>
+						<li><%=link_to "Edit",edit_college_path(@college),id:"edit_profile_btn" %></li>
+						<li><%=link_to "Delete",@college,method: :delete,confirm:"Are you sure?",id:"edit_profile_btn" %></li>
+					<% end %>
 				</ul>
 				<%= render"fbshare" %>
 			</div>
