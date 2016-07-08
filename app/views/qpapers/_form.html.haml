@@ -1,8 +1,8 @@
 =simple_form_for(@qpaper,html:{multipart: true}) do |f|
 
-	=f.input :examname, label: "Title",placeholder:"What is your qpaper About?"
-	=f.input :date, label: "Date"
-	=f.input :description, label: "Description", placeholder:"Describe your qpaper !",input_html:{class:'tinymce'}
+	=f.input :examname, label: "Title",placeholder:"What is name Question Paper?"
+	=f.input :date, label: "Date",hint:"Date of Conduction of Paper",placeholder:"Date of Examination"
+	=f.input :description, label: "Description", placeholder:"Describe your Paper",input_html:{class:'tinymce'},hint:"Describe the Question Paper"
 	%h2 Images
 
 	#tasks
