@@ -32,13 +32,13 @@
 			<div class="social_response">
 				<ul>
 					<li><a href="#" class="icon fb-icon" title="Share on Facebook" id="shareBtn">Facebook</a></li>
-					<li><a href="https://twitter.com/intent/tweet?text= <%= @qpaper.examname%>" target="_blank" class="icon twitter-icon">Twitter</a></li>
-					<li><a href="#" class="icon pinterest-icon">Pinterest</a></li>
+					<li><a href="https://twitter.com/intent/tweet?text= <%= @qpaper.examname%>" target="_blank" class="icon twitter-icon" title="Share on Twitter">Twitter</a></li>
+					<li><a href="#" class="icon pinterest-icon" title="Share on Pinterest">Pinterest</a></li>
 					<li><%=link_to like_qpaper_path(@qpaper),method: :put,remote: true,title:"Like this",class:"icon like" do %>
 							<span class="likecount"><%= @qpaper.get_upvotes.size %></span>
 						<% end %>
 					</li>
-					<li class="view"><%= @qpaper.impressionist_count %> Views</li>
+					<li class="view" title="Views Count"><%= @qpaper.impressionist_count %> Views</li>
 					<% if session[:user_id] == @qpaper.user_id %>
 						<li><%=link_to "Edit",edit_qpaper_path(@qpaper),id:"edit_profile_btn" %></li>
 						<li><%=link_to "Delete",@qpaper,method: :delete,confirm:"Are you sure?",id:"edit_profile_btn" %></li>

@@ -36,13 +36,13 @@
 			<div class="social_response">
 				<ul>
 					<li><a href="#" class="icon fb-icon" title="Share on Facebook" id="shareBtn">Facebook</a></li>
-					<li><a href="https://twitter.com/intent/tweet?text= <%= @practical.title%>" target="_blank" class="icon twitter-icon">Twitter</a></li>
-					<li><a href="#" class="icon pinterest-icon">Pinterest</a></li>
+					<li><a href="https://twitter.com/intent/tweet?text= <%= @practical.title%>" target="_blank" title="Share on Twitter" class="icon twitter-icon">Twitter</a></li>
+					<li><a href="#" class="icon pinterest-icon" title="Share on Pinterest">Pinterest</a></li>
 					<li><%= link_to like_practical_path(@practical),method: :put,class:"icon like",title:"Like this", id:"likebtn",remote: true do %>
 						<span class="likecount"><%= @practical.get_upvotes.size %></span>
 						<% end %>
 					</li>
-					<li class="view"><%= @practical.impressionist_count %> views</li>
+					<li class="view" title="Views Count"><%= @practical.impressionist_count %> views</li>
 					<% if session[:user_id] == @practical.user_id %>
 						<li><%=link_to "Edit",edit_practical_path(@practical),id:"edit_profile_btn" %></li>
 						<li><%=link_to "Delete",@practical,method: :delete,confirm:"Are you sure?",id:"edit_profile_btn" %></li>
