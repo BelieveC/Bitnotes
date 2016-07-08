@@ -1,7 +1,7 @@
 =simple_form_for(@request) do |f|
 	=f.input :topic,label:"Topic",placeholder:"What is this Request About?"
 	%br/
-	=f.collection_select :subject_id, Subject.all,:id,:name, {promt: "Choose a Subject or Add Subject"},label:"Subject"
+	=f.input :subject_id,collection: Subject.all,prompt: "Choose a Subject",label:"Subject",hint:"If subject is not Included, Create Subject first from Upload Link In Navbar"
 	%br/
 	=f.input :type_id,collection:[['Practical',1],['Examnote','2'],['Assignment','3'],['Paper',4]],selected: 'Practical'
 	%br/
