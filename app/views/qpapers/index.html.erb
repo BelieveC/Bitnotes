@@ -9,10 +9,10 @@
 							<% if qpaper.qimages.count > 0 %>
 								<div class="resent-grid-img recommended-grid-img">
 									<%=link_to image_tag(qpaper.qimages.first.image.url(:medium),alt: qpaper.examname),qpaper %>
-									<div class="time">
+									<div class="time" title="Pages Count">
 										<p><%= qpaper.qimages.count %></p>
 									</div>
-									<div class="clck">
+									<div class="clck" title="Pages">
 										<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
 									</div>
 								</div>
@@ -38,10 +38,10 @@
 								<% if qpaper.qimages.count > 0 %>
 								<div class="resent-grid-img recommended-grid-img">
 									<%= link_to image_tag(qpaper.qimages.first.image.url(:small),alt: qpaper.examname),qpaper %>
-									<div class="time small-time">
+									<div class="time small-time" title="Pages Count">
 										<p><%= qpaper.qimages.count %></p>
 									</div>
-									<div class="clck small-clck">
+									<div class="clck small-clck" title="Pages">
 										<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
 									</div>
 								</div>
@@ -68,10 +68,10 @@
 								<% if qpaper.qimages.count > 0 %>
 								<div class="resent-grid-img recommended-grid-img">
 									<%= link_to image_tag(qpaper.qimages.first.image.url(:small),alt: qpaper.examname),qpaper %>
-									<div class="time small-time">
+									<div class="time small-time" title="Pages Count">
 										<p><%= qpaper.qimages.count %></p>
 									</div>
-									<div class="clck small-clck">
+									<div class="clck small-clck" title="Pages">
 										<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
 									</div>
 								</div>
