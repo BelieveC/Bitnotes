@@ -21,10 +21,10 @@
 							<div class="resent-grid-img recommended-grid-img">
 								<% if practical.pimages.count > 0  %>
 									<%= link_to image_tag(practical.pimages.first.image.url(:medium),alt: practical.title),practical %>
-									<div class="time">
+									<div class="time" title="Pages Count">
 										<p><%=practical.pimages.count%></p>
 									</div>
-									<div class="clck">
+									<div class="clck" title="Pages">
 										<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
 									</div>
 								<% end %>
@@ -53,10 +53,10 @@
 								<%else %>
 									<%= link_to image_tag("we1",alt: examnote.topic),examnote %>
 								<% end %>
-									<div class="time small-time">
+									<div class="time small-time" title="Pages Count">
 										<p><%= examnote.eimages.count %></p>
 									</div>
-									<div class="clck small-clck">
+									<div class="clck small-clck" title="Pages">
 										<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
 									</div>
 								</div>
@@ -85,10 +85,10 @@
 								<%else %>
 									<%= link_to image_tag("we1",alt: assignment.topic),assignment %>
 								<% end %>
-									<div class="time small-time">
+									<div class="time small-time" title="Pages Count">
 										<p><%= assignment.aimages.count %></p>
 									</div>
-									<div class="clck small-clck">
+									<div class="clck small-clck" title="Pages">
 										<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
 									</div>
 								</div>
@@ -117,10 +117,10 @@
 								<%else %>
 									<%= link_to image_tag("we1",alt: qpaper.examname),qpaper %>
 								<% end %>
-									<div class="time small-time">
+									<div class="time small-time" title="Pages Count">
 										<p><%= qpaper.qimages.count %></p>
 									</div>
-									<div class="clck small-clck">
+									<div class="clck small-clck" title="Pages">
 										<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
 									</div>
 								</div>
