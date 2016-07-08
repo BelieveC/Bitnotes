@@ -1,7 +1,10 @@
 =simple_form_for(@examnote,html:{multipart: true}) do |f|
 
-	=f.input :topic, label: "Title",placeholder:"What is your examnote About?"
-	=f.input :description, label: "Description", placeholder:"Describe your examnote",input_html:{class:'tinymce'}
+	=f.input :topic, label: "Title",placeholder:"What is your Examnote About?"
+	=f.input :subject_id,collection: Subject.all,prompt: "Choose Subject of Exam Note",label:"Subject Name",hint:"If Institute not Found,add Subject via Upload Link Above"
+
+	=f.input :college_id,collection: College.all,label:"Institute",prompt:"Choose Institute related to Exam Note",hint:"If Institute not Found,add Your Institute via Upload Link Above",label:"Institute Name"
+	=f.input :description, label: "Description", placeholder:"Describe your examnote",input_html:{class:'tinymce'},hint:"Describe Exam Note Above"
 	%h2 Images
 
 	#tasks
