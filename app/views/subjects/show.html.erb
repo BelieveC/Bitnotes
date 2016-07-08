@@ -39,6 +39,10 @@
 						<% end%>
 					</li>
 					<li class="view"><%=@subject.impressionist_count %> Views</li>
+					<% if session[:user_id] == @subject.user_id %>
+						<li><%=link_to "Edit",edit_subject_path(@subject),id:"edit_profile_btn" %></li>
+						<li><%=link_to "Delete",@subject,method: :delete,confirm:"Are you sure?",id:"edit_profile_btn" %></li>
+					<% end %>
 				</ul>
 				<%= render "fbshare" %>
 			</div>
