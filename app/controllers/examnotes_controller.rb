@@ -2,6 +2,7 @@ class ExamnotesController < ApplicationController
 	
 	impressionist actions: [:show]
 	before_action :get_examnote,only: [:show,:edit,:update,:destroy,:upvote]
+	before_action :authenticate_user!,only:[:edit,:new,:create,:update,:destroy]
 
 	def index
 		@recentExamnotes = Examnote.all.order("created_at desc").limit(3)
@@ -21,6 +22,8 @@ class ExamnotesController < ApplicationController
 
 	def create
 		@examnote = Examnote.new(examnote_params)
+		@examnote.user_id = current_user.id
+		@examnote.user_name = current_user.phname
 		if @examnote.save
 			redirect_to @examnote,notice:"Successfully Created Your Examnote"
 		else
@@ -30,21 +33,35 @@ class ExamnotesController < ApplicationController
 	end
 
 	def edit
-		render layout: "form"
-	end
-
-	def update
-		if @examnote.update(examnote_params)
-			redirect_to @examnote,notice:"Successfully updated your Examnote"
-		else
+		if session[:user_id] == @examnote.user_id
 			render layout: "form"
-			render "edit"
+		else
+			redirect_to root_path,notice:"Sorry!, You don't have access to edit this Examnote."
 		end
 	end
 
+	def update
+		if session[:user_id] == @examnote.user_id
+			if @examnote.update(examnote_params)
+				redirect_to @examnote,notice:"Successfully updated your Examnote"
+			else
+				render layout: "form"
+				render "edit"
+			end
+		else
+			redirect_to root_path,notice:"Sorry!, You don't have access to Update this Examnote."
+		end
+		
+	end
+
 	def destroy
-		@examnote.destroy
-		redirect_to root_path,notice:"Successfully Destroyed your Examnote"
+		if session[:user_id] == @examnote.user_id
+			@examnote.destroy
+			redirect_to root_path,notice:"Successfully Destroyed your Examnote"
+		else
+			redirect_to root_path,notice:"Sorry!, You don't have rights to Delete this Examnote."
+		end
+		
 	end
 
 	def upvote

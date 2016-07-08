@@ -40,7 +40,15 @@
 						<div class="clearfix"> </div>
 					</div>	
 				<div class="signin">
-					<a href="#small-dialog2" class="play-icon popup-with-zoom-anim">Sign Up</a>
+					<% if user_signed_in? %>
+						<% if current_user.avatar.url %>
+							<%= link_to (image_tag current_user.avatar.url,class:"navbarprofilepic"),current_user,id:"publishinghouselink"%>
+						<% else%>
+							<%= image_tag "customprofile",class:"navbarprofilepic"%>
+						<%end %>
+					<% else%>
+						<a href="#small-dialog2" class="play-icon popup-with-zoom-anim">Sign Up</a>
+					<% end %>
 									<div id="small-dialog2" class="mfp-hide">
 										<h3>Create Account</h3> 
 										<div class="social-sits">
@@ -177,7 +185,11 @@
 									</script>	
 				</div>
 				<div class="signin">
-					<a href="#small-dialog" class="play-icon popup-with-zoom-anim">Sign In</a>
+					<% if user_signed_in? %>
+						<%= link_to "Sign Out",signout_path %>
+					<% else %>
+						<a href="#small-dialog" class="play-icon popup-with-zoom-anim">Sign In</a>
+					<% end %>
 					<div id="small-dialog" class="mfp-hide">
 						<h3>Login</h3>
 						<div class="social-sits">

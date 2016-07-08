@@ -1,15 +1,13 @@
 class PracticalsController < ApplicationController
 
 	impressionist actions: [:show]
-	/ Before Performing below action Get Practical /
 	before_action :get_practical, only: [:show,:update,:edit,:destroy,:upvote]
+	before_action :authenticate_user!,only:[:edit,:new,:create,:update,:destroy]
 
-	/ Index Page Action/
 	def index
 		@recentPracticals = Practical.all.order("created_at DESC").limit(3);
 	end
 
-	/ Show Page Action/
 	def show
 		@recentAssignments = Assignment.all.order("created_at desc").limit(4)
 		@recentPracticals = Practical.all.order("created_at desc").limit(4)
@@ -17,15 +15,15 @@ class PracticalsController < ApplicationController
 		@recentExamnotes = Examnote.all.order("created_at desc").limit(4)
 	end
 
-	/ New Page Action/
 	def new
 		@practical = Practical.new
 		render layout: "form"
 	end
 
-	/ Create Action /
 	def create
 		@practical = Practical.new(practical_params)
+		@practical.user_id = current_user.id
+		@practical.user_name = current_user.phname
 		if @practical.save
 			redirect_to @practical,notice: "Successfully Created your Practical!"
 		else
@@ -33,24 +31,33 @@ class PracticalsController < ApplicationController
 		end
 	end
 
-	/ Edit Action /
 	def edit
-		render layout: "form"
-	end
-
-	/ Update Action /
-	def update
-		if @practical.update(practical_params)
-			redirect_to @practical,notice: "Successfully Updated Your Practical"
+		if session[:user_id] == @practical.user_id
+			render layout: "form"
 		else
-			render "edit"
+			redirect_to root_path,notice:"Gotcha!, You don't have access to edit this Practical."
 		end
 	end
 
-	/ Destroy Action /
+	def update
+		if session[:user_id] == @practical.user_id
+			if @practical.update(practical_params)
+				redirect_to @practical,notice: "Successfully Updated Your Practical"
+			else
+				render "edit"
+			end
+		else
+			redirect_to root_path,notice:"Gotcha!, You don't have access to edit this Practical."
+		end
+	end
+
 	def destroy
-		@practical.destroy
-		redirect_to root_path,notice:"Successfully Removed your Practical"
+		if session[:user_id] == @practical.user_id
+			@practical.destroy
+			redirect_to root_path,notice:"Successfully Removed your Practical"
+		else
+			redirect_to root_path,notice:"Gotcha!, You don't have right to delete this Practical"
+		end
 	end
 
 	def upvote

@@ -2,6 +2,7 @@ class AssignmentsController < ApplicationController
 	
 	impressionist actions: [:show]
 	before_action :get_assignment,only: [:show,:edit,:update,:destroy,:upvote]
+	before_action :authenticate_user!,only:[:edit,:new,:create,:update,:destroy]
 
 	def index
 		@recentAssignments = Assignment.all.order("created_at desc").limit(3)
@@ -21,6 +22,8 @@ class AssignmentsController < ApplicationController
 
 	def create
 		@assignment = Assignment.new(assignment_params)
+		@assignment.user_id = current_user.id
+		@assignment.user_name = current_user.phname
 		if @assignment.save
 			redirect_to @assignment,notice:"Created Your Assignment."
 		else
@@ -30,21 +33,34 @@ class AssignmentsController < ApplicationController
 	end
 
 	def edit
-		render layout: "form"
-	end
-
-	def update
-		if @assignment.update(assignment_params)
-			redirect_to @assignment,notice:"Updated your Assignment."
-		else
+		if session[:user_id] == @assignment.user_id
 			render layout: "form"
-			render "edit"
+		else
+			redirect_to root_path,notice:"Gotcha!, You don't have access to edit this Assignment."
 		end
 	end
 
+	def update
+		if session[:user_id] = @assignment.user_id
+			if @assignment.update(assignment_params)
+				redirect_to @assignment,notice:"Updated your Assignment."
+			else
+				render layout: "form"
+				render "edit"
+			end
+		else
+			redirect_to root_path,notice:"Gotcha!, You don't have access to update this Assignment."
+		end
+		
+	end
+
 	def destroy
-		@assignment.destroy
-		redirect_to root_path,notice:"Destroyed your Assignment."
+		if session[:user_id] == @assignment.user_id
+			@assignment.destroy
+			redirect_to root_path,notice:"Destroyed your Assignment."
+		else
+			redirect_to root_path,notice:"Gotcha!, You don't have rights to Delete this Assignment"
+		end
 	end
 
 	def upvote

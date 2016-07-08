@@ -2,6 +2,7 @@ class QpapersController < ApplicationController
 	
 	impressionist actions: [:show]
 	before_action :get_qpaper,only: [:show,:edit,:update,:destroy,:upvote]
+	before_action :authenticate_user!,only:[:edit,:new,:create,:update,:destroy]
 
 	def index
 		@recentQpapers = Qpaper.all.order("created_at desc").limit(3)
@@ -21,8 +22,10 @@ class QpapersController < ApplicationController
 
 	def create
 		@qpaper = Qpaper.new(qpaper_params)
+		@qpaper.user_id = current_user.id
+		@qpaper.user_name = current_user.phname
 		if @qpaper.save
-			redirect_to @qpaper,notice:"Successfully Created Your Qpaper!"
+			redirect_to @qpaper,notice:"Successfully Created Your Paper!"
 		else
 			render layout: "form"
 			render "new"
@@ -30,21 +33,32 @@ class QpapersController < ApplicationController
 	end
 
 	def edit
-		render layout: "form"
+		if session[:user_id] == @practical.user_id
+			render layout: "form"
+		else
+			redirect_to root_path,notice:"Gotcha!, You don't have access to edit this Paper."
+		end
 	end
 
 	def update
-		if @qpaper.update(qpaper_params)
-			redirect_to @qpaper,notice:"Successfully updated your Qpaper"
+		if session[:user_id] == @qpaper.user_id
+			if @qpaper.update(qpaper_params)
+				redirect_to @qpaper,notice: "Successfully Updated Your Paper"
+			else
+				render "edit"
+			end
 		else
-			render layout: "form"
-			render "edit"
+			redirect_to root_path,notice:"Gotcha!, You don't have access to edit this Paper."
 		end
 	end
 
 	def destroy
-		@qpaper.destroy
-		redirect_to root_path,notice:"Successfully Destroyed your Qpaper"
+		if session[:user_id] == @qpaper.user_id
+			@qpaper.destroy
+			redirect_to root_path,notice:"Successfully Destroyed your Qpaper"
+		else
+			redirect_to root_path,notice:"Gotcha!, You don't have right to delete this Paper."
+		end
 	end
 
 	def upvote

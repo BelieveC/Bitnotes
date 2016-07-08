@@ -2,6 +2,7 @@ class SubjectsController < ApplicationController
 	
 	impressionist actions: [:show]
 	before_action :get_subject,only: [:show,:edit,:update,:destroy,:upvote]
+	before_action :authenticate_user!,only:[:edit,:new,:create,:update,:destroy]
 
 	def index
 		@recentSubjects = Subject.all.order("created_at desc").limit(3)
@@ -17,6 +18,8 @@ class SubjectsController < ApplicationController
 
 	def create
 		@subject = Subject.new(subject_params)
+		@subject.user_id = current_user.id
+		@subject.user_name = current_user.phname
 		if @subject.save
 			redirect_to @subject,notice:"Successfully Created Your Subject"
 		else
@@ -26,21 +29,32 @@ class SubjectsController < ApplicationController
 	end
 
 	def edit
-		render layout: "form"
+		if session[:user_id] == @subject.user_id
+			render layout: "form"
+		else
+			redirect_to root_path,notice:"Gotcha!, You don't have access to edit this Subject."
+		end
 	end
 
 	def update
-		if @subject.update(subject_params)
-			redirect_to @subject,notice:"Successfully updated your Subject"
+		if session[:user_id] == @subject.user_id
+			if @subject.update(subject_params)
+				redirect_to @subject,notice: "Successfully Updated Your Subject"
+			else
+				render "edit"
+			end
 		else
-			render layout: "form"
-			render "edit"
+			redirect_to root_path,notice:"Gotcha!, You don't have access to edit this Subject."
 		end
 	end
 
 	def destroy
-		@subject.destroy
-		redirect_to root_path,notice:"Successfully Destroyed your Subject"
+		if session[:user_id] == @subject.user_id
+			@subject.destroy
+			redirect_to root_path,notice:"Successfully Removed your subject"
+		else
+			redirect_to root_path,notice:"Gotcha!, You don't have right to delete this Subject"
+		end
 	end
 
 	def upvote

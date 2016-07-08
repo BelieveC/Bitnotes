@@ -2845,3 +2845,21 @@ background: url("social") no-repeat 0px 0px;
   background-color: white;
   color: #21deef;
 }
+
+.navbarprofilepic{
+  height: 33px;
+  width: 40px;
+  margin-top:-6px;
+  border-radius: 4px;
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  --transition: 0.5s all;
+}
+.navbarprofilepic:hover,.navbarprofilepic:focus{
+ 
+}
+#publishinghouselink{
+  background-color: white !important;
+}
