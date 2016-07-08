@@ -34,7 +34,7 @@
 					<li><a href="#" class="icon fb-icon" id="shareBtn">Facebook</a></li>
 					<li><a href="https://twitter.com/intent/tweet?text= <%= @qpaper.examname%>" target="_blank" class="icon twitter-icon">Twitter</a></li>
 					<li><a href="#" class="icon pinterest-icon">Pinterest</a></li>
-					<li><%=link_to like_qpaper_path(@qpaper),method: :put,remote: true,class:"icon like" do %>
+					<li><%=link_to like_qpaper_path(@qpaper),method: :put,remote: true,title:"Like this",class:"icon like" do %>
 							<span class="likecount"><%= @qpaper.get_upvotes.size %></span>
 						<% end %>
 					</li>
