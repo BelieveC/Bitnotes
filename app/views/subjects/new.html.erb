@@ -3,13 +3,13 @@
 	<div class="container">
 		<div class="upload-grids">
 			<div class="upload-right">
-				<% if @qpaper.errors.any? %>
+				<% if @subject.errors.any? %>
 					<div class="alert alert-danger alert-dismissible" role="alert">
 					   	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true	">&times;</span></button>
-						<h2><%= pluralize(@qpaper.errors.count, "Error")%> prevented this qpaper from saving</h2>
+						<h2><%= pluralize(@subject.errors.count, "Error")%> prevented this Subject from saving</h2>
 						<ul>
-							<% @qpaper.errors.full_messages.each do |msg| %>
-								<li><%= msg%></li>
+							<% @subject.errors.full_messages.each do |msg| %>
+								<li><%= msg %></li>
 							<% end%>
 						</ul>
 					</div>
