@@ -2858,9 +2858,6 @@ background: url("social") no-repeat 0px 0px;
   -o-transition: 0.5s all;
   --transition: 0.5s all;
 }
-.navbarprofilepic:hover,.navbarprofilepic:focus{
-    
-}
 #publishinghouselink{
   background-color: white !important;
 }

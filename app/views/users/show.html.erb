@@ -18,10 +18,17 @@
 		</div>
 		<!-- //container -->
 	</div>
+	<div class="clearfix"></div>
     <div class="container">
+    	<% if flash.any?%>
+			<div class="alert alert-success alert-dismissible" style="margin-top: 10px;margin-bottom: -10px" role="alert">
+			   	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true	">&times;</span></button>
+			   	<h4><%= flash[:notice]%></h4>
+			</div>
+		<% end %>
         <div class="developers-grids">
             <div class="show-top-grids">
-  			    <div class="col-sm-8 show-grid-left main-grids">
+  			    <div class="col-sm-8 show-grid-left main-grids" id="profileinfocontainer">
                     <div class="creators-grid" id="phpage_detail">
   						<a href="#" class="phpage_detail_title">Details</a>
   						<% if session[:user_id] && session[:user_id] == @user.id %>
@@ -122,8 +129,9 @@
 							</div>
                         </div>
                     </div>
+                    <div class="clearfix"></div>
                 </div>
-                <div class="col-sm-1"></div>
+                <div class="col-md-1"></div>
                 <div class="col-md-3  show-grid-right">
     					<h3><span class="phpage_detail_title">Similar Publishing House</span></h3>
     					<div class="show-right-grids">
