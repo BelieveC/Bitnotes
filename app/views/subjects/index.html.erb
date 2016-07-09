@@ -20,7 +20,7 @@
 							<div class="resent-grid-info recommended-grid-info">
 								<h3><%=link_to subject.name,subject,class:"title title-info" %><br><small>Submitted <strong> <%=time_ago_in_words(subject.created_at) %> ago</strong></small></h3>
 								<ul>
-									<li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
+									<li><p class="author author-info"><%= link_to subject.user_name,  controller:"users",action:"show",id:subject.user_id,class:"author"%></p></li>
 									<li class="right-list"><p class="views views-info"><strong><%=subject.impressionist_count %></strong> views</p></li>
 								</ul>
 							</div>
@@ -49,7 +49,7 @@
 								<div class="resent-grid-info recommended-grid-info video-info-grid">
 									<h5><%=link_to subject.name,subject, class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(subject.created_at) %> ago</strong></small></h5>
 									<ul>
-										<li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
+										<li><p class="author author-info"><%= link_to subject.user_name,  controller:"users",action:"show",id:subject.user_id,class:"author"%></p></li>
 										<li class="right-list"><p class="views views-info"><strong><%=subject.impressionist_count %></strong> views</p></li>
 									</ul>
 								</div>
@@ -79,7 +79,7 @@
 								<div class="resent-grid-info recommended-grid-info video-info-grid">
 									<h5><%=link_to subject.name,subject, class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(subject.created_at) %> ago</strong></small></h5>
 									<ul>
-										<li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
+										<li><p class="author author-info"><%= link_to subject.user_name,  controller:"users",action:"show",id:subject.user_id,class:"author"%></p></li>
 										<li class="right-list"><p class="views views-info"><strong><%=subject.impressionist_count %></strong> views</p></li>
 									</ul>
 								</div>
