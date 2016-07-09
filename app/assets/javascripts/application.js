@@ -31,3 +31,24 @@ var result=key?undefined:{};var cookies=document.cookie?document.cookie.split(';
 if(!key&&(cookie=read(cookie))!==undefined){result[name]=cookie;}}
 return result;};config.defaults={};$.removeCookie=function(key,options){if($.cookie(key)===undefined){return false;}
 $.cookie(key,'',$.extend({},options,{expires:-1}));return!$.cookie(key);};}));
+
+
+//Description Slider
+	$(document).ready(function () {
+		$("#showLess").hide();
+		size_li = $("#myList li").size();
+		x=1;
+		$('#myList li:lt('+x+')').show();
+		$('#loadMore').click(function () {
+			x= (x+1 <= size_li) ? x+1 : size_li;
+			$('#myList li:lt('+x+')').fadeIn();
+			$("#loadMore").hide();
+			$("#showLess").fadeIn();
+		});
+		$('#showLess').click(function () {
+			x=(x-1<0) ? 1 : x-1;
+			$('#myList li').not(':lt('+x+')').fadeOut();
+			$("#showLess").hide();
+			$("#loadMore").fadeIn();
+		});
+	});	

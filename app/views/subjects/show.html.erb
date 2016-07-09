@@ -48,49 +48,28 @@
 			</div>
 			<div class="clearfix"> </div>
 			<div class="published">
-					<script>
-						$(document).ready(function () {
-							$("#showLess").hide();
-							size_li = $("#myList li").size();
-							x=1;
-							$('#myList li:lt('+x+')').show();
-							$('#loadMore').click(function () {
-								x= (x+1 <= size_li) ? x+1 : size_li;
-								$('#myList li:lt('+x+')').fadeIn();
-								$("#loadMore").hide();
-								$("#showLess").fadeIn();
-							});
-							$('#showLess').click(function () {
-								x=(x-1<0) ? 1 : x-1;
-								$('#myList li').not(':lt('+x+')').fadeOut();
-								$("#showLess").hide();
-								$("#loadMore").fadeIn();
-							});
-						});	
-					</script>
-					<div class="load_more">	
-						<ul id="myList">
-							<li>
-								<h4>Published on <%= @subject.created_at.strftime("%d %B %Y") %></h4>
-								<p>Nullam fringilla sagittis tortor ut rhoncus. Nam vel ultricies erat, vel sodales leo. Maecenas pellentesque, est suscipit laoreet tincidunt, ipsum tortor vestibulum leo, ac dignissim diam velit id tellus. Morbi luctus velit quis semper egestas. Nam condimentum sem eget ex iaculis bibendum. Nam tortor felis, commodo faucibus sollicitudin ac, luctus a turpis. Donec congue pretium nisl, sed fringilla tellus tempus in.</p>
-							</li>
-							<li>
-								<p>Nullam fringilla sagittis tortor ut rhoncus. Nam vel ultricies erat, vel sodales leo. Maecenas pellentesque, est suscipit laoreet tincidunt, ipsum tortor vestibulum leo, ac dignissim diam velit id tellus. Morbi luctus velit quis semper egestas. Nam condimentum sem eget ex iaculis bibendum. Nam tortor felis, commodo faucibus sollicitudin ac, luctus a turpis. Donec congue pretium nisl, sed fringilla tellus tempus in.</p>
-								<p>Nullam fringilla sagittis tortor ut rhoncus. Nam vel ultricies erat, vel sodales leo. Maecenas pellentesque, est suscipit laoreet tincidunt, ipsum tortor vestibulum leo, ac dignissim diam velit id tellus. Morbi luctus velit quis semper egestas. Nam condimentum sem eget ex iaculis bibendum. Nam tortor felis, commodo faucibus sollicitudin ac, luctus a turpis. Donec congue pretium nisl, sed fringilla tellus tempus in.</p>
-								<div class="load-grids">
-									<div class="load-grid">
-										<p>Category</p>
-									</div>
-									<div class="load-grid">
-										<a href="movies.html">Entertainment</a>
-									</div>
-									<div class="clearfix"> </div>
+				<div class="load_more">	
+					<ul id="myList">
+						<li>
+							<h4>Published on <%= @subject.created_at.strftime("%d %B %Y") %></h4>
+							<p><%= @subject.name %></p>
+						</li>
+						<li>
+							
+							<div class="load-grids">
+								<div class="load-grid">
+									<p>Category</p>
 								</div>
-							</li>
-						</ul>
-						<button id="loadMore">Load more</button>
-						<button id="showLess">Show less</button>
-					</div>
+								<div class="load-grid">
+									<%=link_to "Subject",subjects_path %>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+						</li>
+					</ul>
+					<button id="loadMore">Load more</button>
+					<button id="showLess">Show less</button>
+				</div>
 			</div>
 			<div class="all-comments">
 				<div class="all-comments-info">
