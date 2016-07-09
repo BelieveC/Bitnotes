@@ -23,7 +23,11 @@ class AssignmentsController < ApplicationController
 	def create
 		@assignment = Assignment.new(assignment_params)
 		@assignment.user_id = current_user.id
-		@assignment.user_name = current_user.phname
+		if current_user.phname.empty?
+			@assignment.user_name = current_user.name 
+		else
+			@assignment.user_name = current_user.phname
+		end
 		if @assignment.save
 			redirect_to @assignment,notice:"Successfully created your Assignment."
 		else

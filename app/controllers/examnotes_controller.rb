@@ -23,7 +23,11 @@ class ExamnotesController < ApplicationController
 	def create
 		@examnote = Examnote.new(examnote_params)
 		@examnote.user_id = current_user.id
-		@examnote.user_name = current_user.phname
+		if current_user.phname.empty?
+			@examnote.user_name = current_user.name 
+		else
+			@examnote.user_name = current_user.phname
+		end
 		if @examnote.save
 			redirect_to @examnote,notice:"Successfully created your Examnote"
 		else

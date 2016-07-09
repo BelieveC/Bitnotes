@@ -23,7 +23,11 @@ class QpapersController < ApplicationController
 	def create
 		@qpaper = Qpaper.new(qpaper_params)
 		@qpaper.user_id = current_user.id
-		@qpaper.user_name = current_user.phname
+		if current_user.phname.empty?
+			@qpaper.user_name = current_user.name 
+		else
+			@qpaper.user_name = current_user.phname
+		end
 		if @qpaper.save
 			redirect_to @qpaper,notice:"Successfully created your Paper!"
 		else

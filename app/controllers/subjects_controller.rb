@@ -19,7 +19,11 @@ class SubjectsController < ApplicationController
 	def create
 		@subject = Subject.new(subject_params)
 		@subject.user_id = current_user.id
-		@subject.user_name = current_user.phname
+		if current_user.phname.empty?
+			@subject.user_name = current_user.name 
+		else
+			@subject.user_name = current_user.phname
+		end
 		if @subject.save
 			redirect_to @subject,notice:"Successfully Created Your Subject"
 		else
