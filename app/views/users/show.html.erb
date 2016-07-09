@@ -133,87 +133,23 @@
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-3  show-grid-right">
-    					<h3><span class="phpage_detail_title">Similar Publishing House</span></h3>
-    					<div class="show-right-grids">
-    						<ul>
-    							<li class=""><%= link_to image_tag(@user.avatar.url,alt:"logo",height: "50px") %></li>
-    							<li><a href="#">English Movies</a><br><a href="#small-dialog8" id="suggestion_subscribe_btn" class="play-icon popup-with-zoom-anim">Subscribe</a></li>
-                                <br>
-    						</ul>
-    					</div>
-    					<div class="show-right-grids">
-    						<ul>
-    							<li class="tv-img"><%= link_to image_tag("mv",alt:"logo") %></li>
-    							<li><a href="#">English Movies</a><br><a href="#small-dialog8" id="suggestion_subscribe_btn" class="play-icon popup-with-zoom-anim">Subscribe</a></li>
-    						</ul>
-    					</div>
-    					<div class="show-right-grids">
-    						<ul>
-    							<li class="tv-img"><%= link_to image_tag("mv",alt:"logo") %></li>
-    							<li><a href="#">English Movies</a><br><a href="#small-dialog8" id="suggestion_subscribe_btn" class="play-icon popup-with-zoom-anim">Subscribe</a></li>
-    						</ul>
-    					</div>
-    					<div class="show-right-grids">
-    						<ul>
-    							<li class="tv-img"><%= link_to image_tag("mv",alt:"logo") %></li>
-    							<li><a href="#">English Movies</a><br><a href="#small-dialog8" id="suggestion_subscribe_btn" class="play-icon popup-with-zoom-anim">Subscribe</a></li>
-    						</ul>
-    					</div>
-    					<div class="show-right-grids">
-    						<ul>
-    							<li class="tv-img"><%= link_to image_tag("mv",alt:"logo") %></li>
-    							<li><a href="#">English Movies</a><br><a href="#small-dialog8" id="suggestion_subscribe_btn" class="play-icon popup-with-zoom-anim">Subscribe</a></li>
-    						</ul>
-    					</div>
-    					<div class="show-right-grids">
-    						<ul>
-    							<li class="tv-img"><%= link_to image_tag("mv",alt:"logo") %></li>
-    							<li><a href="#">English Movies</a><br><a href="#small-dialog8" id="suggestion_subscribe_btn" class="play-icon popup-with-zoom-anim">Subscribe</a></li>
-    						</ul>
-    					</div>
-    					<div class="show-right-grids">
-    						<ul>
-    							<li class="tv-img"><%= link_to image_tag("mv",alt:"logo") %></li>
-    							<li><a href="#">English Movies</a><br><a href="#small-dialog8" id="suggestion_subscribe_btn" class="play-icon popup-with-zoom-anim">Subscribe</a></li>
-    						</ul>
-    					</div>
-    					<div class="show-right-grids">
-    						<ul>
-    							<li class="tv-img"><%= link_to image_tag("mv",alt:"logo") %></li>
-    							<li><a href="#">Chinese Movies</a><br><a href="#small-dialog8" id="suggestion_subscribe_btn" class="play-icon popup-with-zoom-anim">Subscribe</a></li>
-    						</ul>
-    					</div>
-    					<div class="show-right-grids">
-    						<ul>
-    							<li class="tv-img"><%= link_to image_tag("mv",alt:"logo") %></li>
-    							<li><a href="#">Hindi Movies</a><br><a href="#small-dialog8" id="suggestion_subscribe_btn" class="play-icon popup-with-zoom-anim">Subscribe</a></li>
-    						</ul>
-    					</div>
-    					<div class="show-right-grids">
-    						<ul>
-    							<li class="tv-img"><%= link_to image_tag("mv",alt:"logo") %></li>
-    							<li><a href="#">Telugu Movies</a><br><a href="#small-dialog8" id="suggestion_subscribe_btn" class="play-icon popup-with-zoom-anim">Subscribe</a></li>
-    						</ul>
-    					</div>
-    					<div class="show-right-grids">
-    						<ul>
-    							<li class="tv-img"><%= link_to image_tag("mv",alt:"logo") %></li>
-    							<li><a href="#">Tamil Movies</a><br><a href="#small-dialog8" id="suggestion_subscribe_btn" class="play-icon popup-with-zoom-anim">Subscribe</a></li>
-    						</ul>
-    					</div>
-    					<div class="show-right-grids">
-    						<ul>
-    							<li class="tv-img"><%= link_to image_tag("mv",alt:"logo") %></li>
-    							<li><a href="#">Kannada Movies</a><br><a href="#small-dialog8" id="suggestion_subscribe_btn" class="play-icon popup-with-zoom-anim">Subscribe</a></li>
-    						</ul>
-    					</div>
-    					<div class="show-right-grids">
-    						<ul>
-    							<li class="tv-img"><%= link_to image_tag("mv",alt:"logo") %></li>
-    							<li><a href="#">Marathi movies</a><br><a href="#small-dialog8" id="suggestion_subscribe_btn" class="play-icon popup-with-zoom-anim">Subscribe</a></li>
-    						</ul>
-    					</div>
-    				</div>
+					<h3><span class="phpage_detail_title">Similar Publishing House</span></h3>
+					<% @recentUsers.each do |user| %>
+						<div class="show-right-grids">
+							<ul>
+								<li>
+									<% if user.avatar.url == "/avatars/original/missing.png" %>
+					                	<%=link_to image_tag("customprofile",height:"50px",alt:user.name),user %>
+					                <% else%>
+					                	<%=link_to image_tag(user.avatar.url,height:"50px",alt:user.name),user%>
+					                <% end %>
+				                </li>
+								<li><%=link_to user.phname,user%><br><a href="#small-dialog8" id="suggestion_subscribe_btn" class="play-icon popup-with-zoom-anim">Subscribe</a></li>
+	                            <br>
+							</ul>
+						</div>
+					<% end %>
+				</div>
     			<div class="clearfix"> </div>
           </div>
         </div>

@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 	end
 
 	def show
+		@recentUsers = User.all.order("created_at DESC").limit(5)
 		render layout: "form"
 	end
 
