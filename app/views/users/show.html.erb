@@ -1,10 +1,9 @@
 <div class="developers">
-	<div class="phouse-banner"
-		<% if @user.cover.url == "/avatars/original/missing.png" %>
-			style="background: url(<%= @user.cover.url %>) no-repeat 0px 0px !important">
-		<% else%>
-			style="background: url("customcover") no-repeat 0px 0px !important">
-		<% end%>
+	<% if @user.cover.url == "/covers/original/missing.png" %> 
+		<div class="phouse-banner"style="background: url("customcover") no-repeat 0px 0px !important">
+	<% else %>
+		<div class="phouse-banner" style="background: url(<%=@user.cover.url(:thumb)%>) no-repeat 0px 0px !important">
+	<% end %>
 	   <!-- container -->
 		<div class="container">
 			<div class="phouse-short-info">
