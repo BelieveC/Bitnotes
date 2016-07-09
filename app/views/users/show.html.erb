@@ -1,11 +1,10 @@
 <div class="developers">
-	<div class="phouse-banner" style="background: url(
-		<%=if @user.cover.url(:thumb).present?
-				@user.cover.url(:thumb) 
-			else
-				"customcover"
-			end
-	%>) no-repeat 0px 0px !important">
+	<div class="phouse-banner"
+		<% if @user.cover.url == "/avatars/original/missing.png" %>
+			style="background: url(<%= @user.cover.url %>) no-repeat 0px 0px !important">
+		<% else%>
+			style="background: url("customcover") no-repeat 0px 0px !important">
+		<% end%>
 	   <!-- container -->
 		<div class="container">
 			<div class="phouse-short-info">
@@ -13,7 +12,7 @@
                 	<%= image_tag("customprofile",width:"150em",height:"200em",alt:@user.name) %>
                 <%else%>
                 	<%= image_tag(@user.avatar.url,width:"150em",height:"200em",alt:@user.name) %>
-                <% end%>
+                <% end %>
 				<h3><strong><%= @user.phname %></strong></h3>
 				<p>"<em><%= @user.intro %></em>"</p>
 			</div>
