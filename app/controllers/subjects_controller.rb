@@ -9,11 +9,12 @@ class SubjectsController < ApplicationController
 	end
 
 	def show
-		@recentColleges = College.all.order("created_at desc").limit(4)
-		@recentAssignments = Assignment.all.order("created_at desc").limit(4)
-		@recentPracticals = Practical.all.order("created_at desc").limit(4)
-		@recentQpapers = Qpaper.all.order("created_at desc").limit(4)
-		@recentExamnotes = Examnote.all.order("created_at desc").limit(4)
+		@recentSubjects = Subject.all.order("created_at desc").limit(3)
+		@recentColleges = College.all.order("created_at desc").limit(3)
+		@recentAssignments = Assignment.all.order("created_at desc").limit(3)
+		@recentPracticals = Practical.all.order("created_at desc").limit(3)
+		@recentQpapers = Qpaper.all.order("created_at desc").limit(3)
+		@recentExamnotes = Examnote.all.order("created_at desc").limit(3)
 	end
 
 	def new
