@@ -100,7 +100,7 @@
 						<% end %>
 						<div class="col-md-8 single-right-grid-right">
 							<%= link_to qpaper.examname,qpaper,class:"title"%>
-							<p class="author"><a href="#" class="author">John Maniya</a></p>
+							<p class="author"><%= link_to qpaper.user_name,  controller:"users",action:"show",id:qpaper.user_id,class:"author"%></p>
 							<p class="views"><%= qpaper.impressionist_count %> views</p>
 						</div>
 						<div class="clearfix"> </div>
@@ -115,7 +115,7 @@
 						<% end %>
 						<div class="col-md-8 single-right-grid-right">
 							<%= link_to assignment.topic,assignment,class:"title"%>
-							<p class="author"><a href="#" class="author">John Maniya</a></p>
+							<p class="author"><%= link_to assignment.user_name,  controller:"users",action:"show",id:assignment.user_id,class:"author"%></p>
 							<p class="views"><%= assignment.impressionist_count %> views</p>
 						</div>
 						<div class="clearfix"> </div>
@@ -130,7 +130,7 @@
 						<% end %>
 						<div class="col-md-8 single-right-grid-right">
 							<%= link_to practical.title,practical,class:"title"%>
-							<p class="author"><a href="#" class="author">John Maniya</a></p>
+							<p class="author"><%= link_to practical.user_name,  controller:"users",action:"show",id:practical.user_id,class:"author"%></p>
 							<p class="views"><%= practical.impressionist_count %> views</p>
 						</div>
 						<div class="clearfix"> </div>
@@ -145,7 +145,7 @@
 						<% end %>
 						<div class="col-md-8 single-right-grid-right">
 							<%= link_to examnote.topic,examnote,class:"title"%>
-							<p class="author"><a href="#" class="author">John Maniya</a></p>
+							<p class="author"><%= link_to examnote.user_name,  controller:"users",action:"show",id:examnote.user_id,class:"author"%></p>
 							<p class="views"><%=examnote.impressionist_count %> views</p>
 						</div>
 						<div class="clearfix"> </div>

@@ -127,7 +127,7 @@
 								<div class="resent-grid-info recommended-grid-info video-info-grid">
 									<h5><%= link_to qpaper.examname,qpaper,class:"title"%><br><small>Submitted <strong> <%=time_ago_in_words(qpaper.created_at) %> ago</strong></small></h5>
 									<ul>
-										<li><p class="author author-info"><%= link_to examnote.user_name,  controller:"users",action:"show",id:examnote.user_id,class:"author"%></p></li>
+										<li><p class="author author-info"><%= link_to qpaper.user_name,  controller:"users",action:"show",id:qpaper.user_id,class:"author"%></p></li>
 										<li class="right-list"><p class="views views-info"><strong><%=qpaper.impressionist_count %></strong> views</p></li>
 									</ul>
 								</div>
