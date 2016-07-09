@@ -6,6 +6,10 @@ class UsersController < ApplicationController
 
 	def show
 		@recentUsers = User.all.order("created_at DESC").limit(5)
+		@recentPracticals = Practical.where(user_id: params[:id]).order("created_at DESC").limit(4)
+		@recentQpapers = Qpaper.where(user_id: params[:id]).order("created_at DESC").limit(4)
+		@recentExamnotes = Examnote.where(user_id: params[:id]).order("created_at DESC").limit(4)
+		@recentAssignments = Assignment.where(user_id: params[:id]).order("created_at DESC").limit(4)
 		render layout: "form"
 	end
 
