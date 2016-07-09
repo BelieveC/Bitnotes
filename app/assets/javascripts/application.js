@@ -16,7 +16,6 @@
 //= require jquery_ujs
 //= require cocoon
 //= require tinymce
-//= require tinymce-jquery
 //= require turbolinks
 //= require_tree .
 
