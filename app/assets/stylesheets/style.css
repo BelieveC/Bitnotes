@@ -2850,6 +2850,7 @@ background: url("social") no-repeat 0px 0px;
   width: 40px;
   margin-top:-6px;
   border-radius: 4px;
+  cursor: pointer;
   transition: 0.5s all;
   -webkit-transition: 0.5s all;
   -moz-transition: 0.5s all;
@@ -2857,7 +2858,7 @@ background: url("social") no-repeat 0px 0px;
   --transition: 0.5s all;
 }
 .navbarprofilepic:hover,.navbarprofilepic:focus{
- 
+    
 }
 #publishinghouselink{
   background-color: white !important;
