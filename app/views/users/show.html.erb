@@ -9,7 +9,11 @@
 	   <!-- container -->
 		<div class="container">
 			<div class="phouse-short-info">
-                <%= image_tag(@user.avatar.url||="customprofile",width:"150em",height:"200em",alt:@user.name) %>
+				<% if @user.avatar.url == "/avatars/original/missing.png" %>
+                	<%= image_tag("customprofile",width:"150em",height:"200em",alt:@user.name) %>
+                <%else%>
+                	<%= image_tag(@user.avatar.url,width:"150em",height:"200em",alt:@user.name) %>
+                <% end%>
 				<h3><strong><%= @user.phname %></strong></h3>
 				<p>"<em><%= @user.intro %></em>"</p>
 			</div>
