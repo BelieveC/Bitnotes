@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 		if session[:user_id] == @user.id
 			render layout: "form"
 		else
-			redirect_to root_path,"Gotcha!,You are not owner of this Profile."
+			redirect_to root_path,notice:"Gotcha!,You are not owner of this Profile."
 		end
 	end
 

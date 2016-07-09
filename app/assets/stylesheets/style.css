@@ -2812,6 +2812,7 @@ background: url("social") no-repeat 0px 0px;
   float:left !important;
 }
 .phouse-banner{
+    background: url("customcover") no-repeat 0px 0px !important;
     background-size: cover !important;
     padding: 3em 0;
 }
