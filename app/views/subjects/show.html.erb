@@ -13,7 +13,7 @@
 			</div>
 				<div class="video-grid">
 					<ul class="docs-pictures">
-						<% if @subject.simages.count > 0 %>
+						<% if session[:user_id] && @subject.simages.count > 0 %>
 							<li><% @subject.simages.each do |simage| %>
 								<%=image_tag(simage.image.url(:medium),alt: @subject.name,class: "img-thumbnail",height:"140px",width:"140px",data:{original:simage.image.url(:thumb)}) %></li>
 							<% end %>
@@ -39,7 +39,7 @@
 						<% end%>
 					</li>
 					<li class="view" title="Views Count"><%=@subject.impressionist_count %> Views</li>
-					<% if session[:user_id] == @subject.user_id %>
+					<% if session[:user_id] && session[:user_id] == @subject.user_id %>
 						<li><%=link_to "Edit",edit_subject_path(@subject),id:"edit_profile_btn" %></li>
 						<li><%=link_to "Delete",@subject,method: :delete,confirm:"Are you sure?",id:"edit_profile_btn" %></li>
 					<% end %>
