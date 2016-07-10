@@ -1,6 +1,12 @@
 class User < ActiveRecord::Base
 
 	has_many :practicals
+	has_many :assignments
+	has_many :colleges
+	has_many :examnotes
+	has_many :qpapers
+	has_many :subjects
+	has_many :requests
 
     has_attached_file :avatar,:styles => {:thumb => "1280*720>",:medium=>"640*426#",:small=>"180*320#"},
 										  :convert_options => {
