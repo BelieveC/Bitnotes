@@ -6,10 +6,29 @@ class UsersController < ApplicationController
 
 	def show
 		@recentUsers = User.all.order("created_at DESC").limit(5)
-		@recentPracticals = @user.practicals.order("created_at DESC").limit(4)
-		@recentQpapers = @user.qpapers.order("created_at DESC").limit(4)
-		@recentExamnotes = @user.examnotes.order("created_at DESC").limit(4)
-		@recentAssignments = @user.assignments.order("created_at DESC").limit(4)
+		@practicals =@user.practicals
+		@qpapers = @user.qpapers
+		@examnotes = @user.examnotes
+		@assignments = @user.assignments
+		@recentPracticals = @practicals.order("created_at DESC").limit(4)
+		@recentQpapers =@qpapers.order("created_at DESC").limit(4)
+		@recentExamnotes = @examnotes.order("created_at DESC").limit(4)
+		@recentAssignments =@assignments.order("created_at DESC").limit(4)
+
+		@totalvote = 0
+
+		@practicals.each do |practical|
+			@totalvote += practical.impressionist_count
+		end
+		@assignments.each do |assignment|
+			@totalvote += assignment.impressionist_count
+		end
+		@qpapers.each do |qpaper|
+			@totalvote += qpaper.impressionist_count
+		end
+		@examnotes.each do |examnote|
+			@totalvote += examnote.impressionist_count
+		end
 		render layout: "form"
 	end
 

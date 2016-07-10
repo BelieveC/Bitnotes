@@ -36,9 +36,9 @@
                        	<% end %>
 						<p>
 						<ul>
-						<li><p><span class="phpage_detail_title">Description:</span> <%= @user.description %></p></li>
-						<li><p><span class="phpage_detail_title">Total Views:</span></p></li>
-						<li><p><span class="phpage_detail_title">Started on:</span>  <%=@user.created_at.strftime("%d %B %Y") %></p></li>
+						<li><p><span class="phpage_detail_title">Description:</span><strong><%= @user.description %></strong> </p></li>
+						<li><p><span class="phpage_detail_title">Total Views:</span> <strong><%= @totalvote%> views</strong></p></li>
+						<li><p><span class="phpage_detail_title">Started on:</span><strong><%=@user.created_at.strftime("%d %B %Y") %></strong></p></li>
 						<li><p><span class="phpage_detail_title">Subscribers Count:</span></p></li>
 						<li><p><span class="phpage_detail_title">Social Links:
 							<%= link_to image_tag("fb"),@user.fblink,class:"sociallink" %>

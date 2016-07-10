@@ -2817,6 +2817,7 @@ background: url("social") no-repeat 0px 0px;
     padding: 3em 0;
 }
 .phpage_detail_title{
+  padding-right: 5px;
   font-weight: bold;
   color: #21deef;
 }
