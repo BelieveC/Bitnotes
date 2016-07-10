@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+	has_many :practicals
+
     has_attached_file :avatar,:styles => {:thumb => "1280*720>",:medium=>"640*426#",:small=>"180*320#"},
 										  :convert_options => {
 										    :thumb => "-quality 50 -strip",:medium=>"-quality 60 -strip",:small=>"-quality 90 -strip" }
