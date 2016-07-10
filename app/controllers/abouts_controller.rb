@@ -8,9 +8,7 @@ class AboutsController < ApplicationController
 		else
 			@practicals = Practical.search(params[:search])
 			@assignments = Assignment.search(params[:search])
-			@qpapers = Qpaper.search(params[:search])
-			@examnotes = Examnote.search(params[:search])
-			@totalResult = @practicals.count + @assignments.count + @qpapers.count + @examnotes.count
+			@totalResult = @practicals.count + @assignments.count
 			@query = params[:search]
 		end
 
