@@ -41,10 +41,10 @@
 						<li><p><span class="phpage_detail_title">Started on:</span>  <%=@user.created_at.strftime("%d %B %Y") %></p></li>
 						<li><p><span class="phpage_detail_title">Subscribers Count:</span></p></li>
 						<li><p><span class="phpage_detail_title">Social Links:
-								<%= link_to "Facebook",@user.fblink,id:"userfblink"%>
-								<span id="usertwitterlink"><%= link_to "Twitter",@user.twitterlink,id:"usertwitterlink" %></span>
-								<span id="userpinterestlink"><%= link_to "Pinterest",@user.pinterestlink,id:"userpinterestlink" %></span> 
-						</span></p></li>
+							<%= link_to image_tag("fb"),"#",class:"sociallink" %>
+							<%= link_to image_tag("twitter"),"#",class:"sociallink" %>
+							<%= link_to image_tag("pinterest"),"#",class:"sociallink" %>
+						</p></li>
 						</ul>
 						</p>
 					</div>
