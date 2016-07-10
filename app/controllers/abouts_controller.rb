@@ -8,6 +8,8 @@ class AboutsController < ApplicationController
 		else
 			@practicals = Practical.search(params[:search])
 			@assignments = Assignment.search(params[:search])
+			@examnotes = Examnote.all.limit(0)
+			@qpapers = Qpaper.all.limit(0)
 			@totalResult = @practicals.count + @assignments.count
 			@query = params[:search]
 		end
