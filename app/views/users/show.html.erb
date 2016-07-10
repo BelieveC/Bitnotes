@@ -41,9 +41,10 @@
 						<li><p><span class="phpage_detail_title">Started on:</span>  <%=@user.created_at.strftime("%d %B %Y") %></p></li>
 						<li><p><span class="phpage_detail_title">Subscribers Count:</span></p></li>
 						<li><p><span class="phpage_detail_title">Social Links:
-							<%= link_to image_tag("fb"),"#",class:"sociallink" %>
-							<%= link_to image_tag("twitter"),"#",class:"sociallink" %>
-							<%= link_to image_tag("pinterest"),"#",class:"sociallink" %>
+							<%= link_to image_tag("fb"),@user.fblink,class:"sociallink" %>
+							<%= link_to image_tag("twitter"),@user.twitterlink,class:"sociallink" %>
+							<%= link_to image_tag("pinterest"),@user.pinterestlink,class:"sociallink" %>
+							<%= link_to image_tag("google"),@user.pinterestlink,class:"sociallink" %>
 						</p></li>
 						</ul>
 						</p>

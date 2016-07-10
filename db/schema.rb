@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160710025846) do
+ActiveRecord::Schema.define(version: 20160710112352) do
 
   create_table "aimages", force: :cascade do |t|
     t.datetime "created_at",         null: false
@@ -280,6 +280,7 @@ ActiveRecord::Schema.define(version: 20160710025846) do
     t.string   "fblink"
     t.string   "twitterlink"
     t.string   "pinterestlink"
+    t.string   "googlelink"
   end
 
   create_table "votes", force: :cascade do |t|
