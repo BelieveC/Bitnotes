@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160707073807) do
+ActiveRecord::Schema.define(version: 20160710025846) do
 
   create_table "aimages", force: :cascade do |t|
     t.datetime "created_at",         null: false
@@ -277,6 +277,9 @@ ActiveRecord::Schema.define(version: 20160707073807) do
     t.text     "description"
     t.string   "phname"
     t.text     "intro"
+    t.string   "fblink"
+    t.string   "twitterlink"
+    t.string   "pinterestlink"
   end
 
   create_table "votes", force: :cascade do |t|
