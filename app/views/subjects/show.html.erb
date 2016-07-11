@@ -1,4 +1,4 @@
-<% session[:category_user_id] = @subjects.user_id %>
+<% session[:category_user_id] = @subject.user_id %>
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 	<div class="show-top-grids">
 		<% if flash.any? %>
@@ -23,20 +23,21 @@
 				</div>
 			</div>
 			<div class="clearfix"> </div>
-			<% user = User.find(@subject.user_id) %>
+			<% @user = User.find(@subject.user_id) %>
 
 
 			<div class="show-right-grids">
 				<ul>
 					<li>
-						<% if user.avatar.url == "/avatars/original/missing.png" %>
-		                	<%= link_to image_tag("customprofile",alt:"logo",height: "50px"),controller:"users",action:"show",id:user.id %> 
+						<% if @user.avatar.url == "/avatars/original/missing.png" %>
+		                	<%= link_to image_tag("customprofile",alt:"logo",height: "50px"),controller:"users",action:"show",id:@user.id %> 
 		                <%else%>
-		                	<%= link_to image_tag(user.avatar.url,alt:"logo",height: "50px",alt:user.name),controller: "users",action:"show",id:user.id %>
+		                	<%= link_to image_tag(@user.avatar.url,alt:"logo",height: "50px",alt:@user.name),controller: "users",action:"show",id:@user.id %>
 		                <% end %>
 
 					</li>
-					<li><%=link_to @subject.user_name,controller:"users",action: "show",id: @subject.user_id%><br><a href="#small-dialog8" id="suggestion_subscribe_btn" class="play-icon popup-with-zoom-anim">Subscribe</a></li>
+					<li><%=link_to @subject.user_name,controller:"users",action: "show",id: @subject.user_id%><br>
+						<%= render 'shared/subscribe_form' if current_user %></li>
                     <br>
 				</ul>
 			</div>
