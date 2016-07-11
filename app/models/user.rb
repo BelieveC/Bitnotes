@@ -1,5 +1,11 @@
 class User < ActiveRecord::Base
 
+	has_many :active_relationships, class_name: "Relationship",
+									foreign_key: "subscriber_id",
+									dependent: :destroy
+									
+	has_many :subscribed, through: :active_relationships
+
 	has_many :practicals
 	has_many :assignments
 	has_many :colleges
