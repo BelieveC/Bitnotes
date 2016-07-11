@@ -1,2 +1,4 @@
-alert("Hello");
-$("#follow_form").html(<%= escape_javascript(render("shared/unsubscribe")) %>).fadaIn();
+jQuery(document).ready(function($) {
+	$(".show-right-grids ul li").find("#follow_form").html("<%= j render"shared/unsubscribe" %>").fadeIn();
+});
+

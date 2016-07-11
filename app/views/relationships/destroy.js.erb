@@ -1,3 +1,3 @@
-alert("Hello");
-$("#follow_form").html(<%= escape_javascript(render("shared/subscribe")) %>);
-alert("Hello");
+$(document).ready(function() {
+	$(".show-right-grids ul li").find("#follow_form").html("<%= j render("shared/subscribe")%>").fadeIn();
+});
