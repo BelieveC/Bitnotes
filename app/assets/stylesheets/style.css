@@ -935,6 +935,8 @@ select.form-control.bfh-countries:hover {
 .social_response li.view{
     background: url("view") no-repeat 0px 0px;
     height: 34px;
+    margin-top: 17px;
+    margin-left: 20px;
     display: block;
     padding-left: 3em;
     line-height: 2em;
