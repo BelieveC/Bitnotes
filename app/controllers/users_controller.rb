@@ -69,12 +69,12 @@ class UsersController < ApplicationController
 
 	//Subscribation
 
-	def subscribe(@other_user)
-		active_relationships.create(subscribed_id: @other_user.id)
+	def subscribe(other_user)
+		active_relationships.create(subscribed_id: other_user.id)
 	end
 
-	def unsubscribe(@other_user)
-		active_relationships.find_by(subscribed_id: @other_user.id).destroy
+	def unsubscribe(other_user)
+		active_relationships.find_by(subscribed_id: other_user.id).destroy
 	end
 
 	private
