@@ -764,7 +764,7 @@ button::-moz-focus-inner {
 	    -o-transition: 0.3s all;
 	    -ms-transition: 0.3s all;
 	}
-	.facebook-button a:hover{
+	.facebook-button a:hover,.facebook-button a:focus,.facebook-button a:visited{
 		color: white;
 		font-size: 14px !important;
 		text-decoration: none;
