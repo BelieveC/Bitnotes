@@ -1,5 +1,5 @@
 <% @other_user = User.find(params[:id]) %>
-<% unless current_user?(@other_user) %>
+<% if current_user?(@other_user) %>
 	<div id="follow_form">
 		<% if subscribed?(@other_user) %>
 			<%= render 'shared/unsubscribe' %>
