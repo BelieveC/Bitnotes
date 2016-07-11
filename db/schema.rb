@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160710112352) do
+ActiveRecord::Schema.define(version: 20160711064414) do
 
   create_table "aimages", force: :cascade do |t|
     t.datetime "created_at",         null: false
@@ -206,6 +206,17 @@ ActiveRecord::Schema.define(version: 20160710112352) do
   add_index "qpapers", ["cached_votes_score"], name: "index_qpapers_on_cached_votes_score"
   add_index "qpapers", ["cached_votes_total"], name: "index_qpapers_on_cached_votes_total"
   add_index "qpapers", ["cached_votes_up"], name: "index_qpapers_on_cached_votes_up"
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "subscriber_id"
+    t.integer  "subscribed_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "relationships", ["subscribed_id"], name: "index_relationships_on_subscribed_id"
+  add_index "relationships", ["subscriber_id", "subscribed_id"], name: "index_relationships_on_subscriber_id_and_subscribed_id", unique: true
+  add_index "relationships", ["subscriber_id"], name: "index_relationships_on_subscriber_id"
 
   create_table "requests", force: :cascade do |t|
     t.string   "topic"
