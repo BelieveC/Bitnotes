@@ -6,7 +6,7 @@ class RelationshipsController < ApplicationController
 		user = User.find(params[:subscribed_id])
 		current_user.active_relationships.create(subscribed_id: user.id)
 		respond_to do |format|
-			format.html{redirect_to: :back}
+			format.html{redirect_to :back}
 			format.js
 		end
 	end

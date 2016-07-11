@@ -1,4 +1,5 @@
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+	<% session[:category_user_id] = @practical.user_id %>
 	<div class="show-top-grids">
 		<% if flash.any? %>
 			<div class="alert alert-success alert-dismissible" role="alert">
@@ -26,22 +27,22 @@
 			<%=javascript_include_tag "main",'data-turbolinks-track' => true %>
 			
 			<div class="clearfix"> </div>
-			<% user = User.find(@practical.user_id) %>
-
-
+			<% @user = User.find(@practical.user_id) %>
 			<div class="show-right-grids">
 				<ul>
 					<li>
-						<% if user.avatar.url == "/avatars/original/missing.png" %>
-		                	<%= link_to image_tag("customprofile",alt:"logo",height: "50px"),controller:"users",action:"show",id:user.id %> 
+						<% if @user.avatar.url == "/avatars/original/missing.png" %>
+		                	<%= link_to image_tag("customprofile",alt:"logo",height: "50px"),controller:"users",action:"show",id: @user.id %> 
 		                <%else%>
-		                	<%= link_to image_tag(user.avatar.url,alt:"logo",height: "50px",alt:user.name),controller: "users",action:"show",id:user.id %>
+		                	<%= link_to image_tag(@user.avatar.url,alt:"logo",height: "50px",alt:@user.name),controller: "users",action:"show",id: @user.id %>
 		                <% end %>
 
 					</li>
 					<li><%=link_to @practical.user_name,controller:"users",action: "show",id: @practical.user_id%><br>
-						<%= render 'shared/subscribe_form',local:{id: @practical.user_id} if current_user %></li>
+						<%= render 'shared/subscribe_form' if current_user %></li>
                     <br>
+
+                    <div id="result"></div>
 				</ul>
 			</div>
 			<div class="social_response">

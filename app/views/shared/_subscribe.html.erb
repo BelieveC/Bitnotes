@@ -1,6 +1,4 @@
-<div class="follow_form">
-	<%= form_for(current_user.active_relationships.build,remote: true) do |f| %>
-	  <div><%= hidden_field_tag :subscribed_id, @other_user.id %></div>
-	  <%= f.submit "Subscribe", id: "suggestion_subscribe_btn" %>
-	<% end %>
-</div>
+<%= form_for(current_user.active_relationships.build,remote: true) do |f| %>
+  <div><%= hidden_field_tag :subscribed_id,  session[:category_user_id] %></div>
+  <%= f.submit "Subscribe",id:"suggestion_subscribe_btn" %>
+<% end %>
