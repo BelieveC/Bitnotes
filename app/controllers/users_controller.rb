@@ -67,6 +67,16 @@ class UsersController < ApplicationController
 		end
 	end
 
+	//Subscribation
+
+	def subscribe(@other_user)
+		active_relationships.create(subscribed_id: @other_user.id)
+	end
+
+	def unsubscribe(@other_user)
+		active_relationships.find_by(subscribed_id: @other_user.id).destroy
+	end
+
 	private
 		def user_params
 			params.require(:user).permit(:name,:phname,:intro,:description,:avatar,:cover,:googlelink,:fblink,:twitterlink,:pinterestlink)

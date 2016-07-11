@@ -19,12 +19,10 @@ Rails.application.routes.draw do
 / Resources /
 
   resources :users
+  resources :relationships, only:[:create,:destroy]
+
+  resources :abouts
   
-  resources :abouts do
-  	member do
-  		get 'test'
-  	end
-  end
   resources :practicals do
     member do
       put "like"=>"practicals#upvote"

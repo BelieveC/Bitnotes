@@ -5,9 +5,23 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :user_signed_in?
   helper_method :authenticate_user!
+  helper_method :current_user?
+  helper_method :subscribed?
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
+  def current_user?(other_user)
+    if other_user.id == current_user.id
+      true
+    else
+      false
+    end
+  end
+
+  def subscribed?(other_user)
+    current_user.subscribed.include?(other_user)
   end
 
   def user_signed_in?
