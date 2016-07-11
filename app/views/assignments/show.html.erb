@@ -48,10 +48,10 @@
 					<li><a href="https://twitter.com/intent/tweet?text= <%= @assignment.topic%>" target="_blank" title="Share on Twitter" class="icon twitter-icon">Twitter</a></li>
 					<li><a href="#" class="icon pinterest-icon" title="Share on Pinterest">Pinterest</a></li>
 					<li><%=link_to like_assignment_path(@assignment),method: :put,remote: true,title:"Like this",class:"icon like" do %>
-							<span class="likecount"><%= @assignment.get_upvotes.size %></span>
+							<span class="likecount"><strong><%= @assignment.get_upvotes.size %></strong></span>
 						<% end %>
 					</li>
-					<li class="view" title="Views Count"><%= @assignment.impressionist_count %> Views</li>
+					<li class="view" title="Views Count"><strong><%= @assignment.impressionist_count %> Views</strong></li>
 					<% if session[:user_id] && session[:user_id] == @assignment.user_id %>
 						<li><%=link_to "Edit",edit_assignment_path(@assignment),id:"edit_profile_btn" %></li>
 						<li><%=link_to "Delete",@assignment,method: :delete,confirm:"Are you sure?",id:"edit_profile_btn" %></li>
