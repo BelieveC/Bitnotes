@@ -39,7 +39,8 @@
 		                <% end %>
 
 					</li>
-					<li><%=link_to @practical.user_name,controller:"users",action: "show",id: @practical.user_id%><br><a href="#small-dialog8" id="suggestion_subscribe_btn" class="play-icon popup-with-zoom-anim">Subscribe</a></li>
+					<li><%=link_to @practical.user_name,controller:"users",action: "show",id: @practical.user_id%><br>
+						<%= render 'shared/subscribe_form',local:{id: @practical.user_id} if current_user %></li>
                     <br>
 				</ul>
 			</div>
