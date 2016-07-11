@@ -3,8 +3,13 @@ class User < ActiveRecord::Base
 	has_many :active_relationships, class_name: "Relationship",
 									foreign_key: "subscriber_id",
 									dependent: :destroy
-									
+
+	has_many :passive_relationships, class_name: "Relationship",
+									foreign_key: "subscribed_id",
+									dependent: :destroy
+
 	has_many :subscribed, through: :active_relationships
+	has_many :subscriber, through: :passive_relationships
 
 	has_many :practicals
 	has_many :assignments
