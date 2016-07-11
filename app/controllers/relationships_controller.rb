@@ -4,14 +4,14 @@ class RelationshipsController < ApplicationController
 
 	def create
 		user = User.find(params[:subscribed_id])
-		current.user.subscribe(user)
+		current_user.active_relationships.create(subscribed_id: user.id)
 		redirect_to :back
 	end
 
 	def destroy
-		user = Relationship.find(params[:id]).followed
-    	current_user.unfollow(user)
-    	redirect_to user
+		user = Relationship.find(params[:id]).subscribed
+    	current_user.active_relationships.find_by(subscribed_id: user.id).destroy
+    	redirect_to :back
 	end
 
 end
