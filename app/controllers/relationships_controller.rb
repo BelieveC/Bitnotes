@@ -5,13 +5,19 @@ class RelationshipsController < ApplicationController
 	def create
 		user = User.find(params[:subscribed_id])
 		current_user.active_relationships.create(subscribed_id: user.id)
-		redirect_to :back
+		respond_to do |format|
+			format.html{redirect_to: :back}
+			format.js
+		end
 	end
 
 	def destroy
 		user = Relationship.find(params[:id]).subscribed
     	current_user.active_relationships.find_by(subscribed_id: user.id).destroy
-    	redirect_to :back
+    	respond_to do |format|
+    		format.html{redirect_to :back}
+    		format.js
+    	end
 	end
 
 end
