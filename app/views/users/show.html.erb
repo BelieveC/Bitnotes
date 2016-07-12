@@ -1,3 +1,4 @@
+<% session[:category_user_id] = @user.id %>
 <div class="developers">
 	<% if @user.cover.url == "/covers/original/missing.png" %> 
 		<div class="phouse-banner" style=" background: url("customcover") no-repeat 0px 0px !important">
@@ -33,6 +34,8 @@
   						<a href="#" class="phpage_detail_title">Details</a>
   						<% if session[:user_id] && session[:user_id] == @user.id %>
                         	<%= link_to "Edit Profile",edit_user_path(@user),id:"edit_profile_btn"%>
+                        <% else %>
+                        
                        	<% end %>
 						<p>
 						<ul>
