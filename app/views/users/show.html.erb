@@ -45,10 +45,10 @@
 						<li><p><span class="phpage_detail_title">Started on:</span><strong><%=@user.created_at.strftime("%d %B %Y") %></strong></p></li>
 						<li><p><span class="phpage_detail_title">Subscribers Count:</span><strong><%= @user.subscriber.count %></strong></p></li>
 						<li><p><span class="phpage_detail_title">Social Links:
-							<%= link_to image_tag("fb"),@user.fblink,class:"sociallink" %>
-							<%= link_to image_tag("twitter"),@user.twitterlink,class:"sociallink" %>
-							<%= link_to image_tag("pinterest"),@user.pinterestlink,class:"sociallink" %>
-							<%= link_to image_tag("google"),@user.pinterestlink,class:"sociallink" %>
+							<%= link_to image_tag("fb"),@user.fblink,class:"sociallink" unless @user.fblink.blank? %>
+							<%= link_to image_tag("twitter"),@user.twitterlink,class:"sociallink" unless @user.twitterlink.blank? %>
+							<%= link_to image_tag("pinterest"),@user.pinterestlink,class:"sociallink" unless @user.pinterestlink.blank? %>
+							<%= link_to image_tag("google"),@user.googlelink,class:"sociallink" unless @user.googlelink.blank? %>
 						</p></li>
 						</ul>
 						</p>
