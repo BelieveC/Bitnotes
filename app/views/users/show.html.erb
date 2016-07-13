@@ -8,9 +8,9 @@
 		<div class="container">
 			<div class="phouse-short-info">
 				<% if @user.avatar.url == "/avatars/original/missing.png" %>
-                	<%= image_tag("customprofile",width:"150em",height:"200em",alt:@user.name) %>
+                	<%= image_tag("customprofile",width:"180em",height:"200em",alt:@user.name) %>
                 <%else%>
-                	<%= image_tag(@user.avatar.url,width:"150em",height:"200em",alt:@user.name) %>
+                	<%= image_tag(@user.avatar.url,width:"180em",height:"200em",alt:@user.name) %>
                 <% end %>
 				<h3><strong><%= @user.phname %></strong></h3>
 				<p>"<em><%= @user.intro %></em>"</p>
@@ -30,7 +30,7 @@
             <div class="show-top-grids">
   			    <div class="col-sm-8 show-grid-left main-grids" id="profileinfocontainer">
                     <div class="creators-grid" id="phpage_detail">
-  						<a href="#" class="phpage_detail_title">Details</a>
+  						<a href="#" class="phpage_detail_title">About</a>
   						<% if session[:user_id] && session[:user_id] == @user.id %>
                         	<%= link_to "Edit Profile",edit_user_path(@user),id:"edit_profile_btn"%>
                         <% else %>
@@ -40,7 +40,7 @@
                        	<% end %>
 						<p>
 						<ul>
-						<li><p><span class="phpage_detail_title">Description:</span><strong><%= @user.description %></strong> </p></li>
+						<li><p><strong><%= @user.description %></strong> </p></li>
 						<li><p><span class="phpage_detail_title">Total Views:</span> <strong><%= @totalvote%> views</strong></p></li>
 						<li><p><span class="phpage_detail_title">Started on:</span><strong><%=@user.created_at.strftime("%d %B %Y") %></strong></p></li>
 						<li><p><span class="phpage_detail_title">Subscribers Count:</span><strong><%= @user.subscriber.count %></strong></p></li>
