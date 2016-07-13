@@ -2887,3 +2887,20 @@ background: url("social") no-repeat 0px 0px;
 #publishinghouselink{
   background-color: white !important;
 }
+
+
+ul#subscription{
+  list-style: none;
+}
+
+ul#subscription .sidebar_publication_image{
+  height:25px;
+  width: 25px;
+  display: inline-block;
+}
+
+ul#subscription .sidebar_publication_link{
+  display: inline-block;
+  padding: 0.2em;
+  color: #05B0B8;
+}

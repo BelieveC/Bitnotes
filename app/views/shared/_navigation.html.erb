@@ -258,6 +258,16 @@
 					  		<% end %>
 					  	</li>
 					  </ul>
+						<hr>
+					  
+					  <h4>Subscribed</h4>
+					  <ul id="subscription">
+					  	<% current_user.subscribed.each do |subscribed| %>
+					  		<li>
+							<%= link_to image_tag(subscribed.avatar.url,alt: subscribed.phname,class:"sidebar_publication_image"),subscribed,class:"sidebar_publication_link"%>
+					  		<strong><%= link_to subscribed.phname,subscribed,class:"sidebar_publication_link" %></strong></li>
+					  	<% end %>
+					  </ul>
 					  <!-- script-for-menu -->
 							<script>
 								$( ".top-navigation" ).click(function() {
