@@ -495,7 +495,6 @@ button::-moz-focus-inner {
     padding: 2em 0 0 6em;
     float: right !important;
     width: 50%;
-    border-left: solid 1px #E4E4E4;
     text-align: left;
 }
 .login h3,.signup h3{
@@ -807,6 +806,7 @@ button::-moz-focus-inner {
     text-align: left;
     padding: 3em 0 0 3em;
     width: 50%;
+	border-right: solid 1px #E4E4E4;
 }
 .social-sits ul{
 	padding:0;
@@ -822,6 +822,11 @@ button::-moz-focus-inner {
 .facebook-button {
     margin-bottom: 4em;
 }
+.facebook-button a, .chrome-button a{
+	display: block;
+	width: 60%;
+}
+
 .facebook-button a{
     background: url("fb1") no-repeat 14px 15px #3b5998;
     color: #fff;
@@ -837,7 +842,10 @@ button::-moz-focus-inner {
 .facebook-button a:hover{
 	color: white;
 	text-decoration: none;
-	font-size: 15px;
+	/*font-size: 15px;*/
+	border-color: 2px;
+	transform: translateX(-2px);
+	box-shadow: 2px 2px 5px 1px darkgrey;
 }
 .chrome-button a{
     background: url("ch1.png") no-repeat 14px 15px #dd4b39;
@@ -854,8 +862,12 @@ button::-moz-focus-inner {
 .chrome-button a:hover{
 	color: white;
 	text-decoration: none;
-	font-size: 15px;
+	/*font-size: 15px;*/
+	border-color: 2px;
+	transform: translateX(-2px);
+	box-shadow: 2px 2px 5px 1px darkgrey;
 }
+
 .social-sits p{
   color: #7e7f84;
   font-size: 14px;
