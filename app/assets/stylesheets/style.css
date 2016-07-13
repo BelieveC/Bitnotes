@@ -2868,6 +2868,9 @@ background: url("social") no-repeat 0px 0px;
   padding-left: 5px;
   padding-right: 5px;
 }
+.sociallink img {
+	border-radius: 4px;
+}
 
 .navbarprofilepic{
   height: 33px;
