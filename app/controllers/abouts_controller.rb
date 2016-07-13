@@ -13,7 +13,6 @@ class AboutsController < ApplicationController
 			@totalResult = @practicals.count + @assignments.count
 			@query = params[:search]
 		end
-
 	end
 
 	def privacy

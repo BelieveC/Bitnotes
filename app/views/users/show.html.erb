@@ -1,4 +1,4 @@
-<% session[:category_user_id] = @user.id %>
+<% session[:user_id] = 3 %>
 <div class="developers">
 	<% if @user.cover.url == "/covers/original/missing.png" %> 
 		<div class="phouse-banner" style=" background: url("customcover") no-repeat 0px 0px !important">
@@ -201,7 +201,10 @@
 					                	<%=link_to image_tag(user.avatar.url,height:"50px",alt:user.name),user%>
 					                <% end %>
 				                </li>
-								<li><%=link_to user.phname,user%><br><a href="#small-dialog8" id="suggestion_subscribe_btn" class="play-icon popup-with-zoom-anim">Subscribe</a></li>
+								<li><%=link_to user.phname,user%><br>
+									<% @user = user %>
+									<%= render "shared/subscribe_form" if current_user %>
+								</li>
 	                            <br>
 							</ul>
 						</div>
