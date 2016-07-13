@@ -820,7 +820,10 @@ button::-moz-focus-inner {
 	padding:.5em 2em;
 }
 .facebook-button {
-    margin-bottom: 4em;
+    margin-bottom: 2em;
+}
+.chrome-button {
+	margin-bottom: 2em;
 }
 .facebook-button a, .chrome-button a{
 	display: block;
