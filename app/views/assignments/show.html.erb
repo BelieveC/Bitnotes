@@ -71,16 +71,21 @@
 							<div class="load-grids">
 								<div class="load-grid">
 									<p>Category:</p>
+									<p>College:</p>
+									<p>Subject:</p>
 								</div>
 								<div class="load-grid">
 									<%= link_to "Assignment",assignments_path %>
+									<%= link_to @assignment.college,controller:"colleges",action:"show",
+									id: @assignment.college_id %>
+									<%= link_to @assignment.subject,controller:"subjects",action:"show",id: @assignment.subject_id%>
 								</div>
 								<div class="clearfix"> </div>
 							</div>
 						</li>
 					</ul>
 					<button id="loadMore">Load more</button>
-					<button id="showLess">Show less</button>
+					<button id="showLess" style="display:none">Show less</button>
 				</div>
 			</div>
 			<div class="all-comments">
