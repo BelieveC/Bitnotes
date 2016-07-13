@@ -2907,5 +2907,8 @@ ul#subscription .sidebar_publication_image{
 ul#subscription .sidebar_publication_link{
   display: inline-block;
   padding: 0.2em;
-  color: #05B0B8;
+  color: black;
+}
+#subscription_title{
+  color: #05b0b8;
 }
