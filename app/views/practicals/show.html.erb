@@ -50,7 +50,7 @@
 					<li><a href="https://twitter.com/intent/tweet?text= <%= @practical.title%>" target="_blank" title="Share on Twitter" class="icon twitter-icon">Twitter</a></li>
 					<li><a href="#" class="icon pinterest-icon" title="Share on Pinterest">Pinterest</a></li>
 					<li><%= link_to like_practical_path(@practical),method: :put,class:"icon like",title:"Like this", id:"likebtn",remote: true do %>
-						<span class="likecount"><strong><%= @practical.get_upvotes.size %></strong></span>
+						<span class="likecount"><strong><%= @practical.cached_votes_up %></strong></span>
 						<% end %>
 					</li>
 					<li class="view" title="Views Count"><strong><%= @practical.impressionist_count %> views</strong></li>

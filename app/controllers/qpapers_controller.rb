@@ -37,7 +37,7 @@ class QpapersController < ApplicationController
 	end
 
 	def edit
-		if session[:user_id] == @practical.user_id
+		if session[:user_id] == @qpaper.user_id
 			render layout: "form"
 		else
 			redirect_to root_path,notice:"Gotcha!, You don't have access to edit this Paper."
