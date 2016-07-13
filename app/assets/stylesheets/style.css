@@ -2795,6 +2795,9 @@ background: url("social") no-repeat 0px 0px;
 .phouse-short-info {
   width: 60%;
 }
+.phouse-short-info p, .phouse-short-info h3 {
+	padding-left: 20px;
+}
 .phouse-short-info h3{
     color: #FFF;
     font-size: 36px;
