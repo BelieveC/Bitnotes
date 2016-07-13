@@ -264,7 +264,11 @@
 					  <ul id="subscription">
 					  	<% current_user.subscribed.each do |subscribed| %>
 					  		<li>
-							<%= link_to image_tag(subscribed.avatar.url,alt: subscribed.phname,class:"sidebar_publication_image"),subscribed,class:"sidebar_publication_link"%>
+					  		<% if subscribed.avatar.url != "/avatars/original/missing.png" %> 
+								<%= link_to image_tag(subscribed.avatar.url,alt: subscribed.phname,class:"sidebar_publication_image"),subscribed,class:"sidebar_publication_link"%>
+							<% else %>
+								<%= link_to (image_tag "customprofile",class:"sidebar_publication_image"),current_user,class:"sidebar_publication_link"%>
+							<% end %>
 					  		<strong><%= link_to subscribed.phname,subscribed,class:"sidebar_publication_link" %></strong></li>
 					  	<% end %>
 					  </ul>
