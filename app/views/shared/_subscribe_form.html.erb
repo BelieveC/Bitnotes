@@ -1,3 +1,4 @@
+<% @user = User.find(params[:id]) if params[:id].present? %>
 <% unless current_user?(@user) %>
 	<div id="follow_form">
 		<% if subscribed?(@user) %>
