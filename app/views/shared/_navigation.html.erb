@@ -42,7 +42,7 @@
 					<div class="signin">
 						<% if user_signed_in? %>
 							<% if current_user.avatar.url != "/avatars/original/missing.png" %>
-								<%= link_to (image_tag current_user.avatar.url,class:"navbarprofilepic"),current_user,id:"publishinghouselink"%>
+								<%= link_to (image_tag current_user.avatar.url(:thumb),class:"navbarprofilepic"),current_user,id:"publishinghouselink"%>
 							<% else%>
 								<%= link_to (image_tag "customprofile",class:"navbarprofilepic"),current_user,id:"publishinghouselink"%>
 							<%end %>
@@ -266,7 +266,7 @@
 						  	<% current_user.subscribed.each do |subscribed| %>
 						  		<li>
 						  		<% if subscribed.avatar.url != "/avatars/original/missing.png" %> 
-									<%= link_to image_tag(subscribed.avatar.url,alt: subscribed.phname,class:"sidebar_publication_image"),subscribed,class:"sidebar_publication_link"%>
+									<%= link_to image_tag(subscribed.avatar.url(:thumb),alt: subscribed.phname,class:"sidebar_publication_image"),subscribed,class:"sidebar_publication_link"%>
 								<% else %>
 									<%= link_to (image_tag "customprofile",class:"sidebar_publication_image"),current_user,class:"sidebar_publication_link"%>
 								<% end %>

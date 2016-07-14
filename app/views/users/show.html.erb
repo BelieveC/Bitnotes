@@ -10,7 +10,7 @@
 				<% if @user.avatar.url == "/avatars/original/missing.png" %>
                 	<%= image_tag("customprofile",width:"180em",height:"200em",alt:@user.name) %>
                 <%else%>
-                	<%= image_tag(@user.avatar.url,width:"180em",height:"200em",alt:@user.name) %>
+                	<%= image_tag(@user.avatar.url(:thumb),width:"180em",height:"200em",alt:@user.name) %>
                 <% end %>
 				<h3><strong><%= @user.phname %></strong></h3>
 				<p>"<em><%= @user.intro %></em>"</p>
@@ -197,7 +197,7 @@
 									<% if user.avatar.url == "/avatars/original/missing.png" %>
 					                	<%=link_to image_tag("customprofile",height:"50px",alt:user.name),user %>
 					                <% else%>
-					                	<%=link_to image_tag(user.avatar.url,height:"50px",alt:user.name),user%>
+					                	<%=link_to image_tag(user.avatar.url(:thumb),height:"50px",alt:user.name),user%>
 					                <% end %>
 				                </li>
 								<li><%=link_to user.phname,user%><br>

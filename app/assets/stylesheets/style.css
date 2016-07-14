@@ -890,6 +890,7 @@ select.form-control.bfh-countries:hover {
 .song-info h3{
   color: #272C2E;
   font-size: 22px;
+  font-weight: bold;
   margin: 0;
   line-height: 1.5em;
 }
@@ -1967,6 +1968,7 @@ background: url("social") no-repeat 0px 0px;
 		font-size: 13px;
 	}
 	.song-info h3 {
+    font-weight: bold;
 		font-size: 20px;
 	}
 	.single-right-grid-right {
@@ -2663,6 +2665,7 @@ background: url("social") no-repeat 0px 0px;
 		width: 50% !important;
 	}
 	.song-info h3 {
+    font-weight: bold;
 		font-size: 15px;
 	}
 	.video-grid iframe {

@@ -32,7 +32,7 @@
 						<% if @user.avatar.url == "/avatars/original/missing.png" %>
 		                	<%= link_to image_tag("customprofile",alt:"logo",height: "50px"),controller:"users",action:"show",id:@user.id %> 
 		                <%else%>
-		                	<%= link_to image_tag(@user.avatar.url,alt:"logo",height: "50px",alt:@user.name),controller: "users",action:"show",id:@user.id %>
+		                	<%= link_to image_tag(@user.avatar.url(:thumb),alt:"logo",height: "50px",alt:@user.name),controller: "users",action:"show",id:@user.id %>
 		                <% end %>
 
 					</li>
