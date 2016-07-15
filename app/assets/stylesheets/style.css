@@ -1875,7 +1875,7 @@ background: url("social") no-repeat 0px 0px;
 		width: 47%;
 	}
 	.header-top-right {
-		margin: .5em 0;
+		margin: .5em 3.4em;
 	}
 	.sidebar {
     top: 0px;
@@ -2158,7 +2158,7 @@ background: url("social") no-repeat 0px 0px;
 		width: 33%;
 	}
 	ul.nav.nav-sidebar li a {
-		padding: .8em 0 .8em 27em;
+		padding: .8em 0 .8em 25em;
 	}
 	.nav-sidebar ul li a {
 		padding: .5em 0 .5em 31em !important;
@@ -2297,7 +2297,7 @@ background: url("social") no-repeat 0px 0px;
 		border: none;
 	}
 	form.navbar-form.navbar-right {
-		width: 38%;
+		width: 100%;
 		margin: 0;
 	}
 	.top-search form input[type="submit"] {
@@ -2460,7 +2460,7 @@ background: url("social") no-repeat 0px 0px;
 		width: 50%;
 	}
 	ul.nav.nav-sidebar li a {
-		padding: .8em 0 .8em 14em;
+		padding: .8em 0 .8em 10em;
 	}
 	.resent-grid-info p.author-info {
 		font-size: 13px;
@@ -2562,7 +2562,7 @@ background: url("social") no-repeat 0px 0px;
 		float: none;
 	}
 	ul.nav.nav-sidebar li a {
-		padding: .8em 0 .8em 8em;
+		padding: .8em 0 .8em 10em;
 	}
 	.nav-sidebar ul li a {
 		padding: .5em 0 .5em 12em !important;
@@ -2907,6 +2907,8 @@ background: url("social") no-repeat 0px 0px;
 
 
 ul#subscription{
+  margin-right: -21px;
+  margin-left: -20px;
   list-style: none;
 }
 

@@ -233,6 +233,13 @@
 					  			<span class="glyphicon glyphicon-flash" aria-hidden="true"></span> Trending
 					  		<% end %>
 					  	</li>
+					  	<% if current_user %>
+						  	<li><%=link_to current_user,class:"user-icon" do %>
+					  			<span class="glyphicon glyphicon-home" aria-hidden="left-align"></span> My Publication
+					  		<% end %>
+					  	</li>
+						<% end %>
+						<hr>
 					  	<li><%=link_to practicals_path,class:"user-icon" do %>
 					  			<span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span> Practicals
 					  		<% end %>
@@ -249,6 +256,7 @@
 							<span class="glyphicon glyphicon-level-up" aria-hidden="true"></span> Examnote
 							<% end %>
 						</li>
+						<hr>
 						<li><%=link_to colleges_path,class:"song-icon" do %>
 					  			<span class="glyphicon glyphicon-education" aria-hidden="true"></span> Institutes
 					  		<% end %>
