@@ -2547,18 +2547,10 @@ background: url("social") no-repeat 0px 0px;
 
 @media screen and (max-width: 435px){
   .header-top-right {
-    margin: .5em 6.9em;
-    float: none;
-  }
-}
-
-@media screen and (max-width: 414px){
-   .header-top-right {
     margin: .5em 5.9em;
     float: none;
   }
 }
-
 @media screen and (max-width: 411px){
   .header-top-right {
     margin: .5em 5.6em;
