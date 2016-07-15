@@ -49,7 +49,7 @@
 							<%= link_to image_tag("twitter"),@user.twitterlink,class:"sociallink" unless @user.twitterlink.blank? %>
 							<%= link_to image_tag("pinterest"),@user.pinterestlink,class:"sociallink" unless @user.pinterestlink.blank? %>
 							<%= link_to image_tag("google"),@user.googlelink,class:"sociallink" unless @user.googlelink.blank? %>
-							<%= link_to image_tag("instagram"),"#",class:"sociallink" %>
+							<%= link_to image_tag("instagram"),@user.instagramlink,class:"sociallink" unless @user.instagramlink.blank? %>
 						</p></li>
 						</ul>
 						</p>
