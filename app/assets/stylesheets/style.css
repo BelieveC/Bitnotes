@@ -2555,6 +2555,9 @@ background: url("social") no-repeat 0px 0px;
     margin: .5em 5.9em;
     float: none;
   }
+   .load-grid{
+    padding-right: 7em;
+  }
 }
 @media screen and (max-width: 411px){
   .header-top-right {
@@ -2604,6 +2607,9 @@ background: url("social") no-repeat 0px 0px;
 	.nav-sidebar ul li a {
 		padding: .5em 0 .5em 12em !important;
 	}
+  .load-grid{
+    padding-right: 6em;
+  }
 	.callbacks_nav {
 		right: 20%;
 	}
