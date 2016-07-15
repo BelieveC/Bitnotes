@@ -2283,6 +2283,11 @@ background: url("social") no-repeat 0px 0px;
 		padding: 0;
 	}
 }
+@media (min-width: 676px){
+  a.navbar-brand h1{
+    padding-left: .6em;
+  }
+}
 @media (max-width: 640px) {
 	.sidebar {
     top:0px;
