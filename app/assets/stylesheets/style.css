@@ -34,7 +34,7 @@ nav.navbar.navbar-inverse.navbar-fixed-top {
   overflow: auto;
 }
 a.navbar-brand h1 {
-    margin: 0;
+    margin: 0 -1em;
     color: #05B0B8;
     -webkit-transition: 1s all;
     -o-transition: 1s all;
@@ -2560,7 +2560,6 @@ background: url("social") no-repeat 0px 0px;
 	}
 	.header-top-right {
 		float: none;
-    margin: .5em 1em;
 	}
 	ul.nav.nav-sidebar li a {
 		padding: .8em 0 .8em 10em;
