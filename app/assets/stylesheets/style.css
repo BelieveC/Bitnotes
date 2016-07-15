@@ -2560,6 +2560,7 @@ background: url("social") no-repeat 0px 0px;
 	}
 	.header-top-right {
 		float: none;
+    margin: .5em 1em;
 	}
 	ul.nav.nav-sidebar li a {
 		padding: .8em 0 .8em 10em;
