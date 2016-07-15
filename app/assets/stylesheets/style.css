@@ -2929,3 +2929,7 @@ ul#subscription .sidebar_publication_link{
 #subscription_title{
   color: #05b0b8;
 }
+
+#subscription_content hr{
+  width: 100%;
+}
