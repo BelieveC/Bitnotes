@@ -938,6 +938,10 @@ select.form-control.bfh-countries:hover {
     background: url("pinterest") no-repeat 0px 0px;
     text-indent: -999px;
 }
+.social_response li a.googleplus-icon{
+    background: url("google-plus") no-repeat 0px 0px;
+    text-indent: -999px;
+}
 .social_response li.view{
     background: url("view") no-repeat 0px 0px;
     height: 34px;
