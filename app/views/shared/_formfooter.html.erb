@@ -1,6 +1,21 @@
 			<div class="footer">
 				<div class="container">
 					<div class="footer-top">
+						<div class="footer-bottom-nav">
+							<ul>
+								<li><%= link_to "Hindi",language_path(lang: "hi"),remote: true %></li>
+								<li><%= link_to "Marathi",language_path(lang: "mr"),remote: true %></li>
+								<li><%= link_to "Gujrati",language_path(lang: "gu"),remote: true %></li>
+								<li><%= link_to "Punjabi",language_path(lang: "pa"),remote: true %></li>
+								<li><%= link_to "Telugu",language_path(lang: "te"),remote: true %></li>
+								<li><%= link_to "Tamil",language_path(lang: "ta"),remote: true %></li>
+								<li><%= link_to "Urdu",language_path(lang: "ur"),remote: true %></li>
+								<li><%= link_to "Kannada",language_path(lang: "kn"),remote: true %></li>
+								<li><%= link_to "Bengali",language_path(lang: "bn"),remote: true %></li>
+								<li><%= link_to "Malayalam",language_path(lang: "ml"),remote: true %></li>
+							</ul>
+						</div>
+						<hr>
 						<div class="footer-top-nav">
 							<ul>
 								<li><%= link_to "About",about_path %></li>
@@ -14,14 +29,23 @@
 								<li><%= link_to "Privacy",privacy_path %></li>
 								<li><a href="#small-dialog4" class="play-icon popup-with-zoom-anim">Send feedback</a></li>
 								<li><%= link_to "Try something new!",try_path%></li><br>
-								<li><p>Copyright © 2016 Bitnotes.Inc. All Rights Reserved | Design by <a href="http/www.bitnotes.in">Bitnotes.Inc</a></p></li>
+								<li><a href="#small-dialog5" class="play-icon popup-with-zoom-anim f-history f-help">Help</a></li>
+								<li><p>© 2016 <a href="http/www.bitnotes.in">Bitnotes.Inc</a></p></li>
+							</ul>
+						</div>
+						<div class="footer-bottom-nav">
+							<ul>
+								<li><a href="https://www.facebook.com/BitNotes4U/" title="Follow us on Facebook" target="_blank"><%=image_tag("fb2") %></a> </li>
+								<li><a href="#" title="Follow us on Google+" target="_blank"><%=image_tag("google2") %></a></li>
+								<li><a href="https://twitter.com/BitnotesFamily " title="Follow us on Twitter" target="_blank"><%=image_tag("twitter2") %></a></li>
+								<li> <a href="mailto:cwayconnect@gmail.com" title="Mail us" target="_blank"><%=image_tag("mail") %></li>
 							</ul>
 						</div>
 					</div>
 					<div class="footer-bottom">
 						<ul>
 							<li class="languages">
-								<div id="google_translate_element"></div>
+								<div id="google_translate_element"style="display:none;"></div>
 								<script type="text/javascript">
 									function googleTranslateElementInit() {
 									  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
@@ -29,7 +53,7 @@
 									</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
 								</script>
 							</li>
-							<li><a href="#small-dialog5" class="play-icon popup-with-zoom-anim f-history f-help">Help</a></li>
+							
 						</ul>
 					</div>
 				</div>
