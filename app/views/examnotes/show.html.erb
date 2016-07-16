@@ -44,7 +44,7 @@
 			<div class="social_response">
 				<ul>
 					<li><a href="#" class="icon fb-icon" title="Share on Facebook" id="shareBtn">Facebook</a></li>
-					<li><a href="https://twitter.com/intent/tweet?text= <%= @examnote.topic%>" target="_blank" title="Share on Twitter" class="icon twitter-icon">Twitter</a></li>
+					<li><a href="https://twitter.com/intent/tweet?text= <%="Check this " +@examnote.topic + " " + url_for([@examnote,{only_path: false}])%>" target="_blank" title="Share on Twitter" class="icon twitter-icon">Twitter</a></li>
 					<li><a href="https://www.pinterest.com/pin/create/button/" class="icon pinterest-icon" title="Share on Pinterest" data-pin-custom="true">Pinterest</a></li>
 					<li><%=link_to like_examnote_path(@examnote),method: :put,remote: true,title:"Like this",class:"icon like" do %>
 							<span class="likecount"><strong><%= @examnote.cached_votes_up %></strong></span>
