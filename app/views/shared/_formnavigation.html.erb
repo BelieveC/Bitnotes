@@ -13,11 +13,11 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
 			<div class="top-search">
-				<form class="navbar-form navbar-right">
-					<input type="text" class="form-control" placeholder="Search...">
-					<input type="submit" value=" ">
-				</form>
-			</div>  
+					<%=form_tag(abouts_path,method: :get,class:"navbar-form navbar-right") do%>
+						<%=text_field_tag :search,params[:search],class:"form-control",placeholder:"Search.."%>
+						<%=submit_tag(value="")%>
+					<% end%>
+				</div> 
 			<div class="header-top-right">
 				<div class="file" id="upload-btn">
 						<a href="#small-dialog9" class="play-icon popup-with-zoom-anim">Upload</a>
