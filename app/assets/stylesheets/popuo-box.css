@@ -953,3 +953,8 @@ div#small-dialog8 {
     width: 100%;
 	border:none;
 }
+
+.uploadlinks a{
+	display: inline-block;
+	margin: 0.2em;
+}
