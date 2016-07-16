@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/creators'=>'abouts#creators', as:"creators"
   get '/copyright'=>'abouts#copyright', as:"copyright"
   get '/try'=>'abouts#try', as:"try"
+  get '/lang'=>'abouts#language',as:"language"
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
