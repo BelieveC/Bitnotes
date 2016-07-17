@@ -1,7 +1,7 @@
 body{
 	background:#fff;
 	font-size:100%;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Roboto',arial,sans-serif;
 }
 body a {
   transition: 0.5s all;
@@ -582,7 +582,7 @@ a.btn.btn-primary.btn-lg.see-button.hvr-shutter-out-horizontal {
   margin: 0;
   font-size: 18px;
   font-weight: 600;
-  color: #525254;
+  color: #00C2DC;
 }
 .resent-grid-info a.title:hover{
     transition: inherit;
@@ -1019,8 +1019,9 @@ select.form-control.bfh-countries:hover {
 }
 /*-- history --*/
 .recommended-info p.history-text {
-	font-size: 13px;
-    color: #9E9E9E;
+	   font-size: 15px;
+    color: #777;
+    font-weight: 400;
     margin: 0;
     line-height: 1.8em;
 }
@@ -1437,8 +1438,9 @@ span.glyphicon.glyphicon-user {
     text-decoration: none;
 }
 .about-left-info p{
-    font-size: 13px;
-    color: #9E9E9E;
+    font-size: 15px;
+    color: #777;
+    font-weight: 400;
     margin: 0;
     line-height: 1.8em;
 }
@@ -1607,8 +1609,9 @@ span.glyphicon.glyphicon-user {
     text-decoration: none;
 }
 .creators-grid p{
-    font-size: 13px;
+    font-size: 15px;
     line-height: 1.8em;
+    font-weight: 400;
     color: darkblue;
     margin: 1em 0 0 0;
 }
