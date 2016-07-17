@@ -541,7 +541,7 @@ button::-moz-focus-inner {
 .login input[type="submit"],.signup input[type="submit"]{
     border: 0px;
     padding: .5em 2em;
-    background: #05B0B8;
+    background: #00C2DC;
     margin: 1em 0 0 0;
     outline: none;
     font-size: 16px;
@@ -579,12 +579,12 @@ button::-moz-focus-inner {
 	-ms-transition: 0.3s all;
 }
 .button-bottom p a:hover{
-	color:#05B0B8;
+	color:#00C2DC;
 	text-decoration: none;	
 }
 .continue-button a {
     padding: .5em 2em;
-    background: #05B0B8;
+    background: #00C2DC;
     margin: 1em 0 0 0;
     outline: none;
     font-size: 16px;
@@ -913,7 +913,7 @@ button::-moz-focus-inner {
   background: url("h-arrow") no-repeat 0px 4px;
 }
 .help-button-bottom a:hover{
-    color: #05B0B8;
+    color: #00C2DC;
     text-decoration: none;
 }
 .help-grids {
