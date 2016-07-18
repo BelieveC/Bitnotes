@@ -51,5 +51,8 @@ $.cookie(key,'',$.extend({},options,{expires:-1}));return!$.cookie(key);};}));
 			$("#showLess").hide();
 			$("#loadMore").fadeIn();
 		});
+
+
+		$()
 	});	
 									
