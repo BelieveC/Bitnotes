@@ -37,12 +37,8 @@ class AboutsController < ApplicationController
 	end
 
 	def language
-		@lang = params[:lang]
-		respond_to do |format|
-			format.html{redirect_to :back}
-			format.js
-		end
+		session[:langId] = params[:lang]
+		redirect_to :back
 	end
-
 
 end

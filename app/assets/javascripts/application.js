@@ -51,8 +51,16 @@ $.cookie(key,'',$.extend({},options,{expires:-1}));return!$.cookie(key);};}));
 			$("#showLess").hide();
 			$("#loadMore").fadeIn();
 		});
-
-
-		$()
+		$(".footer-bottom-nav").on("click","#moreLang",function(event){
+			event.preventDefault();
+			if($(this).hasClass("moreLang")){
+				$(this).text("-Less Languages");
+				$(this).removeClass("moreLang");
+			}else{
+				$(this).text("+More Languages");
+				$(this).addClass("moreLang");
+			}
+			$("#moreLangDiv").fadeToggle();
+		});
 	});	
 									

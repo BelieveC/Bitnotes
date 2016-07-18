@@ -4,16 +4,35 @@
 					<div class="footer-top">
 						<div class="footer-bottom-nav">
 							<ul>
-								<li><%= link_to "Hindi",language_path(lang: "hi"),remote: true %></li>
-								<li><%= link_to "Marathi",language_path(lang: "mr"),remote: true %></li>
-								<li><%= link_to "Gujrati",language_path(lang: "gu"),remote: true %></li>
-								<li><%= link_to "Punjabi",language_path(lang: "pa"),remote: true %></li>
-								<li><%= link_to "Telugu",language_path(lang: "te"),remote: true %></li>
-								<li><%= link_to "Tamil",language_path(lang: "ta"),remote: true %></li>
-								<li><%= link_to "Urdu",language_path(lang: "ur"),remote: true %></li>
-								<li><%= link_to "Kannada",language_path(lang: "kn"),remote: true %></li>
-								<li><%= link_to "Bengali",language_path(lang: "bn"),remote: true %></li>
-								<li><%= link_to "Malayalam",language_path(lang: "ml"),remote: true %></li>
+								<li><%= link_to "English (UK)",language_path(lang: "en"),data: { no_turbolink: true }%></li>
+								<li><%= link_to "Hindi",language_path(lang: "hi"),data: { no_turbolink: true }%></li>
+								<li><%= link_to "Marathi",language_path(lang: "mr"),data: { no_turbolink: true } %></li>
+								<li><%= link_to "Gujrati",language_path(lang: "gu"),data: { no_turbolink: true } %></li>
+								<li><%= link_to "Punjabi",language_path(lang: "pa"),data: { no_turbolink: true } %></li>
+								<li><%= link_to "Telugu",language_path(lang: "te"),data: { no_turbolink: true } %></li>
+								<li><%= link_to "Tamil",language_path(lang: "ta"),data: { no_turbolink: true } %></li>
+								<li><%= link_to "Urdu",language_path(lang: "ur"),data: { no_turbolink: true } %></li>
+								<li><%= link_to "Kannada",language_path(lang: "kn"),data: { no_turbolink: true } %></li>
+								<li><%= link_to "Bengali",language_path(lang: "bn"),data: { no_turbolink: true } %></li>
+								<li><%= link_to "Malayalam",language_path(lang: "ml"),data: { no_turbolink: true } %></li>
+								<li><%= link_to "+More Languages","",id:"moreLang",class:"moreLang"%></li>
+							</ul>
+						</div>
+						<div class="footer-bottom-nav" id="moreLangDiv" style="display:none">
+							<ul>
+								<li><%= link_to "Arabic",language_path(lang: "ar"),data: { no_turbolink: true }%></li>
+								<li><%= link_to "Chinese Simplified",language_path(lang: "zh-CN"),data: { no_turbolink: true }%></li>
+								<li><%= link_to "Dutch",language_path(lang: "nl"),data: { no_turbolink: true } %></li>
+								<li><%= link_to "French",language_path(lang: "fr"),data: { no_turbolink: true } %></li>
+								<li><%= link_to "German",language_path(lang: "el"),data: { no_turbolink: true } %></li>
+								<li><%= link_to "Italian",language_path(lang: "it"),data: { no_turbolink: true } %></li>
+								<li><%= link_to "Japanese",language_path(lang: "ja"),data: { no_turbolink: true } %></li>
+								<li><%= link_to "Latin",language_path(lang: "la"),data: { no_turbolink: true } %></li>
+								<li><%= link_to "Portugese",language_path(lang: "pt"),data: { no_turbolink: true } %></li>
+								<li><%= link_to "Russian",language_path(lang: "ru"),data: { no_turbolink: true } %></li>
+								<li><%= link_to "Spanish",language_path(lang: "es"),data: { no_turbolink: true } %></li>
+								<li><%= link_to "Turkish",language_path(lang: "tr"),data: { no_turbolink: true } %></li>
+								<li><%= link_to "Ukrainian",language_path(lang: "uk"),data: { no_turbolink: true } %></li>
 							</ul>
 						</div>
 						<hr>
@@ -47,7 +66,7 @@
 						<ul>
 							<li class="languages">	
 								<script>
-									$.cookie('googtrans','/en/en');
+									$.cookie('googtrans','/en/<%= session[:langId] if session[:langId] %>');
 								</script>
 								<div id="google_translate_element" style="display:none;"></div>
 								<script type="text/javascript">
