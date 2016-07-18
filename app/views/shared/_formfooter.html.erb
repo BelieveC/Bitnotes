@@ -64,6 +64,9 @@
 					<div class="footer-bottom">
 						<ul>
 							<li class="languages">
+								<script>
+									$.cookie('googtrans','/en/<%= session[:langId] if session[:langId] %>');
+								</script>
 								<div id="google_translate_element"style="display:none;"></div>
 								<script type="text/javascript">
 									function googleTranslateElementInit() {
