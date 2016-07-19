@@ -1,5 +1,5 @@
 /* Styles for dialog window */
-#small-dialog,#small-dialog2,#small-dialog3,#small-dialog4,#small-dialog5,#small-dialog6,#small-dialog7,#small-dialog8,#small-dialog9,#small-dialog10,#small-dialog11{
+#small-dialog2,#small-dialog4,#small-dialog5,#small-dialog6,#small-dialog9,#small-dialog10,#small-dialog11{
 	background: #FFF;
     padding: 20px;
     text-align: left;
@@ -52,127 +52,7 @@ a.play-icon.popup-with-zoom-anim img:hover {
  */
 
 /* start state */
-.my-mfp-zoom-in #small-dialog {
-opacity: 0;
--webkit-transition: all 0.2s ease-in-out;
--moz-transition: all 0.2s ease-in-out;
--o-transition: all 0.2s ease-in-out;
-transition: all 0.2s ease-in-out;
--webkit-transform: scale(0.8);
--moz-transform: scale(0.8);
--ms-transform: scale(0.8);
--o-transform: scale(0.8);
-transform: scale(0.8);
-}
-.my-mfp-zoom-in #small-dialog2 {
-opacity: 0;
--webkit-transition: all 0.2s ease-in-out;
--moz-transition: all 0.2s ease-in-out;
--o-transition: all 0.2s ease-in-out;
-transition: all 0.2s ease-in-out;
--webkit-transform: scale(0.8);
--moz-transform: scale(0.8);
--ms-transform: scale(0.8);
--o-transform: scale(0.8);
-transform: scale(0.8);
-}
-.my-mfp-zoom-in #small-dialog3 {
-opacity: 0;
--webkit-transition: all 0.2s ease-in-out;
--moz-transition: all 0.2s ease-in-out;
--o-transition: all 0.2s ease-in-out;
-transition: all 0.2s ease-in-out;
--webkit-transform: scale(0.8);
--moz-transform: scale(0.8);
--ms-transform: scale(0.8);
--o-transform: scale(0.8);
-transform: scale(0.8);
-}
-.my-mfp-zoom-in #small-dialog4 {
-opacity: 0;
--webkit-transition: all 0.2s ease-in-out;
--moz-transition: all 0.2s ease-in-out;
--o-transition: all 0.2s ease-in-out;
-transition: all 0.2s ease-in-out;
--webkit-transform: scale(0.8);
--moz-transform: scale(0.8);
--ms-transform: scale(0.8);
--o-transform: scale(0.8);
-transform: scale(0.8);
-}
-.my-mfp-zoom-in #small-dialog5 {
-opacity: 0;
--webkit-transition: all 0.2s ease-in-out;
--moz-transition: all 0.2s ease-in-out;
--o-transition: all 0.2s ease-in-out;
-transition: all 0.2s ease-in-out;
--webkit-transform: scale(0.8);
--moz-transform: scale(0.8);
--ms-transform: scale(0.8);
--o-transform: scale(0.8);
-transform: scale(0.8);
-}
-.my-mfp-zoom-in #small-dialog6 {
-opacity: 0;
--webkit-transition: all 0.2s ease-in-out;
--moz-transition: all 0.2s ease-in-out;
--o-transition: all 0.2s ease-in-out;
-transition: all 0.2s ease-in-out;
--webkit-transform: scale(0.8);
--moz-transform: scale(0.8);
--ms-transform: scale(0.8);
--o-transform: scale(0.8);
-transform: scale(0.8);
-}
-.my-mfp-zoom-in #small-dialog7 {
-opacity: 0;
--webkit-transition: all 0.2s ease-in-out;
--moz-transition: all 0.2s ease-in-out;
--o-transition: all 0.2s ease-in-out;
-transition: all 0.2s ease-in-out;
--webkit-transform: scale(0.8);
--moz-transform: scale(0.8);
--ms-transform: scale(0.8);
--o-transform: scale(0.8);
-transform: scale(0.8);
-}
-.my-mfp-zoom-in #small-dialog8 {
-opacity: 0;
--webkit-transition: all 0.2s ease-in-out;
--moz-transition: all 0.2s ease-in-out;
--o-transition: all 0.2s ease-in-out;
-transition: all 0.2s ease-in-out;
--webkit-transform: scale(0.8);
--moz-transform: scale(0.8);
--ms-transform: scale(0.8);
--o-transform: scale(0.8);
-transform: scale(0.8);
-}
-.my-mfp-zoom-in #small-dialog9 {
-opacity: 0;
--webkit-transition: all 0.2s ease-in-out;
--moz-transition: all 0.2s ease-in-out;
--o-transition: all 0.2s ease-in-out;
-transition: all 0.2s ease-in-out;
--webkit-transform: scale(0.8);
--moz-transform: scale(0.8);
--ms-transform: scale(0.8);
--o-transform: scale(0.8);
-transform: scale(0.8);
-}
-.my-mfp-zoom-in #small-dialog10 {
-opacity: 0;
--webkit-transition: all 0.2s ease-in-out;
--moz-transition: all 0.2s ease-in-out;
--o-transition: all 0.2s ease-in-out;
-transition: all 0.2s ease-in-out;
--webkit-transform: scale(0.8);
--moz-transform: scale(0.8);
--ms-transform: scale(0.8);
--o-transform: scale(0.8);
-transform: scale(0.8);
-}
-.my-mfp-zoom-in #small-dialog11 {
+.my-mfp-zoom-in #small-dialog2,.my-mfp-zoom-in #small-dialog4,.my-mfp-zoom-in #small-dialog5,.my-mfp-zoom-in #small-dialog6,.my-mfp-zoom-in #small-dialog9,.my-mfp-zoom-in #small-dialog10,.my-mfp-zoom-in #small-dialog11{
 opacity: 0;
 -webkit-transition: all 0.2s ease-in-out;
 -moz-transition: all 0.2s ease-in-out;
@@ -185,7 +65,7 @@ transition: all 0.2s ease-in-out;
 transform: scale(0.8);
 }
 /* animate in */
-.my-mfp-zoom-in.mfp-ready #small-dialog {
+.my-mfp-zoom-in.mfp-ready #small-dialog2,.my-mfp-zoom-in.mfp-ready #small-dialog4,.my-mfp-zoom-in.mfp-ready #small-dialog5,.my-mfp-zoom-in.mfp-ready #small-dialog6,.my-mfp-zoom-in.mfp-ready #small-dialog9,.my-mfp-zoom-in.mfp-ready #small-dialog10,.my-mfp-zoom-in.mfp-ready #small-dialog11 {
 opacity: 1;
 -webkit-transform: scale(1);
 -moz-transform: scale(1);
@@ -193,88 +73,9 @@ opacity: 1;
 -o-transform: scale(1);
 transform: scale(1);
 }
-.my-mfp-zoom-in.mfp-ready #small-dialog2 {
-opacity: 1;
--webkit-transform: scale(1);
--moz-transform: scale(1);
--ms-transform: scale(1);
--o-transform: scale(1);
-transform: scale(1);
-}
-.my-mfp-zoom-in.mfp-ready #small-dialog3 {
-opacity: 1;
--webkit-transform: scale(1);
--moz-transform: scale(1);
--ms-transform: scale(1);
--o-transform: scale(1);
-transform: scale(1);
-}
-.my-mfp-zoom-in.mfp-ready #small-dialog4 {
-opacity: 1;
--webkit-transform: scale(1);
--moz-transform: scale(1);
--ms-transform: scale(1);
--o-transform: scale(1);
-transform: scale(1);
-}
-.my-mfp-zoom-in.mfp-ready #small-dialog5 {
-opacity: 1;
--webkit-transform: scale(1);
--moz-transform: scale(1);
--ms-transform: scale(1);
--o-transform: scale(1);
-transform: scale(1);
-}
-.my-mfp-zoom-in.mfp-ready #small-dialog6 {
-opacity: 1;
--webkit-transform: scale(1);
--moz-transform: scale(1);
--ms-transform: scale(1);
--o-transform: scale(1);
-transform: scale(1);
-}
-.my-mfp-zoom-in.mfp-ready #small-dialog7 {
-opacity: 1;
--webkit-transform: scale(1);
--moz-transform: scale(1);
--ms-transform: scale(1);
--o-transform: scale(1);
-transform: scale(1);
-}
-.my-mfp-zoom-in.mfp-ready #small-dialog8 {
-opacity: 1;
--webkit-transform: scale(1);
--moz-transform: scale(1);
--ms-transform: scale(1);
--o-transform: scale(1);
-transform: scale(1);
-}
-.my-mfp-zoom-in.mfp-ready #small-dialog9 {
-opacity: 1;
--webkit-transform: scale(1);
--moz-transform: scale(1);
--ms-transform: scale(1);
--o-transform: scale(1);
-transform: scale(1);
-}
-.my-mfp-zoom-in.mfp-ready #small-dialog10 {
-opacity: 1;
--webkit-transform: scale(1);
--moz-transform: scale(1);
--ms-transform: scale(1);
--o-transform: scale(1);
-transform: scale(1);
-}
-.my-mfp-zoom-in.mfp-ready #small-dialog11 {
-opacity: 1;
--webkit-transform: scale(1);
--moz-transform: scale(1);
--ms-transform: scale(1);
--o-transform: scale(1);
-transform: scale(1);
-}
+
 /* animate out */
-.my-mfp-zoom-in.mfp-removing #small-dialog {
+.my-mfp-zoom-in.mfp-removing #small-dialog2,.my-mfp-zoom-in.mfp-removing #small-dialog4,.my-mfp-zoom-in.mfp-removing #small-dialog5,.my-mfp-zoom-in.mfp-removing #small-dialog6,.my-mfp-zoom-in.mfp-removing #small-dialog9,.my-mfp-zoom-in.mfp-removing #small-dialog10,.my-mfp-zoom-in.mfp-removing #small-dialog11{
 -webkit-transform: scale(0.8);
 -moz-transform: scale(0.8);
 -ms-transform: scale(0.8);
@@ -282,86 +83,7 @@ transform: scale(1);
 transform: scale(0.8);
 opacity: 0;
 }
-.my-mfp-zoom-in.mfp-removing #small-dialog2 {
--webkit-transform: scale(0.8);
--moz-transform: scale(0.8);
--ms-transform: scale(0.8);
--o-transform: scale(0.8);
-transform: scale(0.8);
-opacity: 0;
-}
-.my-mfp-zoom-in.mfp-removing #small-dialog3 {
--webkit-transform: scale(0.8);
--moz-transform: scale(0.8);
--ms-transform: scale(0.8);
--o-transform: scale(0.8);
-transform: scale(0.8);
-opacity: 0;
-}
-.my-mfp-zoom-in.mfp-removing #small-dialog4 {
--webkit-transform: scale(0.8);
--moz-transform: scale(0.8);
--ms-transform: scale(0.8);
--o-transform: scale(0.8);
-transform: scale(0.8);
-opacity: 0;
-}
-.my-mfp-zoom-in.mfp-removing #small-dialog5 {
--webkit-transform: scale(0.8);
--moz-transform: scale(0.8);
--ms-transform: scale(0.8);
--o-transform: scale(0.8);
-transform: scale(0.8);
-opacity: 0;
-}
-.my-mfp-zoom-in.mfp-removing #small-dialog6 {
--webkit-transform: scale(0.8);
--moz-transform: scale(0.8);
--ms-transform: scale(0.8);
--o-transform: scale(0.8);
-transform: scale(0.8);
-opacity: 0;
-}
-.my-mfp-zoom-in.mfp-removing #small-dialog7 {
--webkit-transform: scale(0.8);
--moz-transform: scale(0.8);
--ms-transform: scale(0.8);
--o-transform: scale(0.8);
-transform: scale(0.8);
-opacity: 0;
-}
-.my-mfp-zoom-in.mfp-removing #small-dialog8 {
--webkit-transform: scale(0.8);
--moz-transform: scale(0.8);
--ms-transform: scale(0.8);
--o-transform: scale(0.8);
-transform: scale(0.8);
-opacity: 0;
-}
-.my-mfp-zoom-in.mfp-removing #small-dialog9 {
--webkit-transform: scale(0.8);
--moz-transform: scale(0.8);
--ms-transform: scale(0.8);
--o-transform: scale(0.8);
-transform: scale(0.8);
-opacity: 0;
-}
-.my-mfp-zoom-in.mfp-removing #small-dialog10 {
--webkit-transform: scale(0.8);
--moz-transform: scale(0.8);
--ms-transform: scale(0.8);
--o-transform: scale(0.8);
-transform: scale(0.8);
-opacity: 0;
-}
-.my-mfp-zoom-in.mfp-removing #small-dialog11 {
--webkit-transform: scale(0.8);
--moz-transform: scale(0.8);
--ms-transform: scale(0.8);
--o-transform: scale(0.8);
-transform: scale(0.8);
-opacity: 0;
-}
+
 /* Dark overlay, start state */
 .my-mfp-zoom-in.mfp-bg {
 opacity: 0;
@@ -547,7 +269,7 @@ button::-moz-focus-inner {
   width: 100%; 
 }
 @media all and (max-width:768px){
-	#small-dialog, #small-dialog2,#small-dialog9 {
+  #small-dialog2,#small-dialog9 {
 		  max-width: 85% !important;
 	}
 }
@@ -561,16 +283,10 @@ button::-moz-focus-inner {
 	#small-dialog5 {
 		max-width: 50% !important;
 	}
-	#small-dialog8 {
-		width: 60% !important;
-	}
 }
 @media all and (max-width:768px){
-	#small-dialog, #small-dialog2, #small-dialog3, #small-dialog4, #small-dialog5, #small-dialog6, #small-dialog7, #small-dialog8,#small-dialog9,#small-dialog10,small-dialog11{
+    #small-dialog2, #small-dialog4, #small-dialog5, #small-dialog6,#small-dialog9,#small-dialog10,small-dialog11{
 		 max-width: 80%;
-	}
-	#small-dialog8 {
-		width: 70% !important;
 	}
 }
 @media all and (max-width:640px){
@@ -612,10 +328,10 @@ button::-moz-focus-inner {
   width: 35em;
    margin-left: 2.5em;
 }
-	#small-dialog, #small-dialog2,#sma-dialog9 {
+	#small-dialog2,#sma-dialog9 {
 		max-width: 95% !important;
 	}
-	#small-dialog, #small-dialog2, #small-dialog3, #small-dialog4, #small-dialog5, #small-dialog6, #small-dialog7, #small-dialog8,small-dialog9,#small-dialog10,#small-dialog11 {
+	 #small-dialog2, #small-dialog4, #small-dialog5, #small-dialog6,small-dialog9,#small-dialog10,#small-dialog11 {
 		max-width: 95%;
 	}
 	.comments-area span.label,.comments-area span.text-field{
@@ -624,9 +340,6 @@ button::-moz-focus-inner {
 	}
 	.comments-area span{
 		padding-bottom:3px;
-	}
-	#small-dialog{
-		padding:15px;
 	}
 	.comments-area input[type="text"], .comments-area textarea{
 		width:92%;
@@ -831,10 +544,6 @@ button::-moz-focus-inner {
 	margin: 1em 0;
 	font-size: 13px;
 	line-height: 1.8em;
-}
-div#small-dialog8 {
-    width: 33%;
-    padding: 3em;
 }
 .subscribe-grid{
     float: none !important;
