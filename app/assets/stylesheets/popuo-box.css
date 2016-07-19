@@ -546,133 +546,6 @@ button::-moz-focus-inner {
   padding-right: 6px;
   width: 100%; 
 }
-.signup {
-    position: relative;
-    padding: 2em 0 0 6em;
-    float: right !important;
-    width: 50%;
-    text-align: left;
-}
-.login h3,.signup h3{
-	margin: 0;
-	color: #3498DB;
-	text-align: left;
-	position: absolute;
-	top: 2px;
-	left: 54px;
-}
-.login h3, .signup h4  a{
-	text-align: right;
-	position: absolute;
-	margin: 0;
-	top: 10px;
-	right: 58px;
-}
-.login input[type="text"],.login input[type="password"]{
-	width:90%;
-	padding:5px;
-	margin:3px 0;
-	border: 1px solid #a63d56;
-	outline: none !important;
-}
-.signup input[type="text"]{
-	width: 44.5%;
-	padding: 5px;
-	margin: 10px 0;
-	font-size: 14px;
-	outline: none;
-	background: #EBEBEB;
-	border: solid 1px #222;
-}
-.signup input.email[type="text"],.signup input[type="password"]{
-  width: 90%;
-  padding: 10px;
-  background: #FFF;
-  margin: 10px 0;
-  font-size: 14px;
-  outline: none;
-  color: #817F7F;
-  border: solid 1px #817F7F;
-}
-.login input[type="submit"],.signup input[type="submit"]{
-    border: 0px;
-    padding: .5em 2em;
-    background: #00C2DC;
-    margin: 1em 0 0 0;
-    outline: none;
-    font-size: 16px;
-    color: #fff;
-    text-transform: uppercase;
-    -webkit-appearance: none;
-    position: relative;
-    border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -o-border-radius: 3px;
-    -ms-border-radius: 3px;
-}
-.login input[type="submit"]:hover,.signup input[type="submit"]:hover{
-  background: #C7C7C7;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-.button-bottom {
-  margin-top: 3em;
-}
-.button-bottom p{
-	color: #333;
- 	font-size:14px;
-}
-.button-bottom p a{
-	color: #DF2229;
-	font-weight: bold;
-	transition: 0.4s all;
-	-webkit-transition: 0.3s all;
-	-moz-transition: 0.3s all;
-	-o-transition: 0.3s all;
-	-ms-transition: 0.3s all;
-}
-.button-bottom p a:hover{
-	color:#00C2DC;
-	text-decoration: none;	
-}
-.continue-button a {
-    padding: .5em 2em;
-    background: #00C2DC;
-    margin: 1em 0 0 0;
-    outline: none;
-    font-size: 16px;
-    color: #fff;
-    text-transform: uppercase;
-    -webkit-appearance: none;
-    position: relative;
-    border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -o-border-radius: 3px;
-    -ms-border-radius: 3px;
-}
-.continue-button a:hover{
-	text-decoration:none;
-	background: #E2E2E2;
-}
-.forgot {
-  margin-top: 1em;
-}
-.forgot a{
-	color:#000;
-	font-size:14px;
-}
-.forgot a:hover{
-	color:#DF2229;
-	text-decoration:none;
-}
-.continue-button {
-    margin: 2em 0 0 0;
-}
-
 @media all and (max-width:768px){
 	#small-dialog, #small-dialog2,#small-dialog9 {
 		  max-width: 85% !important;
@@ -707,14 +580,6 @@ button::-moz-focus-inner {
 		padding: 3em 0 0 0em !important;
 		width: 100% !important;
 	}
-	.signup {
-		position: relative;
-		padding: 2em 0 0 0em;
-		float: none;
-		width: 100%;
-		border-left: none;
-		text-align: center;
-	}
 	#small-dialog5 {
 		max-width: 75% !important;
 	}
@@ -723,10 +588,6 @@ button::-moz-focus-inner {
 	.comments-area textarea{
 		height:100px;
 	}
-	.login input[type="submit"], .signup input[type="submit"] {
-		font-size: 14px;
-		width: 20%;
-	}
 	.social-sits {
 		padding-top: 0em !important;
 		float: none;
@@ -734,16 +595,6 @@ button::-moz-focus-inner {
 	}
 	.social-sits ul li a {
 	  font-size: 14px;
-	}
-	.signup {
-	  padding: 0;
-	  float: right !important;
-	  width: 100%;
-	  border-left: none;
-	  text-align: left;
-	}
-	.login input[type="submit"], .signup input[type="submit"] {
-	  width: 50%;
 	}
 	.mfp-content h3 {
 		font-size: 18px;
@@ -787,31 +638,8 @@ button::-moz-focus-inner {
 		width:100%;
 		min-height:250px;
 	}
-	.login input[type="submit"], .signup input[type="submit"] {
-		font-size: 12px;
-		  width: 50% !important;
-	}
-	.signup input[type="text"] {
-		width: 90%;
-	}
-	.login h3, .signup h3 {
-		top: 7px;
-		left: 25px;
-		font-size: 18px;
-	}
-	.login h3, .signup h4 a {
-		top: 7px;
-		right: 19px;
-		font-size: 18px;
-	}
-	.signup {
-		  padding:0 !important;
-	}
 	.social-sits ul li a {
 	  font-size: 13px !important;
-	}
-	.signup input.email[type="text"], .signup input[type="password"] {
-		width: 100% !important;
 	}
 	.mfp-content h3 {
 	    font-size: 16px;
@@ -854,15 +682,8 @@ button::-moz-focus-inner {
 		right: -8px;
 		top: -5px;
 	}
-	.continue-button a {
-		font-size: 14px !important;
-	}
 	#small-dialog4 {
 		max-width: 92% !important;
-	}
-	.signup input.email[type="text"], .signup input[type="password"] {
-		padding: 6px;
-		font-size:13px;
 	}
 } 
 .social-sits{

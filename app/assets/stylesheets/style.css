@@ -190,10 +190,6 @@ ul.nav.nav-sidebar li a:focus {
 	width: 100%;
 	left:0;
 }
-.nav-sidebar ul.cl-effect-1 li,.nav-sidebar ul.cl-effect-2 li {
-    display: block;
-    margin: 0;
-}
 .nav-sidebar ul li a {
     padding: .5em 0 .5em 7em !important;
     display: block;
@@ -1982,10 +1978,6 @@ span.glyphicon.glyphicon-user {
 		width: 33.33% !important;
 		float: left !important;
 	}
-	.side-bottom {
-	    position: inherit;
-		padding: 2em 0;
-	}
 	.drop-navigation{
 		display: none;
 		margin-top: 1em;
@@ -2693,9 +2685,6 @@ span.glyphicon.glyphicon-user {
 		font-size: 15px;
 	}
 	ul.nav.nav-sidebar li a {
-		font-size: 12px;
-	}
-	.copyright p {
 		font-size: 12px;
 	}
 	.about-grids {
