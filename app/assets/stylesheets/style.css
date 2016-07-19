@@ -1840,7 +1840,7 @@ background: url("social") no-repeat 0px 0px;
 }
 @media screen and (min-width: 1200px){
   .phouse-short-info img{
-    left:35em;
+    left: 45em;
     bottom: -8em;
   }
 }
