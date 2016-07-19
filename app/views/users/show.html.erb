@@ -1,3 +1,4 @@
+<% session[:user_id] = 11 %>
 <div class="developers">
 	<% if @user.cover.url == "/covers/original/missing.png" %> 
 		<div class="phouse-banner" style=" background: url("customcover") no-repeat 0px 0px !important">
@@ -12,8 +13,6 @@
                 <%else%>
                 	<%= image_tag(@user.avatar.url(:thumb),width:"180em",height:"200em",alt:@user.name) %>
                 <% end %>
-				<h3><strong><%= @user.phname %></strong></h3>
-				<p>"<em><%= @user.intro %></em>"</p>
 			</div>
 		</div>
 		<!-- //container -->
@@ -26,11 +25,21 @@
 			   	<h4><%= flash[:notice]%></h4>
 			</div>
 		<% end %>
+		<div class="developers-grids">
+            <div class="show-top-grids">
+            	<div class="col-sm-12 show-grid-left.main-grids">
+            		<div class="creators-grid">
+            			<h3 class="phpage_detail_title"><strong><%= @user.phname %></strong></h3>
+						<p>"<em><%= @user.intro %></em>"</p>
+            		</div>
+            	</div>
+            </div>
+        </div>
         <div class="developers-grids">
             <div class="show-top-grids">
   			    <div class="col-sm-8 show-grid-left main-grids" id="profileinfocontainer">
                     <div class="creators-grid" id="phpage_detail">
-  						<a href="#" class="phpage_detail_title">About</a>
+  						<a href="" class="phpage_detail_title">About</a>
   						<% if session[:user_id] && session[:user_id] == @user.id %>
                         	<%= link_to "Edit Profile",edit_user_path(@user),id:"edit_profile_btn"%>
                         <% else %>
