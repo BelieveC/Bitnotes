@@ -1213,11 +1213,6 @@ width:100%;
     padding: 3em 1em;
     box-shadow: 0px 0 2px #C1C1C1 !important;
 }
-.all-comments-info a{
-    font-size: 14px;
-    color: #9E9E9E;
-    text-decoration: none;
-}
 .box {
   margin: 1em 0;
 }
@@ -2292,10 +2287,6 @@ span.glyphicon.glyphicon-user {
 		min-height: 130px;
 		width: 100%;
 	}
-	.all-comments-buttons ul li a.top {
-		font-size: 12px;
-		padding: .5em 1em;
-	}
 	.show-grid-left {
 		width: 100%;
 		float: none;
@@ -2671,12 +2662,6 @@ span.glyphicon.glyphicon-user {
 	}
 	.box textarea {
 		min-height: 95px;
-	}
-	.all-comments-buttons ul li {
-		margin: 1em;
-	}
-	.all-comments-buttons ul li:nth-child(1) {
-		margin-left: 1em;
 	}
 	.media-body p {
 		font-size: 12px;
