@@ -672,11 +672,11 @@ button::-moz-focus-inner {
 .continue-button {
     margin: 2em 0 0 0;
 }
+
 @media all and (max-width:768px){
 	#small-dialog, #small-dialog2,#small-dialog9 {
 		  max-width: 85% !important;
 	}
-	
 }
 @media all and (max-width:991px){
 	.social-sits ul li a {
@@ -753,6 +753,14 @@ button::-moz-focus-inner {
 	}
 }
 @media all and (max-width:320px){
+  .facebook-button {
+   width: 35em;
+   margin-left: 2.5em;
+}
+.chrome-button{
+  width: 35em;
+   margin-left: 2.5em;
+}
 	#small-dialog, #small-dialog2,#sma-dialog9 {
 		max-width: 95% !important;
 	}
@@ -861,8 +869,7 @@ button::-moz-focus-inner {
     float: left;
     text-align: left;
     padding: 2em 0 0 3em;
-    width: 50%;
-	border-right: solid 1px #E4E4E4;
+    width: 100%;
 }
 .social-sits ul{
 	padding:0;
@@ -876,14 +883,15 @@ button::-moz-focus-inner {
 	padding:.5em 2em;
 }
 .facebook-button {
-    margin-bottom: 2em;
+   margin: 0em auto 2em auto;
+   width: 20.5em;
 }
 .chrome-button {
-	margin-bottom: 2em;
+	 margin: 0em auto 2em auto;
+   width: 20.5em;
 }
 .facebook-button a, .chrome-button a{
 	display: block;
-	width: 60%;
 }
 
 .facebook-button a{

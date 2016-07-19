@@ -2780,8 +2780,8 @@ background: url("social") no-repeat 0px 0px;
 		font-size: 12px;
 	}
 	.creators-banner {
-		background: url("create") no-repeat -118px 0px !important;
-		background-size: cover !important;
+		background: url("create") no-repeat -58px 0px !important;
+		background-size: 500px 183px !important;
 		padding: 3em 0;
 	}
 	.creators-top-grid {

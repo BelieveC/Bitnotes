@@ -48,7 +48,8 @@
 						<!-- pop-up-box -->
 						<!--//pop-up-box -->
 						<div id="small-dialog2" class="mfp-hide">
-							<h3>Create Account</h3> 
+							<h3>Sign In</h3> 
+							<small>Join BitNotes Community to dive in to Resource Bucket!</small>
 							<div class="social-sits">
 								<div class="facebook-button">
 									<%=link_to "Connect with Facebook","/auth/facebook", id: "sign_in" %>
@@ -57,61 +58,8 @@
 									<%=link_to "Connect with Google","/auth/google_oauth2", id: "sign_in" %>
 								</div>
 							</div>
-							<div class="signup">
-								<form>
-									<input type="text" class="email" placeholder="Mobile Number" maxlength="10" pattern="[1-9]{1}\d{9}" title="Enter a valid mobile number" />
-								</form>
-								<div class="continue-button">
-									<a href="#small-dialog3" class="hvr-shutter-out-horizontal play-icon popup-with-zoom-anim">CONTINUE</a>
-								</div>
-							</div>
 							<div class="clearfix"> </div>
 						</div>	
-						<div id="small-dialog3" class="mfp-hide">
-							<h3>Create Account</h3> 
-							<div class="social-sits">
-								<div class="facebook-button">
-									<%=link_to "Connect with Facebook","/auth/facebook", id: "sign_in" %>
-								</div>
-								<div class="chrome-button">
-									<%=link_to "Connect with Google","/auth/google_oauth2", id: "sign_in" %>
-								</div>
-								<div class="button-bottom">
-									<p>Already have an account? <a href="#small-dialog" class="play-icon popup-with-zoom-anim">Login</a></p>
-								</div>
-							</div>
-							<div class="signup">
-								<form>
-									<input type="text" class="email" placeholder="Email" required="required" pattern="([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?" title="Enter a valid email"/>
-									<input type="password" placeholder="Password" required="required" pattern=".{6,}" title="Minimum 6 characters required" autocomplete="off" />
-									<input type="text" class="email" placeholder="Mobile Number" maxlength="10" pattern="[1-9]{1}\d{9}" title="Enter a valid mobile number" />
-									<input type="submit"  value="Sign Up"/>
-								</form>
-							</div>
-							<div class="clearfix"> </div>
-						</div>	
-						<div id="small-dialog7" class="mfp-hide">
-							<h3>Create Account</h3> 
-							<div class="social-sits">
-								<div class="facebook-button">
-									<a href="#">Connect with Facebook</a>
-								</div>
-								<div class="chrome-button">
-									<a href="#">Connect with Google</a>
-								</div>
-								<div class="button-bottom">
-									<p>Already have an account? <a href="#small-dialog" class="play-icon popup-with-zoom-anim">Login</a></p>
-								</div>
-							</div>
-							<div class="signup">
-								<form action="upload.html">
-									<input type="text" class="email" placeholder="Email" required="required" pattern="([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?" title="Enter a valid email"/>
-									<input type="password" placeholder="Password" required="required" pattern=".{6,}" title="Minimum 6 characters required" autocomplete="off" />
-									<input type="submit"  value="Sign In"/>
-								</form>
-							</div>
-							<div class="clearfix"> </div>
-						</div>		
 						<div id="small-dialog4" class="mfp-hide">
 							<h3>Feedback</h3> 
 							<div class="feedback-grids">
@@ -204,32 +152,6 @@
 						<% if user_signed_in? %>
 							<%= link_to "Sign Out",signout_path %>
 						<% end %>
-
-						<div id="small-dialog" class="mfp-hide">
-							<h3>Login</h3>
-							<div class="social-sits">
-								<div class="facebook-button">
-									<a href="#">Connect with Facebook</a>
-								</div>
-								<div class="chrome-button">
-									<a href="#">Connect with Google</a>
-								</div>
-								<div class="button-bottom">
-									<p>New account? <a href="#small-dialog2" class="play-icon popup-with-zoom-anim">Signup</a></p>
-								</div>
-							</div>
-							<div class="signup">
-								<form>
-									<input type="text" class="email" placeholder="Enter email / mobile" required="required" pattern="([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?"/>
-									<input type="password" placeholder="Password" required="required" pattern=".{6,}" title="Minimum 6 characters required" autocomplete="off" />
-									<input type="submit"  value="LOGIN"/>
-								</form>
-								<div class="forgot">
-									<a href="#">Forgot password ?</a>
-								</div>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
