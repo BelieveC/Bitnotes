@@ -29,7 +29,7 @@
             	<div class="col-sm-12 show-grid-left.main-grids">
             		<div class="creators-grid">
             			<h3 class="phpage_detail_title"><strong><%= @user.phname %></strong></h3>
-						<p>"<em><%= @user.intro %></em>"</p>
+						<p><em><%=@user.intro unless @user.intro.nil? %></em></p>
             		</div>
             	</div>
             </div>
