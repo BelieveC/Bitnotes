@@ -23,11 +23,6 @@ class PracticalsController < ApplicationController
 	def create
 		@practical = Practical.new(practical_params)
 		@practical.user_id = current_user.id
-		if current_user.phname.empty?
-			@practical.user_name = current_user.name 
-		else
-			@practical.user_name = current_user.phname
-		end
 		if @practical.save
 			redirect_to @practical,notice: "Successfully created your Practical!"
 		else
