@@ -31,11 +31,11 @@
 						<% if @user.avatar.url == "/avatars/original/missing.png" %>
 		                	<%= link_to image_tag("customprofile",alt:"logo",height: "50px"),controller:"users",action:"show",id:@user.id %> 
 		                <%else%>
-		                	<%= link_to image_tag(@user.avatar.url(:thumb),alt:"logo",height: "50px",alt:@user.name),controller: "users",action:"show",id:@user.id %>
+		                	<%= link_to image_tag(@user.avatar.url(:thumb),alt:"logo",height: "50px",alt:@user.phname),controller: "users",action:"show",id:@user.id %>
 		                <% end %>
 
 					</li>
-					<li><%=link_to @qpaper.user.name,controller:"users",action: "show",id: @qpaper.user_id%><br>
+					<li><%=link_to @qpaper.user.phname,controller:"users",action: "show",id: @qpaper.user_id%><br>
 						<%= render 'shared/subscribe_form' if current_user %></li>
                     <br>
 				</ul>
@@ -106,7 +106,7 @@
 						<% end %>
 						<div class="col-md-8 single-right-grid-right">
 							<%= link_to qpaper.examname,qpaper,class:"title"%>
-							<p class="author"><%= link_to qpaper.user.name,  controller:"users",action:"show",id:qpaper.user_id,class:"author"%></p>
+							<p class="author"><%= link_to qpaper.user.phname,  controller:"users",action:"show",id:qpaper.user_id,class:"author"%></p>
 							<p class="views"><%= qpaper.impressionist_count %> views</p>
 						</div>
 						<div class="clearfix"> </div>
@@ -121,7 +121,7 @@
 						<% end %>
 						<div class="col-md-8 single-right-grid-right">
 							<%= link_to practical.title,practical,class:"title"%>
-							<p class="author"><%= link_to practical.user.name,  controller:"users",action:"show",id:practical.user_id,class:"author"%></p>
+							<p class="author"><%= link_to practical.user.phname,  controller:"users",action:"show",id:practical.user_id,class:"author"%></p>
 							<p class="views"><%= practical.impressionist_count %> views</p>
 						</div>
 						<div class="clearfix"> </div>
@@ -136,7 +136,7 @@
 						<% end %>
 						<div class="col-md-8 single-right-grid-right">
 							<%= link_to assignment.topic,assignment,class:"title"%>
-							<p class="author"><%= link_to assignment.user.name,  controller:"users",action:"show",id:assignment.user_id,class:"author"%></p>
+							<p class="author"><%= link_to assignment.user.phname,  controller:"users",action:"show",id:assignment.user_id,class:"author"%></p>
 							<p class="views"><%= assignment.impressionist_count %> views</p>
 						</div>
 						<div class="clearfix"> </div>
@@ -151,7 +151,7 @@
 						<% end %>
 						<div class="col-md-8 single-right-grid-right">
 							<%= link_to examnote.topic,examnote,class:"title"%>
-							<p class="author"><%= link_to examnote.user.name,  controller:"users",action:"show",id:examnote.user_id,class:"author"%></p>
+							<p class="author"><%= link_to examnote.user.phname,  controller:"users",action:"show",id:examnote.user_id,class:"author"%></p>
 							<p class="views"><%= examnote.impressionist_count %> views</p>
 						</div>
 						<div class="clearfix"> </div>
