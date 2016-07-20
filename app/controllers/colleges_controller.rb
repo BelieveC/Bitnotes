@@ -25,11 +25,6 @@ class CollegesController < ApplicationController
 	def create
 		@college = College.new(college_params)
 		@college.user_id = current_user.id
-		if current_user.phname.empty?
-			@college.user_name = current_user.name 
-		else
-			@college.user_name = current_user.phname
-		end
 		if @college.save
 			redirect_to @college,notice:"Successfully created your College."
 		else
