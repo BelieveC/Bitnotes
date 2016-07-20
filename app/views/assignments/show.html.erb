@@ -108,7 +108,7 @@
 						<% end %>
 						<div class="col-md-8 single-right-grid-right">
 							<%= link_to qpaper.examname,qpaper,class:"title"%>
-							<p class="author"><%= link_to qpaper.user_name,  controller:"users",action:"show",id:qpaper.user_id,class:"author"%></p>
+							<p class="author"><%= link_to qpaper.user.name,  controller:"users",action:"show",id:qpaper.user_id,class:"author"%></p>
 							<p class="views"><%= qpaper.impressionist_count %> views</p>
 						</div>
 						<div class="clearfix"> </div>
