@@ -30,13 +30,13 @@
 				<ul>
 					<li>
 						<% if @user.avatar.url == "/avatars/original/missing.png" %>
-		                	<%= link_to image_tag("customprofile",alt:"logo",height: "50px"),controller:"users",action:"show",id:@user.id %> 
+		                	<%= link_to image_tag("customprofile",alt:"logo",height: "50px"),@user %> 
 		                <%else%>
-		                	<%= link_to image_tag(@user.avatar.url(:thumb),alt:"logo",height: "50px",alt:@user.phname),controller: "users",action:"show",id:@user.id %>
+		                	<%= link_to image_tag(@user.avatar.url(:thumb),alt:"logo",height: "50px",alt:@user.phname),@user %>
 		                <% end %>
 
 					</li>
-					<li><%=link_to @examnote.user.phname,controller:"users",action: "show",id: @examnote.user_id%><br><%= render 'shared/subscribe_form' if current_user %></li>
+					<li><%=link_to @examnote.user.phname,@user%><br><%= render 'shared/subscribe_form' if current_user %></li>
                     <br>
 				</ul>
 			</div>
