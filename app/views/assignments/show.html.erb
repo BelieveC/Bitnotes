@@ -36,7 +36,7 @@
 		                <% end %>
 
 					</li>
-					<li><%=link_to @assignment.user_name,controller:"users",action: "show",id: @assignment.user_id%><br>
+					<li><%=link_to @assignment.user.phname,controller:"users",action: "show",id: @assignment.user_id%><br>
 					<%= render 'shared/subscribe_form' if current_user %></li></li>
                     <br>
 				</ul>
@@ -123,7 +123,7 @@
 						<% end %>
 						<div class="col-md-8 single-right-grid-right">
 							<%= link_to assignment.topic,assignment,class:"title"%>
-							<p class="author"><%= link_to assignment.user_name,  controller:"users",action:"show",id:assignment.user_id,class:"author"%></p>
+							<p class="author"><%= link_to assignment.user.name,  controller:"users",action:"show",id:assignment.user_id,class:"author"%></p>
 							<p class="views"><%= assignment.impressionist_count %> views</p>
 						</div>
 						<div class="clearfix"> </div>
