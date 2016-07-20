@@ -153,7 +153,7 @@
 						<% end %>
 						<div class="col-md-8 single-right-grid-right">
 							<%= link_to examnote.topic,examnote,class:"title"%>
-							<p class="author"><%= link_to examnote.user_name,  controller:"users",action:"show",id:examnote.user_id,class:"author"%></p>
+							<p class="author"><%= link_to examnote.user.name,  controller:"users",action:"show",id:examnote.user_id,class:"author"%></p>
 							<p class="views"><%=examnote.impressionist_count %> views</p>
 						</div>
 						<div class="clearfix"> </div>
