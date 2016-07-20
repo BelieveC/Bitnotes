@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160720164557) do
+ActiveRecord::Schema.define(version: 20160720165127) do
 
   create_table "aimages", force: :cascade do |t|
     t.datetime "created_at",         null: false
@@ -59,7 +59,6 @@ ActiveRecord::Schema.define(version: 20160720164557) do
   create_table "colleges", force: :cascade do |t|
     t.string   "name"
     t.string   "address"
-    t.string   "user_name"
     t.integer  "user_id"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
@@ -240,7 +239,6 @@ ActiveRecord::Schema.define(version: 20160720164557) do
   create_table "subjects", force: :cascade do |t|
     t.string   "name"
     t.integer  "user_id"
-    t.string   "user_name"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.integer  "cached_votes_total", default: 0
