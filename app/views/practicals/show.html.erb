@@ -74,15 +74,15 @@
 						<li>
 							<%=simple_format(@practical.description.slice(30..-1))%></p>
 							<div class="load-grids">
-								<div class="load-grid">
+								<div class="load-grid-info">
 									<p>Category:</p>
 									<p>College:</p>
 									<p>Subject:</p>
 								</div>
 								<div class="load-grid">
 									<%=link_to "Practical",practicals_path %>
-									<%= link_to @practical.college, controller:"colleges",action:"show",id:@practical.college_id %>
-									<%= link_to @practical.subject, controller:"subjects",action:"show",id:@practical.subject_id %>
+									<%= link_to @practical.college.name, controller:"colleges",action:"show",id:@practical.college_id %>
+									<%= link_to @practical.subject.name, controller:"subjects",action:"show",id:@practical.subject_id %>
 								</div>
 								<div class="clearfix"> </div>
 							</div>

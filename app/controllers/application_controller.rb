@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
     if session[:user_id]
       return true
     else
-      redirect_to root_path,notice:"Please Sign In! Before you Contribute!"
+      redirect_to root_path,notice:"Please Sign In before you Contribute!"
     end
   end
 end

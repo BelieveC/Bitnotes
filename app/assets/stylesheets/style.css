@@ -1107,7 +1107,7 @@ select.form-control.bfh-countries:hover {
     font-size: 13px;
     color: #9E9E9E;
     margin: 1em 0;
-    line-height: 1.8em;
+    line-height: 1.1em;
 }
 /*-- load-more --*/
 #myList ul{
@@ -1187,23 +1187,28 @@ width:100%;
 .load-grids{
 	margin:1em 0 0 0;
 }
-.load-grid{
+.load-grid-info{
   float: left;
   width: 17%;
 }
-.load-grid p{
+.load-grid{
+  float: left;
+  width: 83%;
+  margin-top: 10px;
+}
+.load-grid p,load-grid-info p{
 	font-size: 14px;
 	color: #9E9E9E;
 	margin:0;
 	line-height: 1.8em;
 }
-.load-grid a{
+.load-grid a,load-grid-info a{
     font-size: 14px;
     color: #0076CC;
     margin: 1em 0;
     line-height: 1.8em;
 }
-.load-grid a:hover{
+.load-grid a:hover,load-grid-info a:hover{
 	color:#9E9E9E;
 	text-decoration:none;
 }
