@@ -21,7 +21,7 @@
 							<div class="resent-grid-info recommended-grid-info">
 								<h3><%=link_to practical.title,practical,class:"title title-info" %><br><small>Submitted <strong> <%=time_ago_in_words(practical.created_at) %> ago</strong></small></h3>
 								<ul>
-									<li><p class="author author-info"><%= link_to practical.user_name,  controller:"users",action:"show",id:practical.user_id,class:"author"%></p></li>
+									<li><p class="author author-info"><%= link_to practical.user.phname,  controller:"users",action:"show",id:practical.user_id,class:"author"%></p></li>
 									<li class="right-list"><p class="views views-info"><strong><%= practical.impressionist_count %></strong> views</p></li>
 								</ul>	
 							</div>
@@ -50,7 +50,7 @@
 								<div class="resent-grid-info recommended-grid-info video-info-grid">
 									<h5><%=link_to practical.title,practical,class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(practical.created_at) %> ago</strong></small></h5>
 									<ul>
-										<li><p class="author author-info"><%= link_to practical.user_name,  controller:"users",action:"show",id:practical.user_id,class:"author"%></p></li>
+										<li><p class="author author-info"><%= link_to practical.user.phname,  controller:"users",action:"show",id:practical.user_id,class:"author"%></p></li>
 										<li class="right-list"><p class="views views-info"><strong><%= practical.impressionist_count %></strong> views</p></li>
 									</ul>
 								</div>
@@ -80,7 +80,7 @@
 								<div class="resent-grid-info recommended-grid-info video-info-grid">
 									<h5><%=link_to practical.title,practical,class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(practical.created_at) %> ago</strong></small></h5>
 									<ul>
-										<li><p class="author author-info"><%= link_to practical.user_name,  controller:"users",action:"show",id:practical.user_id,class:"author"%></p></li>
+										<li><p class="author author-info"><%= link_to practical.user.phname,  controller:"users",action:"show",id:practical.user_id,class:"author"%></p></li>
 										<li class="right-list"><p class="views views-info"><strong><%= practical.impressionist_count %></strong> views</p></li>
 									</ul>
 								</div>
