@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160720162400) do
+ActiveRecord::Schema.define(version: 20160720163756) do
 
   create_table "aimages", force: :cascade do |t|
     t.datetime "created_at",         null: false
@@ -148,10 +148,7 @@ ActiveRecord::Schema.define(version: 20160720162400) do
     t.integer  "subject_id"
     t.integer  "college_id"
     t.text     "description"
-    t.string   "user_name"
     t.integer  "user_id"
-    t.string   "subject"
-    t.string   "college"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.integer  "cached_votes_total", default: 0

@@ -152,7 +152,7 @@
 						<% end %>
 						<div class="col-md-8 single-right-grid-right">
 							<%= link_to practical.title,practical,class:"title"%>
-							<p class="author"><%= link_to practical.user_name,  controller:"users",action:"show",id:practical.user_id,class:"author"%></p>
+							<p class="author"><%= link_to practical.user.name,  controller:"users",action:"show",id:practical.user_id,class:"author"%></p>
 							<p class="views"><%= practical.impressionist_count %> views</p>
 						</div>
 						<div class="clearfix"> </div>
