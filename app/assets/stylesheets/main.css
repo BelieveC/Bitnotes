@@ -2,6 +2,8 @@
 .docs-pictures > li > img {
   cursor: -webkit-zoom-in;
   cursor: zoom-in;
+  height: 100px;
+  width: 150px;
 }
 .docs-pictures > li {
 	list-style: none;
