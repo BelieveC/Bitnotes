@@ -481,6 +481,7 @@ a.btn.btn-primary.btn-lg.see-button.hvr-shutter-out-horizontal {
 }
 .resent-grid a img{
 	width:100%;
+  height: 120px;
 }
 .time{
   position: absolute;
@@ -594,7 +595,8 @@ a.btn.btn-primary.btn-lg.see-button.hvr-shutter-out-horizontal {
 }
 /*-- recommended --*/
 .recommended-grids {
-    margin: 5em 0;
+    margin: 0 0;
+    padding-bottom: 2em;
 }
 .recommended-info h3{
     font-size: 20px;

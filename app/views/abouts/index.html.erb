@@ -12,34 +12,66 @@
 				</div>
 			<% end %>			
 			<div class="main-grids">
-				<div class="top-grids">
-					<div class="recommended-info">
-						<h3>Recent Uploads</h3>
-					</div>
-					<% @practicals.each do |practical| %>
-						<div class="col-md-4 resent-grid recommended-grid slider-top-grids">
-							<div class="resent-grid-img recommended-grid-img">
-								<% if practical.pimages.count > 0  %>
-									<%= link_to image_tag(practical.pimages.first.image.url(:medium),alt: practical.title),practical %>
-									<div class="time" title="Pages Count">
-										<p><%=practical.pimages.count%></p>
+				<div class="recommended">
+					<div class="recommended-grids">
+						<div class="recommended-info">
+							<h3>Practicals</h3>
+						</div>
+						<% @practicals.each do |practical| %>
+							<div class="col-md-3 resent-grid recommended-grid">
+								<div class="resent-grid-img recommended-grid-img">
+								<% if practical.pimages.count > 0 %>
+									<%= link_to image_tag(practical.pimages.first.image.url(:small),alt: practical.title),practical %>
+								<%else %>
+									<%= link_to image_tag("we1",alt: practical.title),practical %>
+								<% end %>
+									<div class="time small-time" title="Pages Count">
+										<p><%= practical.pimages.count %></p>
 									</div>
-									<div class="clck" title="Pages">
+									<div class="clck small-clck" title="Pages">
 										<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
 									</div>
+								</div>
+								<div class="resent-grid-info recommended-grid-info video-info-grid">
+									<h5><%= link_to practical.title,practical,class:"title"%><br><small>Submitted <strong> <%=time_ago_in_words(practical.created_at) %> ago</strong></small></h5>
+									<ul>
+										<li><p class="author author-info"><%= link_to practical.user.phname,  controller:"users",action:"show",id:practical.user_id,class:"author"%></p></li>
+										<li class="right-list"><p class="views views-info"><strong><%=practical.impressionist_count %></strong> views</p></li>
+									</ul>
+								</div>
+							</div>
+						<% end %>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="recommended-grids">
+						<% @practicals.each do |practical| %>
+							<div class="col-md-3 resent-grid recommended-grid">
+								<div class="resent-grid-img recommended-grid-img">
+								<% if practical.pimages.count > 0 %>
+									<%= link_to image_tag(practical.pimages.first.image.url(:small),alt: practical.title),practical %>
+								<%else %>
+									<%= link_to image_tag("we1",alt: practical.title),practical %>
 								<% end %>
+									<div class="time small-time" title="Pages Count">
+										<p><%= practical.pimages.count %></p>
+									</div>
+									<div class="clck small-clck" title="Pages">
+										<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+									</div>
+								</div>
+								<div class="resent-grid-info recommended-grid-info video-info-grid">
+									<h5><%= link_to practical.title,practical,class:"title"%><br><small>Submitted <strong> <%=time_ago_in_words(practical.created_at) %> ago</strong></small></h5>
+									<ul>
+										<li><p class="author author-info"><%= link_to practical.user.phname,  controller:"users",action:"show",id:practical.user_id,class:"author"%></p></li>
+										<li class="right-list"><p class="views views-info"><strong><%=practical.impressionist_count %></strong> views</p></li>
+									</ul>
+								</div>
 							</div>
-							<div class="resent-grid-info recommended-grid-info">
-								<h3><%=link_to practical.title,practical,class:"title title-info" %><br><small>Submitted <strong> <%=time_ago_in_words(practical.created_at) %> ago</strong></small></h3>
-								<ul>
-									<li><p class="author author-info"><%= link_to practical.user.phname,  controller:"users",action:"show",id:practical.user_id,class:"author"%></p></li>
-									<li class="right-list"><p class="views views-info"><strong><%=practical.impressionist_count %></strong> views</p></li>
-								</ul>	
-							</div>
-						</div>
-					<% end %>
-					<div class="clearfix"> </div>
-				</div>	
+						<% end %>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				<hr>
 				<div class="recommended">
 					<div class="recommended-grids">
 						<div class="recommended-info">
@@ -72,6 +104,7 @@
 						<div class="clearfix"> </div>
 					</div>
 				</div>
+				<hr>
 				<div class="recommended">
 					<div class="recommended-grids">
 						<div class="recommended-info">
@@ -104,6 +137,7 @@
 						<div class="clearfix"> </div>
 					</div>
 				</div>
+				<hr>
 				<div class="recommended">
 					<div class="recommended-grids">
 						<div class="recommended-info">
@@ -136,39 +170,5 @@
 						<div class="clearfix"> </div>
 					</div>
 				</div>
-				<div class="recommended">
-					<div class="recommended-grids english-grid">
-						<div class="recommended-info">
-							<div class="heading">
-								<h3>Top Assignment</h3>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<% @assignments.each do |assignment| %>
-						<div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-								<% if assignment.aimages.count > 0 %>
-									<%= link_to image_tag(assignment.aimages.first.image.url(:small),alt: assignment.topic),assignment %>
-								<%else %>
-									<%= link_to image_tag("we1",alt: assignment.topic),assignment %>
-								<% end %>
-								<div class="time small-time sports-tome" title="Pages Count">
-									<p><%= assignment.aimages.count %></p>
-								</div>
-								<div class="clck sports-clock">
-									<span class="glyphicon glyphicon-list-alt" aria-hidden="true" title="Pages "></span>
-								</div>
-							</div>
-							<div class="resent-grid-info recommended-grid-info">
-								<h5><%= link_to assignment.topic,assignment,class:"title"%><br><small>Submitted <strong> <%=time_ago_in_words(assignment.created_at) %> ago</strong></small></h5>
-								<ul>
-									<li><p class="author author-info"><%= link_to assignment.user.phname,  controller:"users",action:"show",id:assignment.user_id,class:"author"%></p></li>
-									<li class="right-list"><p class="views views-info"><strong><%=assignment.impressionist_count %></strong> views</p></li>
-								</ul>
-							</div>
-						</div>
-						<%end%>
-						<div class="clearfix"> </div>
-					</div>
-				</div>
 			</div>
+			<hr>

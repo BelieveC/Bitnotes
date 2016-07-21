@@ -86,7 +86,7 @@
 									<div class="resent-grid-info recommended-grid-info recommended-grid-movie-info">
 										<h5><%=link_to practical.title,practical,class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(practical.created_at) %> ago</strong></small></h5>
 										<ul>
-											<li><p class="author author-info"><%= link_to practical.user_name,  controller:"users",action:"show",id:practical.user_id,class:"author"%></p></li>
+											<li><p class="author author-info"><%= link_to practical.user.phname,  controller:"users",action:"show",id:practical.user_id,class:"author"%></p></li>
 											<li class="right-list"><p class="views views-info"><strong><%= practical.impressionist_count %></strong> views</p></li>
 										</ul>
 									</div>
@@ -119,7 +119,7 @@
 									<div class="resent-grid-info recommended-grid-info recommended-grid-movie-info">
 										<h5><%=link_to assignment.topic,assignment,class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(assignment.created_at) %> ago</strong></small></h5>
 										<ul>
-											<li><p class="author author-info"><%= link_to assignment.user_name,  controller:"users",action:"show",id:assignment.user_id,class:"author"%></p></li>
+											<li><p class="author author-info"><%= link_to assignment.user.phname,  controller:"users",action:"show",id:assignment.user_id,class:"author"%></p></li>
 											<li class="right-list"><p class="views views-info"><strong><%= assignment.impressionist_count %></strong> views</p></li>
 										</ul>
 									</div>
@@ -152,7 +152,7 @@
 									<div class="resent-grid-info recommended-grid-info recommended-grid-movie-info">
 										<h5><%=link_to examnote.topic,examnote,class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(examnote.created_at) %> ago</strong></small></h5>
 										<ul>
-											<li><p class="author author-info"><%= link_to examnote.user_name,  controller:"users",action:"show",id:examnote.user_id,class:"author"%></p></li>
+											<li><p class="author author-info"><%= link_to examnote.user.phname,  controller:"users",action:"show",id:examnote.user_id,class:"author"%></p></li>
 											<li class="right-list"><p class="views views-info"><strong><%= examnote.impressionist_count %></strong> views</p></li>
 										</ul>
 									</div>
@@ -185,7 +185,7 @@
 									<div class="resent-grid-info recommended-grid-info recommended-grid-movie-info">
 										<h5><%=link_to qpaper.examname,qpaper,class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(qpaper.created_at) %> ago</strong></small></h5>
 										<ul>
-											<li><p class="author author-info"><%= link_to qpaper.user_name,  controller:"users",action:"show",id:qpaper.user_id,class:"author"%></p></li>
+											<li><p class="author author-info"><%= link_to qpaper.user.phname,  controller:"users",action:"show",id:qpaper.user_id,class:"author"%></p></li>
 											<li class="right-list"><p class="views views-info"><strong><%= qpaper.impressionist_count %></strong> views</p></li>
 										</ul>
 									</div>
