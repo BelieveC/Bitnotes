@@ -1757,6 +1757,9 @@ span.glyphicon.glyphicon-user {
   .single-right-grid-left a img{
     height: 6em;
   }
+   .resent-grid a img {
+      height: 16em;
+  }
 }
 @media (max-width: 1280px) {
 	.time {
@@ -2080,6 +2083,9 @@ span.glyphicon.glyphicon-user {
     .single-right-grid-left a img{
       height: 11em;
     }
+     .resent-grid a img {
+      height: 12em;
+  }
 	 .phouse-short-info img{
     left:25em;
     bottom: -8em;
@@ -2925,4 +2931,7 @@ ul#subscription .sidebar_publication_link{
 
 #subscription_content hr{
   width: 100%;
+}
+.pagecount{
+  background-color: white;
 }
