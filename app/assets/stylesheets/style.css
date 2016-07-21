@@ -2115,7 +2115,8 @@ span.glyphicon.glyphicon-user {
 		top: 79% !important;
 	}
 	.recommended-grids {
-		margin: 2em 0;
+		margin: 0 0;
+    padding-bottom: 1em;
 	}
 	.small-time {
 	    top: 79% !important;
