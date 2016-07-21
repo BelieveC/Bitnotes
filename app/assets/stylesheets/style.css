@@ -133,16 +133,16 @@ form.navbar-form.navbar-right {
 }
 .signin a{
 	padding: 8px 20px;
-    background: #00C2DC;
-    color: #FFF;
-    font-size: 14px;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -o-border-radius: 3px;
-    -ms-border-radius: 3px;
+  background: #00C2DC;
+  color: #FFF;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
 }
 .signin a:hover{
 	text-decoration:none;
