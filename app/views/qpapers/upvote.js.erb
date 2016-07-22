@@ -1,1 +1,6 @@
-$(".likecount").hide().text(<%= @qpaper.get_upvotes.size %>).fadeIn();
+var alert = $('<div class="alert alert-warning alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4>Sign In before you like the Post</h4></div>');
+<% if @flag == 0 %>
+	$(".show-top-grids").prepend(alert);
+<% else %>
+	$(".likecount").hide().text(<%= @qpaper.get_upvotes.size %>).fadeIn();
+<% end %>

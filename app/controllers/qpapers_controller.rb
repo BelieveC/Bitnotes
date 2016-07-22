@@ -62,6 +62,7 @@ class QpapersController < ApplicationController
 
 	def upvote
 		@qpaper.upvote_by current_user
+		@flag = 0 unless current_user
 		respond_to do |format|
 			format.html{redirect_to :back}
 			format.js
