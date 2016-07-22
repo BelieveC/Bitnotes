@@ -14,6 +14,13 @@
  *= require_self
  */
 
+$nprogress-color: #00C2DC;
+$nprogress-height: 2px;
+$nprogress-zindex: 10100;
+
+@import 'nprogress';
+@import 'nprogress-bootstrap';
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 

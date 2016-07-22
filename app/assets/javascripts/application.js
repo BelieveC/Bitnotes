@@ -15,8 +15,17 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require cocoon
+//= require nprogress
+//= require nprogress-turbolinks
 //= require turbolinks
 //= require_tree .
+
+
+NProgress.configure({
+  showSpinner: false,
+  ease: 'ease',
+  speed: 500
+});
 
 //Coookie.js For hiding the Google translator top Bar
 (function(factory){if(typeof define==='function'&&define.amd){define(['jquery'],factory);}else{factory(jQuery);}}(function($){var pluses=/\+/g;function encode(s){return config.raw?s:encodeURIComponent(s);}

@@ -120,6 +120,7 @@ GEM
     nokogiri (1.6.8-x86-mingw32)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
+    nprogress-rails (0.1.6.7)
     oauth2 (1.1.0)
       faraday (>= 0.8, < 0.10)
       jwt (~> 1.0, < 1.5.2)
@@ -241,6 +242,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks (~> 2.1)
+  nprogress-rails
   omniauth
   omniauth-facebook
   omniauth-google-oauth2 (~> 0.2.1)
