@@ -155,7 +155,7 @@ form.navbar-form.navbar-right {
 .main {
     padding: 5em 0 0 0;
 }
-ul.nav.nav-sidebar li.active a{
+ul.nav.nav-sidebar li a.active{
     background-color: #00C2DC !important;
     color: white;
 }

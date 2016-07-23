@@ -169,39 +169,39 @@
 				</div>
 					<div class="drop-navigation drop-navigation">
 					  <ul class="nav nav-sidebar">
-					  	<li><%=link_to abouts_path,class:"home-icon" do %>
+					  	<li><%=active_link_to abouts_path,class:"home-icon" do %>
 					  			<span class="glyphicon glyphicon-flash" aria-hidden="true"></span> Trending
 					  		<% end %>
 					  	</li>
 					  	<% if current_user %>
-						  	<li><%=link_to current_user,class:"user-icon" do %>
+						  	<li><%=active_link_to current_user,class:"user-icon" do %>
 					  			<span class="glyphicon glyphicon-home" aria-hidden="left-align"></span> My Publication
 					  		<% end %>
 					  	</li>
 						<% end %>
 						<hr>
-					  	<li><%=link_to practicals_path,class:"user-icon" do %>
+					  	<li><%=active_link_to practicals_path,class:"user-icon" do %>
 					  			<span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span> Practicals
 					  		<% end %>
 					  	</li>
-					  	<li><%=link_to assignments_path,class:"sub-icon" do %>
+					  	<li><%=active_link_to assignments_path,class:"sub-icon" do %>
 					  			<span class="glyphicon glyphicon-book" aria-hidden="true"></span> Assignments
 					  		<% end %>
 					  	</li>
-						<li><%=link_to qpapers_path,class:"song-icon" do %>
+						<li><%=active_link_to qpapers_path,class:"song-icon" do %>
 							<span class="glyphicon glyphicon-file" aria-hidden="true"></span> Papers
 							<% end %>
 						</li>
-						<li><%=link_to examnotes_path,class:"sub-icon" do %>
+						<li><%=active_link_to examnotes_path,class:"sub-icon" do %>
 							<span class="glyphicon glyphicon-level-up" aria-hidden="true"></span> Notes
 							<% end %>
 						</li>
 						<hr>
-						<li><%=link_to colleges_path,class:"song-icon" do %>
+						<li><%=active_link_to colleges_path,class:"song-icon" do %>
 					  			<span class="glyphicon glyphicon-education" aria-hidden="true"></span> Institutes
 					  		<% end %>
 					  	</li>
-					  	<li><%=link_to subjects_path,class:"news-icon" do %>
+					  	<li><%=active_link_to subjects_path,class:"news-icon" do %>
 					  			<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Subjects
 					  		<% end %>
 					  	</li>
