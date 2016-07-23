@@ -87,9 +87,9 @@
 									<p>Subject:</p>
 								</div>
 								<div class="load-grid">
-									<%= link_to "Examnote",examnotes_path %>
-									<%= link_to @examnote.college.name, controller:"colleges",action:"show",id:@examnote.college_id %>
-									<%= link_to @examnote.subject.name, controller:"subjects",action:"show",id:@examnote.subject_id %>
+									<p><%= link_to "Examnote",examnotes_path %></p>
+									<p><%= link_to @examnote.college.name, controller:"colleges",action:"show",id:@examnote.college_id %></p>
+									<p><%= link_to @examnote.subject.name, controller:"subjects",action:"show",id:@examnote.subject_id %></p>
 								</div>
 								<div class="clearfix"> </div>
 							</div>
