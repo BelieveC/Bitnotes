@@ -33,26 +33,31 @@ Rails.application.routes.draw do
   resources :assignments do
     member do
       put "like"=>"assignments#upvote"
+      put "dislike"=>"assignments#downvote"
     end
   end
   resources :examnotes do
     member do
       put "like"=>"examnotes#upvote"
+      put "dislike"=>"examnotes#downvote"
     end
   end
   resources :qpapers do
     member do
       put "like"=>"qpapers#upvote"
+      put "dislike"=>"qpapers#downvote"
     end
   end
   resources :subjects do
     member do
       put "like"=>"subjects#upvote"
+      put "dislike"=>"subjects#downvote"
     end
   end
   resources :colleges do
     member do
       put "like"=>"colleges#upvote"
+      put "dislike"=>"colleges#downvote"
     end
   end
   resources :requests do
