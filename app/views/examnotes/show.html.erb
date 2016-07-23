@@ -47,9 +47,19 @@
 					<li><a href="#" class="icon googleplus-icon" title="Share on Google Plus"></a>	</li>
 					<li><a href="https://twitter.com/intent/tweet?text= <%="Check this " +@examnote.topic + " " + url_for([@examnote,{only_path: false}])%>" target="_blank" title="Share on Twitter" class="icon twitter-icon">Twitter</a></li>
 					<li><a href="https://www.pinterest.com/pin/create/button/" class="icon pinterest-icon" title="Share on Pinterest" data-pin-custom="true">Pinterest</a></li>
-					<li><%=link_to like_examnote_path(@examnote),method: :put,remote: true,title:"Like this",class:"icon like" do %>
+					<li>
+						<% if current_user %>
+							<%= link_to dislike_examnote_path(@examnote),method: :put,class:"icon dislike",title:"Dislike this",id:"dislikebtn",style:"display:#{"none" unless current_user.liked?@examnote}",remote: true do %>
+								<span class="dislikecount"><strong><%= @examnote.cached_votes_up %></strong></span>	
+							<% end %>
+							<%= link_to like_examnote_path(@examnote),method: :put,class:"icon like",title:"Like this", id:"likebtn",style:"display:#{"none" if current_user.liked?@examnote}",remote: true do %>
+								<span class="likecount"><strong><%= @examnote.cached_votes_up %></strong></span>
+							<% end %>
+						<% else %>
+							<%= link_to like_examnote_path(@examnote),method: :put,class:"icon like",title:"Like this", id:"likebtn",remote: true do %>
 							<span class="likecount"><strong><%= @examnote.cached_votes_up %></strong></span>
-						<% end %>
+							<% end %>
+						<%end %>
 					</li>
 					<li class="view" title="Views Count"><strong><%= @examnote.impressionist_count %> Views</strong></li>
 					<% if session[:user_id] && session[:user_id] == @examnote.user_id %>

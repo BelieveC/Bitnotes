@@ -72,7 +72,7 @@ class ExamnotesController < ApplicationController
 		end
 	end
 
-	def upvote
+	def downvote
 		@examnote.downvote_by current_user
 		@flag = 0 unless current_user
 		respond_to do |format|
