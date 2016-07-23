@@ -2,7 +2,7 @@ var alert = $('<div class="alert alert-warning alert-dismissible" role="alert"><
 <% if @flag == 0 %>
 	$(".show-top-grids").prepend(alert);
 <% else %>
-	$("#likebtn").hide();
-	$("#dislikebtn").fadeIn();
-	$("#dislikebtn").find(".dislikecount").text(<%= @examnote.get_upvotes.size %>);
+	$("#dislikebtn").hide();
+	$("#likebtn").fadeIn();
+	$("#likebtn").find(".likecount").text(<%= @examnote.get_upvotes.size %>);
 <% end %>
