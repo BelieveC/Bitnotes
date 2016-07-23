@@ -47,8 +47,18 @@
 					<li><a href="#" class="icon googleplus-icon" title="Share on Google Plus"></a>	</li>
 					<li><a href="https://twitter.com/intent/tweet?text= <%="Check this " +@college.name + " " + url_for([@college,{only_path: false}])%>" target="_blank" class="icon twitter-icon" title="Share on Twitter">Twitter</a></li>
 					<li><a href="https://www.pinterest.com/pin/create/button/" class="icon pinterest-icon" title="Share on Pinterest" data-pin-custom="true">Pinterest</a></li>
-					<li><%=link_to like_college_path(@college),method: :put,remote: true,title:"Like this",class:"icon like" do %>
+					<li>
+						<% if current_user %>
+							<%= link_to dislike_college_path(@college),method: :put,class:"icon dislike",title:"Dislike this",id:"dislikebtn",style:"display:#{"none" unless current_user.liked?@college}",remote: true do %>
+								<span class="dislikecount"><strong><%= @college.cached_votes_up %></strong></span>	
+							<% end %>
+							<%= link_to like_college_path(@college),method: :put,class:"icon like",title:"Like this", id:"likebtn",style:"display:#{"none" if current_user.liked?@college}",remote: true do %>
+								<span class="likecount"><strong><%= @college.cached_votes_up %></strong></span>
+							<% end %>
+						<% else %>
+							<%= link_to like_college_path(@college),method: :put,class:"icon like",title:"Like this", id:"likebtn",remote: true do %>
 							<span class="likecount"><strong><%= @college.cached_votes_up %></strong></span>
+							<% end %>
 						<%end %>
 					</li>
 					<li class="view" title="Views Count"><strong><%= @college.impressionist_count %> views</strong></li>
