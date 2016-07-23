@@ -90,9 +90,9 @@
 									<p>Subject:</p>
 								</div>
 								<div class="load-grid">
-									<%=link_to "Practical",practicals_path %>
-									<%= link_to @practical.college.name, controller:"colleges",action:"show",id:@practical.college_id %>
-									<%= link_to @practical.subject.name, controller:"subjects",action:"show",id:@practical.subject_id %>
+									<p><%=link_to "Practical",practicals_path %></p>
+									<p><%= link_to @practical.college.name, controller:"colleges",action:"show",id:@practical.college_id %></p>
+									<p><%= link_to @practical.subject.name, controller:"subjects",action:"show",id:@practical.subject_id %></p>
 								</div>
 								<div class="clearfix"> </div>
 							</div>
