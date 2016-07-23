@@ -913,6 +913,12 @@ select.form-control.bfh-countries:hover {
     height: 34px;
     display: block;
 }
+.social_response li a.like{
+    background: url("like") no-repeat 0px 0px;
+}
+.social_response li a.dislike{
+    background: url("dislike") no-repeat 0px 0px;
+}
 .social_response li a.fb-icon{
     background: url("fb") no-repeat 0px 0px;
     text-indent: -999px;

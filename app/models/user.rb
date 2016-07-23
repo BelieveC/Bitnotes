@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-
+	acts_as_voter
+	
 	has_many :active_relationships, class_name: "Relationship",
 									foreign_key: "subscriber_id",
 									dependent: :destroy

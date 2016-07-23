@@ -1,7 +1,7 @@
 class PracticalsController < ApplicationController
 
 	impressionist actions: [:show]
-	before_action :get_practical, only: [:show,:update,:edit,:destroy,:upvote]
+	before_action :get_practical, only: [:show,:update,:edit,:destroy,:upvote,:downvote]
 	before_action :authenticate_user!,only:[:edit,:new,:create,:update,:destroy]
 
 	def index
@@ -61,6 +61,15 @@ class PracticalsController < ApplicationController
 
 	def upvote
 		@practical.upvote_by current_user
+		@flag = 0 unless current_user
+		respond_to do |format|
+			format.html{redirect_to :back}
+			format.js
+		end
+	end
+
+	def downvote
+		@practical.downvote_by current_user
 		@flag = 0 unless current_user
 		respond_to do |format|
 			format.html{redirect_to :back}

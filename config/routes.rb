@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   resources :practicals do
     member do
       put "like"=>"practicals#upvote"
+      put "dislike"=>"practicals#downvote"
     end
   end
   resources :assignments do

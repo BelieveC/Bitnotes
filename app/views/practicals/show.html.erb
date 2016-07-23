@@ -50,9 +50,19 @@
 					<li><a href="#" class="icon googleplus-icon" title="Share on Google Plus"></a>	</li>
 					<li><a href="https://twitter.com/intent/tweet?text= <%="Check this "+ @practical.title + " " + url_for([@practical,{only_path: false}])%>" target="_blank" title="Share on Twitter" class="icon twitter-icon">Twitter</a></li>
 					<li><a href="https://www.pinterest.com/pin/create/button/" class="icon pinterest-icon" title="Share on Pinterest" data-pin-custom="true">Pinterest</a></li>
-					<li><%= link_to like_practical_path(@practical),method: :put,class:"icon like",title:"Like this", id:"likebtn",remote: true do %>
-						<span class="likecount"><strong><%= @practical.cached_votes_up %></strong></span>
-						<% end %>
+					<li>
+						<% if current_user %>
+							<%= link_to dislike_practical_path(@practical),method: :put,class:"icon dislike",title:"Dislike this",id:"dislikebtn",style:"display:#{"none" unless current_user.liked?@practical}",remote: true do %>
+								<span class="dislikecount"><strong><%= @practical.cached_votes_up %></strong></span>	
+							<% end %>
+							<%= link_to like_practical_path(@practical),method: :put,class:"icon like",title:"Like this", id:"likebtn",style:"display:#{"none" if current_user.liked?@practical}",remote: true do %>
+								<span class="likecount"><strong><%= @practical.cached_votes_up %></strong></span>
+							<% end %>
+						<% else %>
+							<%= link_to like_practical_path(@practical),method: :put,class:"icon like",title:"Like this", id:"likebtn",remote: true do %>
+							<span class="likecount"><strong><%= @practical.cached_votes_up %></strong></span>
+							<% end %>
+						<%end %>
 					</li>
 					<li class="view" title="Views Count"><strong><%= @practical.impressionist_count %> views</strong></li>
 					<% if session[:user_id] && session[:user_id] == @practical.user_id %>
