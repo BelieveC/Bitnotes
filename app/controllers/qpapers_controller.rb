@@ -1,7 +1,7 @@
 class QpapersController < ApplicationController
 	
 	impressionist actions: [:show]
-	before_action :get_qpaper,only: [:show,:edit,:update,:destroy,:upvote]
+	before_action :get_qpaper,only: [:show,:edit,:update,:destroy,:upvote,:downvote]
 	before_action :authenticate_user!,only:[:edit,:new,:create,:update,:destroy]
 
 	def index
@@ -62,6 +62,14 @@ class QpapersController < ApplicationController
 
 	def upvote
 		@qpaper.upvote_by current_user
+		@flag = 0 unless current_user
+		respond_to do |format|
+			format.html{redirect_to :back}
+			format.js
+		end
+	end
+	def downvote
+		@qpaper.downvote_by current_user
 		@flag = 0 unless current_user
 		respond_to do |format|
 			format.html{redirect_to :back}
