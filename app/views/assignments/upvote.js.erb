@@ -4,5 +4,5 @@ var alert = $('<div class="alert alert-warning alert-dismissible" role="alert"><
 <% else %>
 	$("#likebtn").hide();
 	$("#dislikebtn").fadeIn();
-	$("#dislikebtn").find(".dislikecount").text(<%= @practical.get_upvotes.size %>);
+	$("#dislikebtn").find(".dislikecount").text(<%= @assignment.get_upvotes.size %>);
 <% end %>
