@@ -1,7 +1,7 @@
 class SubjectsController < ApplicationController
 	
 	impressionist actions: [:show]
-	before_action :get_subject,only: [:show,:edit,:update,:destroy,:upvote]
+	before_action :get_subject,only: [:show,:edit,:update,:destroy,:upvote,:downvote]
 	before_action :authenticate_user!,only:[:edit,:new,:create,:update,:destroy]
 
 	def index
@@ -64,6 +64,14 @@ class SubjectsController < ApplicationController
 
 	def upvote
 		@subject.upvote_by current_user
+		@flag = 0 unless current_user
+		respond_to do |format|
+			format.html{redirect_to :back}
+			format.js
+		end
+	end
+	def downvote
+		@subject.downvote_by current_user
 		@flag = 0 unless current_user
 		respond_to do |format|
 			format.html{redirect_to :back}
