@@ -86,9 +86,9 @@
 									<p>Subject:</p>
 								</div>
 								<div class="load-grid">
-									<%= link_to "Paper",qpapers_path%>
-									<%= link_to @qpaper.college.name, controller:"colleges",action:"show",id:@qpaper.college_id %>
-									<%= link_to @qpaper.subject.name, controller:"subjects",action:"show",id:@qpaper.subject_id %>
+									<p><%= link_to "Paper",qpapers_path%></p>
+									<p><%= link_to @qpaper.college.name, controller:"colleges",action:"show",id:@qpaper.college_id %></p>
+									<p><%= link_to @qpaper.subject.name, controller:"subjects",action:"show",id:@qpaper.subject_id %></p>
 								</div>
 								<div class="clearfix"> </div>
 							</div>
