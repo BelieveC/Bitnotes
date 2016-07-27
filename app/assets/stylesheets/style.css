@@ -935,6 +935,10 @@ select.form-control.bfh-countries:hover {
     background: url("google-plus") no-repeat 0px 0px;
     text-indent: -999px;
 }
+.social_response li a.reddit-icon{
+    background: url("reddit") no-repeat 0px 0px;
+    text-indent: -999px;
+}
 .social_response li.view{
     background: url("view") no-repeat 0px 0px;
     height: 34px;
