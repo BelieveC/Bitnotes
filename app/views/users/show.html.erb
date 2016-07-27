@@ -8,9 +8,9 @@
 		<div class="container">
 			<div class="phouse-short-info">
 				<% if @user.avatar.url == "/avatars/original/missing.png" %>
-                	<%= image_tag("customprofile",width:"180em",height:"200em",alt:@user.name) %>
+                	<%= link_to image_tag("customprofile",width:"180em",height:"200em",alt:@user.name),@user %>
                 <%else%>
-                	<%= image_tag(@user.avatar.url(:thumb),width:"180em",height:"200em",alt:@user.name) %>
+                	<%= link_to image_tag(@user.avatar.url(:thumb),width:"180em",height:"200em",alt:@user.name),@user %>
                 <% end %>
 			</div>
 		</div>
