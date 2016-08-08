@@ -43,9 +43,9 @@ Rails.application.configure do
     :storage => :s3,
     :s3_protocol => 'http',
     :s3_credentials => {
-      :bucket => "cwaybitnotes",
-      :access_key_id =>"AKIAIT2FFKMXGD3AGIBA",
-      :secret_access_key => "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"
+      :bucket => ENV['S3_BUCKET_NAME'],
+      :access_key_id => ENV['AWS_ACCESS_KEY'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
   }
   Paperclip.options[:command_path] = 'C:\Program Files (x86)\GnuWin32\bin'

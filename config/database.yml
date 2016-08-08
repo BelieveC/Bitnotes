@@ -26,5 +26,6 @@ production:
   database: bitnote_production
   pool: 5
   timeout: 5000
+  host: localhost
   username: rails
   password: <%= ENV['APP_DATABASE_PASSWORD'] %>
