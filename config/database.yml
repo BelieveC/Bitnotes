@@ -22,6 +22,9 @@ test:
 
 production:
   adapter: postgresql
-  database: my_production_db
+  encoding: unicode
+  database: bitnote_production
   pool: 5
   timeout: 5000
+  username: rails
+  password: <%= ENV['APP_DATABASE_PASSWORD'] %>

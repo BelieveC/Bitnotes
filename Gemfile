@@ -5,6 +5,7 @@ group :development do
 end
 group :production do
 	gem 'pg'
+	gem 'unicorn'
 end
 gem 'searchkick'
 gem 'cocoon'
