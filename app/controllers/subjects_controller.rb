@@ -28,8 +28,7 @@ class SubjectsController < ApplicationController
 		if @subject.save
 			redirect_to @subject,notice:"Successfully Created Your Subject"
 		else
-			render layout: "form"
-			render "new"
+			render layout: "form",action:"new"
 		end
 	end
 
@@ -46,7 +45,7 @@ class SubjectsController < ApplicationController
 			if @subject.update(subject_params)
 				redirect_to @subject,notice: "Successfully Updated Your Subject"
 			else
-				render "edit"
+				render layout:"form",action:"edit"
 			end
 		else
 			redirect_to root_path,notice:"Gotcha!, You don't have access to edit this Subject."

@@ -26,7 +26,7 @@ class PracticalsController < ApplicationController
 		if @practical.save
 			redirect_to @practical,notice: "Successfully created your Practical!"
 		else
-			render 'new'
+			render layout:"form",action:"new"
 		end
 	end
 
@@ -43,7 +43,7 @@ class PracticalsController < ApplicationController
 			if @practical.update(practical_params)
 				redirect_to @practical,notice: "Successfully Updated your Practical"
 			else
-				render "edit"
+				render action:"edit",layout:"form"
 			end
 		else
 			redirect_to root_path,notice:"Gotcha!, You don't have access to edit this Practical."

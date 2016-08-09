@@ -26,8 +26,7 @@ class QpapersController < ApplicationController
 		if @qpaper.save
 			redirect_to @qpaper,notice:"Successfully created your Paper!"
 		else
-			render layout: "form"
-			render "new"
+			render layout: "form",action:"new"
 		end
 	end
 
@@ -44,7 +43,7 @@ class QpapersController < ApplicationController
 			if @qpaper.update(qpaper_params)
 				redirect_to @qpaper,notice: "Successfully updated your Paper"
 			else
-				render "edit"
+				render layout:"form",action:"edit"
 			end
 		else
 			redirect_to root_path,notice:"Gotcha!, You don't have access to edit this Paper."

@@ -26,8 +26,7 @@ class ExamnotesController < ApplicationController
 		if @examnote.save
 			redirect_to @examnote,notice:"Successfully created your Examnote"
 		else
-			render layout: "form"
-			render "new"
+			render layout: "form",action:"new"
 		end
 	end
 
@@ -44,8 +43,7 @@ class ExamnotesController < ApplicationController
 			if @examnote.update(examnote_params)
 				redirect_to @examnote,notice:"Successfully updated your Examnote"
 			else
-				render layout: "form"
-				render "edit"
+				render layout: "form",action:"edit"
 			end
 		else
 			redirect_to root_path,notice:"Sorry!, You don't have access to Update this Examnote."

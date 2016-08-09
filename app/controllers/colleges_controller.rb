@@ -28,8 +28,7 @@ class CollegesController < ApplicationController
 		if @college.save
 			redirect_to @college,notice:"Successfully created your College."
 		else
-			render layout: "form"
-			render "new"
+			render layout: "form",action: "new"
 		end
 	end
 
@@ -46,8 +45,8 @@ class CollegesController < ApplicationController
 			if @college.update(college_params)
 				redirect_to @college,notice:"Successfully updated your College"
 			else
-				render layout: "form"
-				render "edit"
+				render layout: "form",action:"edit"
+				
 			end
 		else
 			redirect_to root_path,notice:"Gotcha!, You don't have access to edit this College."

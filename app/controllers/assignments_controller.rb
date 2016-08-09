@@ -26,8 +26,7 @@ class AssignmentsController < ApplicationController
 		if @assignment.save
 			redirect_to @assignment,notice:"Successfully created your Assignment."
 		else
-			render layout: "form"
-			render "new"
+			render layout: "form",action:"new"
 		end
 	end
 
@@ -44,8 +43,7 @@ class AssignmentsController < ApplicationController
 			if @assignment.update(assignment_params)
 				redirect_to @assignment,notice:"Successfully updated your Assignment."
 			else
-				render layout: "form"
-				render "edit"
+				render layout: "form",action:"edit"
 			end
 		else
 			redirect_to root_path,notice:"Gotcha!, You don't have access to update this Assignment."
