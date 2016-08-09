@@ -211,7 +211,7 @@
 						  <hr>
 						  <h4 id="subscription_title">Subscribed</h4>
 						  <ul id="subscription">
-						  	<% current_user.subscribed.each do |subscribed| %>
+						  	<% current_user.subscribed.order("phname asc").each do |subscribed| %>
 						  		<li>
 						  		<% if subscribed.avatar.url != "/avatars/original/missing.png" %> 
 									<%= link_to image_tag(subscribed.avatar.url(:thumb),alt: subscribed.phname,class:"sidebar_publication_image"),subscribed,class:"sidebar_publication_link"%>
