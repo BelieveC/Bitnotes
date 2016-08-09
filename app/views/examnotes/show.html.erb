@@ -44,7 +44,8 @@
 			<div class="social_response">
 				<ul>
 					<li><a href="#" class="icon fb-icon" title="Share on Facebook" id="shareBtn">Facebook</a></li>
-					<li><a href="#" class="icon googleplus-icon" title="Share on Google Plus"></a>	</li>
+					<li><a href="https://plus.google.com/share?url={<%= url_for([@examnote,{only_path: false}]) %>}" onclick="javascript:window.open(this.href,
+  			'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="icon googleplus-icon" title="Share on Google Plus"></a></li>
 					<li><a href="//www.reddit.com/submit" target="_blank" class="icon reddit-icon" title="Share on Reddit" onclick="window.location = '//www.reddit.com/submit?url=' + encodeURIComponent(window.location); return false"></a>	</li>
 					<li><a href="https://twitter.com/intent/tweet?text= <%="Check this " +@examnote.topic + " " + url_for([@examnote,{only_path: false}])%>" target="_blank" title="Share on Twitter" class="icon twitter-icon">Twitter</a></li>
 					<li>
