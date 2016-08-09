@@ -47,7 +47,6 @@
 					<li><a href="#" class="icon googleplus-icon" title="Share on Google Plus"></a>	</li>
 					<li><a href="//www.reddit.com/submit" target="_blank" class="icon reddit-icon" title="Share on Reddit" onclick="window.location = '//www.reddit.com/submit?url=' + encodeURIComponent(window.location); return false"></a>	</li>
 					<li><a href="https://twitter.com/intent/tweet?text= <%="Check this " +@college.name + " " + url_for([@college,{only_path: false}])%>" target="_blank" class="icon twitter-icon" title="Share on Twitter">Twitter</a></li>
-					<li><a href="https://www.pinterest.com/pin/create/button/" class="icon pinterest-icon" title="Share on Pinterest" data-pin-custom="true">Pinterest</a></li>
 					<li>
 						<% if current_user %>
 							<%= link_to dislike_college_path(@college),method: :put,class:"icon dislike",title:"Dislike this",id:"dislikebtn",style:"display:#{"none" unless current_user.liked?@college}",remote: true do %>
