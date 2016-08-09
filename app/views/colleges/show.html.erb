@@ -64,7 +64,7 @@
 					<li class="view" title="Views Count"><strong><%= @college.impressionist_count %> views</strong></li>
 					<% if session[:user_id] && session[:user_id] == @college.user_id %>
 						<li><%=link_to "Edit",edit_college_path(@college),id:"edit_profile_btn" %></li>
-						<li><%=link_to "Delete",@college,method: :delete,confirm:"Are you sure?",id:"edit_profile_btn" %></li>
+						<li><%=link_to "Delete",@college,method: :delete,data:{confirm:"Are you sure?"},id:"edit_profile_btn" %></li>
 					<% end %>
 				</ul>
 				<%= render"fbshare" %>

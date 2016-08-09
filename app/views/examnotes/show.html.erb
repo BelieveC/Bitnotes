@@ -64,7 +64,7 @@
 					<li class="view" title="Views Count"><strong><%= @examnote.impressionist_count %> Views</strong></li>
 					<% if session[:user_id] && session[:user_id] == @examnote.user_id %>
 						<li><%=link_to "Edit",edit_examnote_path(@examnote),id:"edit_profile_btn" %></li>
-						<li><%=link_to "Delete",@examnote,method: :delete,confirm:"Are you sure?",id:"edit_profile_btn" %></li>
+						<li><%=link_to "Delete",@examnote,method: :delete,data:{confirm:"Are you sure?"},id:"edit_profile_btn" %></li>
 					<% end %>
 				</ul>
 				<%=render "fbshare" %>
