@@ -739,6 +739,8 @@ a.btn.btn-primary.btn-lg.see-button.hvr-shutter-out-horizontal {
 .footer{
     background: #f7f7f7;
     padding: 2em 3em;
+    border: 1em solid white;
+    border-radius: 2em;
 }
 .footer-top-nav ul{
 	padding:0;
