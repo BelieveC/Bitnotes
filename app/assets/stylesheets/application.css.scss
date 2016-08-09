@@ -43,3 +43,9 @@ hr{
 	margin-bottom: 3px;
 	border-top: 1px dotted #00C2DC;
 }
+
+@media screen and (max-width: 600px) {
+	input[type="file"]{
+		width:90%;
+	}
+}
