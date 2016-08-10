@@ -1,10 +1,9 @@
 source 'http://rubygems.org'
 gem 'rails', '4.2.4'
-group :development do
-	gem 'sqlite3'
-end
+
+gem 'pg'
+
 group :production do
-	gem 'pg'
 	gem 'unicorn'
 end
 gem 'searchkick'

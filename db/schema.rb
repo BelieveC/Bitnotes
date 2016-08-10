@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160809132354) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "aimages", force: :cascade do |t|
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
@@ -23,7 +26,7 @@ ActiveRecord::Schema.define(version: 20160809132354) do
     t.integer  "assignment_id"
   end
 
-  add_index "aimages", ["assignment_id"], name: "index_aimages_on_assignment_id"
+  add_index "aimages", ["assignment_id"], name: "index_aimages_on_assignment_id", using: :btree
 
   create_table "assignments", force: :cascade do |t|
     t.string   "topic"
@@ -39,10 +42,10 @@ ActiveRecord::Schema.define(version: 20160809132354) do
     t.integer  "cached_votes_down",  default: 0
   end
 
-  add_index "assignments", ["cached_votes_down"], name: "index_assignments_on_cached_votes_down"
-  add_index "assignments", ["cached_votes_score"], name: "index_assignments_on_cached_votes_score"
-  add_index "assignments", ["cached_votes_total"], name: "index_assignments_on_cached_votes_total"
-  add_index "assignments", ["cached_votes_up"], name: "index_assignments_on_cached_votes_up"
+  add_index "assignments", ["cached_votes_down"], name: "index_assignments_on_cached_votes_down", using: :btree
+  add_index "assignments", ["cached_votes_score"], name: "index_assignments_on_cached_votes_score", using: :btree
+  add_index "assignments", ["cached_votes_total"], name: "index_assignments_on_cached_votes_total", using: :btree
+  add_index "assignments", ["cached_votes_up"], name: "index_assignments_on_cached_votes_up", using: :btree
 
   create_table "cimages", force: :cascade do |t|
     t.datetime "created_at",         null: false
@@ -54,7 +57,7 @@ ActiveRecord::Schema.define(version: 20160809132354) do
     t.integer  "college_id"
   end
 
-  add_index "cimages", ["college_id"], name: "index_cimages_on_college_id"
+  add_index "cimages", ["college_id"], name: "index_cimages_on_college_id", using: :btree
 
   create_table "colleges", force: :cascade do |t|
     t.string   "name"
@@ -68,10 +71,10 @@ ActiveRecord::Schema.define(version: 20160809132354) do
     t.integer  "cached_votes_down",  default: 0
   end
 
-  add_index "colleges", ["cached_votes_down"], name: "index_colleges_on_cached_votes_down"
-  add_index "colleges", ["cached_votes_score"], name: "index_colleges_on_cached_votes_score"
-  add_index "colleges", ["cached_votes_total"], name: "index_colleges_on_cached_votes_total"
-  add_index "colleges", ["cached_votes_up"], name: "index_colleges_on_cached_votes_up"
+  add_index "colleges", ["cached_votes_down"], name: "index_colleges_on_cached_votes_down", using: :btree
+  add_index "colleges", ["cached_votes_score"], name: "index_colleges_on_cached_votes_score", using: :btree
+  add_index "colleges", ["cached_votes_total"], name: "index_colleges_on_cached_votes_total", using: :btree
+  add_index "colleges", ["cached_votes_up"], name: "index_colleges_on_cached_votes_up", using: :btree
 
   create_table "eimages", force: :cascade do |t|
     t.datetime "created_at",         null: false
@@ -83,7 +86,7 @@ ActiveRecord::Schema.define(version: 20160809132354) do
     t.integer  "examnote_id"
   end
 
-  add_index "eimages", ["examnote_id"], name: "index_eimages_on_examnote_id"
+  add_index "eimages", ["examnote_id"], name: "index_eimages_on_examnote_id", using: :btree
 
   create_table "examnotes", force: :cascade do |t|
     t.string   "topic"
@@ -99,10 +102,10 @@ ActiveRecord::Schema.define(version: 20160809132354) do
     t.integer  "cached_votes_down",  default: 0
   end
 
-  add_index "examnotes", ["cached_votes_down"], name: "index_examnotes_on_cached_votes_down"
-  add_index "examnotes", ["cached_votes_score"], name: "index_examnotes_on_cached_votes_score"
-  add_index "examnotes", ["cached_votes_total"], name: "index_examnotes_on_cached_votes_total"
-  add_index "examnotes", ["cached_votes_up"], name: "index_examnotes_on_cached_votes_up"
+  add_index "examnotes", ["cached_votes_down"], name: "index_examnotes_on_cached_votes_down", using: :btree
+  add_index "examnotes", ["cached_votes_score"], name: "index_examnotes_on_cached_votes_score", using: :btree
+  add_index "examnotes", ["cached_votes_total"], name: "index_examnotes_on_cached_votes_total", using: :btree
+  add_index "examnotes", ["cached_votes_up"], name: "index_examnotes_on_cached_votes_up", using: :btree
 
   create_table "impressions", force: :cascade do |t|
     t.string   "impressionable_type"
@@ -120,14 +123,14 @@ ActiveRecord::Schema.define(version: 20160809132354) do
     t.datetime "updated_at"
   end
 
-  add_index "impressions", ["controller_name", "action_name", "ip_address"], name: "controlleraction_ip_index"
-  add_index "impressions", ["controller_name", "action_name", "request_hash"], name: "controlleraction_request_index"
-  add_index "impressions", ["controller_name", "action_name", "session_hash"], name: "controlleraction_session_index"
-  add_index "impressions", ["impressionable_type", "impressionable_id", "ip_address"], name: "poly_ip_index"
-  add_index "impressions", ["impressionable_type", "impressionable_id", "request_hash"], name: "poly_request_index"
-  add_index "impressions", ["impressionable_type", "impressionable_id", "session_hash"], name: "poly_session_index"
-  add_index "impressions", ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index"
-  add_index "impressions", ["user_id"], name: "index_impressions_on_user_id"
+  add_index "impressions", ["controller_name", "action_name", "ip_address"], name: "controlleraction_ip_index", using: :btree
+  add_index "impressions", ["controller_name", "action_name", "request_hash"], name: "controlleraction_request_index", using: :btree
+  add_index "impressions", ["controller_name", "action_name", "session_hash"], name: "controlleraction_session_index", using: :btree
+  add_index "impressions", ["impressionable_type", "impressionable_id", "ip_address"], name: "poly_ip_index", using: :btree
+  add_index "impressions", ["impressionable_type", "impressionable_id", "request_hash"], name: "poly_request_index", using: :btree
+  add_index "impressions", ["impressionable_type", "impressionable_id", "session_hash"], name: "poly_session_index", using: :btree
+  add_index "impressions", ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index", using: :btree
+  add_index "impressions", ["user_id"], name: "index_impressions_on_user_id", using: :btree
 
   create_table "pimages", force: :cascade do |t|
     t.datetime "created_at",         null: false
@@ -139,7 +142,7 @@ ActiveRecord::Schema.define(version: 20160809132354) do
     t.integer  "practical_id"
   end
 
-  add_index "pimages", ["practical_id"], name: "index_pimages_on_practical_id"
+  add_index "pimages", ["practical_id"], name: "index_pimages_on_practical_id", using: :btree
 
   create_table "practicals", force: :cascade do |t|
     t.string   "title"
@@ -156,11 +159,11 @@ ActiveRecord::Schema.define(version: 20160809132354) do
     t.integer  "cached_votes_down",  default: 0
   end
 
-  add_index "practicals", ["cached_votes_down"], name: "index_practicals_on_cached_votes_down"
-  add_index "practicals", ["cached_votes_score"], name: "index_practicals_on_cached_votes_score"
-  add_index "practicals", ["cached_votes_total"], name: "index_practicals_on_cached_votes_total"
-  add_index "practicals", ["cached_votes_up"], name: "index_practicals_on_cached_votes_up"
-  add_index "practicals", ["user_id"], name: "index_practicals_on_user_id"
+  add_index "practicals", ["cached_votes_down"], name: "index_practicals_on_cached_votes_down", using: :btree
+  add_index "practicals", ["cached_votes_score"], name: "index_practicals_on_cached_votes_score", using: :btree
+  add_index "practicals", ["cached_votes_total"], name: "index_practicals_on_cached_votes_total", using: :btree
+  add_index "practicals", ["cached_votes_up"], name: "index_practicals_on_cached_votes_up", using: :btree
+  add_index "practicals", ["user_id"], name: "index_practicals_on_user_id", using: :btree
 
   create_table "qimages", force: :cascade do |t|
     t.datetime "created_at",         null: false
@@ -172,7 +175,7 @@ ActiveRecord::Schema.define(version: 20160809132354) do
     t.integer  "qpaper_id"
   end
 
-  add_index "qimages", ["qpaper_id"], name: "index_qimages_on_qpaper_id"
+  add_index "qimages", ["qpaper_id"], name: "index_qimages_on_qpaper_id", using: :btree
 
   create_table "qpapers", force: :cascade do |t|
     t.string   "examname"
@@ -189,10 +192,10 @@ ActiveRecord::Schema.define(version: 20160809132354) do
     t.integer  "cached_votes_down",  default: 0
   end
 
-  add_index "qpapers", ["cached_votes_down"], name: "index_qpapers_on_cached_votes_down"
-  add_index "qpapers", ["cached_votes_score"], name: "index_qpapers_on_cached_votes_score"
-  add_index "qpapers", ["cached_votes_total"], name: "index_qpapers_on_cached_votes_total"
-  add_index "qpapers", ["cached_votes_up"], name: "index_qpapers_on_cached_votes_up"
+  add_index "qpapers", ["cached_votes_down"], name: "index_qpapers_on_cached_votes_down", using: :btree
+  add_index "qpapers", ["cached_votes_score"], name: "index_qpapers_on_cached_votes_score", using: :btree
+  add_index "qpapers", ["cached_votes_total"], name: "index_qpapers_on_cached_votes_total", using: :btree
+  add_index "qpapers", ["cached_votes_up"], name: "index_qpapers_on_cached_votes_up", using: :btree
 
   create_table "relationships", force: :cascade do |t|
     t.integer  "subscriber_id"
@@ -201,9 +204,9 @@ ActiveRecord::Schema.define(version: 20160809132354) do
     t.datetime "updated_at",    null: false
   end
 
-  add_index "relationships", ["subscribed_id"], name: "index_relationships_on_subscribed_id"
-  add_index "relationships", ["subscriber_id", "subscribed_id"], name: "index_relationships_on_subscriber_id_and_subscribed_id", unique: true
-  add_index "relationships", ["subscriber_id"], name: "index_relationships_on_subscriber_id"
+  add_index "relationships", ["subscribed_id"], name: "index_relationships_on_subscribed_id", using: :btree
+  add_index "relationships", ["subscriber_id", "subscribed_id"], name: "index_relationships_on_subscriber_id_and_subscribed_id", unique: true, using: :btree
+  add_index "relationships", ["subscriber_id"], name: "index_relationships_on_subscriber_id", using: :btree
 
   create_table "requests", force: :cascade do |t|
     t.string   "topic"
@@ -219,10 +222,10 @@ ActiveRecord::Schema.define(version: 20160809132354) do
     t.integer  "cached_votes_down",  default: 0
   end
 
-  add_index "requests", ["cached_votes_down"], name: "index_requests_on_cached_votes_down"
-  add_index "requests", ["cached_votes_score"], name: "index_requests_on_cached_votes_score"
-  add_index "requests", ["cached_votes_total"], name: "index_requests_on_cached_votes_total"
-  add_index "requests", ["cached_votes_up"], name: "index_requests_on_cached_votes_up"
+  add_index "requests", ["cached_votes_down"], name: "index_requests_on_cached_votes_down", using: :btree
+  add_index "requests", ["cached_votes_score"], name: "index_requests_on_cached_votes_score", using: :btree
+  add_index "requests", ["cached_votes_total"], name: "index_requests_on_cached_votes_total", using: :btree
+  add_index "requests", ["cached_votes_up"], name: "index_requests_on_cached_votes_up", using: :btree
 
   create_table "simages", force: :cascade do |t|
     t.datetime "created_at",         null: false
@@ -234,7 +237,7 @@ ActiveRecord::Schema.define(version: 20160809132354) do
     t.integer  "subject_id"
   end
 
-  add_index "simages", ["subject_id"], name: "index_simages_on_subject_id"
+  add_index "simages", ["subject_id"], name: "index_simages_on_subject_id", using: :btree
 
   create_table "subjects", force: :cascade do |t|
     t.string   "name"
@@ -247,10 +250,10 @@ ActiveRecord::Schema.define(version: 20160809132354) do
     t.integer  "cached_votes_down",  default: 0
   end
 
-  add_index "subjects", ["cached_votes_down"], name: "index_subjects_on_cached_votes_down"
-  add_index "subjects", ["cached_votes_score"], name: "index_subjects_on_cached_votes_score"
-  add_index "subjects", ["cached_votes_total"], name: "index_subjects_on_cached_votes_total"
-  add_index "subjects", ["cached_votes_up"], name: "index_subjects_on_cached_votes_up"
+  add_index "subjects", ["cached_votes_down"], name: "index_subjects_on_cached_votes_down", using: :btree
+  add_index "subjects", ["cached_votes_score"], name: "index_subjects_on_cached_votes_score", using: :btree
+  add_index "subjects", ["cached_votes_total"], name: "index_subjects_on_cached_votes_total", using: :btree
+  add_index "subjects", ["cached_votes_up"], name: "index_subjects_on_cached_votes_up", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "provider"
@@ -291,7 +294,7 @@ ActiveRecord::Schema.define(version: 20160809132354) do
     t.datetime "updated_at"
   end
 
-  add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
-  add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
+  add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
+  add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
 end
