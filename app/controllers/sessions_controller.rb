@@ -7,8 +7,8 @@ class SessionsController < ApplicationController
 	end
 
 	def destroy
-	   @user = current_user
+	   @name = current_user.name
 	   session[:user_id] = nil
-	   redirect_to :back, notice:"#{@user.name} you are logged out. Thank you for passing by. See you soon again."
+	   redirect_to :back, notice:"#{@name} you are logged out. Thank you for passing by. See you soon again."
 	end
 end
