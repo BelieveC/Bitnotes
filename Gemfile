@@ -6,6 +6,11 @@ gem 'pg'
 group :production do
 	gem 'unicorn'
 end
+
+group :development do
+	gem 'puma'
+end
+
 gem 'searchkick'
 gem 'cocoon'
 gem 'bootstrap-sass', '~> 3.3.6'
@@ -26,7 +31,6 @@ gem "omniauth-google-oauth2", "~> 0.2.1"
 gem 'acts_as_votable'
 gem 'aws-sdk', '~> 1.66.0'
 gem 'foreman'
-gem 'puma'
 gem 'omniauth'
 gem 'nprogress-rails'
 gem 'jquery-turbolinks', '~> 2.1'
