@@ -48,5 +48,4 @@ Rails.application.configure do
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
   }
-  Paperclip.options[:command_path] = 'C:\Program Files (x86)\GnuWin32\bin'
 end
