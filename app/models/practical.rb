@@ -1,7 +1,6 @@
 class Practical < ActiveRecord::Base
 	is_impressionable
 	acts_as_votable
-	searchkick
 	belongs_to :user
 	belongs_to :college
 	belongs_to :subject
