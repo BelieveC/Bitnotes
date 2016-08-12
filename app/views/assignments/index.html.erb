@@ -7,9 +7,12 @@
 						</div>
 						<% @recentAssignments.each do |assignment| %>
 							<div class="col-md-3 resent-grid recommended-grid">
-								<% if assignment.aimages.count > 0 %>
 								<div class="resent-grid-img recommended-grid-img">
+								<% if assignment.aimages.count > 0 %>
 									<%= link_to image_tag(assignment.aimages.first.image.url(:small),alt: assignment.topic),assignment %>
+								<%else %>
+									<%= link_to image_tag("defaultcoverimage",alt: assignment.topic),assignment %>
+								<% end %>
 									<div class="time small-time" title="Pages Count">
 										<p><%= assignment.aimages.count %></p>
 									</div>
@@ -17,7 +20,6 @@
 										<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
 									</div>
 								</div>
-								<%end %>
 								<div class="resent-grid-info recommended-grid-info video-info-grid">
 									<h5><%=link_to assignment.topic,assignment, class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(assignment.created_at) %> ago</strong></small></h5>
 									<ul>
@@ -32,9 +34,12 @@
 					<div class="recommended-grids">
 						<% @recentAssignments.each do |assignment| %>
 							<div class="col-md-3 resent-grid recommended-grid">
-								<% if assignment.aimages.count > 0 %>
 								<div class="resent-grid-img recommended-grid-img">
-									<%= link_to image_tag(assignment.aimages.first.image.url(:small),alt: assignment.topic),assignment %>
+									<% if assignment.aimages.count > 0 %>
+										<%= link_to image_tag(assignment.aimages.first.image.url(:small),alt: assignment.topic),assignment %>
+									<%else %>
+										<%= link_to image_tag("defaultcoverimage",alt: assignment.topic),assignment %>
+									<% end %>
 									<div class="time small-time" title="Pages Count">
 										<p><%= assignment.aimages.count %></p>
 									</div>
@@ -42,7 +47,6 @@
 										<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
 									</div>
 								</div>
-								<%end %>
 								<div class="resent-grid-info recommended-grid-info video-info-grid">
 									<h5><%=link_to assignment.topic,assignment, class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(assignment.created_at) %> ago</strong></small></h5>
 									<ul>
@@ -63,9 +67,12 @@
 						</div>
 						<% @recentAssignments.each do |assignment| %>
 							<div class="col-md-3 resent-grid recommended-grid">
-								<% if assignment.aimages.count > 0 %>
 								<div class="resent-grid-img recommended-grid-img">
-									<%= link_to image_tag(assignment.aimages.first.image.url(:small),alt: assignment.topic),assignment %>
+									<% if assignment.aimages.count > 0 %>
+										<%= link_to image_tag(assignment.aimages.first.image.url(:small),alt: assignment.topic),assignment %>
+									<%else %>
+										<%= link_to image_tag("defaultcoverimage",alt: assignment.topic),assignment %>
+									<% end %>
 									<div class="time small-time" title="Pages Count">
 										<p><%= assignment.aimages.count %></p>
 									</div>
@@ -73,7 +80,6 @@
 										<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
 									</div>
 								</div>
-								<%end %>
 								<div class="resent-grid-info recommended-grid-info video-info-grid">
 									<h5><%=link_to assignment.topic,assignment, class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(assignment.created_at) %> ago</strong></small></h5>
 									<ul>
@@ -94,17 +100,19 @@
 						</div>
 						<% @recentAssignments.each do |assignment| %>
 							<div class="col-md-3 resent-grid recommended-grid">
-								<% if assignment.aimages.count > 0 %>
-									<div class="resent-grid-img recommended-grid-img">
+								<div class="resent-grid-img recommended-grid-img">
+									<% if assignment.aimages.count > 0 %>
 										<%= link_to image_tag(assignment.aimages.first.image.url(:small),alt: assignment.topic),assignment %>
-										<div class="time small-time" title="Pages Count">
-											<p><%= assignment.aimages.count %></p>
-										</div>
-										<div class="clck small-clck" title="Pages">
-											<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-										</div>
+									<%else %>
+										<%= link_to image_tag("defaultcoverimage",alt: assignment.topic),assignment %>
+									<% end %>
+									<div class="time small-time" title="Pages Count">
+										<p><%= assignment.aimages.count %></p>
 									</div>
-								<% end %>
+									<div class="clck small-clck" title="Pages">
+										<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+									</div>
+								</div>
 								<div class="resent-grid-info recommended-grid-info video-info-grid">
 									<h5><%=link_to assignment.topic,assignment, class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(assignment.created_at) %> ago</strong></small></h5>
 									<ul>
