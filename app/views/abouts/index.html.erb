@@ -83,7 +83,7 @@
 								<% if examnote.eimages.count > 0 %>
 									<%= link_to image_tag(examnote.eimages.first.image.url(:small),alt: examnote.topic),examnote %>
 								<%else %>
-									<%= link_to image_tag("we1",alt: examnote.topic),examnote %>
+									<%= link_to image_tag("defaultcoverimage",alt: examnote.topic),examnote %>
 								<% end %>
 									<div class="time small-time" title="Pages Count">
 										<p><%= examnote.eimages.count %></p>
@@ -116,7 +116,7 @@
 								<% if assignment.aimages.count > 0 %>
 									<%= link_to image_tag(assignment.aimages.first.image.url(:small),alt: assignment.topic),assignment %>
 								<%else %>
-									<%= link_to image_tag("we1",alt: assignment.topic),assignment %>
+									<%= link_to image_tag("defaultcoverimage",alt: assignment.topic),assignment %>
 								<% end %>
 									<div class="time small-time" title="Pages Count">
 										<p><%= assignment.aimages.count %></p>
@@ -149,7 +149,7 @@
 								<% if qpaper.qimages.count > 0 %>
 									<%= link_to image_tag(qpaper.qimages.first.image.url(:small),alt: qpaper.examname),qpaper %>
 								<%else %>
-									<%= link_to image_tag("we1",alt: qpaper.examname),qpaper %>
+									<%= link_to image_tag("defaultcoverimage",alt: qpaper.examname),qpaper %>
 								<% end %>
 									<div class="time small-time" title="Pages Count">
 										<p><%= qpaper.qimages.count %></p>
