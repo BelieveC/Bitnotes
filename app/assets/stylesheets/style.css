@@ -1771,6 +1771,10 @@ span.glyphicon.glyphicon-user {
    .resent-grid a img {
       height: 16em;
   }
+  a.navbar-brand{
+    padding-left: 0em;
+    margin-left: -10px;
+  }
 }
 @media (max-width: 1280px) {
 	.time {
