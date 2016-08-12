@@ -136,11 +136,13 @@
 				<% end %>
 				<% @recentQpapers.each do |qpaper| %>
 					<div class="single-right-grids">
-						<% if qpaper.qimages.count > 0 %>
-							<div class="col-md-4 single-right-grid-left">
+						<div class="col-md-4 single-right-grid-left">
+							<% if qpaper.qimages.count > 0 %>
 								<%= link_to image_tag(qpaper.qimages.first.image.url(:small),alt:qpaper.examname),qpaper %>
-							</div>
-						<% end %>
+							<% else %>
+								<%= link_to image_tag("defaultcoverimage",alt:qpaper.examname),qpaper %>
+							<% end %>
+						</div>
 						<div class="col-md-8 single-right-grid-right">
 							<%= link_to qpaper.examname,qpaper,class:"title"%>
 							<p class="author"><%= link_to qpaper.user.phname,  controller:"users",action:"show",id:qpaper.user_id,class:"author"%></p>
@@ -166,11 +168,13 @@
 				<% end %>
 				<% @recentAssignments.each do |assignment| %>
 					<div class="single-right-grids">
-						<% if assignment.aimages.count > 0 %>
-							<div class="col-md-4 single-right-grid-left">
+						<div class="col-md-4 single-right-grid-left">
+							<% if assignment.aimages.count > 0 %>
 								<%= link_to image_tag(assignment.aimages.first.image.url(:small),alt: assignment.topic),assignment %>
-							</div>
-						<% end %>
+							<% else %>
+								<%= link_to image_tag("defaultcoverimage",alt: assignment.topic),assignment %>
+							<% end %>
+						</div>
 						<div class="col-md-8 single-right-grid-right">
 							<%= link_to assignment.topic,assignment,class:"title"%>
 							<p class="author"><%= link_to assignment.user.phname,  controller:"users",action:"show",id:assignment.user_id,class:"author"%></p>
