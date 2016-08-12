@@ -78,15 +78,17 @@
 								<% @recentPracticals.each do |practical|%>
 									<div class="col-md-3 resent-grid recommended-grid movie-video-grid">
 										<div class="resent-grid-img recommended-grid-img">
-											<% if practical.pimages.count > 0  %>
-												<%= link_to image_tag(practical.pimages.first.image.url(:small),alt: practical.title),practical %>
-												<div class="time small-time show-time movie-time" title="Pages Count">
-													<p><%=practical.pimages.count%></p>
-												</div>
-												<div class="clck movie-clock" title="Pages">
-													<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-												</div>
-											<% end %>
+										<% if practical.pimages.count > 0  %>
+											<%= link_to image_tag(practical.pimages.first.image.url(:small),alt: practical.title),practical %>
+										<% else%>
+											<%= link_to image_tag("defaultcoverimage",alt: practical.title),practical %>
+										<% end %>
+											<div class="time small-time show-time movie-time" title="Pages Count">
+												<p class="usercontent"><%=practical.pimages.count%></p>
+											</div>
+											<div class="clck movie-clock" title="Pages">
+												<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+											</div>
 										</div>
 										<div class="resent-grid-info recommended-grid-info recommended-grid-movie-info">
 											<h5><%=link_to practical.title,practical,class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(practical.created_at) %> ago</strong></small></h5>
@@ -114,15 +116,17 @@
 							<% @recentAssignments.each do |assignment|%>
 								<div class="col-md-3 resent-grid recommended-grid movie-video-grid">
 									<div class="resent-grid-img recommended-grid-img">
-										<% if assignment.aimages.count > 0  %>
-											<%= link_to image_tag(assignment.aimages.first.image.url(:small),alt: assignment.topic),assignment %>
-											<div class="time small-time show-time movie-time" title="Pages Count">
-												<p><%=assignment.aimages.count%></p>
-											</div>
-											<div class="clck movie-clock" title="Pages">
-												<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-											</div>
-										<% end %>
+									<% if assignment.aimages.count > 0  %>
+										<%= link_to image_tag(assignment.aimages.first.image.url(:small),alt: assignment.topic),assignment %>
+									<% else %>
+										<%= link_to image_tag("defaultcoverimage",alt: assignment.topic),assignment %>
+									<% end%>
+										<div class="time small-time show-time movie-time" title="Pages Count">
+											<p class="usercontent"><%=assignment.aimages.count%></p>
+										</div>
+										<div class="clck movie-clock" title="Pages">
+											<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+										</div>
 									</div>
 									<div class="resent-grid-info recommended-grid-info recommended-grid-movie-info">
 										<h5><%=link_to assignment.topic,assignment,class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(assignment.created_at) %> ago</strong></small></h5>
@@ -147,15 +151,17 @@
 							<% @recentExamnotes.each do |examnote|%>
 								<div class="col-md-3 resent-grid recommended-grid movie-video-grid">
 									<div class="resent-grid-img recommended-grid-img">
-										<% if examnote.eimages.count > 0  %>
-											<%= link_to image_tag(examnote.eimages.first.image.url(:small),alt: examnote.topic),examnote %>
-											<div class="time small-time show-time movie-time" title="Pages Count">
-												<p><%=examnote.eimages.count%></p>
-											</div>
-											<div class="clck movie-clock" title="Pages">
-												<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-											</div>
-										<% end %>
+									<% if examnote.eimages.count > 0  %>
+										<%= link_to image_tag(examnote.eimages.first.image.url(:small),alt: examnote.topic),examnote %>
+									<% else %>
+										<%= link_to image_tag("defaultcoverimage",alt: examnote.topic),examnote %>
+									<% end %>
+										<div class="time small-time show-time movie-time" title="Pages Count">
+											<p class="usercontent"><%=examnote.eimages.count%></p>
+										</div>
+										<div class="clck movie-clock" title="Pages">
+											<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+										</div>
 									</div>
 									<div class="resent-grid-info recommended-grid-info recommended-grid-movie-info">
 										<h5><%=link_to examnote.topic,examnote,class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(examnote.created_at) %> ago</strong></small></h5>
@@ -180,15 +186,17 @@
 							<% @recentQpapers.each do |qpaper|%>
 								<div class="col-md-3 resent-grid recommended-grid movie-video-grid">
 									<div class="resent-grid-img recommended-grid-img">
-										<% if qpaper.qimages.count > 0  %>
-											<%= link_to image_tag(qpaper.qimages.first.image.url(:small),alt: qpaper.examname),qpaper %>
-											<div class="time small-time show-time movie-time" title="Pages Count">
-												<p><%=qpaper.qimages.count%></p>
-											</div>
-											<div class="clck movie-clock" title="Pages">
-												<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-											</div>
-										<% end %>
+									<% if qpaper.qimages.count > 0  %>
+										<%= link_to image_tag(qpaper.qimages.first.image.url(:small),alt: qpaper.examname),qpaper %>
+									<% else %>
+										<%= link_to image_tag("defaultcoverimage",alt: qpaper.examname),qpaper %>
+									<% end %>
+										<div class="time small-time show-time movie-time" title="Pages Count">
+											<p class="usercontent"><%=qpaper.qimages.count%></p>
+										</div>
+										<div class="clck movie-clock" title="Pages">
+											<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+										</div>
 									</div>
 									<div class="resent-grid-info recommended-grid-info recommended-grid-movie-info">
 										<h5><%=link_to qpaper.examname,qpaper,class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(qpaper.created_at) %> ago</strong></small></h5>
