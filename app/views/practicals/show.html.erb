@@ -114,11 +114,13 @@
 			<div class="single-grid-right">
 				<% @recentPracticals.each do |practical| %>
 					<div class="single-right-grids">
-						<% if practical.pimages.count > 0 %>
-							<div class="col-md-4 single-right-grid-left">
+						<div class="col-md-4 single-right-grid-left">
+							<% if practical.pimages.count > 0 %>
 								<%= link_to image_tag(practical.pimages.first.image.url(:small),alt: practical.title),practical %>
-							</div>
-						<% end %>
+							<% else%>
+								<%= link_to image_tag("defaultcoverimage",alt: practical.title),practical %>
+							<% end %>
+						</div>
 						<div class="col-md-8 single-right-grid-right">
 							<%= link_to practical.title,practical,class:"title"%>
 							<p class="author"><%= link_to practical.user.phname,  controller:"users",action:"show",id:practical.user_id,class:"author"%></p>
