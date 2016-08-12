@@ -1,7 +1,7 @@
 body{
 	background:#fff;
 	font-size:100%;
-	font-family: 'Roboto',arial,sans-serif;
+	font-family: 'Roboto', sans-serif !important;
 }
 body a {
   transition: 0.5s all;
@@ -2946,4 +2946,9 @@ ul#subscription .sidebar_publication_link{
 }
 .pagecount{
   background-color: white;
+}
+
+p.NoContentInfo{
+  margin-left: auto;
+  margin-right: auto;
 }
