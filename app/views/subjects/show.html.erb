@@ -105,11 +105,13 @@
 			<div class="single-grid-right">
 				<% @recentSubjects.each do |subject| %>
 					<div class="single-right-grids">
-						<% if subject.simages.count > 0 %>
-							<div class="col-md-4 single-right-grid-left">
+						<div class="col-md-4 single-right-grid-left">
+							<% if subject.simages.count > 0 %>
 								<%= link_to image_tag(subject.simages.first.image.url(:small),alt:subject.name),subject %>
-							</div>
-						<% end %>
+							<% else%>
+								<%= link_to image_tag("defaultcoverimage",alt:subject.name),subject %>
+							<% end %>
+						</div>
 						<div class="col-md-8 single-right-grid-right">
 							<%= link_to subject.name,subject,class:"title"%>
 							<p class="author"><%= link_to subject.user.phname,  controller:"users",action:"show",id:subject.user_id,class:"author"%></p>
@@ -120,11 +122,13 @@
 				<% end %>
 				<% @recentColleges.each do |college| %>
 					<div class="single-right-grids">
-						<% if college.cimages.count > 0 %>
-							<div class="col-md-4 single-right-grid-left">
+						<div class="col-md-4 single-right-grid-left">
+							<% if college.cimages.count > 0 %>
 								<%= link_to image_tag(college.cimages.first.image.url(:small),alt:college.name),college %>
-							</div>
-						<% end %>
+							<% else%>
+								<%= link_to image_tag("defaultcoverimage",alt:college.name),college %>
+							<% end %>
+						</div>
 						<div class="col-md-8 single-right-grid-right">
 							<%= link_to college.name,college,class:"title"%>
 							<p class="author"><%= link_to college.user.phname,  controller:"users",action:"show",id:college.user_id,class:"author"%></p>
@@ -186,11 +190,13 @@
 				<% end %>
 				<% @recentExamnotes.each do |examnote| %>
 					<div class="single-right-grids">
-						<% if examnote.eimages.count > 0 %>
-							<div class="col-md-4 single-right-grid-left">
+						<div class="col-md-4 single-right-grid-left">
+							<% if examnote.eimages.count > 0 %>
 								<%= link_to image_tag(examnote.eimages.first.image.url(:small),alt: examnote.topic),examnote %>
-							</div>
-						<% end %>
+							<% else %>
+								<%= link_to image_tag("defaultcoverimage",alt: examnote.topic),examnote %>
+							<%end%>
+						</div>
 						<div class="col-md-8 single-right-grid-right">
 							<%= link_to examnote.topic,examnote,class:"title"%>
 							<p class="author"><%= link_to examnote.user.phname,  controller:"users",action:"show",id:examnote.user_id,class:"author"%></p>
