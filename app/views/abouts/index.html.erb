@@ -23,7 +23,7 @@
 								<% if practical.pimages.count > 0 %>
 									<%= link_to image_tag(practical.pimages.first.image.url(:small),alt: practical.title),practical %>
 								<%else %>
-									<%= link_to image_tag("we1",alt: practical.title),practical %>
+									<%= link_to image_tag("defaultcoverimage",alt: practical.title),practical %>
 								<% end %>
 									<div class="time small-time" title="Pages Count">
 										<p><%= practical.pimages.count %></p>
@@ -50,7 +50,7 @@
 								<% if practical.pimages.count > 0 %>
 									<%= link_to image_tag(practical.pimages.first.image.url(:small),alt: practical.title),practical %>
 								<%else %>
-									<%= link_to image_tag("we1",alt: practical.title),practical %>
+									<%= link_to image_tag("defaultcoverimage",alt: practical.title),practical %>
 								<% end %>
 									<div class="time small-time" title="Pages Count">
 										<p><%= practical.pimages.count %></p>
