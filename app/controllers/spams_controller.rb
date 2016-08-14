@@ -16,7 +16,7 @@ class SpamsController < ApplicationController
 		end
 		@spam.count = @spam.count.to_i + 1
 		@spam.save
-		if @spam.count > 10
+		if @spam.count > 100
 			if @spam.type_id == 1
 				@prac = Practical.find(@spam.post_id)
 				@prac.destroy
