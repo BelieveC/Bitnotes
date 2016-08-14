@@ -1592,7 +1592,7 @@ span.glyphicon.glyphicon-user {
     font-size: 15px;
     line-height: 1.8em;
     font-weight: 400;
-    color: darkblue;
+    color: grey;
     margin: 1em 0 0 0;
 }
 .creators-bottom{
@@ -1616,7 +1616,7 @@ span.glyphicon.glyphicon-user {
   font-size: 18px;
 }
 .creators-bottom-grid p{
-    color: darkblue;
+    color: grey;
     font-size: 13px;
     margin: 0 auto;
     width: 80%;
