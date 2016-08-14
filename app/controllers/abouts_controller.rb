@@ -44,4 +44,7 @@ class AboutsController < ApplicationController
 	def team
 	end
 
+	def result
+	end
+
 end

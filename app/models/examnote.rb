@@ -1,5 +1,6 @@
 class Examnote < ActiveRecord::Base
 	is_impressionable
+	searchkick
 	acts_as_votable
 	belongs_to :user
 	belongs_to :college

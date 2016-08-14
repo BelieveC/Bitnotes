@@ -24,7 +24,7 @@ class ExamnotesController < ApplicationController
 		@examnote = Examnote.new(examnote_params)
 		@examnote.user_id = current_user.id
 		if @examnote.save
-			redirect_to @examnote,notice:"Successfully created your Examnote"
+			redirect_to @examnote,notice:"Successfully created your Note"
 		else
 			render layout: "form",action:"new"
 		end
@@ -34,19 +34,19 @@ class ExamnotesController < ApplicationController
 		if session[:user_id] == @examnote.user_id
 			render layout: "form"
 		else
-			redirect_to root_path,notice:"Sorry!, You don't have access to edit this Examnote."
+			redirect_to root_path,notice:"Sorry!, You don't have access to edit this Note."
 		end
 	end
 
 	def update
 		if session[:user_id] == @examnote.user_id
 			if @examnote.update(examnote_params)
-				redirect_to @examnote,notice:"Successfully updated your Examnote"
+				redirect_to @examnote,notice:"Successfully updated your Note"
 			else
 				render layout: "form",action:"edit"
 			end
 		else
-			redirect_to root_path,notice:"Sorry!, You don't have access to Update this Examnote."
+			redirect_to root_path,notice:"Sorry!, You don't have access to Update this Note."
 		end
 		
 	end
@@ -54,9 +54,9 @@ class ExamnotesController < ApplicationController
 	def destroy
 		if session[:user_id] == @examnote.user_id
 			@examnote.destroy
-			redirect_to root_path,notice:"Successfully destroyed your Examnote"
+			redirect_to root_path,notice:"Successfully destroyed your Note"
 		else
-			redirect_to root_path,notice:"Sorry!, You don't have rights to Delete this Examnote."
+			redirect_to root_path,notice:"Sorry!, You don't have rights to Delete this Note."
 		end
 		
 	end

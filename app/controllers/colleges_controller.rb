@@ -26,7 +26,7 @@ class CollegesController < ApplicationController
 		@college = College.new(college_params)
 		@college.user_id = current_user.id
 		if @college.save
-			redirect_to @college,notice:"Successfully created your College."
+			redirect_to @college,notice:"Successfully created your Institute."
 		else
 			render layout: "form",action: "new"
 		end
@@ -36,20 +36,20 @@ class CollegesController < ApplicationController
 		if session[:user_id] == @college.user_id
 			render layout: "form"
 		else
-			redirect_to root_path,notice:"Gotcha!, You don't have access to edit this College."
+			redirect_to root_path,notice:"Gotcha!, You don't have access to edit this Institute."
 		end
 	end
 
 	def update
 		if session[:user_id] == @college.user_id
 			if @college.update(college_params)
-				redirect_to @college,notice:"Successfully updated your College"
+				redirect_to @college,notice:"Successfully updated your Institute"
 			else
 				render layout: "form",action:"edit"
 				
 			end
 		else
-			redirect_to root_path,notice:"Gotcha!, You don't have access to edit this College."
+			redirect_to root_path,notice:"Gotcha!, You don't have access to edit this Institute."
 		end
 	end
 
@@ -58,7 +58,7 @@ class CollegesController < ApplicationController
 			@college.destroy
 			redirect_to root_path,notice:"Successfully Destroyed your college"
 		else
-			redirect_to root_path,notice:"Gotcha! You don't have rights to destroy this College"
+			redirect_to root_path,notice:"Gotcha! You don't have rights to destroy this Institute"
 		end
 	end
 
