@@ -11,6 +11,36 @@
 						<div class="recommended-info">
 							<h4><strong><%= @totalResult %></strong> results found for "<strong><%= @query %></strong>"</h4>
 						</div>
+						<% @users.each do |user| %>
+							<div class="col-md-3 resent-grid recommended-grid">
+								<div class="resent-grid-img recommended-grid-img">
+								<% if user.avatar.url == "/avatars/original/missing.png" %>
+				                	<%= link_to image_tag("customprofile",width:"180em",height:"200em",alt:user.name),user %>
+				                <%else%>
+				                	<%= link_to image_tag(user.avatar.url(:thumb),width:"180em",height:"200em",alt:user.name),user %>
+				                <% end %>
+								</div>
+							</div>
+							<div class="col-md-6 resent-grid recommended-grid ">
+								<div class="resent-grid-info recommended-grid-info video-info-grid searchinfodiv">
+									<h5><%= link_to user.phname,user,class:"title"%></h5>
+									<p class="searchdescription"><%= truncate(user.intro, length: 250, separator: ' ') %></p>
+									<p class="views views-info"><strong><%= user.subscriber.count %></strong> Subscriber</p>
+									<ul>
+										<li><p class="author author-info"><%= time_ago_in_words(user.created_at) %> ago</li>
+										
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-3"></div>
+							<div class="clearfix"></div>	
+							<br>		
+						<% end %>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				<div class="recommended">
+					<div class="recommended-grids">
 						<% @practicals.each do |practical| %>
 							<div class="col-md-3 resent-grid recommended-grid">
 								<div class="resent-grid-img recommended-grid-img">
@@ -44,7 +74,8 @@
 						<% end %>
 						<div class="clearfix"> </div>
 					</div>
-				</div><div class="recommended">
+				</div>
+				<div class="recommended">
 					<div class="recommended-grids">
 						<% @assignments.each do |assignment| %>
 							<div class="col-md-3 resent-grid recommended-grid">
