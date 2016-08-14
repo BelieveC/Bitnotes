@@ -13,7 +13,7 @@
 	        </div>
 	        <div id="navbar" class="navbar-collapse collapse">
 				<div class="top-search">
-					<%=form_tag(abouts_path,method: :get,class:"navbar-form navbar-right") do%>
+					<%=form_tag(result_path,method: :get,class:"navbar-form navbar-right") do%>
 						<%=text_field_tag :search,params[:search],class:"form-control",placeholder:"Search.."%>
 						<%=submit_tag(value="")%>
 					<% end%>

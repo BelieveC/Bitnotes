@@ -45,6 +45,14 @@ class AboutsController < ApplicationController
 	end
 
 	def result
+		@practicals = Practical.search(params[:search])
+		@assignments = Assignment.search(params[:search])
+		@examnotes = Examnote.search(params[:search])
+		@qpapers = Qpaper.search(params[:search])
+		@colleges = College.search(params[:search])
+		@subjects = Subject.search(params[:search])
+		@totalResult = @practicals.count + @assignments.count + @examnotes.count + @qpapers.count + @colleges.count + @subjects.count
+		@query = params[:search]
 	end
 
 end

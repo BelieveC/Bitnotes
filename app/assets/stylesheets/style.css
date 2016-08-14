@@ -3,6 +3,11 @@ body{
 	font-size:100%;
 	font-family: 'Roboto', sans-serif !important;
 }
+
+.searchinfodiv{
+  height: 160px;
+}
+
 body a {
   transition: 0.5s all;
   -webkit-transition: 0.5s all;
@@ -2097,6 +2102,12 @@ span.glyphicon.glyphicon-user {
 		width: 34%;
 		margin-left: 4em;
 	}
+  .searchinfodiv{
+    height: 120px;
+  }
+  .searchdescription{
+    display: none;
+  }
 }
 @media (max-width: 768px) {
     .single-right-grid-left a img{
@@ -2963,4 +2974,8 @@ p.NoContentInfo{
   color: #00c2dc;
   font-size: 2em;
   
+}
+
+.searchdescription{
+  font-size: 1.2em;
 }
