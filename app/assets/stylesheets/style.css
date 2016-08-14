@@ -2957,6 +2957,10 @@ ul#subscription .sidebar_publication_link{
 }
 
 p.NoContentInfo{
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 3em;
+  font-family: impact;
+  font-weight: bold;
+  color: #00c2dc;
+  font-size: 2em;
+  
 }

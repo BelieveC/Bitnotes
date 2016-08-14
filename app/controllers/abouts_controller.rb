@@ -41,4 +41,7 @@ class AboutsController < ApplicationController
 		redirect_to :back
 	end
 
+	def team
+	end
+
 end

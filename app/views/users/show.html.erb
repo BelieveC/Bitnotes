@@ -100,7 +100,7 @@
 									</div>
 								<%end%>
 							<% else %>
-								<p class="NoContentInfo">Practical Void will be filled soon ....</p>
+								<p class="NoContentInfo">New Practicals Coming Soon .... Keep Loving us for more exciting content <%= @user.phname %></p>
 							<% end %>
 							<div class="clearfix"></div>
                         </div>
@@ -113,30 +113,34 @@
 								</div>
 								<div class="clearfix"> </div>
 							</div>
-							<% @recentAssignments.each do |assignment|%>
-								<div class="col-md-3 resent-grid recommended-grid movie-video-grid">
-									<div class="resent-grid-img recommended-grid-img">
-									<% if assignment.aimages.count > 0  %>
-										<%= link_to image_tag(assignment.aimages.first.image.url(:small),alt: assignment.topic),assignment %>
-									<% else %>
-										<%= link_to image_tag("defaultcoverimage",alt: assignment.topic),assignment %>
-									<% end%>
-										<div class="time small-time show-time movie-time" title="Pages Count">
-											<p class="usercontent"><%=assignment.aimages.count%></p>
+							<% unless @recentAssignments.blank? %>
+								<% @recentAssignments.each do |assignment|%>
+									<div class="col-md-3 resent-grid recommended-grid movie-video-grid">
+										<div class="resent-grid-img recommended-grid-img">
+										<% if assignment.aimages.count > 0  %>
+											<%= link_to image_tag(assignment.aimages.first.image.url(:small),alt: assignment.topic),assignment %>
+										<% else %>
+											<%= link_to image_tag("defaultcoverimage",alt: assignment.topic),assignment %>
+										<% end%>
+											<div class="time small-time show-time movie-time" title="Pages Count">
+												<p class="usercontent"><%=assignment.aimages.count%></p>
+											</div>
+											<div class="clck movie-clock" title="Pages">
+												<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+											</div>
 										</div>
-										<div class="clck movie-clock" title="Pages">
-											<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+										<div class="resent-grid-info recommended-grid-info recommended-grid-movie-info">
+											<h5><%=link_to assignment.topic,assignment,class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(assignment.created_at) %> ago</strong></small></h5>
+											<ul>
+												<li><p class="author author-info"><%= link_to assignment.user.phname,  controller:"users",action:"show",id:assignment.user_id,class:"author"%></p></li>
+												<li class="right-list"><p class="views views-info"><strong><%= assignment.impressionist_count %></strong> views</p></li>
+											</ul>
 										</div>
 									</div>
-									<div class="resent-grid-info recommended-grid-info recommended-grid-movie-info">
-										<h5><%=link_to assignment.topic,assignment,class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(assignment.created_at) %> ago</strong></small></h5>
-										<ul>
-											<li><p class="author author-info"><%= link_to assignment.user.phname,  controller:"users",action:"show",id:assignment.user_id,class:"author"%></p></li>
-											<li class="right-list"><p class="views views-info"><strong><%= assignment.impressionist_count %></strong> views</p></li>
-										</ul>
-									</div>
-								</div>
-							<%end%>
+								<%end%>
+							<% else %>
+								<p>New Assignments Coming Soon .... Keep Loving us for more exciting content <%= @user.phname %></p>
+							<% end %>
 							<div class="clearfix"></div>
                         </div>
                     </div>
@@ -148,30 +152,34 @@
 								</div>
 								<div class="clearfix"> </div>
 							</div>
-							<% @recentExamnotes.each do |examnote|%>
-								<div class="col-md-3 resent-grid recommended-grid movie-video-grid">
-									<div class="resent-grid-img recommended-grid-img">
-									<% if examnote.eimages.count > 0  %>
-										<%= link_to image_tag(examnote.eimages.first.image.url(:small),alt: examnote.topic),examnote %>
-									<% else %>
-										<%= link_to image_tag("defaultcoverimage",alt: examnote.topic),examnote %>
-									<% end %>
-										<div class="time small-time show-time movie-time" title="Pages Count">
-											<p class="usercontent"><%=examnote.eimages.count%></p>
+							<% unless @recentExamnotes.blank? %>
+								<% @recentExamnotes.each do |examnote|%>
+									<div class="col-md-3 resent-grid recommended-grid movie-video-grid">
+										<div class="resent-grid-img recommended-grid-img">
+										<% if examnote.eimages.count > 0  %>
+											<%= link_to image_tag(examnote.eimages.first.image.url(:small),alt: examnote.topic),examnote %>
+										<% else %>
+											<%= link_to image_tag("defaultcoverimage",alt: examnote.topic),examnote %>
+										<% end %>
+											<div class="time small-time show-time movie-time" title="Pages Count">
+												<p class="usercontent"><%=examnote.eimages.count%></p>
+											</div>
+											<div class="clck movie-clock" title="Pages">
+												<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+											</div>
 										</div>
-										<div class="clck movie-clock" title="Pages">
-											<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+										<div class="resent-grid-info recommended-grid-info recommended-grid-movie-info">
+											<h5><%=link_to examnote.topic,examnote,class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(examnote.created_at) %> ago</strong></small></h5>
+											<ul>
+												<li><p class="author author-info"><%= link_to examnote.user.phname,  controller:"users",action:"show",id:examnote.user_id,class:"author"%></p></li>
+												<li class="right-list"><p class="views views-info"><strong><%= examnote.impressionist_count %></strong> views</p></li>
+											</ul>
 										</div>
 									</div>
-									<div class="resent-grid-info recommended-grid-info recommended-grid-movie-info">
-										<h5><%=link_to examnote.topic,examnote,class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(examnote.created_at) %> ago</strong></small></h5>
-										<ul>
-											<li><p class="author author-info"><%= link_to examnote.user.phname,  controller:"users",action:"show",id:examnote.user_id,class:"author"%></p></li>
-											<li class="right-list"><p class="views views-info"><strong><%= examnote.impressionist_count %></strong> views</p></li>
-										</ul>
-									</div>
-								</div>
-							<%end%>
+								<%end%>
+							<% else %>
+								<p class="NoContentInfo">New Notes Coming Soon .... Keep Loving us for more exciting content <%= @user.phname %></p>
+							<% end %>
 							<div class="clearfix"></div>
                         </div>
                     </div>
@@ -183,30 +191,34 @@
 								</div>
 								<div class="clearfix"> </div>
 							</div>
-							<% @recentQpapers.each do |qpaper|%>
-								<div class="col-md-3 resent-grid recommended-grid movie-video-grid">
-									<div class="resent-grid-img recommended-grid-img">
-									<% if qpaper.qimages.count > 0  %>
-										<%= link_to image_tag(qpaper.qimages.first.image.url(:small),alt: qpaper.examname),qpaper %>
-									<% else %>
-										<%= link_to image_tag("defaultcoverimage",alt: qpaper.examname),qpaper %>
-									<% end %>
-										<div class="time small-time show-time movie-time" title="Pages Count">
-											<p class="usercontent"><%=qpaper.qimages.count%></p>
+							<% unless @recentQpapers.blank? %>
+								<% @recentQpapers.each do |qpaper|%>
+									<div class="col-md-3 resent-grid recommended-grid movie-video-grid">
+										<div class="resent-grid-img recommended-grid-img">
+										<% if qpaper.qimages.count > 0  %>
+											<%= link_to image_tag(qpaper.qimages.first.image.url(:small),alt: qpaper.examname),qpaper %>
+										<% else %>
+											<%= link_to image_tag("defaultcoverimage",alt: qpaper.examname),qpaper %>
+										<% end %>
+											<div class="time small-time show-time movie-time" title="Pages Count">
+												<p class="usercontent"><%=qpaper.qimages.count%></p>
+											</div>
+											<div class="clck movie-clock" title="Pages">
+												<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+											</div>
 										</div>
-										<div class="clck movie-clock" title="Pages">
-											<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+										<div class="resent-grid-info recommended-grid-info recommended-grid-movie-info">
+											<h5><%=link_to qpaper.examname,qpaper,class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(qpaper.created_at) %> ago</strong></small></h5>
+											<ul>
+												<li><p class="author author-info"><%= link_to qpaper.user.phname,  controller:"users",action:"show",id:qpaper.user_id,class:"author"%></p></li>
+												<li class="right-list"><p class="views views-info"><strong><%= qpaper.impressionist_count %></strong> views</p></li>
+											</ul>
 										</div>
 									</div>
-									<div class="resent-grid-info recommended-grid-info recommended-grid-movie-info">
-										<h5><%=link_to qpaper.examname,qpaper,class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(qpaper.created_at) %> ago</strong></small></h5>
-										<ul>
-											<li><p class="author author-info"><%= link_to qpaper.user.phname,  controller:"users",action:"show",id:qpaper.user_id,class:"author"%></p></li>
-											<li class="right-list"><p class="views views-info"><strong><%= qpaper.impressionist_count %></strong> views</p></li>
-										</ul>
-									</div>
-								</div>
-							<%end%>
+								<%end%>
+							<% else %>
+								<p class="NoContentInfo">New Papers Coming Soon .... Keep Loving us for more exciting content <%= @user.phname %></p>
+							<% end %>
 							<div class="clearfix"></div>
                         </div>
                     </div>

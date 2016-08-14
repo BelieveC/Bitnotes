@@ -10,10 +10,10 @@ class UsersController < ApplicationController
 		@qpapers = @user.qpapers
 		@examnotes = @user.examnotes
 		@assignments = @user.assignments
-		@recentPracticals = @practicals.order("created_at DESC").limit(4)
-		@recentQpapers =@qpapers.order("created_at DESC").limit(4)
-		@recentExamnotes = @examnotes.order("created_at DESC").limit(4)
-		@recentAssignments =@assignments.order("created_at DESC").limit(4)
+		@recentPracticals = @practicals.order("created_at DESC")
+		@recentQpapers =@qpapers.order("created_at DESC")
+		@recentExamnotes = @examnotes.order("created_at DESC")
+		@recentAssignments =@assignments.order("created_at DESC")
 
 		@totalvote = 0
 
