@@ -66,6 +66,9 @@
 						<li><%=link_to "Edit",edit_qpaper_path(@qpaper),id:"edit_profile_btn" %></li>
 						<li><%=link_to "Delete",@qpaper,method: :delete,data:{confirm:"Are you sure?"},id:"edit_profile_btn" %></li>
 					<% end %>
+					<% if current_user %>
+						<li><%= link_to "Mark as Spam",add_spam_path(user_id: current_user.id,post_id: @qpaper.id,type_id: 4),id: "edit_profile_btn" %></li>
+					<% end %>
 				</ul>
 				<%= render "fbshare" %>
 			</div>

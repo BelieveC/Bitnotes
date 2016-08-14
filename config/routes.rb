@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/lang'=>'abouts#language',as:"language"
   get '/team'=>'abouts#team',as:"team"
   get '/result'=>'abouts#result',as:"result"
+  get '/spams/add'=>'spams#add',as:'add_spam'
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]

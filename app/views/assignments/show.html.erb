@@ -67,6 +67,9 @@
 						<li><%=link_to "Edit",edit_assignment_path(@assignment),id:"edit_profile_btn" %></li>
 						<li><%=link_to "Delete",@assignment,method: :delete,data:{confirm:"Are you sure?"},id:"edit_profile_btn" %></li>
 					<% end %>
+					<% if current_user %>
+						<li><%= link_to "Mark as Spam",add_spam_path(user_id: current_user.id,post_id: @assignment.id,type_id: 3),id: "edit_profile_btn" %></li>
+					<% end %>
 				</ul>
 				<%= render "fbshare" %>
 			</div>

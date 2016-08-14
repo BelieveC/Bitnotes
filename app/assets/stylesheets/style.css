@@ -884,6 +884,7 @@ select.form-control.bfh-countries:hover {
 .song-info {
     padding-left: 0;
     padding: 0 0 1em;
+    overflow-x: hidden;
 }
 .song-info h3{
   color: #272C2E;
@@ -1377,6 +1378,7 @@ width:100%;
 }
 .single-right-grid-right{
 	padding-right:0;
+  overflow-x: hidden;
 }
 /*-- about --*/
 .about-main-grids {

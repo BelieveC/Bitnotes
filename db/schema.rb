@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160809132354) do
+ActiveRecord::Schema.define(version: 20160814151338) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -238,6 +238,15 @@ ActiveRecord::Schema.define(version: 20160809132354) do
   end
 
   add_index "simages", ["subject_id"], name: "index_simages_on_subject_id", using: :btree
+
+  create_table "spams", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "count"
+    t.integer  "type_id"
+    t.integer  "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "subjects", force: :cascade do |t|
     t.string   "name"
