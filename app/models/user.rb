@@ -29,6 +29,13 @@ class User < ActiveRecord::Base
 										    :thumb => "-quality 50 -strip",:medium=>"-quality 60 -strip",:small=>"-quality 20 -strip" }
     validates_attachment_content_type :cover, content_type: /\Aimage\/.*\Z/
 
+
+    validates :phname, presence: true,length:{minimum: 5}
+    validates :phname, presence: true,length:{minimum: 10}
+	validates :description, presence: true, length:{minimum: 20}
+
+
+
 	def self.from_omniauth(auth)
 	    where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
 	      user.provider = auth.provider
