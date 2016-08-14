@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	searchkick
 	acts_as_voter
 	has_many :active_relationships, class_name: "Relationship",
 									foreign_key: "subscriber_id",
@@ -31,7 +32,7 @@ class User < ActiveRecord::Base
 
 
     validates :phname, presence: true,length:{minimum: 5}
-    validates :phname, presence: true,length:{minimum: 10}
+    validates :intro, presence: true,length:{minimum: 10}
 	validates :description, presence: true, length:{minimum: 20}
 
 
@@ -42,6 +43,8 @@ class User < ActiveRecord::Base
 	      user.uid = auth.uid
 	      user.name = auth.info.name
 	      user.phname = auth.info.name
+	      user.intro = "Hello ! Welcome to my Publication"
+	      user.description = "Hello ! Welcome to my Publication"
 	      user.oauth_token = auth.credentials.token
 	      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
 	      user.save!
