@@ -51,7 +51,8 @@ class AboutsController < ApplicationController
 		@qpapers = Qpaper.search(params[:search])
 		@colleges = College.search(params[:search])
 		@subjects = Subject.search(params[:search])
-		@totalResult = @practicals.count + @assignments.count + @examnotes.count + @qpapers.count + @colleges.count + @subjects.count
+		@users = User.search(params[:search])
+		@totalResult = @practicals.count + @assignments.count + @examnotes.count+ @users.count + @qpapers.count + @colleges.count + @subjects.count
 		@query = params[:search]
 	end
 
