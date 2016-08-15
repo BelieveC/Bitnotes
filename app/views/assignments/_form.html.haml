@@ -1,7 +1,7 @@
 =simple_form_for(@assignment,html:{multipart: true}) do |f|
 
 	=f.input :topic, label: "Title",placeholder:"What is your Assignment About?"
-	=f.input :subject_id,collection: Subject.all,prompt: "Choose Subject of Assignment",label:"Subject Name",hint:"If Institute not Found,add Subject via Upload Link Above"
+	=f.input :subject_id,collection: Subject.all,prompt: "Choose Subject of Assignment",label:"Subject Name",hint:"If Subject not Found,add Subject via Upload Link Above"
 
 	=f.input :college_id,collection: College.all,label:"Institute",prompt:"Choose Institute related to Assignment",hint:"If Institute not Found,add Your Institute via Upload Link Above",label:"Institute Name"
 	=f.input :description, label: "Description", placeholder:"Describe your Assignment",input_html:{class:'tinymce'},hint:"Describe the Assignment Above"

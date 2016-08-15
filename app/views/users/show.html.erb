@@ -236,7 +236,7 @@
 									<% if user.avatar.url == "/avatars/original/missing.png" %>
 					                	<%=link_to image_tag("customprofile",height:"50px",alt:user.name),user %>
 					                <% else%>
-					                	<%=link_to image_tag(user.avatar.url(:thumb),height:"50px",alt:user.name),user%>
+					                	<%=link_to image_tag(user.avatar.url(:small),height:"50px",alt:user.name),user%>
 					                <% end %>
 				                </li>
 								<li><%=link_to user.phname,user%><br>

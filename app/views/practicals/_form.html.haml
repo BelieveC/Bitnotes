@@ -4,7 +4,7 @@
 
 	=f.input :aim, label: "Aim", placeholder: "What is Aim of the Practical?"
 
-	=f.input :subject_id,collection: Subject.all,prompt: "Choose Subject of Practical",label:"Subject Name",hint:"If Institute not Found,add Subject via Upload Link Above"
+	=f.input :subject_id,collection: Subject.all,prompt: "Choose Subject of Practical",label:"Subject Name",hint:"If Subject not Found,add Subject via Upload Link Above"
 
 	=f.input :college_id,collection: College.all,label:"Institute",prompt:"Choose Institute related to Practical",hint:"If Institute not Found,add Your Institute via Upload Link Above",label:"Institute Name"
 

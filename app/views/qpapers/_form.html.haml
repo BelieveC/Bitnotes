@@ -2,7 +2,7 @@
 
 	=f.input :examname, label: "Title",placeholder:"What is name Question Paper?"
 	=f.input :date, label: "Date",hint:"Date of Conduction of Paper",placeholder:"Date of Examination"
-	=f.input :subject_id,collection: Subject.all,prompt: "Choose Subject of Paper",label:"Subject Name",hint:"If Institute not Found,add Subject via Upload Link Above"
+	=f.input :subject_id,collection: Subject.all,prompt: "Choose Subject of Paper",label:"Subject Name",hint:"If Subject not Found,add Subject via Upload Link Above"
 
 	=f.input :college_id,collection: College.all,label:"Institute",prompt:"Choose Institute related to Paper",hint:"If Institute not Found,add Your Institute via Upload Link Above",label:"Institute Name"
 	=f.input :description, label: "Description", placeholder:"Describe your Paper",input_html:{class:'tinymce'},hint:"Describe the Question Paper"
