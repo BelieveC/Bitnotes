@@ -25,12 +25,6 @@
 <%= favicon_link_tag "favicon" %>
 </head>
 <body>
-  <script>
-      if( window.canRunAds === undefined ){
-        // adblocker detected, show fallback
-        alert("Ad Block Plus");
-      }
-    </script>
 	<%= render "shared/navigation" %>
     <%= yield %>
 	<%= render "shared/footer" %>
