@@ -13,7 +13,7 @@
 			</div>
 				<div class="video-grid">
 					<ul class="docs-pictures">
-						<% if session[:user_id] && @subject.simages.count > 0 %>
+						<% if @subject.simages.count > 0 %>
 							<li><% @subject.simages.each do |simage| %>
 								<%=image_tag(simage.image.url(:medium),alt: @subject.name,class: "img-thumbnail",height:"140px",width:"140px",data:{original:simage.image.url(:thumb)}) %></li>
 							<% end %>
