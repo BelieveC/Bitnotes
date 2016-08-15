@@ -1,9 +1,9 @@
 <% unless current_user?(@user) %>
-	<div id="follow_form">
+	<div id="<%="follow_form#{fi}"%>">
 		<% if subscribed?(@user) %>
-			<%= render 'shared/unsubscribe' %>
+			<%= render partial:'shared/unsubscribe',locals:{fi: fi} %>
 		<% else %>
-			<%= render 'shared/subscribe' %>
+			<%= render partial:'shared/subscribe',locals:{fi: fi} %>
 		<% end %>
 	</div>
 <% end %>

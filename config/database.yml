@@ -3,9 +3,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  host: localhost
-  username: rails
-  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
+  
   
 
 development:

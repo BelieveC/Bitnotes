@@ -1,3 +1,3 @@
 $(document).ready(function() {
-	$("#follow_form").html("<%= j render("shared/subscribe")%>").fadeIn();
+	$("<%="#follow_form#{@form_id}"%>").html("<%= j render partial:"shared/subscribe",locals:{fi: @form_id}%>").fadeIn();
 });

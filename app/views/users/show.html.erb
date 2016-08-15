@@ -47,7 +47,7 @@
                         	<%= link_to "Edit Profile",edit_user_path(@user),id:"edit_profile_btn"%>
                         <% else %>
                         	<div style="float:right;">
-                        		<%= render 'shared/subscribe_form' if current_user %>
+                        		<%= render partial:'shared/subscribe_form',locals:{fi: 0} if current_user %>
                         	</div>
                        	<% end %>
 						<p>
@@ -227,8 +227,10 @@
                 <div class="col-md-1"></div>
                 <div class="col-md-3  show-grid-right">
 					<h3><span class="phpage_detail_title">Similar Publishing House</span></h3>
+					<% i = 0 %>
 					<% @recentUsers.each do |user| %>
 						<div class="show-right-grids">
+							<% i = i+ 1%>
 							<ul>
 								<li>
 									<% if user.avatar.url == "/avatars/original/missing.png" %>
@@ -239,7 +241,7 @@
 				                </li>
 								<li><%=link_to user.phname,user%><br>
 									<% @user = user %>
-									<%= render "shared/subscribe_form" if current_user %>
+									<%= render partial:"shared/subscribe_form",locals:{fi: i} if current_user %>
 								</li>
 	                            <br>
 							</ul>
