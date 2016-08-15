@@ -31,33 +31,6 @@
 						<% end %>
 						<div class="clearfix"> </div>
 					</div>
-					<div class="recommended-grids">
-						<% @recentExamnotes.each do |examnote| %>
-							<div class="col-md-3 resent-grid recommended-grid">
-								<div class="resent-grid-img recommended-grid-img">
-									<% if examnote.eimages.count > 0 %>
-										<%= link_to image_tag(examnote.eimages.first.image.url(:small),alt: examnote.topic),examnote %>	
-									<%else%>
-										<%= link_to image_tag("defaultcoverimage",alt: examnote.topic),examnote %>
-									<% end %>
-									<div class="time small-time" title="Pages Count">
-										<p><%= examnote.eimages.count %></p>
-									</div>
-									<div class="clck small-clck" title="Pages">
-										<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-									</div>
-								</div>
-								<div class="resent-grid-info recommended-grid-info video-info-grid">
-									<h5><%=link_to examnote.topic,examnote, class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(examnote.created_at) %> ago</strong></small></h5>
-									<ul>
-										<li><p class="author author-info"><%= link_to examnote.user.phname,  controller:"users",action:"show",id:examnote.user_id,class:"author"%></p></li>
-										<li class="right-list"><p class="views views-info"><strong><%= examnote.impressionist_count %></strong> views</p></li>
-									</ul>
-								</div>
-							</div>
-						<% end %>
-						<div class="clearfix"> </div>
-					</div>
 				</div>
 				<hr>
 				<div class="recommended">
@@ -72,39 +45,6 @@
 										<%= link_to image_tag(examnote.eimages.first.image.url(:small),alt: examnote.topic),examnote %>	
 									<%else%>
 										<%= link_to image_tag("defaultcoverimage",alt: examnote.topic),examnote %>
-									<% end %>
-									<div class="time small-time" title="Pages Count">
-										<p><%= examnote.eimages.count %></p>
-									</div>
-									<div class="clck small-clck" title="Pages">
-										<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-									</div>
-								</div>
-								<div class="resent-grid-info recommended-grid-info video-info-grid">
-									<h5><%=link_to examnote.topic,examnote, class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(examnote.created_at) %> ago</strong></small></h5>
-									<ul>
-										<li><p class="author author-info"><%= link_to examnote.user.phname,  controller:"users",action:"show",id:examnote.user_id,class:"author"%></p></li>
-										<li class="right-list"><p class="views views-info"><strong><%= examnote.impressionist_count %></strong> views</p></li>
-									</ul>
-								</div>
-							</div>
-						<% end %>
-						<div class="clearfix"> </div>
-					</div>
-				</div>
-				<hr>
-				<div class="recommended">
-					<div class="recommended-grids">
-						<div class="recommended-info">
-							<h3>Notes</h3>
-						</div>
-						<% @recentExamnotes.each do |examnote| %>
-							<div class="col-md-3 resent-grid recommended-grid">
-								<div class="resent-grid-img recommended-grid-img">
-									<% if examnote.eimages.count > 0 %>
-										<%= link_to image_tag(examnote.eimages.first.image.url(:small),alt: examnote.topic),examnote %>	
-									<%else%>
-										<%= link_to image_tag("defaultcoverimage",alt: examnote.topic),examnote %>	
 									<% end %>
 									<div class="time small-time" title="Pages Count">
 										<p><%= examnote.eimages.count %></p>

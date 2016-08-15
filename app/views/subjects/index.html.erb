@@ -31,66 +31,6 @@
 						<% end %>
 						<div class="clearfix"> </div>
 					</div>
-					<div class="recommended-grids">
-						<% @recentSubjects.each do |subject| %>
-							<div class="col-md-3 resent-grid recommended-grid">
-								<div class="resent-grid-img recommended-grid-img">
-									<% if subject.simages.count > 0 %>
-										<%= link_to image_tag(subject.simages.first.image.url(:small),alt: subject.name),subject %>
-									<% else%>
-										<%= link_to image_tag("defaultcoverimage",alt: subject.name),subject %>
-									<% end %>
-									<div class="time small-time" title="Pages Count">
-										<p><%= subject.simages.count %></p>
-									</div>
-									<div class="clck small-clck" title="Pages">
-										<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-									</div>
-								</div>
-								<div class="resent-grid-info recommended-grid-info video-info-grid">
-									<h5><%=link_to subject.name,subject, class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(subject.created_at) %> ago</strong></small></h5>
-									<ul>
-										<li><p class="author author-info"><%= link_to subject.user.phname,  controller:"users",action:"show",id:subject.user_id,class:"author"%></p></li>
-										<li class="right-list"><p class="views views-info"><strong><%=subject.impressionist_count %></strong> views</p></li>
-									</ul>
-								</div>
-							</div>
-						<% end %>
-						<div class="clearfix"> </div>
-					</div>
-				</div>
-				<hr>
-				<div class="recommended">
-					<div class="recommended-grids">
-						<div class="recommended-info">
-							<h3>Subjects</h3>
-						</div>
-						<% @recentSubjects.each do |subject| %>
-							<div class="col-md-3 resent-grid recommended-grid">
-								<div class="resent-grid-img recommended-grid-img">
-									<% if subject.simages.count > 0 %>
-										<%= link_to image_tag(subject.simages.first.image.url(:small),alt: subject.name),subject %>
-									<% else%>
-										<%= link_to image_tag("defaultcoverimage",alt: subject.name),subject %>
-									<% end %>
-									<div class="time small-time" title="Pages Count">
-										<p><%= subject.simages.count %></p>
-									</div>
-									<div class="clck small-clck" title="Pages">
-										<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-									</div>
-								</div>
-								<div class="resent-grid-info recommended-grid-info video-info-grid">
-									<h5><%=link_to subject.name,subject, class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(subject.created_at) %> ago</strong></small></h5>
-									<ul>
-										<li><p class="author author-info"><%= link_to subject.user.phname,  controller:"users",action:"show",id:subject.user_id,class:"author"%></p></li>
-										<li class="right-list"><p class="views views-info"><strong><%=subject.impressionist_count %></strong> views</p></li>
-									</ul>
-								</div>
-							</div>
-						<% end %>
-						<div class="clearfix"> </div>
-					</div>
 				</div>
 				<hr>
 				<div class="recommended">

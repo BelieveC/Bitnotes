@@ -37,33 +37,6 @@
 						<% end %>
 						<div class="clearfix"> </div>
 					</div>
-					<div class="recommended-grids">
-						<% @practicals.each do |practical| %>
-							<div class="col-md-3 resent-grid recommended-grid">
-								<div class="resent-grid-img recommended-grid-img">
-								<% if practical.pimages.count > 0 %>
-									<%= link_to image_tag(practical.pimages.first.image.url(:small),alt: practical.title),practical %>
-								<%else %>
-									<%= link_to image_tag("defaultcoverimage",alt: practical.title),practical %>
-								<% end %>
-									<div class="time small-time" title="Pages Count">
-										<p><%= practical.pimages.count %></p>
-									</div>
-									<div class="clck small-clck" title="Pages">
-										<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-									</div>
-								</div>
-								<div class="resent-grid-info recommended-grid-info video-info-grid">
-									<h5><%= link_to practical.title,practical,class:"title"%><br><small>Submitted <strong> <%=time_ago_in_words(practical.created_at) %> ago</strong></small></h5>
-									<ul>
-										<li><p class="author author-info"><%= link_to practical.user.phname,  controller:"users",action:"show",id:practical.user_id,class:"author"%></p></li>
-										<li class="right-list"><p class="views views-info"><strong><%=practical.impressionist_count %></strong> views</p></li>
-									</ul>
-								</div>
-							</div>
-						<% end %>
-						<div class="clearfix"> </div>
-					</div>
 				</div>
 				<hr>
 				<div class="recommended">

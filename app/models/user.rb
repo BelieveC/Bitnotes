@@ -43,8 +43,8 @@ class User < ActiveRecord::Base
 	      user.uid = auth.uid
 	      user.name = auth.info.name
 	      user.phname = auth.info.name
-	      user.intro = "Hello ! Welcome to my Publication"
-	      user.description = "Hello ! Welcome to my Publication"
+	      user.intro = "hello Welcome to my Publication"
+	      user.description = "Welcome to my Publication-"
 	      user.oauth_token = auth.credentials.token
 	      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
 	      user.save!
