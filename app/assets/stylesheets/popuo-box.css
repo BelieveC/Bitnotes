@@ -560,6 +560,6 @@ button::-moz-focus-inner {
 	display: inline-block;
 	margin: 0.2em;
 }
-a:focus {
+.social-sits a:focus {
   color:white !important;
 }
