@@ -32,8 +32,6 @@ class User < ActiveRecord::Base
 
 
     validates :phname, presence: true,length:{minimum: 5}
-    validates :intro, presence: true,length:{minimum: 10}
-	validates :description, presence: true, length:{minimum: 20}
 
 
 
