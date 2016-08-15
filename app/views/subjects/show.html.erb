@@ -36,7 +36,7 @@
 
 					</li>
 					<li><%=link_to @subject.user.phname,controller:"users",action: "show",id: @subject.user_id%><br>
-						<%= render 'shared/subscribe_form' if current_user %></li>
+						<%= render partial:'shared/subscribe_form',locals:{fi: 0} if current_user %></li>
                     <br>
 				</ul>
 			</div>
