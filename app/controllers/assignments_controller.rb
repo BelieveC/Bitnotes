@@ -5,7 +5,12 @@ class AssignmentsController < ApplicationController
 	before_action :authenticate_user!,only:[:edit,:new,:create,:update,:destroy]
 
 	def index
-		@recentAssignments = Assignment.all.order("created_at desc").limit(3)
+		if current_user && current_user.college_id.present?
+			@rassignments = Assignment.where(college_id: current_user.college_id).order("created_at DESC").limit(12)
+			@recentAssignments = Assignment.where.not(college_id: current_user.college_id).order("created_at DESC").limit(4)
+		else	
+			@recentAssignments = Assignment.all.order("created_at desc").limit(12)
+		end
 	end
 
 	def show

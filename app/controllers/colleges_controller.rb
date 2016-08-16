@@ -5,7 +5,7 @@ class CollegesController < ApplicationController
 	before_action :authenticate_user!,only:[:edit,:new,:create,:update,:destroy]
 
 	def index
-		@recentColleges = College.all.order("created_at desc").limit(3)
+		@recentColleges = College.all.order("created_at desc").limit(20)
 	end
 
 	def show

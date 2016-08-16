@@ -1,6 +1,6 @@
 class AboutsController < ApplicationController
-	def index
-		if current_user.college_id.present?
+	def index 
+		if current_user	&& current_user.college_id.present?
 			@rpracticals = Practical.where(college_id: current_user.college_id).order("created_at DESC").limit(4)
 			@rassignments = Assignment.where(college_id: current_user.college_id).order("created_at DESC").limit(4)
 			@rqpapers = Qpaper.where(college_id: current_user.college_id).order("created_at DESC").limit(4)

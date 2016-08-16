@@ -2,10 +2,11 @@
 			<div class="main-grids">
 				<div class="recommended">
 					<div class="recommended-grids">
+			<% if current_user && current_user.college_id.present? %>
 						<div class="recommended-info">
 							<h3>Recommended</h3>
 						</div>
-						<% @recentAssignments.each do |assignment| %>
+						<% @rassignments.each do |assignment| %>
 							<div class="col-md-3 resent-grid recommended-grid">
 								<div class="resent-grid-img recommended-grid-img">
 								<% if assignment.aimages.count > 0 %>
@@ -36,6 +37,7 @@
 				<div class="recommended">
 					<div class="recommended-grids">
 						<div class="recommended-info">
+			<% end %>
 							<h3>Assignments</h3>
 						</div>
 						<% @recentAssignments.each do |assignment| %>
