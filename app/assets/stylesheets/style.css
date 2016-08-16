@@ -2996,6 +2996,7 @@ p.NoContentInfo{
   color: white;
   text-align: center;
   cursor: pointer;
+  opacity: 70%;
 }
 
 #move-to-top-button:hover {
