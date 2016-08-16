@@ -1,18 +1,21 @@
 class AboutsController < ApplicationController
 	def index
-		if params[:search].blank?
-			@practicals = Practical.all.order("created_at DESC").limit(3)
+		if current_user.college_id.present?
+			@rpracticals = Practical.where(college_id: current_user.college_id).order("created_at DESC").limit(4)
+			@rassignments = Assignment.where(college_id: current_user.college_id).order("created_at DESC").limit(4)
+			@rqpapers = Qpaper.where(college_id: current_user.college_id).order("created_at DESC").limit(4)
+			@rexamnotes = Examnote.where(college_id: current_user.college_id).order("created_at DESC").limit(4)
+			@practicals = Practical.where.not(college_id: current_user.college_id).order("created_at DESC").limit(4)
+			@assignments = Assignment.where.not(college_id: current_user.college_id).order("created_at DESC").limit(4)
+			@qpapers = Qpaper.where.not(college_id: current_user.college_id).order("created_at DESC").limit(4)
+			@examnotes = Examnote.where.not(college_id: current_user.college_id).order("created_at DESC").limit(4)
+		else
+			@practicals = Practical.all.order("created_at DESC").limit(4)
 			@assignments = Assignment.all.order("created_at DESC").limit(4)
 			@qpapers = Qpaper.all.order("created_at DESC").limit(4)
 			@examnotes = Examnote.all.order("created_at DESC").limit(4)
-		else
-			@practicals = Practical.search(params[:search])
-			@assignments = Assignment.search(params[:search])
-			@examnotes = Examnote.all.limit(0)
-			@qpapers = Qpaper.all.limit(0)
-			@totalResult = @practicals.count + @assignments.count
-			@query = params[:search]
 		end
+
 	end
 
 	def privacy
