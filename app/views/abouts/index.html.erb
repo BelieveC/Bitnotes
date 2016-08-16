@@ -9,7 +9,7 @@
 				<div class="recommended">
 					<div class="recommended-grids">
 						<div class="recommended-info">
-							<h3> Recommended Practicals</h3>
+							<h3>Practicals</h3>
 						</div>
 						<% if current_user.college_id.present? %>
 								<% @rpracticals.each do |practical| %>
@@ -75,6 +75,37 @@
 						<div class="recommended-info">
 							<h3>Notes</h3>
 						</div>
+						<% if current_user.college_id.present? %>
+								<% @rexamnotes.each do |examnote| %>
+									<div class="col-md-3 resent-grid recommended-grid">
+										<div class="resent-grid-img recommended-grid-img">
+										<% if examnote.eimages.count > 0 %>
+											<%= link_to image_tag(examnote.eimages.first.image.url(:small),alt: examnote.topic),examnote %>
+										<%else %>
+											<%= link_to image_tag("defaultcoverimage",alt: examnote.topic),examnote %>
+										<% end %>
+											<div class="time small-time" title="Pages Count">
+												<p><%= examnote.eimages.count %></p>
+											</div>
+											<div class="clck small-clck" title="Pages">
+												<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+											</div>
+										</div>
+										<div class="resent-grid-info recommended-grid-info video-info-grid">
+											<h5><%= link_to examnote.topic,examnote,class:"title"%><br><small>Submitted <strong> <%=time_ago_in_words(examnote.created_at) %> ago</strong></small></h5>
+											<ul>
+												<li><p class="author author-info"><%= link_to examnote.user.phname,  controller:"users",action:"show",id:examnote.user_id,class:"author"%></p></li>
+												<li class="right-list"><p class="views views-info"><strong><%=examnote.impressionist_count %></strong> views</p></li>
+											</ul>
+										</div>
+									</div>
+								<% end %>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+						<div class="recommended">
+							<div class="recommended-grids">
+					<% end %>
 						<% @examnotes.each do |examnote| %>
 							<div class="col-md-3 resent-grid recommended-grid">
 								<div class="resent-grid-img recommended-grid-img">
@@ -108,6 +139,37 @@
 						<div class="recommended-info">
 							<h3>Assignments</h3>
 						</div>
+						<% if current_user.college_id.present? %>
+									<% @rassignments.each do |assignment| %>
+										<div class="col-md-3 resent-grid recommended-grid">
+											<div class="resent-grid-img recommended-grid-img">
+											<% if assignment.aimages.count > 0 %>
+												<%= link_to image_tag(assignment.aimages.first.image.url(:small),alt: assignment.topic),assignment %>
+											<%else %>
+												<%= link_to image_tag("defaultcoverimage",alt: assignment.topic),assignment %>
+											<% end %>
+												<div class="time small-time" title="Pages Count">
+													<p><%= assignment.aimages.count %></p>
+												</div>
+												<div class="clck small-clck" title="Pages">
+													<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+												</div>
+											</div>
+											<div class="resent-grid-info recommended-grid-info video-info-grid">
+												<h5><%= link_to assignment.topic,assignment,class:"title"%><br><small>Submitted <strong> <%=time_ago_in_words(assignment.created_at) %> ago</strong></small></h5>
+												<ul>
+													<li><p class="author author-info"><%= link_to assignment.user.phname,  controller:"users",action:"show",id:assignment.user_id,class:"author"%></p></li>
+													<li class="right-list"><p class="views views-info"><strong><%=assignment.impressionist_count %></strong> views</p></li>
+												</ul>
+											</div>
+										</div>
+									<% end %>
+									<div class="clearfix"> </div>
+								</div>
+							</div>
+							<div class="recommended">
+								<div class="recommended-grids">
+						<%end%>
 						<% @assignments.each do |assignment| %>
 							<div class="col-md-3 resent-grid recommended-grid">
 								<div class="resent-grid-img recommended-grid-img">
@@ -141,6 +203,37 @@
 						<div class="recommended-info">
 							<h3>Papers</h3>
 						</div>
+						<% if current_user.college_id.present? %>
+								<% @rqpapers.each do |qpaper| %>
+									<div class="col-md-3 resent-grid recommended-grid">
+										<div class="resent-grid-img recommended-grid-img">
+										<% if qpaper.qimages.count > 0 %>
+											<%= link_to image_tag(qpaper.qimages.first.image.url(:small),alt: qpaper.examname),qpaper %>
+										<%else %>
+											<%= link_to image_tag("defaultcoverimage",alt: qpaper.examname),qpaper %>
+										<% end %>
+											<div class="time small-time" title="Pages Count">
+												<p><%= qpaper.qimages.count %></p>
+											</div>
+											<div class="clck small-clck" title="Pages">
+												<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+											</div>
+										</div>
+										<div class="resent-grid-info recommended-grid-info video-info-grid">
+											<h5><%= link_to qpaper.examname,qpaper,class:"title"%><br><small>Submitted <strong> <%=time_ago_in_words(qpaper.created_at) %> ago</strong></small></h5>
+											<ul>
+												<li><p class="author author-info"><%= link_to qpaper.user.phname,  controller:"users",action:"show",id:qpaper.user_id,class:"author"%></p></li>
+												<li class="right-list"><p class="views views-info"><strong><%=qpaper.impressionist_count %></strong> views</p></li>
+											</ul>
+										</div>
+									</div>
+								<% end %>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+						<div class="recommended">
+							<div class="recommended-grids">
+					<% end %>
 						<% @qpapers.each do |qpaper| %>
 							<div class="col-md-3 resent-grid recommended-grid">
 								<div class="resent-grid-img recommended-grid-img">
