@@ -32,7 +32,7 @@ nav.navbar.navbar-inverse.navbar-fixed-top {
     top: 80px;
     background: #F7F7F7;
     border: none;
-    padding: 0 20px 20px 20px;
+    padding: 0 25px 20px 20px;
     justify-content: center;
 }
 .sidebar:hover, .sidebar:focus{
@@ -2980,4 +2980,25 @@ p.NoContentInfo{
 
 .searchdescription{
   font-size: 1.2em;
+}
+
+
+#move-to-top-button {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #00c2dc;
+  font-size: 40px;
+  line-height: 40px;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+#move-to-top-button:hover {
+  box-shadow: 1px 1px 2px 1px grey;
+  transition: box-shadow 0.2s;
 }

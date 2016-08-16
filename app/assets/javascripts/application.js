@@ -72,4 +72,4 @@ $.cookie(key,'',$.extend({},options,{expires:-1}));return!$.cookie(key);};}));
 			$("#moreLangDiv").fadeToggle();
 		});
 	});	
-									
+
