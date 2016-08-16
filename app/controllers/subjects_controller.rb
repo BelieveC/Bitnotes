@@ -5,7 +5,7 @@ class SubjectsController < ApplicationController
 	before_action :authenticate_user!,only:[:edit,:new,:create,:update,:destroy]
 
 	def index
-		@recentSubjects = Subject.all.order("created_at desc").limit(3)
+		@recentSubjects = Subject.all.order("created_at desc").limit(20)
 	end
 
 	def show
