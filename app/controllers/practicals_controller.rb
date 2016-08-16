@@ -5,7 +5,12 @@ class PracticalsController < ApplicationController
 	before_action :authenticate_user!,only:[:edit,:new,:create,:update,:destroy]
 
 	def index
-		@recentPracticals = Practical.all.order("created_at DESC").limit(3);
+		if current_user && current_user.college_id.present?
+			@rpracticals = Practical.where(college_id: current_user.college_id).limit(12)
+			@recentPracticals = Practical.where.not(college_id: current_user.college_id).limit(12)
+		else
+			@recentPracticals = Practical.all.order("created_at DESC").limit(12);
+		end
 	end
 
 	def show
