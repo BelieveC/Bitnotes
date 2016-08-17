@@ -41,7 +41,7 @@ class AboutsController < ApplicationController
 
 	def language
 		session[:langId] = params[:lang]
-		redirect_to root_path
+		redirect_to :back
 	end
 
 	def team
