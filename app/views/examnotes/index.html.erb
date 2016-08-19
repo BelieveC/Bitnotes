@@ -22,8 +22,9 @@
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info video-info-grid">
-									<h5><%=link_to examnote.topic,examnote, class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(examnote.created_at) %> ago</strong></small></h5>
 									<ul>
+									<h5><%=link_to examnote.topic,examnote, class:"title" %><br></h5>
+									<small>Submitted <strong> <%=time_ago_in_words(examnote.created_at) %> ago</strong></small>
 										<li><p class="author author-info"><%= link_to examnote.user.phname,  controller:"users",action:"show",id:examnote.user_id,class:"author"%></p></li>
 										<li class="right-list"><p class="views views-info"><strong><%= examnote.impressionist_count %></strong> views</p></li>
 									</ul>
@@ -56,8 +57,9 @@
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info video-info-grid">
-									<h5><%=link_to examnote.topic,examnote, class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(examnote.created_at) %> ago</strong></small></h5>
 									<ul>
+									<h5><%=link_to examnote.topic,examnote, class:"title" %><br></h5>
+									<small>Submitted <strong> <%=time_ago_in_words(examnote.created_at) %> ago</strong></small>
 										<li><p class="author author-info"><%= link_to examnote.user.phname,  controller:"users",action:"show",id:examnote.user_id,class:"author"%></p></li>
 										<li class="right-list"><p class="views views-info"><strong><%= examnote.impressionist_count %></strong> views</p></li>
 									</ul>

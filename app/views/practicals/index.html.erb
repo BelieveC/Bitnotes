@@ -22,7 +22,8 @@
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info video-info-grid">
-									<h5><%=link_to practical.title,practical,class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(practical.created_at) %> ago</strong></small></h5>
+									<h5><%=link_to practical.title,practical,class:"title",title: practical.title%><br></h5>
+									<small>Submitted <strong> <%=time_ago_in_words(practical.created_at) %> ago</strong></small>
 									<ul>
 										<li><p class="author author-info"><%= link_to practical.user.phname,  controller:"users",action:"show",id:practical.user_id,class:"author"%></p></li>
 										<li class="right-list"><p class="views views-info"><strong><%= practical.impressionist_count %></strong> views</p></li>
@@ -56,7 +57,8 @@
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info video-info-grid">
-									<h5><%=link_to practical.title,practical,class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(practical.created_at) %> ago</strong></small></h5>
+									<h5><%=link_to practical.title,practical,class:"title",title: practical.title %><br></h5>
+									<small>Submitted <strong> <%=time_ago_in_words(practical.created_at) %> ago</strong></small>
 									<ul>
 										<li><p class="author author-info"><%= link_to practical.user.phname,  controller:"users",action:"show",id:practical.user_id,class:"author"%></p></li>
 										<li class="right-list"><p class="views views-info"><strong><%= practical.impressionist_count %></strong> views</p></li>

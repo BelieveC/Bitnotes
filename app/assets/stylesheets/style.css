@@ -631,7 +631,7 @@ a.btn.btn-primary.btn-lg.see-button.hvr-shutter-out-horizontal {
 .recommended-grid-info h5 {
   margin: 0;
   overflow: hidden;
-  height: 34px;
+  height: 1.5em;
 }
 .resent-grid-info a.title-info{
     font-size: 15px;
@@ -661,6 +661,7 @@ a.btn.btn-primary.btn-lg.see-button.hvr-shutter-out-horizontal {
 .resent-grid-info p.author-info{
     font-size: 13px;
     font-weight: 600;
+    margin-top: 5px;
 }
 .resent-grid-info p.views {
     font-size: 13px;

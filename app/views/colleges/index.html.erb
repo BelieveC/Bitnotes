@@ -21,7 +21,8 @@
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info video-info-grid">
-									<h5><%=link_to college.name,college, class:"title" %><br><small>Submitted <strong> <%=time_ago_in_words(college.created_at) %> ago</strong></small></h5>
+									<h5><%=link_to college.name,college, class:"title" %><br></h5>
+									<small>Submitted <strong> <%=time_ago_in_words(college.created_at) %> ago</strong></small>
 									<ul>
 										<li><p class="author author-info"><%= link_to college.user.phname,  controller:"users",action:"show",id:college.user_id,class:"author"%></p></li>
 										<li class="right-list"><p class="views views-info"><strong><%= college.impressionist_count %></strong> views</p></li>
