@@ -2,60 +2,23 @@
 	<!-- container -->
 	<div class="container">
 		<div class="upload-grids">
-			<div class="upload-right">
-				<div class="upload-info">
-					<h1>Edit Practical</h1>
+			<div>
+				<% if @practical.errors.any? %>
+					<div class="alert alert-danger alert-dismissible" role="alert">
+					   	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true	">&times;</span></button>
+						<h2><%= pluralize(@practical.errors.count, "Error")%> prevented this practical from saving</h2>
+						<ul>
+							<% @practical.errors.full_messages.each do |msg| %>
+								<li><%= msg%></li>
+							<% end%>
+						</ul>
+					</div>
+				<% end %>
+ 			</div>
 
-					<%= render "form" %>
-					<br>
-					<%=link_to "Back",:back,class:"btn btn-danger" %>
-				</div>
-			</div>
-			<<div class="upload-right-bottom-grids">
-				<div class="col-md-4 upload-right-bottom-left">
-					<h4>Help and Suggestions</h4>
-					<div class="upload-right-top-list">
-						<ul>
-							<li>Use Good Quality Camera Phone</li>
-							<li>Provide Good Conventional Title </li>
-							<li>Divide your Project Images in Group of Six. Good For user.</li>
-							<li>Use Camscanner to Improve images quality</li>
-							<li>Give Brief Introduction</li>
-							<li>Use Description part to convey actual meaning of content</li>
-							<li>Try and beautify Images</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md-4 upload-right-bottom-left">
-					<h4>Reaching Audience</h4>
-					<div class="upload-right-top-list">
-						<ul>
-							<li>Post On Social Sites to get Audience</li>
-							<li>Try and Gather more subscriber to earn more!</li>
-							<li>Provide social links in Description</li>
-							<li>Share with Friends at College, Schools</li>
-							<li>Maximize the Views</li>
-							<li>Get more Hits</li>
-							<li>Use good Publicity tools.</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md-4 upload-right-bottom-left">
-					<h4>Benefits</h4>
-					<div class="upload-right-top-list">
-						<ul>
-							<li>Cool Incentive(Coming Soon)</li>
-							<li>Sharing is Caring</li>
-							<li>Help us make Education open source</li>
-							<li>Lets Build Free Educational Library</li>
-							<li>Be Responsible Student(xD)</li>
-							<li>Try something new with BitNotes</li>
-							<li>Feel Like God!</li>
-						</ul>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
+			<%= render "form" %>
+
+			<%= render "shared/help" %>	
 		</div>
 	</div>
 	<!-- //container -->
