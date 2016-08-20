@@ -1,0 +1,69 @@
+<div class='form-container'>
+	<%= simple_form_for(@practical,html:{multipart: true}) do |f|%>
+
+		<div class='form-item'>
+			<div class='data-header'>
+				<span class='header-name'>Title:</span>
+			</div>
+			<div class='form-data'>
+				<%= f.input :title,label: false,placeholder:"What is your Practical About?"%>	
+			</div>
+		</div>
+		<div class='form-item'>
+			<div class='data-header'>
+				<span class='header-name'>Aim:</span>
+			</div>
+			<div class='form-data'>
+				<%=f.input :aim, label: false, placeholder: "What is Aim of the Practical?"	%>
+			</div>
+		</div>
+		<div class='form-item'>
+			<div class='data-header'>
+				<span class='header-name'>Subject:</span>
+				<span class="header-tip">If Subject not Found,add Subject via Upload Link Above</span>
+			</div>
+			<div class='form-data'>
+				<%=f.input :subject_id,collection: Subject.all,prompt: "Choose Subject of Practical",label:false	%>
+			</div>
+		</div>
+		<div class='form-item'>
+			<div class='data-header'>
+				<span class='header-name'>College:</span>
+				<span class='header-tip'>If Institute not Found,add Your Institute via Upload Link Above</span>
+			</div>
+			<div class='form-data'>
+				<%=f.input :college_id,collection: College.all,label:"Institute",prompt:"Choose Institute related to Practical",label: false	%>
+			</div>
+		</div>
+		<div class='form-item'>
+			<div class='data-header'>
+				<span class='header-name'>Description:</span>
+				<span class='header-tip'>Describe above Practical</span>
+			</div>
+			<div class='form-data'>
+				<%=f.input :description, label: false, placeholder:"Describe your Practical",input_html:{class:'tinymce'}	%>
+			</div>
+		</div>
+		<div class='form-item'>
+			<div class='form-data'>
+				<div id='image-preview-box'>	
+				</div>
+			</div>
+			<div class='data-header'>
+				<span id='add-image' onclick='addImage(event)' title="Add Image">
+					<svg fill="#2196F3" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
+					    <circle cx="12" cy="12" r="3.2"/>
+					    <path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/>
+					    <path d="M0 0h24v24H0z" fill="none"/>
+					</svg>
+				</span>
+			</div>
+
+		</div>
+		<div class='form-actions'>
+			<%=f.submit class:"btn btn-primary form-actions-btn form-submit" %>
+			<span class="btn btn-primary form-actions-btn form-cancel">Cancel</span>
+		</div>
+		
+	<% end %>
+</div>

@@ -2,7 +2,7 @@
 	<!-- container -->
 	<div class="container">
 		<div class="upload-grids">
-			<div class="upload-right">
+			<div class="">
 				<% if @practical.errors.any? %>
 					<div class="alert alert-danger alert-dismissible" role="alert">
 					   	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true	">&times;</span></button>
@@ -14,14 +14,9 @@
 						</ul>
 					</div>
 				<% end %>
-				<div class="upload-info">
-					<h1>New Practical</h1>
-
-					<%= render "form" %>
-					<br>
-					<%=link_to "Back",:back,class:"btn btn-danger" %>
-				</div>
-			</div>
+				
+				<%= render 'form' %>
+ 			</div>
 			<div class="upload-right-bottom-grids">
 				<div class="col-md-4 upload-right-bottom-left">
 					<h4>Help and Suggestions</h4>

@@ -73,3 +73,83 @@ $.cookie(key,'',$.extend({},options,{expires:-1}));return!$.cookie(key);};}));
 		});
 	});	
 
+
+
+// form image add feature
+
+// function addImage(event) {
+// 	var deleteSvg = '<svg fill="#E91E63" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">\
+//     <path d="M15 16h4v2h-4zm0-8h7v2h-7zm0 4h6v2h-6zM3 18c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2V8H3v10zM14 5h-3l-1-1H6L5 5H2v2h12z"/>\
+//     <path d="M0 0h24v24H0z" fill="none"/>\
+// </svg>';
+// 	console.log(event.target);
+// 	var el = document.createElement('div');
+// 	el.setAttribute('class', 'image-preview');
+// 	el.setAttribute('id', '123');
+// 	var targetLocation = document.getElementById('image-preview-box');
+// 	targetLocation.appendChild(el);
+// 	el.innerHTML = "<span class='delete-image'>"+deleteSvg+"</span><input type='file' accept='image/*'>";
+
+// 	// el.getElementsByTagName('input')[0].click();
+
+// 	function change
+// }
+
+
+function addImage(event) {
+	var deleteSvg = '<svg fill="#0288d1" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">\
+					    <path d="M15 16h4v2h-4zm0-8h7v2h-7zm0 4h6v2h-6zM3 18c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2V8H3v10zM14 5h-3l-1-1H6L5 5H2v2h12z"/>\
+					    <path d="M0 0h24v24H0z" fill="none"/>\
+					</svg>';
+	var imgPreviewBox = document.getElementById('image-preview-box');
+	var milliseconds = (new Date).getTime();
+
+	var imgbox = document.createElement('div');
+	imgbox.setAttribute('class', 'image-preview');
+	imgbox.setAttribute('id', '123');
+
+	var hiddenInput = document.createElement('input');
+	hiddenInput.setAttribute('type', 'file');
+	hiddenInput.setAttribute('name', 'practical[pimages_attributes]['+ milliseconds+'][image]');
+	hiddenInput.style.display = "none";
+
+	var deleteBtn = document.createElement('span');
+	deleteBtn.setAttribute('class', 'delete-image');
+	deleteBtn.setAttribute('title', 'Remove this image');
+
+	deleteBtn.innerHTML = deleteSvg;
+
+	hiddenInput.click();
+
+	imgPreviewBox.appendChild(imgbox);
+	imgbox.appendChild(deleteBtn);
+	imgbox.appendChild(hiddenInput);
+
+	deleteBtn.onclick = function() {
+		imgPreviewBox.removeChild(imgbox);
+	}
+
+	function handleFileSelect(evt) {
+	    var files = evt.target.files;
+
+	    var f = files[0];
+	      // Only process image files.
+	      if (!f.type.match('image.*')) {
+	      	console.log('not an image');
+	        return;
+	      }
+
+	      var reader = new FileReader();
+	      reader.onload = (function(theFile) {
+	        return function(e) {
+	          imgbox.style.background = "url("+e.target.result+")";
+	          imgbox.style.backgroundSize = "150px 200px";
+	          imgbox.style.backgroundRepeat = "no-repeat";
+	        };
+	      })(f);
+	      reader.readAsDataURL(f);
+	}
+
+
+	hiddenInput.addEventListener('change', handleFileSelect, false);
+}

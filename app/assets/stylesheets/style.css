@@ -3004,3 +3004,115 @@ p.NoContentInfo{
   box-shadow: 1px 1px 2px 1px grey;
   transition: box-shadow 0.2s;
 }
+
+.form-actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: flex-start;
+  left: 0;
+  right: 0;
+  margin: 0 auto 2em auto;
+}
+
+.form-actions-btn {
+  /*font-size: 2em;*/
+  box-sizing: border-box;
+  cursor: pointer;
+  margin-right: 20px;
+  margin-bottom: 1em; 
+}
+
+.form-submit {
+
+}
+
+.form-cancel {
+  background-color: 
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 60vw;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.form-item {
+  display: block;
+  margin-bottom: 2em;
+}
+
+.header-name {
+  float: left;
+  font-size: 2em;
+  color: #00c2dc;
+}
+
+.header-tip {
+  float: right;
+  color: #00c2dc;
+  margin-top: 0.3em;
+  font-size: 1.5em;
+}
+
+.form-data {
+  padding-top: 10px;
+}
+
+.form-data input {
+  width: 100%;
+  border-radius: 5px;
+  font-size: 1.5em;
+}
+
+.form-item .add-item:hover {
+  background-color: blue;
+  box-shadow: 0 0 1px 0px skyblue;
+}
+
+.form-item #add-image {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  border-color: transparent;
+  cursor: pointer;
+  color: white;
+}
+
+.image-preview {
+  height: 200px;
+  width: 150px;
+  margin: 10px;
+  border: 1px solid transparent;
+  box-shadow: 0 0 2px 0 grey;
+}
+
+.image-preview:hover {
+  border: 1px solid grey;
+}
+
+.delete-image {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  float: right;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.delete-image:hover svg{
+  fill: red;
+}
+
+#image-preview-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
