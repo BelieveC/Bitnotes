@@ -2,7 +2,7 @@
 	<!-- container -->
 	<div class="container">
 		<div class="upload-grids">
-			<div class="upload-right">
+			<div>
 				<% if @assignment.errors.any? %>
 					<div class="alert alert-danger alert-dismissible" role="alert">
 					   	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true	">&times;</span></button>
@@ -13,17 +13,12 @@
 							<% end%>
 						</ul>
 					</div>
-				<% end %>
-				<div class="upload-info">
-					<h1>New Assignment</h1>
+				<% end %>	
+			</div>			
 
-					<%= render "form" %>
-					<br>
-					<%=link_to "Back",:back,class:"btn btn-danger" %>
-				</div>
-			</div>
+				<%= render "form" %>
 			
-			<%= render "shared/help" %>
+				<%= render "shared/help" %>
 		</div>
 	</div>
 	<!-- //container -->

@@ -20,6 +20,11 @@ Rails.application.routes.draw do
   get '/result'=>'abouts#result',as:"result"
   get '/spams/add'=>'spams#add',as:'add_spam'
   get 'practicals/:id/destroyimage'=>"practicals#destroyimage",as:"destroypimage"
+  get 'assignments/:id/destroyimage'=>"assignments#destroyimage",as:"destroyaimage"
+  get 'colleges/:id/destroyimage'=>"colleges#destroyimage",as:"destroycimage"
+  get 'qpapers/:id/destroyimage'=>"qpapers#destroyimage",as:"destroyqimage"
+  get 'examnotes/:id/destroyimage'=>"examnotes#destroyimage",as:"destroyeimage"
+  get 'subjects/:id/destroyimage'=>"subjects#destroyimage",as:"destroysimage"
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
