@@ -10,9 +10,9 @@
 <br>
 <div class="developers">
 	<% if @user.cover.url == "/covers/original/missing.png" %> 
-		<div class="phouse-banner" style=" background: url("customcover") no-repeat 0px 0px !important">
+		<div class="phouse-banner" style=" background: url("customcover") no-repeat 0px 0px !important;background-size: 100vw auto !important">
 	<% else %>
-		<div class="phouse-banner" style="background: url(<%=@user.cover.url(:thumb)%>) no-repeat 0px 0px !important">
+		<div class="phouse-banner" style="background: url(<%=@user.cover.url(:thumb)%>) no-repeat 0px 0px !important;background-size: 100vw auto !important;">
 	<% end %>
 	   <!-- container -->
 		<div class="container">
