@@ -2,6 +2,8 @@ body{
 	background:#fff;
 	font-size:100%;
 	font-family: 'Roboto', sans-serif !important;
+  margin: 0;
+  padding: 0;
 }
 
 .searchinfodiv{
@@ -2882,7 +2884,7 @@ span.glyphicon.glyphicon-user {
 }
 .phouse-banner{
     background: url("customcover") no-repeat 0px 0px !important;
-    background-size: cover !important;
+    background-size: 100vw auto !important;
     padding: 3em 0;
 }
 .phpage_detail_title{
