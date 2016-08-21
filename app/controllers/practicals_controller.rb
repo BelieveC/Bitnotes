@@ -1,7 +1,7 @@
 class PracticalsController < ApplicationController
 
 	impressionist actions: [:show]
-	before_action :get_practical, only: [:show,:update,:edit,:destroy,:upvote,:downvote]
+	before_action :get_practical, only: [:show,:update,:edit,:destroy,:upvote,:downvote,:destroyimage]
 	before_action :authenticate_user!,only:[:edit,:new,:create,:update,:destroy]
 
 	def index
@@ -37,6 +37,7 @@ class PracticalsController < ApplicationController
 
 	def edit
 		if session[:user_id] == @practical.user_id
+			@check = 1
 			render layout: "form"
 		else
 			redirect_to root_path,notice:"Gotcha!, You don't have access to edit this Practical."
@@ -82,6 +83,11 @@ class PracticalsController < ApplicationController
 		end
 	end
 
+	def destroyimage
+		@pimage = @practical.pimages.find(params[:imageid])
+		@pimage.destroy
+		redirect_to :back
+	end
 	private
 		/ Strong Params for Rails 4+  /
 		def practical_params

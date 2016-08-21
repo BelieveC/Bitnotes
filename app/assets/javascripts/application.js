@@ -106,7 +106,6 @@ function addImage(event) {
 
 	var imgbox = document.createElement('div');
 	imgbox.setAttribute('class', 'image-preview');
-	imgbox.setAttribute('id', '123');
 
 	var hiddenInput = document.createElement('input');
 	hiddenInput.setAttribute('type', 'file');
@@ -153,3 +152,10 @@ function addImage(event) {
 
 	hiddenInput.addEventListener('change', handleFileSelect, false);
 }
+
+$(document).ready(function(){
+	$(".delete-image").on("click",function(){
+		$(this).closest(".image-preview").remove();
+		
+	});
+});
