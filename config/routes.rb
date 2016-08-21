@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get '/team'=>'abouts#team',as:"team"
   get '/result'=>'abouts#result',as:"result"
   get '/spams/add'=>'spams#add',as:'add_spam'
-  get 'practicals/:id/destroyimage'=>"practicals#destroyimage",as:"destroyimage"
+  get 'practicals/:id/destroyimage'=>"practicals#destroyimage",as:"destroypimage"
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
