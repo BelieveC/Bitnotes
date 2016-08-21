@@ -95,7 +95,7 @@
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info video-info-grid">
-									<h5><%= link_to examnote.topic,examnote,class:"title",title: examname.topic %><br></h5>
+									<h5><%= link_to examnote.topic,examnote,class:"title",title: examnote.topic %><br></h5>
 									<small>Submitted <strong> <%=time_ago_in_words(examnote.created_at) %> ago</strong></small>
 									<ul>
 										<li><p class="author author-info"><%= link_to examnote.user.phname,  controller:"users",action:"show",id:examnote.user_id,class:"author"%></p></li>
