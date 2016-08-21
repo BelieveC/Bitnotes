@@ -3026,14 +3026,6 @@ p.NoContentInfo{
   margin-bottom: 1em; 
 }
 
-.form-submit {
-
-}
-
-.form-cancel {
-  background-color: 
-}
-
 .form-container {
   display: flex;
   flex-direction: column;
