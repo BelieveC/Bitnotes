@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :get_user, only:[:show,:edit,:update,:destroy]
-  before_action :authenticate_user!,only:[:edit,:update,:destroy]
+  before_action :get_user, only:[:show,:edit,:update,:destroy,:dashboard,:dashassignments,:dashexamnotes,:dashqpapers,:dashsubjects,:dashcolleges]
+  before_action :authenticate_user!,only:[:edit,:update,:destroy,:dashboard,:dashassignments,:dashexamnotes,:dashqpapers,:dashsubjects,:dashcolleges]
 	def index
 	end
 
@@ -68,7 +68,57 @@ class UsersController < ApplicationController
 	end
 
 	def dashboard
-		render layout: "dashboard"
+		if session[:user_id] == @user.id
+			@practicals = Practical.where(user_id: @user.id).order("created_at DESC")
+			render layout: "dashboard"
+		else
+			redirect_to root_path,notice: "Gotcha!, You are not owner of this Profile"
+		end
+	end
+
+	def dashassignments
+		if session[:user_id] == @user.id
+			@assignments = Assignment.where(user_id: @user.id).order("created_at DESC")
+			render "dashboard",layout: "dashboard"
+		else
+			redirect_to root_path,notice: "Gotcha!, You are not owner of this Profile"
+		end
+	end
+
+	def dashexamnotes
+		if session[:user_id] == @user.id
+			@examnotes = Examnote.where(user_id: @user.id).order("created_at DESC")
+			render "dashboard",layout: "dashboard"
+		else
+			redirect_to root_path,notice: "Gotcha!, You are not owner of this Profile"
+		end
+	end
+
+	def dashqpapers
+		if session[:user_id] == @user.id
+			@qpapers = Qpaper.where(user_id: @user.id).order("created_at DESC")
+			render "dashboard",layout: "dashboard"
+		else
+			redirect_to root_path,notice: "Gotcha!, You are not owner of this Profile"
+		end	
+	end
+
+	def dashcolleges
+		if session[:user_id] == @user.id
+			@colleges =College.where(user_id: @user.id).order("created_at DESC")
+			render "dashboard",layout: "dashboard"
+		else
+			redirect_to root_path,notice: "Gotcha!, You are not owner of this Profile"
+		end
+	end
+
+	def dashsubjects
+		if session[:user_id] == @user.id
+			@subjects = Subject.where(user_id: @user.id).order("created_at DESC")
+			render "dashboard",layout: "dashboard"
+		else
+			redirect_to root_path,notice: "Gotcha!, You are not owner of this Profile"
+		end
 	end
 
 	private
