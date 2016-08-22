@@ -169,12 +169,30 @@
 		</div>
 			<div class="drop-navigation drop-navigation">
 			  <ul class="nav nav-sidebar">
-			  	
+			   	<div id="subscription_content">
+				  	<ul id="subscription">
+				  		<li>
+				  		<% if @user.avatar.url != "/avatars/original/missing.png" %> 
+							<%= link_to image_tag(@user.avatar.url(:small),alt: @user.phname,class:"dashboardProfileImage"),@user,class:"dashProImage"%>
+						<% else %>
+							<%= link_to (image_tag "customprofile",class:"dashboardProfileImage"),@user%>
+						<% end %>
+						</li>
+						<li><%=link_to @user.phname,@user,class:"dashProName"%></li>
+						<li class="dashBalance">Balance: <span class="glyphicon glyphicon-usd"></span>0</li>
+				  	</ul>
+				</div>
+
+				<hr>
 			  	<% if current_user %>
 				  	<li><%=active_link_to current_user,:active=> :exclusive,class:"user-icon" do %>
 			  			<span class="glyphicon glyphicon-home" aria-hidden="left-align"></span> My Publication
 			  		<% end %>
-			  	</li>
+			  		</li>
+			  		<li><%=active_link_to "#",:active=> :exclusive,class:"user-icon" do %>
+			  			<span class="glyphicon glyphicon-usd" aria-hidden="left-align"></span> Payment Gateway.
+			  		<% end %>
+			  		</li>
 				<% end %>
 				<hr>
 			  	<li><%=active_link_to user_dashboard_path(id: @user.id),:active=> :exclusive,class:"user-icon" do %>
@@ -203,30 +221,7 @@
 			  		<% end %>
 			  	</li>
 			  </ul>
-			   <% if current_user %>
-			   	<div id="subscription_content">
-				  <hr>
-				  <h4 id="subscription_title">Subscribed</h4>
-				  <ul id="subscription">
-				  	<% current_user.subscribed.order("phname asc").each do |subscribed| %>
-				  		<li>
-				  		<% if subscribed.avatar.url != "/avatars/original/missing.png" %> 
-							<%= link_to image_tag(subscribed.avatar.url(:small),alt: subscribed.phname,class:"sidebar_publication_image"),subscribed,class:"sidebar_publication_link"%>
-						<% else %>
-							<%= link_to (image_tag "customprofile",class:"sidebar_publication_image"),current_user,class:"sidebar_publication_link"%>
-						<% end %>
-				  		<strong><%= link_to subscribed.phname,subscribed,class:"sidebar_publication_link" %></strong></li>
-				  	<% end %>
-				  </ul>
-				<% else %>
-				 <div id="subscription_content">
-				 	<hr>
-				 	<br><br>
-				 	<h4>Sign In to subscribe, like and get recommendations.</h4>
-				 	<p><a href="#small-dialog2" class="play-icon popup-with-zoom-anim btn-lg btn btn-default">Sign In</a></p>
-				 </div>
-				<% end %>
-				</div>
+			   
 			  <!-- script-for-menu -->
 					<script>
 						$( ".top-navigation" ).click(function() {
