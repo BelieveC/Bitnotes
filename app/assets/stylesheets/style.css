@@ -2906,6 +2906,7 @@ span.glyphicon.glyphicon-user {
   background-color: #00C2DC;
   color:white;
   padding: 5px 6px;
+  margin-left: 0.2em;
   border-radius: 4px;
   font-size: 13px;
   font-weight: bold;
@@ -3137,3 +3138,47 @@ p.NoContentInfo{
     width: 100%;
   }
 } 
+.earning{
+  float: right;
+  font-size: 1em;
+  font-weight: bold;
+}
+.earning .usd{
+  font-size: 0.75em;
+}
+
+.dashboardProfileImage{
+  width: 11em;
+  height: 11em;
+  margin-top: 0.4em;
+  margin-left: -4em;
+}
+#subscription_content ul#subscription li:hover a.dashProImage{
+  background-color: white !important;
+  box-shadow: 0px 1px 1px 0px grey;
+
+}
+.dashProName{
+  margin-left: -2em;
+}
+.dashBalance{
+  margin-left: 4.2em;
+  font-size: 1.5em;
+}
+
+.dashActionLinks{
+  font-size: 1.5em;
+  color: white;
+  float: left;
+  margin: 0.1em;
+  padding: 0.2em 0.4em;
+  background-color: #00c2dc;
+  border-radius: 20%;
+  border: 0.2em solid white;
+
+}
+.dashActionLinks:hover, .dashActionLinks:active{
+  color:black;
+  background-color: #f7f7f7;
+  text-decoration: none;
+}
