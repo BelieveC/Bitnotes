@@ -1,7 +1,7 @@
 class CollegesController < ApplicationController
 	
 	impressionist actions: [:show]
-	before_action :get_college,only: [:show,:edit,:update,:destroy,:upvote,:downvote]
+	before_action :get_college,only: [:show,:edit,:update,:destroy,:upvote,:downvote,:destroyimage]
 	before_action :authenticate_user!,only:[:edit,:new,:create,:update,:destroy]
 
 	def index
@@ -34,6 +34,7 @@ class CollegesController < ApplicationController
 
 	def edit
 		if session[:user_id] == @college.user_id
+			@check = 1
 			render layout: "form"
 		else
 			redirect_to root_path,notice:"Gotcha!, You don't have access to edit this Institute."
@@ -79,6 +80,11 @@ class CollegesController < ApplicationController
 		end
 	end
 
+	def destroyimage
+		@cimage = @college.cimages.find(params[:imageid])
+		@cimage.destroy
+		redirect_to :back
+	end
 	private
 		def get_college
 			@college = College.find(params[:id])

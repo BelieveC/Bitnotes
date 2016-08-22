@@ -35,7 +35,7 @@
 								<% end %>
 								
 
-								<input type="file" name="college[cimages_attributes][<%= aimage.id %>][image]" style="display: none">
+								<input type="file" name="college[cimages_attributes][<%= cimage.id %>][image]" style="display: none">
 							</div>
 				
 						<% end%>
@@ -61,40 +61,3 @@
 		
 	<% end %>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=simple_form_for(@college) do |f|
-	=f.input :name,placeholder:"What is the name of the Institute?",label:"Institute Name"
-	=f.input :address,placeholder:"Where is Institute situated?",label:"Address of Institute",hint:"City Name"
-	%h2 Images
-
-	#tasks
-	=f.simple_fields_for :cimages do |cimage|
-		=render "cimage_fields", f: cimage
-	.links
-		=link_to_add_association "Add Images",f, :cimages, class:"btn btn-success"
-	%br
-	=f.submit class:"btn btn-primary"
