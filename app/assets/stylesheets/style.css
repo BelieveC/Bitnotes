@@ -434,6 +434,9 @@ ul.social-slide li i.mac{
   .callbacks_nav {
     top: 47%;
     }
+    .nocontent{
+      width: 100% !important;
+    }
 }
 /*----*/
 .callbacks_tabs a{
@@ -1792,6 +1795,9 @@ span.glyphicon.glyphicon-user {
     padding-left: 0em;
     margin-left: -10px;
   }
+  .nocontent{
+    width: 100% !important;
+  }
 }
 @media (max-width: 1280px) {
 	.time {
@@ -2104,6 +2110,9 @@ span.glyphicon.glyphicon-user {
 	.try-right-left {
 		margin-bottom: 2em;
 	}
+  .nocontent{
+    width: 100% !important;
+  }
 }
 @media (max-width: 800px) {
 	form.navbar-form.navbar-right {
@@ -2115,6 +2124,9 @@ span.glyphicon.glyphicon-user {
   }
   .searchdescription{
     display: none;
+  }
+  .nocontent{
+    width: 100% !important;
   }
 }
 @media (max-width: 768px) {
