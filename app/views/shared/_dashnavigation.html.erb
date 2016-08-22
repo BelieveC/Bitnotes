@@ -1,0 +1,242 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to root_path,class:"navbar-brand" do %>
+		<h1><%= image_tag "thumbnail"%></h1>
+      <% end %>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+		<div class="top-search">
+			<%=form_tag(result_path,method: :get,class:"navbar-form navbar-right") do%>
+				<%=text_field_tag :search,params[:search],class:"form-control",placeholder:"Search.."%>
+				<%=submit_tag(value="")%>
+			<% end%>
+		</div> 
+		<div class="header-top-right">
+			<div class="file" id="upload-btn">
+				<a href="#small-dialog9" class="play-icon popup-with-zoom-anim">Upload</a>
+			</div>	
+			<div id="small-dialog9" class="mfp-hide">
+				<h3>New Upload</h3> 
+				<div class="uploadlinks">
+					<%= link_to "Institute",new_college_path,data: { no_turbolink: true },class:"btn btn-primary"%>
+					<%= link_to "Subject",new_subject_path,data: { no_turbolink: true },class:"btn btn-success"%>
+					<%= link_to "Assignment", new_assignment_path,data: { no_turbolink: true },class:"btn btn-info"%>
+					<%= link_to "Practical", new_practical_path,data: { no_turbolink: true },class:"btn btn-warning"%>
+					<%= link_to "Paper", new_qpaper_path,data: { no_turbolink: true },class:"btn btn-danger"%>
+					<%= link_to "Notes", new_examnote_path,data: { no_turbolink: true },class:"btn btn-primary"%>
+					<br><br><br>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="signin">
+				<% if user_signed_in? %>
+					<% if current_user.avatar.url != "/avatars/original/missing.png" %>
+						<%= link_to (image_tag current_user.avatar.url(:small),class:"navbarprofilepic"),current_user,id:"publishinghouselink"%>
+					<% else%>
+						<%= link_to (image_tag "customprofile",class:"navbarprofilepic"),current_user,id:"publishinghouselink"%>
+					<%end %>
+				<% else%>
+					<a href="#small-dialog2" class="play-icon popup-with-zoom-anim">Sign In</a>
+				<% end %>
+				<!-- pop-up-box -->
+				<!--//pop-up-box -->
+				<div id="small-dialog2" class="mfp-hide">
+					<h3>Sign In</h3> 
+					<small>Join BitNotes Community to dive in to Resource Bucket!</small>
+					<div class="social-sits">
+						<div class="facebook-button">
+							<%=link_to "Connect with Facebook","/auth/facebook", id: "sign_in" %>
+						</div>
+						<div class="chrome-button">
+							<%=link_to "Connect with Google","/auth/google_oauth2", id: "sign_in" %>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>	
+				<div id="small-dialog4" class="mfp-hide">
+					<h3>Feedback</h3> 
+					<div class="feedback-grids">
+						<div class="feedback-grid">
+							<p>We are always happy to hear your queries and suggestion. Mails us <a href="mailto:cwayconnect@gmail.com">here</a> with your suggestion. We would reach you back. Thank You from Team BitNotes.</p>
+						</div>
+					</div>
+				</div>
+				<div id="small-dialog5" class="mfp-hide">
+					<h3>Help</h3> 
+						<div class="help-grid">
+							<p>Team BitNote is Happy to Help you. Below are some FAQ. If you are not satisfied with FAQ, drop a mail <a href="mailto:cwayconnect@gmail.com">here</a>, Customer Support Team would reach you back. Have Happy time BitNoting.</p>
+						</div>
+						<div class="help-grids">
+							<div class="help-button-bottom">
+								<p><a href="#small-dialog4" class="play-icon popup-with-zoom-anim">Feedback</a></p>
+							</div>
+							<div class="help-button-bottom">
+								<p><a href="#small-dialog6" class="play-icon popup-with-zoom-anim">How to start a Publication?</a></p>
+							</div>
+							<div class="help-button-bottom">
+								<p><a href="#small-dialog10" class="play-icon popup-with-zoom-anim">How to Upload Resource?</a></p>
+							</div>
+							<div class="help-button-bottom">
+								<p><a href="#small-dialog11" class="play-icon popup-with-zoom-anim">How Incentive Work?</a></p>
+							</div>
+							<div class="help-button-bottom">
+								<p><a href="/policy" class="play-icon popup-with-zoom-anim">Policy</a></p>
+							</div>
+							<div class="help-button-bottom">
+								<p><a href="/terms" class="play-icon popup-with-zoom-anim">Terms</a></p>
+							</div>
+						</div>
+				</div>
+				<div id="small-dialog6" class="mfp-hide">
+					<div class="video-information-text">
+						<h4>Getting Started with Publication</h4>
+						<p>Publication is way to Publish your Notes, Practical, Assignments and Papers. Below are step to setup Publication. For <a href="/try">Benefits</a> of starting Publication.</p>
+						<ol>
+							<li>Sign In with your Facebook or Google Account. Click on My Publication in Left Side navigation.</li>
+							<li>Click on Edit Profile button, Add all the Required Fields.</li>
+							<li>You are ready to Upload Assignments, Practicals, Examnotes, Papers by clicking on Upload button on Top Navigation.</li>
+							<li>After successfully uploading your resource, share it with your Facebook, Google+ or Pinterest friends to earn large number of Views.</li>
+							<li>Advertise your Publication to have lot of Subscribers. Lot of Subscriber is easiest way to reach lot of people and Earn lot of Incentive.</li>
+						</ol>
+					</div>
+				</div>
+				<div id="small-dialog10" class="mfp-hide">
+					<div class="video-information-text">
+						<h4>Uploading your first Resource..</h4>
+						<p>Resources can be anything like Practicals, Assignments, Papers, Notes etc. Below is Easy step to upload resource in less than a Minute.</p>
+						<ol>
+							<li>Sign In with your Facebook or Google Account. Click on My Publication in Left Side navigation.</li>
+							<li>Click on Edit Profile button, Add all the Required Fields.</li>
+							<li>You are ready to Upload Assignments, Practicals, Notes, Papers by clicking on Upload button on Top Navigation.</li>
+							<li>Fill the Form of respective Resources as specified. Add images through upload field provided. Submit the Form.</li>
+							<li>Images would be Uploaded and Form would get submitted. You would be redirected on Resource page. Yay! You have done it. Share it to earn Subsciber and Incentive.</li>
+						</ol>
+					</div>
+				</div>
+				<div id="small-dialog11" class="mfp-hide">
+					<div class="video-information-text">
+						<h4>How Incentive Works?</h4>
+						<p>Incentive is nothing but money paid By BitNotes to Publication/Creator as per views count and Advertisement money earned through respective resource.<strong> Currently Monetization Model is Under Development Stage</strong>, you would be notified about when we will start to provide incentive to Publication.<strong> Publications can build there subscriber and Audience till we complete testing of Monetization Model.</strong></p>
+						<ol>
+							<li>We would earn Money through Affiliate Advertising on our Site with Google AdSense, Amazon Associate Program.</li>
+							<li>Money earned through each resource uploaded would be tracked.</li>
+							<li>Publication would get All Statistics about Views and Earned Incentive. Large part of money earned through advertising on your resource would be Given to Publication.</li>
+							<li>Little part of Advertising Money would be kept for Building BitNotes Platform and Keeping Server of BitNotes running. This money helps us provide you Free Services.</li>
+						</ol>
+					</div>
+				</div>
+				<script>
+					$(document).ready(function() {
+						$('.popup-with-zoom-anim').magnificPopup({
+							type: 'inline',
+							fixedContentPos: false,
+							fixedBgPos: true,
+							overflowY: 'auto',
+							closeBtnInside: true,
+							preloader: false,
+							midClick: true,
+							removalDelay: 300,
+							mainClass: 'my-mfp-zoom-in'
+						});																
+					});
+				</script>	
+			</div>
+			<div class="signin">
+				<% if user_signed_in? %>
+					<%= link_to "Sign Out",signout_path %>
+				<% end %>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+    </div>
+	<div class="clearfix"> </div>
+  </div>
+</nav>
+    <div class="col-sm-3 col-md-2 sidebar">
+		<div class="top-navigation">
+			<div class="t-menu">MENU</div>
+			<div class="t-img">
+				<span class="glyphicon glyphicon-align-justify"></span>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+			<div class="drop-navigation drop-navigation">
+			  <ul class="nav nav-sidebar">
+			  	<li><%=active_link_to root_path,:active=> :exclusive,class:"home-icon" do %>
+			  			<span class="glyphicon glyphicon-flash" aria-hidden="true"></span> Trending
+			  		<% end %>
+			  	</li>
+			  	<% if current_user %>
+				  	<li><%=active_link_to current_user,class:"user-icon" do %>
+			  			<span class="glyphicon glyphicon-home" aria-hidden="left-align"></span> My Publication
+			  		<% end %>
+			  	</li>
+				<% end %>
+				<hr>
+			  	<li><%=active_link_to practicals_path,class:"user-icon" do %>
+			  			<span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span> Practicals
+			  		<% end %>
+			  	</li>
+			  	<li><%=active_link_to assignments_path,class:"sub-icon" do %>
+			  			<span class="glyphicon glyphicon-book" aria-hidden="true"></span> Assignments
+			  		<% end %>
+			  	</li>
+				<li><%=active_link_to qpapers_path,class:"song-icon" do %>
+					<span class="glyphicon glyphicon-file" aria-hidden="true"></span> Papers
+					<% end %>
+				</li>
+				<li><%=active_link_to examnotes_path,class:"sub-icon" do %>
+					<span class="glyphicon glyphicon-level-up" aria-hidden="true"></span> Notes
+					<% end %>
+				</li>
+				<hr>
+				<li><%=active_link_to colleges_path,class:"song-icon" do %>
+			  			<span class="glyphicon glyphicon-education" aria-hidden="true"></span> Institutes
+			  		<% end %>
+			  	</li>
+			  	<li><%=active_link_to subjects_path,class:"news-icon" do %>
+			  			<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Subjects
+			  		<% end %>
+			  	</li>
+			  </ul>
+			   <% if current_user %>
+			   	<div id="subscription_content">
+				  <hr>
+				  <h4 id="subscription_title">Subscribed</h4>
+				  <ul id="subscription">
+				  	<% current_user.subscribed.order("phname asc").each do |subscribed| %>
+				  		<li>
+				  		<% if subscribed.avatar.url != "/avatars/original/missing.png" %> 
+							<%= link_to image_tag(subscribed.avatar.url(:small),alt: subscribed.phname,class:"sidebar_publication_image"),subscribed,class:"sidebar_publication_link"%>
+						<% else %>
+							<%= link_to (image_tag "customprofile",class:"sidebar_publication_image"),current_user,class:"sidebar_publication_link"%>
+						<% end %>
+				  		<strong><%= link_to subscribed.phname,subscribed,class:"sidebar_publication_link" %></strong></li>
+				  	<% end %>
+				  </ul>
+				<% else %>
+				 <div id="subscription_content">
+				 	<hr>
+				 	<br><br>
+				 	<h4>Sign In to subscribe, like and get recommendations.</h4>
+				 	<p><a href="#small-dialog2" class="play-icon popup-with-zoom-anim btn-lg btn btn-default">Sign In</a></p>
+				 </div>
+				<% end %>
+				</div>
+			  <!-- script-for-menu -->
+					<script>
+						$( ".top-navigation" ).click(function() {
+						$( ".drop-navigation" ).slideToggle( 300, function() {
+						// Animation complete.
+						});
+						});
+					</script>
+			</div>
+        </div>

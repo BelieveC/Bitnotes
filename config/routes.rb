@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get 'qpapers/:id/destroyimage'=>"qpapers#destroyimage",as:"destroyqimage"
   get 'examnotes/:id/destroyimage'=>"examnotes#destroyimage",as:"destroyeimage"
   get 'subjects/:id/destroyimage'=>"subjects#destroyimage",as:"destroysimage"
+  get 'users/:id/dashboard'=>"users#dashboard",as:"user_dashboard"
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]

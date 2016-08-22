@@ -67,6 +67,10 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def dashboard
+		render layout: "dashboard"
+	end
+
 	private
 		def user_params
 			params.require(:user).permit(:name,:phname,:intro,:college_id,:description,:avatar,:cover,:instagramlink,:googlelink,:fblink,:twitterlink,:pinterestlink)

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BitNotes</title>
+  <meta name="viewport" content="width=device-width initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'dashboard', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'style', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'viewer', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'main', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'ads', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+  <style type="text/css">
+    .goog-te-banner-frame.skiptranslate{display:none!important;}
+    body{top:0px!important;}
+  </style>
+<!-- fonts -->
+<link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+<!-- //fonts -->
+<%= render "shared/fb" %>
+<%= favicon_link_tag "favicon" %>
+
+<!-- InfoLinks Adv -->
+
+<script type="text/javascript">
+var infolinks_pid = 2851388;
+var infolinks_wsid = 0;
+</script>
+<script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>
+
+</head>
+<body>
+	<%= render "shared/dashnavigation" %>
+    <%= yield %>
+	<%= render "shared/footer" %>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-76818554-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+  <span id="move-to-top-button">&uarr;</span>
+
+  <script>
+    function scrollTo (element, to, duration) {
+      var start = element.scrollTop,
+        change = to - start,
+        increment = 20;
+      var animateScroll = function(elapsedTime) {
+        elapsedTime += increment;
+        var position = easeInOut (elapsedTime, start, change, duration);
+        element.scrollTop = position;
+        if (elapsedTime < duration) {
+          setTimeout (function() {
+            animateScroll(elapsedTime);
+          });
+        }
+      };
+      animateScroll(0);
+    }
+    function easeInOut(currentTime, start, change, duration) {
+      currentTime /= duration/2;
+      if (currentTime < 1) {
+        return change / 2 * currentTime * currentTime + start;
+      }
+      currentTime -= 1;
+      return -change / 2 * (currentTime * (currentTime - 2) - 1) + start;
+    }
+
+    document.getElementById('move-to-top-button').addEventListener('click', function() {
+      scrollTo(document.body, document.documentElement.clientHeight*0, 2000);
+    });
+  </script>
+
+   
+</body>
+</html>
