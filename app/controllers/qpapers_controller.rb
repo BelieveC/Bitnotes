@@ -1,7 +1,7 @@
 class QpapersController < ApplicationController
 	
 	impressionist actions: [:show]
-	before_action :get_qpaper,only: [:show,:edit,:update,:destroy,:upvote,:downvote]
+	before_action :get_qpaper,only: [:show,:edit,:update,:destroy,:upvote,:downvote.:destroyimage]
 	before_action :authenticate_user!,only:[:edit,:new,:create,:update,:destroy]
 
 	def index
@@ -37,6 +37,7 @@ class QpapersController < ApplicationController
 
 	def edit
 		if session[:user_id] == @qpaper.user_id
+			@check = 1
 			render layout: "form"
 		else
 			redirect_to root_path,notice:"Gotcha!, You don't have access to edit this Paper."
@@ -79,6 +80,12 @@ class QpapersController < ApplicationController
 			format.html{redirect_to :back}
 			format.js
 		end
+	end
+
+	def destroyimage
+		@qimage = @qpaper.qimages.find(params[:imageid])
+		@qimage.destroy
+		redirect_to :back
 	end
 
 	private
