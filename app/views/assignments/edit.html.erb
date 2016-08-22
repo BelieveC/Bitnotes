@@ -2,15 +2,22 @@
 	<!-- container -->
 	<div class="container">
 		<div class="upload-grids">
-			<div class="upload-right">
-				<div class="upload-info">
-					<h1>Edit Assignment</h1>
+			<div>
+				<% if @assignment.errors.any? %>
+					<div class="alert alert-danger alert-dismissible" role="alert">
+					   	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true	">&times;</span></button>
+						<h2><%= pluralize(@assignment.errors.count, "Error")%> prevented this assignment from saving</h2>
+						<ul>
+							<% @assignment.errors.full_messages.each do |msg| %>
+								<li><%= msg%></li>
+							<% end%>
+						</ul>
+					</div>
+				<% end %>	
+			</div>			
 
-					<%= render "form" %>
-					<br>
-					<%=link_to "Back",:back,class:"btn btn-danger" %>
-				</div>
-			</div>
+			<%= render "form" %>
+		
 			<%= render "shared/help" %>
 		</div>
 	</div>
