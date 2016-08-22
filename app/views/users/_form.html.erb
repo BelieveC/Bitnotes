@@ -1,4 +1,4 @@
-  <div class='form-container'>
+  <div class='form-container'> 
   <%= simple_form_for(@user, html:{multipart: true}) do |f|%>
 
     <div class="form-row">
@@ -48,36 +48,42 @@
       </div>
     </div>
 
-    <div class='form-item' style="display: inline-block; border: 1px solid">
-      <div class='data-header' onclick='addUserImage(this)'>
-        <span class='add-image' title="Add Profile Pic">
-          <svg fill="#2196F3" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="12" cy="12" r="3.2"/>
-              <path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/>
-              <path d="M0 0h24v24H0z" fill="none"/>
-          </svg>
-        </span>
-      </div>
-      <div class='form-data'>
-        <div class='image-preview-box'>  
-        </div>
-      </div>
-    </div>
+    <div class='form-row'>
 
-    <div class='form-item' style="display: inline-block; border: 1px solid;">
-      <div class='data-header' onclick="addUserImage(this)">
-        <span class='add-image' title="Add Cover Pic">
-          <svg fill="#2196F3" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="12" cy="12" r="3.2"/>
-              <path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/>
-              <path d="M0 0h24v24H0z" fill="none"/>
-          </svg>
-        </span>
-      </div>
-      <div class='form-data'>
-        <div class='image-preview-box'>  
+      <div class='form-item' style="display: inline-block;">
+        <div id='avatar' class='data-header' onclick='addUserImage(this)'>
+          <span class='add-image' title="Add Profile Pic">
+            <svg fill="#2196F3" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="3.2"/>
+                <path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/>
+                <path d="M0 0h24v24H0z" fill="none"/>
+            </svg>
+          </span>
+          <span class="header-name" style="float: none; position: absolute; margin: 10px;">Add Avatar</span>
+        </div>
+        <div class='form-data'>
+          <div class='image-preview-box'>  
+          </div>
         </div>
       </div>
+
+      <div class='form-item' style="display: inline-block;">
+        <div id='cover-pic' class='data-header' onclick="addUserImage(this)">
+          <span class='add-image' title="Add Cover Pic">
+            <svg fill="#2196F3" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="3.2"/>
+                <path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/>
+                <path d="M0 0h24v24H0z" fill="none"/>
+            </svg>
+          </span>
+          <span class="header-name" style="float: none; position: absolute; margin: 10px;">Add Cover Pic</span>
+        </div>
+        <div class='form-data'>
+          <div class='image-preview-box'>  
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <div class='form-row'>
@@ -124,7 +130,7 @@
     </div>
 
     <div class='form-actions'>
-      <%=f.submit class:"btn btn-primary" %>
+      <%=f.submit class:"btn btn-primary form-actions-btn" %>
       <span class="btn btn-primary form-actions-btn form-cancel">Cancel</span>
     </div>
   <% end %>    

@@ -178,9 +178,18 @@ function addUserImage(elem) {
 
 	var imgbox = document.createElement('div');
 	imgbox.setAttribute('class', 'image-preview');
+	imgbox.style.width = '100%';
 
 	var hiddenInput = document.createElement('input');
 	hiddenInput.setAttribute('type', 'file');
+	var whoami = elem.getAttribute('id');
+	if (whoami == 'avatar') {
+		hiddenInput.setAttribute('name', "user[avatar]");
+	} else if (whoami == 'cover-pic') {
+		hiddenInput.setAttribute('name', "user[cover]");
+	} else {
+		console.log("caught you idiot. don't mess with my design");
+	}
 	// hiddenInput.setAttribute('name' + '_attributes]['+ milliseconds+'][image]');
 	hiddenInput.style.display = "none";
 
@@ -214,7 +223,7 @@ function addUserImage(elem) {
 	      reader.onload = (function(theFile) {
 	        return function(e) {
 	          imgbox.style.background = "url("+e.target.result+")";
-	          imgbox.style.backgroundSize = "150px 200px";
+	          imgbox.style.backgroundSize = "cover";
 	          imgbox.style.backgroundRepeat = "no-repeat";
 	        };
 	      })(f);
@@ -229,3 +238,4 @@ function addUserImage(elem) {
 function resizeIframe(obj) {
 	obj.style.height = obj.contentWindow.document.documentElement.offsetHeight + 'px';
 }
+ 
