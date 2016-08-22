@@ -6,248 +6,265 @@
 		</div>
 	<% end %>			
 	<div class="main-grids">
-		<% if @practicals.present? %>
-			<div class="recommended">
-				<div class="recommended-grids">
-					<div class="recommended-info">
-						<h4><strong><%= @practicals.count %></strong> Practicals contributed to Open Source Education!</h4>
+		<% if @practicals.present? || @qpapers.present? || @examnotes.present? || @assignments.present? || @subjects.present? || @colleges.present? %>
+			<% if @practicals.present? %>
+				<div class="recommended">
+					<div class="recommended-grids">
+						<div class="recommended-info">
+							<h4><strong><%= @practicals.count %></strong> Practicals contributed to Open Source Education!</h4>
+						</div>
+						<% @practicals.each do |practical| %>
+							<div class="col-md-3 resent-grid recommended-grid">
+								<div class="resent-grid-img recommended-grid-img">
+								<% if practical.pimages.count > 0 %>
+									<%= link_to image_tag(practical.pimages.first.image.url(:small),alt: practical.title),practical %>
+								<%else %>
+									<%= link_to image_tag("defaultcoverimage",alt: practical.title),practical %>
+								<% end %>
+									<div class="time small-time" title="Pages Count">
+										<p><%= practical.pimages.count %></p>
+									</div>
+									<div class="clck small-clck" title="Pages">
+										<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 resent-grid recommended-grid ">
+								<div class="resent-grid-info recommended-grid-info video-info-grid searchinfodiv">
+									<h5><%= link_to practical.title,practical,class:"title"%></h5>
+									<p class="views views-info"><strong><%=practical.impressionist_count %></strong> views</p>
+									<br>
+									<ul>
+										<li><span><%=link_to "Edit",edit_practical_path(practical),class:"dashActionLinks" %><span><span><%=link_to "Delete",practical,method: :delete,data:{confirm:"Are you sure?"},class:"dashActionLinks"%></span></li>
+										<br>
+										<li><strong><%= time_ago_in_words(practical.created_at)%></strong> ago</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-3"></div>
+							<div class="clearfix"></div>	
+							<br>		
+						<% end %>
+						<div class="clearfix"> </div>
 					</div>
-					<% @practicals.each do |practical| %>
-						<div class="col-md-3 resent-grid recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-							<% if practical.pimages.count > 0 %>
-								<%= link_to image_tag(practical.pimages.first.image.url(:small),alt: practical.title),practical %>
-							<%else %>
-								<%= link_to image_tag("defaultcoverimage",alt: practical.title),practical %>
-							<% end %>
-								<div class="time small-time" title="Pages Count">
-									<p><%= practical.pimages.count %></p>
-								</div>
-								<div class="clck small-clck" title="Pages">
-									<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 resent-grid recommended-grid ">
-							<div class="resent-grid-info recommended-grid-info video-info-grid searchinfodiv">
-								<h5><%= link_to practical.title,practical,class:"title"%></h5>
-								<p class="searchdescription"><%= truncate(practical.description, length: 250, separator: ' ') %></p>
-								<p class="views views-info"><strong><%=practical.impressionist_count %></strong> views</p>
-								<ul>
-									<li><p class="author author-info"><%= link_to practical.user.phname,  controller:"users",action:"show",id:practical.user_id,class:"author"%></p></li>
-									<li class="right-list"><strong><%= time_ago_in_words(practical.created_at)%></strong> ago</li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-3"></div>
-						<div class="clearfix"></div>	
-						<br>		
-					<% end %>
-					<div class="clearfix"> </div>
 				</div>
-			</div>
-		<% end %>
-		<% if @assignments.present? %>
-			<div class="recommended">
-				<div class="recommended-grids">
-					<div class="recommended-info">
-						<h4><strong><%= @assignments.count %></strong> Assignments contributed to Open Source Education!</h4>
+			<% end %>
+			<% if @assignments.present? %>
+				<div class="recommended">
+					<div class="recommended-grids">
+						<div class="recommended-info">
+							<h4><strong><%= @assignments.count %></strong> Assignments contributed to Open Source Education!</h4>
+						</div>
+						<% @assignments.each do |assignment| %>
+							<div class="col-md-3 resent-grid recommended-grid">
+								<div class="resent-grid-img recommended-grid-img">
+								<% if assignment.aimages.count > 0 %>
+									<%= link_to image_tag(assignment.aimages.first.image.url(:small),alt: assignment.topic),assignment %>
+								<%else %>
+									<%= link_to image_tag("defaultcoverimage",alt: assignment.topic),assignment %>
+								<% end %>
+									<div class="time small-time" title="Pages Count">
+										<p><%= assignment.aimages.count %></p>
+									</div>
+									<div class="clck small-clck" title="Pages">
+										<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 resent-grid recommended-grid ">
+								<div class="resent-grid-info recommended-grid-info video-info-grid searchinfodiv">
+									<h5><%= link_to assignment.topic,assignment,class:"title"%></h5>
+									<p class="views views-info"><strong><%=assignment.impressionist_count %></strong> views</p>
+									<ul>
+										<li><span><%=link_to "Edit",edit_assignment_path(assignment),class:"dashActionLinks" %><span><span><%=link_to "Delete",assignment,method: :delete,data:{confirm:"Are you sure?"},class:"dashActionLinks"%></span></li>
+										<br>
+										<li ><strong><%= time_ago_in_words(assignment.created_at)%></strong> ago</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-3"></div>
+							<div class="clearfix"></div>	
+							<br>		
+						<% end %>
+						<div class="clearfix"> </div>
 					</div>
-					<% @assignments.each do |assignment| %>
-						<div class="col-md-3 resent-grid recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-							<% if assignment.aimages.count > 0 %>
-								<%= link_to image_tag(assignment.aimages.first.image.url(:small),alt: assignment.topic),assignment %>
-							<%else %>
-								<%= link_to image_tag("defaultcoverimage",alt: assignment.topic),assignment %>
-							<% end %>
-								<div class="time small-time" title="Pages Count">
-									<p><%= assignment.aimages.count %></p>
-								</div>
-								<div class="clck small-clck" title="Pages">
-									<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 resent-grid recommended-grid ">
-							<div class="resent-grid-info recommended-grid-info video-info-grid searchinfodiv">
-								<h5><%= link_to assignment.topic,assignment,class:"title"%></h5>
-								<p class="searchdescription"><%= truncate(assignment.description, length: 250, separator: ' ') %></p>
-								<p class="views views-info"><strong><%=assignment.impressionist_count %></strong> views</p>
-								<ul>
-									<li><p class="author author-info"><%= link_to assignment.user.phname,  controller:"users",action:"show",id:assignment.user_id,class:"author"%></p></li>
-									<li class="right-list"><strong><%= time_ago_in_words(assignment.created_at)%></strong> ago</li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-3"></div>
-						<div class="clearfix"></div>	
-						<br>		
-					<% end %>
-					<div class="clearfix"> </div>
 				</div>
-			</div>
-		<% end %>
-		<% if @examnotes.present? %>
-			<div class="recommended">
-				<div class="recommended-grids">
-					<div class="recommended-info">
-						<h4><strong><%= @examnotes.count %></strong> Examnotes contributed to Open Source Education!</h4>
+			<% end %>
+			<% if @examnotes.present? %>
+				<div class="recommended">
+					<div class="recommended-grids">
+						<div class="recommended-info">
+							<h4><strong><%= @examnotes.count %></strong> Examnotes contributed to Open Source Education!</h4>
+						</div>
+						<% @examnotes.each do |examnote| %>
+							<div class="col-md-3 resent-grid recommended-grid">
+								<div class="resent-grid-img recommended-grid-img">
+								<% if examnote.eimages.count > 0 %>
+									<%= link_to image_tag(examnote.eimages.first.image.url(:small),alt: examnote.topic),examnote %>
+								<%else %>
+									<%= link_to image_tag("defaultcoverimage",alt: examnote.topic),examnote %>
+								<% end %>
+									<div class="time small-time" title="Pages Count">
+										<p><%= examnote.eimages.count %></p>
+									</div>
+									<div class="clck small-clck" title="Pages">
+										<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 resent-grid recommended-grid ">
+								<div class="resent-grid-info recommended-grid-info video-info-grid searchinfodiv">
+									<h5><%= link_to examnote.topic,examnote,class:"title"%></h5>
+									<p class="views views-info"><strong><%=examnote.impressionist_count %></strong> views</p>
+									<ul>
+										<li><span><%=link_to "Edit",edit_examnote_path(examnote),class:"dashActionLinks" %><span><span><%=link_to "Delete",examnote,method: :delete,data:{confirm:"Are you sure?"},class:"dashActionLinks"%></span></li>
+										<br>
+										<li ><strong><%= time_ago_in_words(examnote.created_at)%></strong> ago</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-3"></div>
+							<div class="clearfix"></div>	
+							<br>		
+						<% end %>
+						<div class="clearfix"> </div>
 					</div>
-					<% @examnotes.each do |examnote| %>
-						<div class="col-md-3 resent-grid recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-							<% if examnote.eimages.count > 0 %>
-								<%= link_to image_tag(examnote.eimages.first.image.url(:small),alt: examnote.topic),examnote %>
-							<%else %>
-								<%= link_to image_tag("defaultcoverimage",alt: examnote.topic),examnote %>
-							<% end %>
-								<div class="time small-time" title="Pages Count">
-									<p><%= examnote.eimages.count %></p>
-								</div>
-								<div class="clck small-clck" title="Pages">
-									<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 resent-grid recommended-grid ">
-							<div class="resent-grid-info recommended-grid-info video-info-grid searchinfodiv">
-								<h5><%= link_to examnote.topic,examnote,class:"title"%></h5>
-								<p class="searchdescription"><%= truncate(examnote.description, length: 250, separator: ' ') %></p>
-								<p class="views views-info"><strong><%=examnote.impressionist_count %></strong> views</p>
-								<ul>
-									<li><p class="author author-info"><%= link_to examnote.user.phname,  controller:"users",action:"show",id:examnote.user_id,class:"author"%></p></li>
-									<li class="right-list"><strong><%= time_ago_in_words(examnote.created_at)%></strong> ago</li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-3"></div>
-						<div class="clearfix"></div>	
-						<br>		
-					<% end %>
-					<div class="clearfix"> </div>
 				</div>
-			</div>
-		<% end %>
-		<% if @qpapers.present? %>
-			<div class="recommended">
-				<div class="recommended-grids">
-					<div class="recommended-info">
-						<h4><strong><%= @qpapers.count %></strong> Papers contributed to Open Source Education!</h4>
+			<% end %>
+			<% if @qpapers.present? %>
+				<div class="recommended">
+					<div class="recommended-grids">
+						<div class="recommended-info">
+							<h4><strong><%= @qpapers.count %></strong> Papers contributed to Open Source Education!</h4>
+						</div>
+						<% @qpapers.each do |qpaper| %>
+							<div class="col-md-3 resent-grid recommended-grid">
+								<div class="resent-grid-img recommended-grid-img">
+								<% if qpaper.qimages.count > 0 %>
+									<%= link_to image_tag(qpaper.qimages.first.image.url(:small),alt: qpaper.examname),qpaper %>
+								<%else %>
+									<%= link_to image_tag("defaultcoverimage",alt: qpaper.examname),qpaper %>
+								<% end %>
+									<div class="time small-time" title="Pages Count">
+										<p><%= qpaper.qimages.count %></p>
+									</div>
+									<div class="clck small-clck" title="Pages">
+										<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 resent-grid recommended-grid ">
+								<div class="resent-grid-info recommended-grid-info video-info-grid searchinfodiv">
+									<h5><%= link_to qpaper.examname,qpaper,class:"title"%></h5>
+									
+									<p class="views views-info"><strong><%=qpaper.impressionist_count %></strong> views</p>
+									<ul>
+										<li><span><%=link_to "Edit",edit_qpaper_path(qpaper),class:"dashActionLinks" %><span><span><%=link_to "Delete",qpaper,method: :delete,data:{confirm:"Are you sure?"},class:"dashActionLinks"%></span></li>
+										<br>
+										<li><strong><%= time_ago_in_words(qpaper.created_at)%></strong> ago</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-3"></div>
+							<div class="clearfix"></div>	
+							<br>		
+						<% end %>
+						<div class="clearfix"> </div>
 					</div>
-					<% @qpapers.each do |qpaper| %>
-						<div class="col-md-3 resent-grid recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-							<% if qpaper.qimages.count > 0 %>
-								<%= link_to image_tag(qpaper.qimages.first.image.url(:small),alt: qpaper.examname),qpaper %>
-							<%else %>
-								<%= link_to image_tag("defaultcoverimage",alt: qpaper.examname),qpaper %>
-							<% end %>
-								<div class="time small-time" title="Pages Count">
-									<p><%= qpaper.qimages.count %></p>
-								</div>
-								<div class="clck small-clck" title="Pages">
-									<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 resent-grid recommended-grid ">
-							<div class="resent-grid-info recommended-grid-info video-info-grid searchinfodiv">
-								<h5><%= link_to qpaper.examname,qpaper,class:"title"%></h5>
-								<p class="searchdescription"><%= truncate(qpaper.description, length: 250, separator: ' ') %></p>
-								<p class="views views-info"><strong><%=qpaper.impressionist_count %></strong> views</p>
-								<ul>
-									<li><p class="author author-info"><%= link_to qpaper.user.phname,  controller:"users",action:"show",id:qpaper.user_id,class:"author"%></p></li>
-									<li class="right-list"><strong><%= time_ago_in_words(qpaper.created_at)%></strong> ago</li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-3"></div>
-						<div class="clearfix"></div>	
-						<br>		
-					<% end %>
-					<div class="clearfix"> </div>
 				</div>
-			</div>
-		<% end %>
-		<% if @subjects.present? %>
-			<div class="recommended">
-				<div class="recommended-grids">
-					<div class="recommended-info">
-						<h4><strong><%= @subjects.count %></strong> Subjects contributed to Open Source Education!</h4>
+			<% end %>
+			<% if @subjects.present? %>
+				<div class="recommended">
+					<div class="recommended-grids">
+						<div class="recommended-info">
+							<h4><strong><%= @subjects.count %></strong> Subjects contributed to Open Source Education!</h4>
+						</div>
+						<% @subjects.each do |subject| %>
+							<div class="col-md-3 resent-grid recommended-grid">
+								<div class="resent-grid-img recommended-grid-img">
+								<% if subject.simages.count > 0 %>
+									<%= link_to image_tag(subject.simages.first.image.url(:small),alt: subject.name),subject %>
+								<%else %>
+									<%= link_to image_tag("defaultcoverimage",alt: subject.name),subject %>
+								<% end %>
+									<div class="time small-time" title="Pages Count">
+										<p><%= subject.simages.count %></p>
+									</div>
+									<div class="clck small-clck" title="Pages">
+										<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 resent-grid recommended-grid ">
+								<div class="resent-grid-info recommended-grid-info video-info-grid searchinfodiv">
+									<h5><%= link_to subject.name,subject,class:"title"%></h5>
+									<p class="views views-info"><strong><%=subject.impressionist_count %></strong> views</p>
+									<ul>
+										<li><span><%=link_to "Edit",edit_subject_path(subject),class:"dashActionLinks" %></li>
+										<br>
+										<li ><strong><%= time_ago_in_words(subject.created_at)%></strong> ago</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-3"></div>
+							<div class="clearfix"></div>	
+							<br>		
+						<% end %>
+						<div class="clearfix"> </div>
 					</div>
-					<% @subjects.each do |subject| %>
-						<div class="col-md-3 resent-grid recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-							<% if subject.simages.count > 0 %>
-								<%= link_to image_tag(subject.simages.first.image.url(:small),alt: subject.name),subject %>
-							<%else %>
-								<%= link_to image_tag("defaultcoverimage",alt: subject.name),subject %>
-							<% end %>
-								<div class="time small-time" title="Pages Count">
-									<p><%= subject.simages.count %></p>
-								</div>
-								<div class="clck small-clck" title="Pages">
-									<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 resent-grid recommended-grid ">
-							<div class="resent-grid-info recommended-grid-info video-info-grid searchinfodiv">
-								<h5><%= link_to subject.name,subject,class:"title"%></h5>
-								<p class="views views-info"><strong><%=subject.impressionist_count %></strong> views</p>
-								<ul>
-									<li><p class="author author-info"><%= link_to subject.user.phname,  controller:"users",action:"show",id:subject.user_id,class:"author"%></p></li>
-									<li class="right-list"><strong><%= time_ago_in_words(subject.created_at)%></strong> ago</li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-3"></div>
-						<div class="clearfix"></div>	
-						<br>		
-					<% end %>
-					<div class="clearfix"> </div>
 				</div>
-			</div>
-		<% end %>
-		<% if @colleges.present? %>
+			<% end %>
+			<% if @colleges.present? %>
+				<div class="recommended">
+					<div class="recommended-grids">
+						<div class="recommended-info">
+							<h4><strong><%= @colleges.count %></strong> Colleges contributed to Open Source Education!</h4>
+						</div>
+						<% @colleges.each do |college| %>
+							<div class="col-md-3 resent-grid recommended-grid">
+								<div class="resent-grid-img recommended-grid-img">
+								<% if college.cimages.count > 0 %>
+									<%= link_to image_tag(college.cimages.first.image.url(:small),alt: college.name),college %>
+								<%else %>
+									<%= link_to image_tag("defaultcoverimage",alt: college.name),college %>
+								<% end %>
+									<div class="time small-time" title="Pages Count">
+										<p><%= college.cimages.count %></p>
+									</div>
+									<div class="clck small-clck" title="Pages">
+										<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 resent-grid recommended-grid ">
+								<div class="resent-grid-info recommended-grid-info video-info-grid searchinfodiv">
+									<h5><%= link_to college.name,college,class:"title"%></h5>
+									<p class="views views-info"><strong><%=college.impressionist_count %></strong> views</p>
+									<ul>
+										<li><span><%=link_to "Edit",edit_college_path(college),class:"dashActionLinks" %><span></li>
+										<br>
+										<li ><strong><%= time_ago_in_words(college.created_at)%></strong> ago</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-3"></div>
+							<div class="clearfix"></div>	
+							<br>		
+						<% end %>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+			<% end %>
+		<%else%>
 			<div class="recommended">
 				<div class="recommended-grids">
 					<div class="recommended-info">
-						<h4><strong><%= @colleges.count %></strong> Colleges contributed to Open Source Education!</h4>
+						<h4>You have not Contributed to League of Giving and Making Education Free! We would love to See you Back with Contribution Soon!</h4>
 					</div>
-					<% @colleges.each do |college| %>
-						<div class="col-md-3 resent-grid recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-							<% if college.cimages.count > 0 %>
-								<%= link_to image_tag(college.cimages.first.image.url(:small),alt: college.name),college %>
-							<%else %>
-								<%= link_to image_tag("defaultcoverimage",alt: college.name),college %>
-							<% end %>
-								<div class="time small-time" title="Pages Count">
-									<p><%= college.cimages.count %></p>
-								</div>
-								<div class="clck small-clck" title="Pages">
-									<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 resent-grid recommended-grid ">
-							<div class="resent-grid-info recommended-grid-info video-info-grid searchinfodiv">
-								<h5><%= link_to college.name,college,class:"title"%></h5>
-								<p class="searchdescription"><%= truncate(college.address, length: 250, separator: ' ') %></p>
-								<p class="views views-info"><strong><%=college.impressionist_count %></strong> views</p>
-								<ul>
-									<li><p class="author author-info"><%= link_to college.user.phname,  controller:"users",action:"show",id:college.user_id,class:"author"%></p></li>
-									<li class="right-list"><strong><%= time_ago_in_words(college.created_at)%></strong> ago</li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-3"></div>
-						<div class="clearfix"></div>	
-						<br>		
-					<% end %>
-					<div class="clearfix"> </div>
+					<div class="col-md-12 resent-grid recommended-grid">
+						<%= image_tag("create",height:"100%",width:"100%") %>
+					</div>
+					<div class="clearfix"></div>	
 				</div>
 			</div>
 		<% end %>
