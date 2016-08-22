@@ -1,0 +1,100 @@
+<div class='form-container'>
+	<%= simple_form_for(@college,html:{multipart: true}) do |f|%>
+
+		<div class='form-item'>
+			<div class='data-header'>
+				<span class='header-name'>Institute Name:</span>
+			</div>
+			<div class='form-data'>
+				<%= f.input :name,label: false,placeholder:"What is name of the Institute?"%>	
+			</div>
+		</div>
+		<div class='form-item'>
+			<div class='data-header'>
+				<span class='header-name'>Address:</span>
+			</div>
+			<div class='form-data'>
+				<%=f.input :address, label: false, placeholder:"Where is Institute located?"	%>
+			</div>
+		</div>
+		<div class='form-item'>
+			<div class='form-data'>
+				<div id='image-preview-box'>	
+				<% if @check == 1 %>
+					<% if @college.cimages.count > 0%>
+					
+						<% @college.cimages.each do |cimage| %>
+
+							<div class="image-preview" style="background: url(<%=cimage.image.url(:small) %>) no-repeat; background-size: 150px 200px;  ">
+								<!--  Ajax call and Jquery remove function for destroyimage_path -->
+								<%= link_to destroycimage_path(id: @college.id,imageid: cimage.id),remote: true do%>
+										<span class="delete-image">
+											<svg fill="#0288d1" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">					    <path d="M15 16h4v2h-4zm0-8h7v2h-7zm0 4h6v2h-6zM3 18c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2V8H3v10zM14 5h-3l-1-1H6L5 5H2v2h12z"></path><path d="M0 0h24v24H0z" fill="none"></path>					
+											</svg>
+										</span>
+								<% end %>
+								
+
+								<input type="file" name="college[cimages_attributes][<%= aimage.id %>][image]" style="display: none">
+							</div>
+				
+						<% end%>
+					<% end %>							
+				<% end %>
+				</div>
+			</div>
+			<div class='data-header'>
+				<span id='add-image' onclick='addImage("college","cimages")' title="Add Image">
+					<svg fill="#2196F3" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
+					    <circle cx="12" cy="12" r="3.2"/>
+					    <path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/>
+					    <path d="M0 0h24v24H0z" fill="none"/>
+					</svg>
+				</span>
+			</div>
+
+		</div>
+		<div class='form-actions'>
+			<%=f.submit class:"btn btn-primary form-actions-btn form-submit" %>
+			<span class="btn btn-primary form-actions-btn form-cancel">Cancel</span>
+		</div>
+		
+	<% end %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=simple_form_for(@college) do |f|
+	=f.input :name,placeholder:"What is the name of the Institute?",label:"Institute Name"
+	=f.input :address,placeholder:"Where is Institute situated?",label:"Address of Institute",hint:"City Name"
+	%h2 Images
+
+	#tasks
+	=f.simple_fields_for :cimages do |cimage|
+		=render "cimage_fields", f: cimage
+	.links
+		=link_to_add_association "Add Images",f, :cimages, class:"btn btn-success"
+	%br
+	=f.submit class:"btn btn-primary"
