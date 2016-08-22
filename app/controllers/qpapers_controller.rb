@@ -1,7 +1,7 @@
 class QpapersController < ApplicationController
 	
 	impressionist actions: [:show]
-	before_action :get_qpaper,only: [:show,:edit,:update,:destroy,:upvote,:downvote.:destroyimage]
+	before_action :get_qpaper,only: [:show,:edit,:update,:destroy,:upvote,:downvote,:destroyimage]
 	before_action :authenticate_user!,only:[:edit,:new,:create,:update,:destroy]
 
 	def index
