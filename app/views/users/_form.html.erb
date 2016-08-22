@@ -59,7 +59,7 @@
                 <path d="M0 0h24v24H0z" fill="none"/>
             </svg>
           </span>
-          <span class="header-name" style="float: none; position: absolute; margin: 10px;">Add Avatar</span>
+          <span class="header-name">Add Avatar</span>
         </div>
         <div class='form-data'>
           <div class='image-preview-box'>  
@@ -76,7 +76,7 @@
                 <path d="M0 0h24v24H0z" fill="none"/>
             </svg>
           </span>
-          <span class="header-name" style="float: none; position: absolute; margin: 10px;">Add Cover Pic</span>
+          <span class="header-name">Add Cover Pic</span>
         </div>
         <div class='form-data'>
           <div class='image-preview-box'>  
@@ -131,7 +131,9 @@
 
     <div class='form-actions'>
       <%=f.submit class:"btn btn-primary form-actions-btn" %>
-      <span class="btn btn-primary form-actions-btn form-cancel">Cancel</span>
+      <%= link_to :back do %>  
+        <span class="btn btn-primary form-actions-btn form-cancel">Cancel</span>
+      <% end %>
     </div>
   <% end %>    
 </div>

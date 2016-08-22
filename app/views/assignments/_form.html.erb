@@ -75,7 +75,9 @@
 		</div>
 		<div class='form-actions'>
 			<%=f.submit class:"btn btn-primary form-actions-btn form-submit" %>
-			<span class="btn btn-primary form-actions-btn form-cancel">Cancel</span>
+			<%= link_to :back do %>  
+				<span class="btn btn-primary form-actions-btn form-cancel">Cancel</span>
+			<% end %>
 		</div>
 		
 	<% end %>

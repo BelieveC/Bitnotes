@@ -612,6 +612,11 @@ a.btn.btn-primary.btn-lg.see-button.hvr-shutter-out-horizontal {
     color: #181818;
     margin: 0 0 1em 0;
     font-weight: 600;
+    font-family: 'Roboto';
+}
+.recommended-info h4{
+  color: #00c2dc;
+  font-family: 'Roboto';
 }
 .recommended-info p{
     font-size: 13px;
@@ -3045,6 +3050,13 @@ p.NoContentInfo{
   color: #00c2dc;
 }
 
+#avatar .header-name, #cover-pic .header-name {
+  cursor: pointer;
+  float: none; 
+  position: absolute;
+ margin: 10px;
+}
+
 .header-tip {
   float: right;
   color: #00c2dc;
@@ -3124,4 +3136,4 @@ p.NoContentInfo{
   .form-row .form-item {
     width: 100%;
   }
-}
+} 

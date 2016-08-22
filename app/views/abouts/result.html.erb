@@ -153,9 +153,9 @@
 							<div class="col-md-3 resent-grid recommended-grid">
 								<div class="resent-grid-img recommended-grid-img">
 								<% if qpaper.qimages.count > 0 %>
-									<%= link_to image_tag(qpaper.qimages.first.image.url(:small),alt: qpaper.topic),qpaper %>
+									<%= link_to image_tag(qpaper.qimages.first.image.url(:small),alt: qpaper.examname),qpaper %>
 								<%else %>
-									<%= link_to image_tag("defaultcoverimage",alt: qpaper.topic),qpaper %>
+									<%= link_to image_tag("defaultcoverimage",alt: qpaper.examname),qpaper %>
 								<% end %>
 									<div class="time small-time" title="Pages Count">
 										<p><%= qpaper.qimages.count %></p>
@@ -167,7 +167,7 @@
 							</div>
 							<div class="col-md-6 resent-grid recommended-grid ">
 								<div class="resent-grid-info recommended-grid-info video-info-grid searchinfodiv">
-									<h5><%= link_to qpaper.topic,qpaper,class:"title"%></h5>
+									<h5><%= link_to qpaper.examname,qpaper,class:"title"%></h5>
 									<p class="searchdescription"><%= truncate(qpaper.description, length: 250, separator: ' ') %></p>
 									<p class="views views-info"><strong><%=qpaper.impressionist_count %></strong> views</p>
 									<ul>
