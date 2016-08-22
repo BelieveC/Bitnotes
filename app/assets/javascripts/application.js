@@ -167,6 +167,13 @@ function addUserImage(elem) {
 					    <path d="M0 0h24v24H0z" fill="none"/>\
 					</svg>';
 	var imgPreviewBox = elem.parentElement.getElementsByClassName('image-preview-box')[0];
+	var imgPreviewChildren = imgPreviewBox.children;
+
+	if (imgPreviewChildren !== undefined) {
+		while (imgPreviewChildren.length !== 0) {
+			imgPreviewBox.removeChild(imgPreviewChildren[0]);
+		}
+	}
 	var milliseconds = (new Date).getTime();
 
 	var imgbox = document.createElement('div');
@@ -174,7 +181,7 @@ function addUserImage(elem) {
 
 	var hiddenInput = document.createElement('input');
 	hiddenInput.setAttribute('type', 'file');
-	hiddenInput.setAttribute('name', type + '['+ imageType +'_attributes]['+ milliseconds+'][image]');
+	// hiddenInput.setAttribute('name' + '_attributes]['+ milliseconds+'][image]');
 	hiddenInput.style.display = "none";
 
 	var deleteBtn = document.createElement('span');
