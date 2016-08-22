@@ -1,7 +1,7 @@
 class SubjectsController < ApplicationController
 	
 	impressionist actions: [:show]
-	before_action :get_subject,only: [:show,:edit,:update,:destroy,:upvote,:downvote]
+	before_action :get_subject,only: [:show,:edit,:update,:destroy,:upvote,:downvote,:destroyimage]
 	before_action :authenticate_user!,only:[:edit,:new,:create,:update,:destroy]
 
 	def index
@@ -34,6 +34,7 @@ class SubjectsController < ApplicationController
 
 	def edit
 		if session[:user_id] == @subject.user_id
+			@check = 1
 			render layout: "form"
 		else
 			redirect_to root_path,notice:"Gotcha!, You don't have access to edit this Subject."
@@ -76,6 +77,12 @@ class SubjectsController < ApplicationController
 			format.html{redirect_to :back}
 			format.js
 		end
+	end
+
+	def destroyimage
+		@simage = @subject.simages.find(params[:imageid])
+		@simage.destroy
+		redirect_to :back
 	end
 
 	private
