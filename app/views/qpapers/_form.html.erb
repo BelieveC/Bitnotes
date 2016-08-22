@@ -1,0 +1,91 @@
+<div class='form-container'>
+	<%= simple_form_for(@assignment,html:{multipart: true}) do |f|%>
+
+		<div class='form-item'>
+			<div class='data-header'>
+				<span class='header-name'>ExamName:</span>
+			</div>
+			<div class='form-data'>
+				<%= f.input :topic,label: false,placeholder:"What is your Paper About?"%>	
+			</div>
+		</div>
+		<div class='form-item'>
+			<div class='data-header'>
+				<span class='header-name'>Date:</span>
+				<span class='header-tip'>Date of Examination</span>
+			</div>
+			<div class='form-data'>
+				<%=f.input :date, label: false%>
+			</div>
+		</div>
+		<div class='form-item'>
+			<div class='data-header'>
+				<span class='header-name'>Subject:</span>
+				<span class="header-tip">If Subject not Found,add Subject via Upload Link Above</span>
+			</div>
+			<div class='form-data'>
+				<%=f.input :subject_id,collection: Subject.all,prompt: "Choose Subject of Paper",label:false	%>
+			</div>
+		</div>
+		<div class='form-item'>
+			<div class='data-header'>
+				<span class='header-name'>College:</span>
+				<span class='header-tip'>If Institute not Found,add Your Institute via Upload Link Above</span>
+			</div>
+			<div class='form-data'>
+				<%=f.input :college_id,collection: College.all,label:"Institute",prompt:"Choose Institute related to Paper",label: false	%>
+			</div>
+		</div>
+		<div class='form-item'>
+			<div class='data-header'>
+				<span class='header-name'>Description:</span>
+				<span class='header-tip'>Describe above Paper</span>
+			</div>
+			<div class='form-data'>
+				<%=f.input :description, label: false, placeholder:"Describe your Paper"	%>
+			</div>
+		</div>
+		<div class='form-item'>
+			<div class='form-data'>
+				<div id='image-preview-box'>	
+				<% if @check == 1 %>
+					<% if @qpaper.qpapers.count > 0%>
+					
+						<% @qpaper.qpapers.each do |qpaper| %>
+
+							<div class="image-preview" style="background: url(<%=qpaper.image.url(:small) %>) no-repeat; background-size: 150px 200px;  ">
+								<!--  Ajax call and Jquery remove function for destroyimage_path -->
+								<%= link_to destroyqpaper_path(id: @qpaper.id,imageid: qpaper.id),remote: true do%>
+										<span class="delete-image">
+											<svg fill="#0288d1" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">					    <path d="M15 16h4v2h-4zm0-8h7v2h-7zm0 4h6v2h-6zM3 18c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2V8H3v10zM14 5h-3l-1-1H6L5 5H2v2h12z"></path><path d="M0 0h24v24H0z" fill="none"></path>					
+											</svg>
+										</span>
+								<% end %>
+								
+
+								<input type="file" name="qpaper[qpapers_attributes][<%= qpaper.id %>][image]" style="display: none">
+							</div>
+				
+						<% end%>
+					<% end %>							
+				<% end %>
+				</div>
+			</div>
+			<div class='data-header'>
+				<span id='add-image' onclick='addImage("qpaper","qpapers")' title="Add Image">
+					<svg fill="#2196F3" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
+					    <circle cx="12" cy="12" r="3.2"/>
+					    <path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/>
+					    <path d="M0 0h24v24H0z" fill="none"/>
+					</svg>
+				</span>
+			</div>
+
+		</div>
+		<div class='form-actions'>
+			<%=f.submit class:"btn btn-primary form-actions-btn form-submit" %>
+			<span class="btn btn-primary form-actions-btn form-cancel">Cancel</span>
+		</div>
+		
+	<% end %>
+</div>
