@@ -26,6 +26,11 @@ Rails.application.routes.draw do
   get 'examnotes/:id/destroyimage'=>"examnotes#destroyimage",as:"destroyeimage"
   get 'subjects/:id/destroyimage'=>"subjects#destroyimage",as:"destroysimage"
   get 'users/:id/dashboard'=>"users#dashboard",as:"user_dashboard"
+  get 'users/:id/dashboard/assignments'=>"users#dashassignments",as:"user_dashboard_assignments"
+  get 'users/:id/dashboard/examnotes'=>"users#dashexamnotes",as:"user_dashboard_examnotes"
+  get 'users/:id/dashboard/qpapers'=>"users#dashqpapers",as:"user_dashboard_qpapers"
+  get 'users/:id/dashboard/subjects'=>"users#dashsubjects",as:"user_dashboard_subjects"
+  get 'users/:id/dashboard/colleges'=>"users#dashcolleges",as:"user_dashboard_colleges"
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
