@@ -3067,7 +3067,7 @@ p.NoContentInfo{
   box-shadow: 0 0 1px 0px skyblue;
 }
 
-.form-item #add-image {
+.form-item #add-image, .form-item .add-image {
   width: 48px;
   height: 48px;
   border-radius: 10px;
@@ -3101,10 +3101,27 @@ p.NoContentInfo{
   fill: red;
 }
 
-#image-preview-box {
+#image-preview-box,.image-preview-box {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   margin-bottom: 20px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.form-row .form-item {
+  width: 48%;
+}
+
+@media screen and (max-width: 800px) {
+  .form-row .form-item {
+    width: 100%;
+  }
 }

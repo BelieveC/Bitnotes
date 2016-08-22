@@ -161,6 +161,64 @@ $(document).ready(function(){
 });
 
 
+function addUserImage(elem) {
+	var deleteSvg = '<svg fill="#0288d1" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">\
+					    <path d="M15 16h4v2h-4zm0-8h7v2h-7zm0 4h6v2h-6zM3 18c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2V8H3v10zM14 5h-3l-1-1H6L5 5H2v2h12z"/>\
+					    <path d="M0 0h24v24H0z" fill="none"/>\
+					</svg>';
+	var imgPreviewBox = elem.parentElement.getElementsByClassName('image-preview-box')[0];
+	var milliseconds = (new Date).getTime();
+
+	var imgbox = document.createElement('div');
+	imgbox.setAttribute('class', 'image-preview');
+
+	var hiddenInput = document.createElement('input');
+	hiddenInput.setAttribute('type', 'file');
+	hiddenInput.setAttribute('name', type + '['+ imageType +'_attributes]['+ milliseconds+'][image]');
+	hiddenInput.style.display = "none";
+
+	var deleteBtn = document.createElement('span');
+	deleteBtn.setAttribute('class', 'delete-image');
+	deleteBtn.setAttribute('title', 'Remove this image');
+
+	deleteBtn.innerHTML = deleteSvg;
+
+	hiddenInput.click();
+
+	imgPreviewBox.appendChild(imgbox);
+	imgbox.appendChild(deleteBtn);
+	imgbox.appendChild(hiddenInput);
+
+	deleteBtn.onclick = function() {
+		imgPreviewBox.removeChild(imgbox);
+	}
+
+	function handleFileSelect(evt) {
+	    var files = evt.target.files;
+
+	    var f = files[0];
+	      // Only process image files.
+	      if (!f.type.match('image.*')) {
+	      	console.log('not an image');
+	        return;
+	      }
+
+	      var reader = new FileReader();
+	      reader.onload = (function(theFile) {
+	        return function(e) {
+	          imgbox.style.background = "url("+e.target.result+")";
+	          imgbox.style.backgroundSize = "150px 200px";
+	          imgbox.style.backgroundRepeat = "no-repeat";
+	        };
+	      })(f);
+	      reader.readAsDataURL(f);
+	}
+
+
+	hiddenInput.addEventListener('change', handleFileSelect, false);
+}
+
+
 function resizeIframe(obj) {
 	obj.style.height = obj.contentWindow.document.documentElement.offsetHeight + 'px';
 }
