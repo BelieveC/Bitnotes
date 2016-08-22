@@ -1,7 +1,7 @@
 class ExamnotesController < ApplicationController
 	
 	impressionist actions: [:show]
-	before_action :get_examnote,only: [:show,:edit,:update,:destroy,:upvote,:downvote]
+	before_action :get_examnote,only: [:show,:edit,:update,:destroy,:upvote,:downvote,:destroyimage]
 	before_action :authenticate_user!,only:[:edit,:new,:create,:update,:destroy]
 
 	def index
@@ -37,6 +37,7 @@ class ExamnotesController < ApplicationController
 
 	def edit
 		if session[:user_id] == @examnote.user_id
+			@check = 1
 			render layout: "form"
 		else
 			redirect_to root_path,notice:"Sorry!, You don't have access to edit this Note."
@@ -82,6 +83,12 @@ class ExamnotesController < ApplicationController
 			format.html{redirect_to :back}
 			format.js
 		end
+	end
+
+	def destroyimage
+		@eimage = @examnote.eimages.find(params[:imageid])
+		@eimage.destroy
+		redirect_to :back
 	end
 
 	private
