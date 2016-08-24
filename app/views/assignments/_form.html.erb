@@ -21,7 +21,7 @@
 		<div class='form-item'>
 			<div class='data-header'>
 				<span class='header-name'>College:</span>
-				<span class='header-tip'>If Institute not Found,add Your Institute via Upload Link Above</span>
+				<span class='header-tip'>If Institute not Found,add Your Institute <%=link_to "here",new_college_path %></span>
 			</div>
 			<div class='form-data'>
 				<%=f.input :college_id,collection: College.all,label:"Institute",prompt:"Choose Institute related to Assignment",label: false	%>
