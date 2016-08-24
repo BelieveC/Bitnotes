@@ -12,7 +12,7 @@
 		<div class='form-item'>
 			<div class='data-header'>
 				<span class='header-name'>Subject:</span>
-				<span class="header-tip">If Subject not Found,add Subject via Upload Link Above</span>
+				<span class="header-tip">If Subject not Found,add Subject <%= link_to "here",new_subject_path %></span>
 			</div>
 			<div class='form-data'>
 				<%=f.input :subject_id,collection: Subject.all,prompt: "Choose Subject of Note",label:false	%>
