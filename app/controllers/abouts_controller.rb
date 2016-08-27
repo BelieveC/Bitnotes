@@ -40,6 +40,7 @@ class AboutsController < ApplicationController
 	end
 
 	def language
+		session[:langId] = ""
 		session[:langId] = params[:lang]
 		redirect_to :back
 	end
