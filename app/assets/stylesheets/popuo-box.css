@@ -421,11 +421,11 @@ button::-moz-focus-inner {
 }
 .facebook-button {
    margin: 0em auto 2em auto;
-   width: 20.5em;
+   width: 22.5em;
 }
 .chrome-button {
 	 margin: 0em auto 2em auto;
-   width: 20.5em;
+   width: 22.5em;
 }
 .facebook-button a, .chrome-button a{
 	display: block;
@@ -436,7 +436,7 @@ button::-moz-focus-inner {
     color: #fff;
     padding: 1em 1em 1em 3em;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 1.4em;
     transition: 0.3s all;
     -webkit-transition: 0.3s all;
     -moz-transition: 0.3s all;
@@ -454,7 +454,7 @@ button::-moz-focus-inner {
 .chrome-button a{
     background: url("ch1.png") no-repeat 14px 15px #dd4b39;
     color: #FFF;
-    font-size: 14px;
+    font-size: 1.4em;
     padding: 1em 1em 1em 3em;
     text-decoration: none;
     transition: 0.3s all;

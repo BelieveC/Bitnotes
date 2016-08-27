@@ -476,6 +476,7 @@ a.btn.btn-primary.btn-lg.see-button.hvr-shutter-out-horizontal {
 }
 .resent-grid {
 	padding-left: 0.1em;
+  padding-bottom: 1em;
 }
 .resent-grid-img{
 	position:relative;
