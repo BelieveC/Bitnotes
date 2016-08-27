@@ -6,8 +6,8 @@ class AssignmentsController < ApplicationController
 
 	def index
 		if current_user && current_user.college_id.present?
-			@rassignments = Assignment.recommended.limit(12)
-			@recentAssignments = Assignment.notrecommended.limit(4)
+			@rassignments = Assignment.where(college_id: current_user.college_id).order("created_at DESC").limit(12)
+			@recentAssignments = Assignment.where.not(college_id: current_user.college_id).order("created_at DESC").limit(4)
 		else	
 			@recentAssignments = Assignment.recent.limit(12)
 		end
