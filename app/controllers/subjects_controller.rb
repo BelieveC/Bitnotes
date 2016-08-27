@@ -5,16 +5,16 @@ class SubjectsController < ApplicationController
 	before_action :authenticate_user!,only:[:edit,:new,:create,:update,:destroy]
 
 	def index
-		@recentSubjects = Subject.all.order("created_at desc").limit(20)
+		@recentSubjects = Subject.recent.limit(20)
 	end
 
 	def show
-		@recentSubjects = Subject.all.order("created_at desc").limit(3)
-		@recentColleges = College.all.order("created_at desc").limit(3)
-		@recentAssignments = Assignment.all.order("created_at desc").limit(3)
-		@recentPracticals = Practical.all.order("created_at desc").limit(3)
-		@recentQpapers = Qpaper.all.order("created_at desc").limit(3)
-		@recentExamnotes = Examnote.all.order("created_at desc").limit(3)
+		@recentSubjects = Subject.recent.limit(3)
+		@recentColleges = College.recent.limit(3)
+		@recentAssignments = Assignment.recent.limit(3)
+		@recentPracticals = Practical.recent.limit(3)
+		@recentQpapers = Qpaper.recent.limit(3)
+		@recentExamnotes = Examnote.recent.limit(3)
 	end
 
 	def new

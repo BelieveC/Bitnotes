@@ -8,6 +8,9 @@ class Practical < ActiveRecord::Base
 	has_many :pimages
 	accepts_nested_attributes_for :pimages, reject_if: :all_blank, allow_destroy: true
 
+	scope :recommended, ->{where(college_id: current_user.college_id).order("created_at DESC")}
+	scope :notrecommended, ->{where.not(college_id: current_user.college_id).order("created_at DESC")}
+	scope :recent,->{all.order("created_at DESC")}
 
 	validates :title, presence: true,length:{minimum: 5}
 	validates :aim, presence: true,length:{minimum: 10}

@@ -6,18 +6,18 @@ class ExamnotesController < ApplicationController
 
 	def index
 		if current_user && current_user.college_id.present?
-			@rexamnotes = Examnote.where(college_id: current_user.college_id).order("created_at desc").limit(12)
-			@recentExamnotes = Examnote.where.not(college_id: current_user.college_id).order("created_at desc").limit(12)
+			@rexamnotes = Examnote.recommended.limit(12)
+			@recentExamnotes = Examnote.notrecommended.limit(12)
 		else
-			@recentExamnotes = Examnote.all.order("created_at desc").limit(12)
+			@recentExamnotes = Examnote.recent.limit(12)
 		end
 	end
 
 	def show
-		@recentAssignments = Assignment.all.order("created_at desc").limit(4)
-		@recentPracticals = Practical.all.order("created_at desc").limit(4)
-		@recentQpapers = Qpaper.all.order("created_at desc").limit(4)
-		@recentExamnotes = Examnote.all.order("created_at desc").limit(4)
+		@recentAssignments = Assignment.recent.limit(4)
+		@recentPracticals = Practical.recent.limit(4)
+		@recentQpapers = Qpaper.recent.limit(4)
+		@recentExamnotes = Examnote.recent.limit(4)
 	end
 
 	def new

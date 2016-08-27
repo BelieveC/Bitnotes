@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
 	acts_as_voter
 	searchkick
+
+	# User Subscription setting
+
 	has_many :active_relationships, class_name: "Relationship",
 									foreign_key: "subscriber_id",
 									dependent: :destroy
@@ -11,6 +14,8 @@ class User < ActiveRecord::Base
 
 	has_many :subscribed, through: :active_relationships
 	has_many :subscriber, through: :passive_relationships
+	
+	# end
 
 	has_many :practicals
 	has_many :assignments
@@ -19,6 +24,11 @@ class User < ActiveRecord::Base
 	has_many :qpapers
 	has_many :subjects
 	has_many :requests
+
+	# Scopes
+	scope :userspecific, ->{where(user_id: @user.id).order("created_at DESC")}
+
+	# Paperclip Config
 
     has_attached_file :avatar,:styles => {:thumb => "1280*720>",:medium=>"640*426#",:small=>"180*320"},
 										  :convert_options => {
@@ -29,14 +39,15 @@ class User < ActiveRecord::Base
 										  :convert_options => {
 										    :thumb => "-quality 50 -strip",:medium=>"-quality 60 -strip",:small=>"-quality 20 -strip" }
     validates_attachment_content_type :cover, content_type: /\Aimage\/.*\Z/
+    # Config End
 
-
+    # Validations
     validates :phname, presence: true,length:{minimum: 5}
     validates :intro,presence: true,length:{minimum: 10}
     validates :description,presence: true,length:{minimum: 20}
 
 
-
+    # Omniauth
 	def self.from_omniauth(auth)
 	    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
 	      user.provider = auth.provider

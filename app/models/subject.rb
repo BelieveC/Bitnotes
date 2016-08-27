@@ -10,5 +10,9 @@ class Subject < ActiveRecord::Base
 	has_many :simages
 	accepts_nested_attributes_for :simages, reject_if: :all_blank, allow_destroy: true
 
+	# Scopes
+
+	scope :recent,->{all.order("created_at DESC")}
+
 	validates :name, presence: true,length:{minimum: 5}
 end

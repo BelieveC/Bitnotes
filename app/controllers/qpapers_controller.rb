@@ -6,18 +6,18 @@ class QpapersController < ApplicationController
 
 	def index
 		if current_user && current_user.college_id.present?
-			@rqpapers = Qpaper.where(college_id: current_user.college_id).order("created_at desc").limit(12)
-			@recentQpapers = Qpaper.where.not(college_id: current_user.college_id).order("created_at desc").limit(12)
+			@rqpapers = Qpaper.recommended.limit(12)
+			@recentQpapers = Qpaper.notrecommended.limit(12)
 		else
-			@recentQpapers = Qpaper.all.order("created_at DESC").order("created_at desc").limit(12);
+			@recentQpapers = Qpaper.recent.limit(12);
 		end
 	end
 
 	def show
-		@recentAssignments = Assignment.all.order("created_at desc").limit(4)
-		@recentPracticals = Practical.all.order("created_at desc").limit(4)
-		@recentQpapers = Qpaper.all.order("created_at desc").limit(4)
-		@recentExamnotes = Examnote.all.order("created_at desc").limit(4)
+		@recentAssignments = Assignment.recent.limit(4)
+		@recentPracticals = Practical.recent.limit(4)
+		@recentQpapers = Qpaper.recent.limit(4)
+		@recentExamnotes = Examnote.recent.limit(4)
 	end
 
 	def new
