@@ -1,29 +1,29 @@
  <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-			<div class="main-grids">
-				<div class="recommended">
-					<div class="recommended-grids">
-						<%= render "shared/bitvertiser" %>
-				<% if current_user && current_user.college_id.present? %>
-						<div class="recommended-info">
-							<h3>Recommended</h3>
-						</div>
-						<% @rexamnotes.each do |examnote| %>
-							<%= render partial:"shared/examnote", locals:{examnote: examnote} %>
-						<% end %>
-						<div class="clearfix"> </div>
-					</div>
+	<div class="main-grids">
+		<div class="recommended">
+			<div class="recommended-grids">
+				<%= render "shared/bitvertiser" %>
+		<% if current_user && current_user.college_id.present? %>
+				<div class="recommended-info">
+					<h3>Recommended</h3>
 				</div>
-				<hr>
-				<div class="recommended">
-					<div class="recommended-grids">
-			<% end %>
-						<div class="recommended-info">
-							<h3>Notes</h3>
-						</div>
-						<% @recentExamnotes.each do |examnote| %>
-							<%= render partial: "shared/examnote", locals:{examnote: examnote} %>
-						<% end %>
-						<div class="clearfix"> </div>
-					</div>
-				</div>
+				<% @rexamnotes.each do |examnote| %>
+					<%= render partial:"shared/examnote", locals:{examnote: examnote} %>
+				<% end %>
+				<div class="clearfix"> </div>
 			</div>
+		</div>
+		<hr>
+		<div class="recommended">
+			<div class="recommended-grids">
+	<% end %>
+				<div class="recommended-info">
+					<h3>Notes</h3>
+				</div>
+				<% @recentExamnotes.each do |examnote| %>
+					<%= render partial: "shared/examnote", locals:{examnote: examnote} %>
+				<% end %>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
