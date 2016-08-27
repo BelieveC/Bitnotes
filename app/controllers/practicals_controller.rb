@@ -6,8 +6,8 @@ class PracticalsController < ApplicationController
 
 	def index
 		if current_user && current_user.college_id.present?
-			@rpracticals = Practical.recommended.limit(12)
-			@recentPracticals = Practical.notrecommended.limit(12)
+			@rpracticals = Practical.where(college_id: current_user.college_id).order("created_at DESC").limit(12)
+			@recentPracticals = Practical.where.not(college_id: current_user.college_id).order("created_at DESC").limit(12)
 		else
 			@recentPracticals = Practical.recent.limit(12);
 		end

@@ -6,8 +6,8 @@ class QpapersController < ApplicationController
 
 	def index
 		if current_user && current_user.college_id.present?
-			@rqpapers = Qpaper.recommended.limit(12)
-			@recentQpapers = Qpaper.notrecommended.limit(12)
+			@rqpapers = Qpaper.where(college_id: current_user.college_id).order("created_at DESC").limit(12)
+			@recentQpapers = Qpaper.where.not(college_id: current_user.college_id).order("created_at DESC").limit(12)
 		else
 			@recentQpapers = Qpaper.recent.limit(12);
 		end
