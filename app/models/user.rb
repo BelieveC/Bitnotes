@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
 
 	# Scopes
 	scope :userspecific, ->{where(user_id: @user.id).order("created_at DESC")}
-
+	scope :recent, ->{order("created_at DESC")}
 	# Paperclip Config
 
     has_attached_file :avatar,:styles => {:thumb => "1280*720>",:medium=>"640*426#",:small=>"180*320"},
