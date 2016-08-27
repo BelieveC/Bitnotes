@@ -15,7 +15,7 @@
 				</div>
 	<% if current_user && current_user.college_id.present? %>
 				<% @rpracticals.each do |practical| %>
-					<% render partial: "shared/practical",locals:{practical: practical} %>
+					<%= render partial: "shared/practical",locals:{practical: practical} %>
 				<% end %>
 				<div class="clearfix"> </div>
 			</div>

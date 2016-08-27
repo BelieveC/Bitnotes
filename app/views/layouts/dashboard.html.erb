@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BitNotes</title>
+  <title><%= yield(:title) %> | BitNotes</title>
   <meta name="viewport" content="width=device-width initial-scale=1">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -24,12 +24,6 @@
 <%= render "shared/fb" %>
 <%= favicon_link_tag "favicon" %>
 
-<!-- InfoLinks Adv -->
-
-<script type="text/javascript">
-var infolinks_pid = 2851388;
-var infolinks_wsid = 0;
-</script>
 <script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>
 
 </head>
