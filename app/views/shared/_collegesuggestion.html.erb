@@ -1,0 +1,15 @@
+<div class="single-right-grids">
+	<div class="col-md-4 single-right-grid-left">
+		<% if college.cimages.count > 0 %>
+			<%= link_to image_tag(college.cimages.first.image.url(:small),alt:college.name),college %>
+		<% else%>
+			<%= link_to image_tag("defaultcoverimage",alt:college.name),college %>
+		<% end %>
+	</div>
+	<div class="col-md-8 single-right-grid-right">
+		<%= link_to college.name,college,class:"title"%>
+		<p class="author"><%= link_to college.user.phname,  controller:"users",action:"show",id:college.user_id,class:"author"%></p>
+		<p class="views"><%= college.impressionist_count %> views</p>
+	</div>
+	<div class="clearfix"> </div>
+</div>

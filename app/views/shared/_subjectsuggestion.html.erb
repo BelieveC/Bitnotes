@@ -1,0 +1,15 @@
+<div class="single-right-grids">
+	<div class="col-md-4 single-right-grid-left">
+		<% if subject.simages.count > 0 %>
+			<%= link_to image_tag(subject.simages.first.image.url(:small),alt:subject.name),subject %>
+		<% else%>
+			<%= link_to image_tag("defaultcoverimage",alt:subject.name),subject %>
+		<% end %>
+	</div>
+	<div class="col-md-8 single-right-grid-right">
+		<%= link_to subject.name,subject,class:"title"%>
+		<p class="author"><%= link_to subject.user.phname,  controller:"users",action:"show",id:subject.user_id,class:"author"%></p>
+		<p class="views"><%= subject.impressionist_count %> views</p>
+	</div>
+	<div class="clearfix"> </div>
+</div>
