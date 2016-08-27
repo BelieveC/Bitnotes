@@ -1,0 +1,15 @@
+<div class="single-right-grids">
+	<div class="col-md-4 single-right-grid-left">
+		<% if assignment.aimages.count > 0 %>
+			<%= link_to image_tag(assignment.aimages.first.image.url(:small),alt: assignment.topic),assignment %>
+		<% else %>
+			<%= link_to image_tag("defaultcoverimage",alt: assignment.topic),assignment %>
+		<% end %>
+	</div>
+	<div class="col-md-8 single-right-grid-right">
+		<%= link_to assignment.topic,assignment,class:"title"%>
+		<p class="author"><%= link_to assignment.user.phname,  controller:"users",action:"show",id:assignment.user_id,class:"author"%></p>
+		<p class="views"><%= assignment.impressionist_count %> views</p>
+	</div>
+	<div class="clearfix"> </div>
+</div>

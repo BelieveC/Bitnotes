@@ -1,0 +1,15 @@
+<div class="single-right-grids">
+	<div class="col-md-4 single-right-grid-left">
+		<% if examnote.eimages.count > 0 %>
+			<%= link_to image_tag(examnote.eimages.first.image.url(:small),alt: examnote.topic),examnote %>
+		<% else %>
+			<%= link_to image_tag("defaultcoverimage",alt: examnote.topic),examnote %>
+		<%end%>
+	</div>
+	<div class="col-md-8 single-right-grid-right">
+		<%= link_to examnote.topic,examnote,class:"title"%>
+		<p class="author"><%= link_to examnote.user.phname,  controller:"users",action:"show",id:examnote.user_id,class:"author"%></p>
+		<p class="views"><%=examnote.impressionist_count %> views</p>
+	</div>
+	<div class="clearfix"> </div>
+</div>

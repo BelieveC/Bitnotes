@@ -120,72 +120,16 @@
 			<h3>Up Next</h3>
 			<div class="single-grid-right">
 				<% @recentQpapers.each do |qpaper| %>
-					<div class="single-right-grids">
-						<div class="col-md-4 single-right-grid-left">
-							<% if qpaper.qimages.count > 0 %>
-								<%= link_to image_tag(qpaper.qimages.first.image.url(:small),alt:qpaper.examname),qpaper %>
-							<% else %>
-								<%= link_to image_tag("defaultcoverimage",alt:qpaper.examname),qpaper %>
-							<% end %>
-						</div>
-						<div class="col-md-8 single-right-grid-right">
-							<%= link_to qpaper.examname,qpaper,class:"title"%>
-							<p class="author"><%= link_to qpaper.user.phname,  controller:"users",action:"show",id:qpaper.user_id,class:"author"%></p>
-							<p class="views"><%= qpaper.impressionist_count %> views</p>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
+					<%= render partial: "shared/qpapersuggestion",locals:{qpaper: qpaper} %>
 				<% end %>
 				<% @recentAssignments.each do |assignment| %>
-					<div class="single-right-grids">
-						<div class="col-md-4 single-right-grid-left">
-							<% if assignment.aimages.count > 0 %>
-								<%= link_to image_tag(assignment.aimages.first.image.url(:small),alt: assignment.topic),assignment %>
-							<% else %>
-								<%= link_to image_tag("defaultcoverimage",alt: assignment.topic),assignment %>
-							<% end %>
-						</div>
-						<div class="col-md-8 single-right-grid-right">
-							<%= link_to assignment.topic,assignment,class:"title"%>
-							<p class="author"><%= link_to assignment.user.phname,  controller:"users",action:"show",id:assignment.user_id,class:"author"%></p>
-							<p class="views"><%= assignment.impressionist_count %> views</p>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
+					<%= render partial:"shared/assignmentsuggestion",locals:{assignment: assignment} %>
 				<% end %>
 				<% @recentPracticals.each do |practical| %>
-					<div class="single-right-grids">
-						<div class="col-md-4 single-right-grid-left">
-							<% if practical.pimages.count > 0 %>
-								<%= link_to image_tag(practical.pimages.first.image.url(:small),alt: practical.title),practical %>
-							<% else%>
-								<%= link_to image_tag("defaultcoverimage",alt: practical.title),practical %>
-							<% end %>
-						</div>
-						<div class="col-md-8 single-right-grid-right">
-							<%= link_to practical.title,practical,class:"title"%>
-							<p class="author"><%= link_to practical.user.phname,  controller:"users",action:"show",id:practical.user_id,class:"author"%></p>
-							<p class="views"><%= practical.impressionist_count %> views</p>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
+					<%= render partial: "shared/practicalsuggestion",locals:{practical: practical} %>
 				<% end %>
 				<% @recentExamnotes.each do |examnote| %>
-					<div class="single-right-grids">
-						<div class="col-md-4 single-right-grid-left">
-							<% if examnote.eimages.count > 0 %>
-								<%= link_to image_tag(examnote.eimages.first.image.url(:small),alt: examnote.topic),examnote %>
-							<% else %>
-								<%= link_to image_tag("defaultcoverimage",alt: examnote.topic),examnote %>
-							<%end%>
-						</div>
-						<div class="col-md-8 single-right-grid-right">
-							<%= link_to examnote.topic,examnote,class:"title"%>
-							<p class="author"><%= link_to examnote.user.phname,  controller:"users",action:"show",id:examnote.user_id,class:"author"%></p>
-							<p class="views"><%=examnote.impressionist_count %> views</p>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
+					<%= render partial: "shared/examnotesuggestion",locals:{examnote: examnote} %>
 				<% end %>
 			</div>
 		</div>

@@ -1,0 +1,15 @@
+<div class="single-right-grids">
+	<div class="col-md-4 single-right-grid-left">
+		<% if qpaper.qimages.count > 0 %>
+			<%= link_to image_tag(qpaper.qimages.first.image.url(:small),alt:qpaper.examname),qpaper %>
+		<% else %>
+			<%= link_to image_tag("defaultcoverimage",alt:qpaper.examname),qpaper %>
+		<% end %>
+	</div>
+	<div class="col-md-8 single-right-grid-right">
+		<%= link_to qpaper.examname,qpaper,class:"title"%>
+		<p class="author"><%= link_to qpaper.user.phname,  controller:"users",action:"show",id:qpaper.user_id,class:"author"%></p>
+		<p class="views"><%= qpaper.impressionist_count %> views</p>
+	</div>
+	<div class="clearfix"> </div>
+</div>
