@@ -26,7 +26,6 @@ class User < ActiveRecord::Base
 	has_many :requests
 
 	# Scopes
-	scope :userspecific, ->{where(user_id: @user.id).order("created_at DESC")}
 	scope :recent, ->{order("created_at DESC")}
 	# Paperclip Config
 

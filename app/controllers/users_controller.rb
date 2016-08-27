@@ -69,7 +69,7 @@ class UsersController < ApplicationController
 
 	def dashboard
 		if session[:user_id] == @user.id
-			@practicals = Practical.userspecific
+			@practicals = Practical.where(user_id: @user.id).order("created_at DESC")
 			render layout: "dashboard"
 		else
 			redirect_to root_path,notice: "Gotcha!, You are not owner of this Profile"
@@ -78,7 +78,7 @@ class UsersController < ApplicationController
 
 	def dashassignments
 		if session[:user_id] == @user.id
-			@assignments = Assignment.userspecific
+			@assignments = Assignment.where(user_id: @user.id).order("created_at DESC")
 			render "dashboard",layout: "dashboard"
 		else
 			redirect_to root_path,notice: "Gotcha!, You are not owner of this Profile"
@@ -87,7 +87,7 @@ class UsersController < ApplicationController
 
 	def dashexamnotes
 		if session[:user_id] == @user.id
-			@examnotes = Examnote.userspecific
+			@examnotes = Examnote.where(user_id: @user.id).order("created_at DESC")
 			render "dashboard",layout: "dashboard"
 		else
 			redirect_to root_path,notice: "Gotcha!, You are not owner of this Profile"
@@ -96,7 +96,7 @@ class UsersController < ApplicationController
 
 	def dashqpapers
 		if session[:user_id] == @user.id
-			@qpapers = Qpaper.userspecific
+			@qpapers = Qpaper.where(user_id: @user.id).order("created_at DESC")
 			render "dashboard",layout: "dashboard"
 		else
 			redirect_to root_path,notice: "Gotcha!, You are not owner of this Profile"
@@ -105,7 +105,7 @@ class UsersController < ApplicationController
 
 	def dashcolleges
 		if session[:user_id] == @user.id
-			@colleges =College.userspecific
+			@colleges =College.where(user_id: @user.id).order("created_at DESC")
 			render "dashboard",layout: "dashboard"
 		else
 			redirect_to root_path,notice: "Gotcha!, You are not owner of this Profile"
@@ -114,7 +114,7 @@ class UsersController < ApplicationController
 
 	def dashsubjects
 		if session[:user_id] == @user.id
-			@subjects = Subject.userspecific
+			@subjects = Subject.where(user_id: @user.id).order("created_at DESC")
 			render "dashboard",layout: "dashboard"
 		else
 			redirect_to root_path,notice: "Gotcha!, You are not owner of this Profile"
