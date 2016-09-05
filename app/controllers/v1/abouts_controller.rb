@@ -59,7 +59,7 @@ module V1
 				assignmentimages: assignmentimages,
 				examnotes: @examnotes,
 				examnoteimages: examnoteimages,
-				qpaper: @qpapers,
+				qpapers: @qpapers,
 				qpaperimages: qpaperimages
 
 			}
