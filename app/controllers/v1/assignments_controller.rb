@@ -6,7 +6,11 @@ module V1
 			@assignments = Assignment.recent.limit(12)
 			count = 0
 			images = Array.new
+			views = Array.new
+			publications = Array.new
 			@assignments.each do |assignment|
+				views[count] = assignment.impressionist_count
+				publications[count] = assignment.user.phname
 				if assignment.aimages.count > 0
 					images[count] = assignment.aimages.first.image.url(:medium)
 				else
@@ -17,7 +21,9 @@ module V1
 
 			render status: :ok,json: {
 				assignments: @assignments,
-				images: images
+				images: images,
+				publications: publications,
+				views: views
 			}
 		end
 
@@ -37,6 +43,8 @@ module V1
 
 			render status: :ok, json:{
 				assignment: @assignment,
+				publication: @assignment.user.phname,
+				views: @assignment.impressionist_count,
 				images: images
 			}
 		end
