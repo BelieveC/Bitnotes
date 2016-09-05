@@ -6,7 +6,11 @@ module V1
 			@subjects = Subject.recent.limit(12)
 			count = 0
 			images = Array.new
+			views = Array.new
+			publications = Array.new
 			@subjects.each do |subject|
+				views[count] = subject.impressionist_count
+				publications[count] = subject.user.phname
 				if subject.simages.count > 0
 					images[count] = subject.simages.first.image.url(:medium)
 				else
@@ -17,7 +21,9 @@ module V1
 
 			render status: :ok,json: {
 				subjects: @subjects,
-				images: images
+				images: images,
+				publications: publications,
+				views: views
 			}
 		end
 
@@ -37,6 +43,8 @@ module V1
 
 			render status: :ok, json:{
 				subject: @subject,
+				publication: @subject.user.phname,
+				views: @subject.impressionist_count,
 				images: images
 			}
 		end
