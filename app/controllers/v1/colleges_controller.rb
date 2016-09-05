@@ -6,7 +6,11 @@ module V1
 			@colleges = College.recent.limit(12)
 			count = 0
 			images = Array.new
+			views = Array.new
+			publications = Array.new
 			@colleges.each do |college|
+				views[count] = college.impressionist_count
+				publications[count] = college.user.phname
 				if college.cimages.count > 0
 					images[count] = college.cimages.first.image.url(:medium)
 				else
@@ -17,7 +21,9 @@ module V1
 
 			render status: :ok,json: {
 				colleges: @colleges,
-				images: images
+				images: images,
+				publications: publications,
+				views: views
 			}
 		end
 
@@ -37,6 +43,8 @@ module V1
 
 			render status: :ok, json:{
 				college: @college,
+				publication: @college.user.phname,
+				views: @college.impressionist_count,
 				images: images
 			}
 		end
