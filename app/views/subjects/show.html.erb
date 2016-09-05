@@ -1,4 +1,7 @@
 <% title @subject.name %>
+<% keywords "#{@subject.name}, #{@subject.user.phname},Subjects, Exams, BitNotes, Share, Care, Learn, Earn" %>
+<% description "#{@subject.name} is subject of #{@subject.user.phname} publication" %>
+<% author "#{@subject.user.phname}" %>
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 	<div class="show-top-grids">
 		<% if flash.any? %>
