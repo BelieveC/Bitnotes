@@ -89,7 +89,7 @@ Rails.application.routes.draw do
 
 
   namespace :v1 do
-    resources :practicals,only: [:show,:index]
+    resources :practicals,only: [:show,:index],constraints: {subdomain: "v1"}
   end
 
 end
