@@ -3,8 +3,7 @@ module V1
 		before_action :get_practical, only:[:show]
 
 		def index
-			@practicals = Practical.all
-
+			@practicals = Practical.recent.limit(12)
 			count = 0
 			images = Array.new
 			@practicals.each do |practical|
