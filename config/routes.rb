@@ -92,6 +92,10 @@ Rails.application.routes.draw do
     resources :practicals,only: [:show,:index]
     resources :assignments,only: [:show,:index]
     resources :colleges,only: [:show,:index]
+    resources :examnotes,only: [:show,:index]
+    resources :qpapers,only: [:show,:index]
+    resources :subjects,only: [:show,:index]
+    resources :users,only: [:show]
   end
 
 end
