@@ -6,7 +6,11 @@ module V1
 			@qpapers = Qpaper.recent.limit(12)
 			count = 0
 			images = Array.new
+			views = Array.new
+			publications = Array.new
 			@qpapers.each do |qpaper|
+				views[count] = qpaper.impressionist_count
+				publications[count] = qpaper.user.phname
 				if qpaper.qimages.count > 0
 					images[count] = qpaper.qimages.first.image.url(:medium)
 				else
@@ -17,7 +21,9 @@ module V1
 
 			render status: :ok,json: {
 				qpapers: @qpapers,
-				images: images
+				images: images,
+				publications: publications,
+				views: views
 			}
 		end
 
@@ -37,6 +43,8 @@ module V1
 
 			render status: :ok, json:{
 				qpaper: @qpaper,
+				publication: @qpaper.user.phname,
+				views: @qpaper.impressionist_count,
 				images: images
 			}
 		end
