@@ -6,7 +6,11 @@ module V1
 			@practicals = Practical.recent.limit(12)
 			count = 0
 			images = Array.new
+			views = Array.new
+			publications = Array.new
 			@practicals.each do |practical|
+				views[count] = practical.impressionist_count
+				publications[count] = practical.user.phname
 				if practical.pimages.count > 0
 					images[count] = practical.pimages.first.image.url(:medium)
 				else
@@ -17,7 +21,9 @@ module V1
 
 			render status: :ok,json: {
 				practicals: @practicals,
-				images: images
+				images: images,
+				publications: publications,
+				views: views
 			}
 		end
 
@@ -37,6 +43,8 @@ module V1
 
 			render status: :ok, json:{
 				practical: @practical,
+				publication: @practical.user.phname,
+				views: @practical.impressionist_count,
 				images: images
 			}
 		end
