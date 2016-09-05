@@ -96,6 +96,7 @@ Rails.application.routes.draw do
     resources :qpapers,only: [:show,:index]
     resources :subjects,only: [:show,:index]
     resources :users,only: [:show]
+    resources :abouts,only: [:index]
   end
 
 end
