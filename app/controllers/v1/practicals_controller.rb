@@ -13,6 +13,7 @@ module V1
 				else
 					images[count] = nil
 				end
+				count = count + 1
 			end
 
 			render status: :ok,json: {
