@@ -6,7 +6,12 @@ module V1
 			@examnotes = Examnote.recent.limit(12)
 			count = 0
 			images = Array.new
+			views = Array.new
+			publications = Array.new
+
 			@examnotes.each do |examnote|
+				views[count] = examnote.impressionist_count
+				publications[count] = examnote.user.phname
 				if examnote.eimages.count > 0
 					images[count] = examnote.eimages.first.image.url(:medium)
 				else
@@ -17,7 +22,9 @@ module V1
 
 			render status: :ok,json: {
 				examnotes: @examnotes,
-				images: images
+				images: images,
+				publications: publications,
+				views: views
 			}
 		end
 
@@ -37,6 +44,8 @@ module V1
 
 			render status: :ok, json:{
 				examnote: @examnote,
+				publication: @examnote.user.phname,
+				views: @examnote.impressionist_count,
 				images: images
 			}
 		end
