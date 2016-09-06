@@ -13,52 +13,52 @@
 </url>
 <url>
   <loc>http://bitnotes.in/about</loc>
-  <changefreq>daily</changefreq>
+  <changefreq>monthly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://bitnotes.in/creators</loc>
-  <changefreq>daily</changefreq>
+  <changefreq>monthly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://bitnotes.in/terms</loc>
-  <changefreq>daily</changefreq>
+  <changefreq>monthly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://bitnotes.in/try</loc>
-  <changefreq>daily</changefreq>
+  <changefreq>monthly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://bitnotes.in/practicals</loc>
-  <changefreq>daily</changefreq>
+  <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://bitnotes.in/assignments</loc>
-  <changefreq>daily</changefreq>
+  <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://bitnotes.in/qpapers</loc>
-  <changefreq>daily</changefreq>
+  <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://bitnotes.in/examnotes</loc>
-  <changefreq>daily</changefreq>
+  <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://bitnotes.in/colleges</loc>
-  <changefreq>daily</changefreq>
+  <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://bitnotes.in/subjects</loc>
-  <changefreq>daily</changefreq>
+  <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
