@@ -98,7 +98,7 @@ module V1
 			@qpapers = Qpaper.search(params[:search])
 			@colleges = College.search(params[:search])
 			@subjects = Subject.search(params[:search])
-
+			@users = User.search(params[:search])
 
 			count = 0
 			assignmentimages = Array.new
@@ -160,7 +160,61 @@ module V1
 				count = count + 1
 			end
 
+			count = 0
+			collegeimages = Array.new
+			collegeviews = Array.new
+			collegepublications = Array.new
+			@colleges.each do |college|
+				collegeviews[count] = college.impressionist_count
+				collegepublications[count] = college.user.phname
+				if college.cimages.count > 0
+					collegeimages[count] = college.cimages.first.image.url(:medium)
+				else
+					collegeimages[count] = nil
+				end
+				count = count + 1
+			end
+
+			count = 0
+			subjectimages = Array.new
+			subjectviews = Array.new
+			subjectpublications = Array.new
+			@subjects.each do |subject|
+				subjectviews[count] = subject.impressionist_count
+				subjectpublications[count] = subject.user.phname
+				if subject.simages.count > 0
+					subjectimages[count] = subject.simages.first.image.url(:medium)
+				else
+					subjectimages[count] = nil
+				end
+				count = count + 1
+			end
+
+			count = 0
+			useravatars = Array.new
+			usercovers = Array.new	
+			@users.each do |user|
+				if user.avatar.present?
+					useravatars[count] = user.avatar.url(:thumb)
+				else
+					useravatars[count] = nil
+				end
+
+				if user.cover.present?
+					usercovers[count] = user.cover.url(:thumb)
+				else
+					usercovers[count] = nil
+				end
+
+				count = count + 1
+			end
+
+
+
 			render json: {
+				users: @users,
+				useravatars: useravatars,
+				usercovers: usercovers,
 				practicals: @practicals,
 				practicalimages: practicalimages,
 				practicalpublications: practicalpublications,
@@ -178,7 +232,13 @@ module V1
 				qpaperpublications: qpaperpublications,
 				qpaperviews: qpaperviews,
 				colleges: @colleges,
-				subjects: @subjects 
+				collegeimages: collegeimages,
+				collegepublications: collegepublications,
+				collegeviews: collegeviews,
+				subjects: @subjects,
+				subjectimages: subjectimages,
+				subjectpublications: subjectpublications,
+				subjectviews: subjectviews
 			}
 		end
 
