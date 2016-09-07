@@ -97,6 +97,7 @@ Rails.application.routes.draw do
     resources :subjects,only: [:show,:index]
     resources :users,only: [:show]
     resources :abouts,only: [:index]
+    get '/result'=>'abouts#result',as:"result"
   end
 
 end
