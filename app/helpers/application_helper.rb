@@ -14,4 +14,8 @@ module ApplicationHelper
 	 def author(author)
 	 	content_for :author, author.to_s
 	 end
+
+	 def fbshareimage(fbshareimageurl)
+	 	content_for :fbshareimageurl, fbshareimageurl.to_s
+	 end
 end
