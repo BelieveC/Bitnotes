@@ -34,7 +34,7 @@ module V1
 			count = 0
 			if @college.cimages.count > 0
 				@college.cimages.each do |cimage|
-					images[count] = cimage.image.url(:medium)
+					images[count] = cimage.image.url(:thumb)
 					count = count + 1
 				end
 			else

@@ -34,7 +34,7 @@ module V1
 			count = 0
 			if @subject.simages.count > 0
 				@subject.simages.each do |simage|
-					images[count] = simage.image.url(:medium)
+					images[count] = simage.image.url(:thumb)
 					count = count + 1
 				end
 			else

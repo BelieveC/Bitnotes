@@ -35,7 +35,7 @@ module V1
 			count = 0
 			if @examnote.eimages.count > 0
 				@examnote.eimages.each do |eimage|
-					images[count] = eimage.image.url(:medium)
+					images[count] = eimage.image.url(:thumb)
 					count = count + 1
 				end
 			else

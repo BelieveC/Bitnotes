@@ -34,7 +34,7 @@ module V1
 			count = 0
 			if @qpaper.qimages.count > 0
 				@qpaper.qimages.each do |qimage|
-					images[count] = qimage.image.url(:medium)
+					images[count] = qimage.image.url(:thumb)
 					count = count + 1
 				end
 			else

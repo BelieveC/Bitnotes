@@ -34,7 +34,7 @@ module V1
 			count = 0
 			if @practical.pimages.count > 0
 				@practical.pimages.each do |pimage|
-					images[count] = pimage.image.url(:medium)
+					images[count] = pimage.image.url(:thumb)
 					count = count + 1
 				end
 			else
