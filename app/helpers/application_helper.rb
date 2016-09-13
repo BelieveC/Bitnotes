@@ -18,4 +18,13 @@ module ApplicationHelper
 	 def fbshareimage(fbshareimageurl)
 	 	content_for :fbshareimageurl, fbshareimageurl.to_s
 	 end
+
+	 def fbshareurl(fbshareurl)
+	 	content_for :fbshareurl, fbshareurl.to_s
+	 end
+
+	 def fbsharetitle(fbsharetitle)
+	 	content_for :fbsharetitle,fbsharetitle.to_s
+	 end
+	 
 end
