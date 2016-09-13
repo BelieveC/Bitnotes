@@ -2,6 +2,8 @@
 <% keywords "#{@user.phname},Practicals, Notes, Papers, Assignments,Exams, BitNotes, Share, Care, Learn, Earn" %>
 <% description "#{@user.phname} is a publication under BitNotes" %>
 <% author "#{@user.phname}" %>
+<% fbsharetitle "#{@user.phname}" %>
+<% fbshareurl "#{url_for([@user,{only_path: false}])}" %>
 <br><br>
 <div class="container">
 	<% if flash.any?%>
@@ -24,6 +26,7 @@
 				<% if @user.avatar.url == "/avatars/original/missing.png" %>
                 	<%= link_to image_tag("customprofile",width:"180em",height:"200em",alt:@user.name),@user %>
                 <%else%>
+                	<% fbshareimage "#{ @user.avatar.url(:thumb) }" %>
                 	<%= link_to image_tag(@user.avatar.url(:thumb),width:"180em",height:"200em",alt:@user.name),@user %>
                 <% end %>
 			</div>
