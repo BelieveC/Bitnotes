@@ -2,6 +2,8 @@
 <% keywords "#{@subject.name}, #{@subject.user.phname},Subjects, Exams, BitNotes, Share, Care, Learn, Earn" %>
 <% description "#{@subject.name} is subject of #{@subject.user.phname} publication" %>
 <% author "#{@subject.user.phname}" %>
+<% fbsharetitle "#{@subject.name}" %>
+<% fbshareurl "#{url_for([@subject,{only_path: false}])}" %>
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 	<div class="show-top-grids">
 		<% if flash.any? %>
@@ -18,6 +20,7 @@
 				<div class="video-grid">
 					<ul class="docs-pictures">
 						<% if @subject.simages.count > 0 %>
+							<% fbshareimage "#{ @subject.simages.first.image.url(:thumb) }" %>
 							<li><% @subject.simages.each do |simage| %>
 								<%=image_tag(simage.image.url(:medium),alt: @subject.name,class: "img-thumbnail",height:"140px",width:"140px",data:{original:simage.image.url(:thumb)}) %></li>
 							<% end %>
