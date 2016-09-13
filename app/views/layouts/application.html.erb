@@ -40,7 +40,7 @@
 
 <!-- Adsterra Ad Network -->
 </head>
-<body>
+<body id="myPage">
 
 	<%= render "shared/navigation" %>
     
@@ -58,38 +58,26 @@
     ga('send', 'pageview');
 
   </script>
-
-  <span id="move-to-top-button">&uarr;</span>
-
+  
+  <a href="#myPage" id="move-to-top-button" title="To Top">&uarr;</a>
   <script>
-    function scrollTo (element, to, duration) {
-      var start = element.scrollTop,
-        change = to - start,
-        increment = 20;
-      var animateScroll = function(elapsedTime) {
-        elapsedTime += increment;
-        var position = easeInOut (elapsedTime, start, change, duration);
-        element.scrollTop = position;
-        if (elapsedTime < duration) {
-          setTimeout (function() {
-            animateScroll(elapsedTime);
-          });
-        }
-      };
-      animateScroll(0);
-    }
-    function easeInOut(currentTime, start, change, duration) {
-      currentTime /= duration/2;
-      if (currentTime < 1) {
-        return change / 2 * currentTime * currentTime + start;
-      }
-      currentTime -= 1;
-      return -change / 2 * (currentTime * (currentTime - 2) - 1) + start;
-    }
+    $(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $("#move-to-top-button").on('click', function(event) {
+  // Store hash
+  var hash = this.hash;
 
-    document.getElementById('move-to-top-button').addEventListener('click', function() {
-      scrollTo(document.body, document.documentElement.clientHeight*0, 2000);
+  // Using jQuery's animate() method to add smooth page scroll
+  // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+  $('html, body').animate({
+    scrollTop: $(hash).offset().top
+  }, 900, function(){
+
+    // Add hash (#) to URL when done scrolling (default click behavior)
+    window.location.hash = hash;
     });
+  });
+})
   </script>
 
    
