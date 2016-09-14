@@ -669,8 +669,11 @@ a.btn.btn-primary.btn-lg.see-button.hvr-shutter-out-horizontal {
 }
 .resent-grid-info p.author-info{
     font-size: 13px;
-    font-weight: 300;
+    font-weight: 200;
     margin-top: 5px;
+    height: 1em;
+    line-height: 1.3em;
+    overflow-y: hidden;
 }
 .resent-grid-info p.views {
     font-size: 13px;
@@ -1356,16 +1359,21 @@ width:100%;
 }
 .single-right-grid-right a.title {
     margin: 0;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 1.4em;
+    font-weight: 500;
     color: #525254;
     text-decoration: none;
+}
+.single-right-grid-right p.wrap{
+  overflow: hidden;
+  line-height: 1.4em;
+  max-height: 4.5em;
 }
 .single-right-grid-right a.title:hover{
     text-decoration: underline;
 }
 .single-right-grid-right p.author {
-  font-size: 14px;
+  font-size: 1.3em;
   color: #9E9E9E;
   margin: .5em 0;
 }
@@ -1787,7 +1795,7 @@ span.glyphicon.glyphicon-user {
     bottom: -8em;
   }
   .single-right-grid-left a img{
-    height: 6em;
+    height: 10em;
   }
    .resent-grid a img {
       height: 16em;
