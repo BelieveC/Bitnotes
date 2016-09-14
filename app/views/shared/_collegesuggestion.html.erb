@@ -7,7 +7,7 @@
 		<% end %>
 	</div>
 	<div class="col-md-8 single-right-grid-right">
-		<%= link_to college.name,college,class:"title"%>
+		<p class="wrap" title="<%=college.name %>"><%= link_to college.name,college,class:"title"%></p> 
 		<p class="author"><%= link_to college.user.phname,  controller:"users",action:"show",id:college.user_id,class:"author"%></p>
 		<p class="views"><%= college.impressionist_count %> views</p>
 	</div>
