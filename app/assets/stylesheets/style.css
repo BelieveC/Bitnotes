@@ -501,6 +501,7 @@ a.btn.btn-primary.btn-lg.see-button.hvr-shutter-out-horizontal {
 .small-time {
     top: 87% !important;
     z-index: 9;
+    background-color: black;
 }
 .slider-time{
     top: 90% !important;
