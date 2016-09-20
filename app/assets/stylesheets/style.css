@@ -527,6 +527,7 @@ a.btn.btn-primary.btn-lg.see-button.hvr-shutter-out-horizontal {
 .time p.usercontent{
   margin: -0.7em 0 0 0;
   padding: 0em .5em ;
+  background: black;
 }
 .clck {
   position: absolute;
