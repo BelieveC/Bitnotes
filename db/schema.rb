@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160814151338) do
+ActiveRecord::Schema.define(version: 20160922182844) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -289,6 +289,7 @@ ActiveRecord::Schema.define(version: 20160814151338) do
     t.string   "googlelink"
     t.string   "instagramlink"
     t.integer  "college_id"
+    t.string   "email"
   end
 
   create_table "votes", force: :cascade do |t|
