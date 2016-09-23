@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@recentUsers = User.all.order("created_at DESC").limit(5)
+		@recentUsers = User.all.order("subscriber_count DESC").limit(5)
 		@practicals =@user.practicals
 		@qpapers = @user.qpapers
 		@examnotes = @user.examnotes
