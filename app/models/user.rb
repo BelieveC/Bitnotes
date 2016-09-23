@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 	acts_as_voter
-	
+	searchkick
 	# User Subscription setting
 
 	has_many :active_relationships, class_name: "Relationship",
