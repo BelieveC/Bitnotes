@@ -6,5 +6,6 @@ namespace :subscriber do
 			user.subscriber_count = user.subscriber.count
 			user.save
 		end
+		puts "Done!"
 	end
 end

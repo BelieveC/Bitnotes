@@ -38,6 +38,7 @@ gem 'rack-mini-profiler', '~> 0.10.1'
 gem 'execjs', '~> 2.7'
 gem 'impressionist'
 gem 'figaro'
+gem 'whenever', '~> 0.9.7'
 group :development, :test do
   gem 'byebug'
 end
