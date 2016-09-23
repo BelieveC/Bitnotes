@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160922182844) do
+ActiveRecord::Schema.define(version: 20160923091123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -290,6 +290,7 @@ ActiveRecord::Schema.define(version: 20160922182844) do
     t.string   "instagramlink"
     t.integer  "college_id"
     t.string   "email"
+    t.integer  "subscriber_count"
   end
 
   create_table "votes", force: :cascade do |t|
