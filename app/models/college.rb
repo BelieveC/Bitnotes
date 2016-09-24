@@ -1,5 +1,5 @@
 class College < ActiveRecord::Base
-	is_impressionable
+	is_impressionable :counter_cache => true, :column_name => :views, :unique => :all
 	searchkick
 	acts_as_votable
 	has_many :assignments

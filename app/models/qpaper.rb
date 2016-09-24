@@ -1,5 +1,5 @@
 class Qpaper < ActiveRecord::Base
-	is_impressionable
+	is_impressionable :counter_cache => true, :column_name => :views, :unique => :all
 	searchkick
 	acts_as_votable
 	belongs_to :user
