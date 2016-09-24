@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160924150019) do
+ActiveRecord::Schema.define(version: 20160924151502) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20160924150019) do
     t.integer  "cached_votes_score", default: 0
     t.integer  "cached_votes_up",    default: 0
     t.integer  "cached_votes_down",  default: 0
+    t.integer  "views"
   end
 
   add_index "assignments", ["cached_votes_down"], name: "index_assignments_on_cached_votes_down", using: :btree
@@ -69,6 +70,7 @@ ActiveRecord::Schema.define(version: 20160924150019) do
     t.integer  "cached_votes_score", default: 0
     t.integer  "cached_votes_up",    default: 0
     t.integer  "cached_votes_down",  default: 0
+    t.integer  "views"
   end
 
   add_index "colleges", ["cached_votes_down"], name: "index_colleges_on_cached_votes_down", using: :btree
@@ -100,6 +102,7 @@ ActiveRecord::Schema.define(version: 20160924150019) do
     t.integer  "cached_votes_score", default: 0
     t.integer  "cached_votes_up",    default: 0
     t.integer  "cached_votes_down",  default: 0
+    t.integer  "views"
   end
 
   add_index "examnotes", ["cached_votes_down"], name: "index_examnotes_on_cached_votes_down", using: :btree
@@ -191,6 +194,7 @@ ActiveRecord::Schema.define(version: 20160924150019) do
     t.integer  "cached_votes_score", default: 0
     t.integer  "cached_votes_up",    default: 0
     t.integer  "cached_votes_down",  default: 0
+    t.integer  "views"
   end
 
   add_index "qpapers", ["cached_votes_down"], name: "index_qpapers_on_cached_votes_down", using: :btree
@@ -258,6 +262,7 @@ ActiveRecord::Schema.define(version: 20160924150019) do
     t.integer  "cached_votes_score", default: 0
     t.integer  "cached_votes_up",    default: 0
     t.integer  "cached_votes_down",  default: 0
+    t.integer  "views"
   end
 
   add_index "subjects", ["cached_votes_down"], name: "index_subjects_on_cached_votes_down", using: :btree
