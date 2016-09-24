@@ -15,7 +15,6 @@ class AboutsController < ApplicationController
 			@qpapers = Qpaper.all.order("created_at DESC").limit(4)
 			@examnotes = Examnote.all.order("created_at DESC").limit(4)
 		end
-
 	end
 
 	def privacy
@@ -41,7 +40,7 @@ class AboutsController < ApplicationController
 
 	def language
 		session[:langId] = params[:lang]
-		redirect_to :back
+		redirect_to root_path
 	end
 
 	def team
