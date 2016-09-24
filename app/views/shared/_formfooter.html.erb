@@ -1,89 +1,82 @@
-			<div class="footer">
-				<div class="container">
-					<div class="footer-top">
-						<div class="footer-bottom-nav">
-							<ul>
-								<li><span title="English"><%= link_to "English",language_path(lang: "en"),data: { no_turbolink: true }%></span></li>
-								<li><span title="Hindi"><%= link_to "हिन्दी",language_path(lang: "hi"),data: { no_turbolink: true }%></span></li>
-								<li><span title="Marathi"><%= link_to "मराठी",language_path(lang: "mr"),data: { no_turbolink: true } %></span></li>
-								<li><span title="Gujrati"><%= link_to "ગુજરાતી",language_path(lang: "gu"),data: { no_turbolink: true } %></span></li>
-								<li><span title="Punjabi"><%= link_to "ਪੰਜਾਬੀ ਦੇ",language_path(lang: "pa"),data: { no_turbolink: true } %></span></li>
-								<li><span title="Telugu"><%= link_to "తెలుగు",language_path(lang: "te"),data: { no_turbolink: true } %></span></li>
-								<li><span title="Tamil"><%= link_to "தமிழ்",language_path(lang: "ta"),data: { no_turbolink: true } %></span></li>
-								<li><span title="Urdu"><%= link_to "اردو",language_path(lang: "ur"),data: { no_turbolink: true } %></span></li>
-								<li><span title="Kannada"><%= link_to "ಕನ್ನಡ",language_path(lang: "kn"),data: { no_turbolink: true } %></span></li>
-								<li><span title="Bengali"><%= link_to "বাঙালি",language_path(lang: "bn"),data: { no_turbolink: true } %></span></li>
-								<li><span title="Malayalam"><%= link_to "മലയാളം",language_path(lang: "ml"),data: { no_turbolink: true } %></span></li>
-								<li><%= link_to "+More Languages","",id:"moreLang",class:"moreLang"%></li>
-							</ul>
-						</div>
-						<div class="footer-bottom-nav" id="moreLangDiv" style="display:none">
-							<ul>
-								<li><span title="Arabic"><%= link_to "العربية",language_path(lang: "ar"),data: { no_turbolink: true }%></span></li>
-								<li><span title="Chinese Simplified"><%= link_to "简体中文",language_path(lang: "zh-CN"),data: { no_turbolink: true }%></span></li>
-								<li><span title="Dutch"><%= link_to "Nederlands",language_path(lang: "nl"),data: { no_turbolink: true } %></span></li>
-								<li><span title="French"><%= link_to "français",language_path(lang: "fr"),data: { no_turbolink: true } %></span></li>
-								<li><span title="German"><%= link_to "Γερμανός",language_path(lang: "el"),data: { no_turbolink: true } %></span></li>
-								<li><span title="Italian"><%= link_to "italiano",language_path(lang: "it"),data: { no_turbolink: true } %></span></li>
-								<li><span title="Japenese"><%= link_to "日本語",language_path(lang: "ja"),data: { no_turbolink: true } %></span></li>
-								<li><span title="Latin"><%= link_to "Latinae",language_path(lang: "la"),data: { no_turbolink: true } %></span></li>
-								<li><span title="Portugese"><%= link_to "Português",language_path(lang: "pt"),data: { no_turbolink: true } %></span></li>
-								<li><span title="Russian"><%= link_to "русский",language_path(lang: "ru"),data: { no_turbolink: true } %></span></li>
-								<li><span title="Spanish"><%= link_to "Español",language_path(lang: "es"),lang:"es",data: { no_turbolink: true } %></span></li>
-								<li><span title="Turkish"><%= link_to "Türk",language_path(lang: "tr"),data: { no_turbolink: true } %></span></li>
-								<li><span title="Ukrainian"><%= link_to "український",language_path(lang: "uk"),data: { no_turbolink: true } %></span></li>
-							</ul>
-						</div>
-						<hr>
-						<div class="footer-top-nav">
-							<ul>
-								<li><%= link_to "About",about_path %></li>
-								<li><%= link_to "New Adventure!",try_path%></li>
-								<li><%= link_to "Creators",creators_path %></li>
-							</ul>
-						</div>
-						<div class="footer-bottom-nav">
-							<ul>
-								<li><%= link_to "Terms",terms_path %></li>
-								<li><a href="#small-dialog4" class="play-icon popup-with-zoom-anim">Send feedback</a></li>
-								<li><a href="#small-dialog5" class="play-icon popup-with-zoom-anim f-history f-help">Help</a></li>
-								<li><p>© 2016 <a href="http://www.bitnotes.in">BitNotes.Inc</a></p></li>
-							</ul>
-						</div>
-						<div class="footer-bottom-nav">
-							<ul>
-								<li><a href="https://www.facebook.com/BitNotes4U/" title="Follow us on Facebook" target="_blank"><%=image_tag("fb2") %></a> </li>
-								<li><a href="https://plus.google.com/107245586644140617931?hl=en" title="Follow us on Google+" target="_blank"><%=image_tag("google2") %></a></li>
-								<li><a href="https://twitter.com/BitnotesFamily " title="Follow us on Twitter" target="_blank"><%=image_tag("twitter2") %></a></li>
-								<li> <a href="mailto:cwayconnect@gmail.com" title="Mail us" target="_blank"><%=image_tag("mail") %></a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="footer-bottom">
-						<ul>
-							<li class="languages">
-								<script>
-									$.cookie('googtrans','/en/<%= session[:langId] if session[:langId] %>');
-								</script>
-								<div id="google_translate_element"style="display:none;"></div>
-								<script type="text/javascript">
-									function googleTranslateElementInit() {
-									  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-									}
-									</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-								</script>
-							</li>
-							
-						</ul>
-					</div>
+	<div class="footer">
+		<div class="container">
+			<div class="footer-top">
+				<div class="footer-bottom-nav">
+					<ul>
+						<li><span title="English"><%= link_to "English",language_path(lang: "en"),data: { no_turbolink: true }%></span></li>
+						<li><span title="Hindi"><%= link_to "हिन्दी",language_path(lang: "hi"),data: { no_turbolink: true }%></span></li>
+						<li><span title="Marathi"><%= link_to "मराठी",language_path(lang: "mr"),data: { no_turbolink: true } %></span></li>
+						<li><span title="Gujrati"><%= link_to "ગુજરાતી",language_path(lang: "gu"),data: { no_turbolink: true } %></span></li>
+						<li><span title="Punjabi"><%= link_to "ਪੰਜਾਬੀ ਦੇ",language_path(lang: "pa"),data: { no_turbolink: true } %></span></li>
+						<li><span title="Telugu"><%= link_to "తెలుగు",language_path(lang: "te"),data: { no_turbolink: true } %></span></li>
+						<li><span title="Tamil"><%= link_to "தமிழ்",language_path(lang: "ta"),data: { no_turbolink: true } %></span></li>
+						<li><span title="Urdu"><%= link_to "اردو",language_path(lang: "ur"),data: { no_turbolink: true } %></span></li>
+						<li><span title="Kannada"><%= link_to "ಕನ್ನಡ",language_path(lang: "kn"),data: { no_turbolink: true } %></span></li>
+						<li><span title="Bengali"><%= link_to "বাঙালি",language_path(lang: "bn"),data: { no_turbolink: true } %></span></li>
+						<li><span title="Malayalam"><%= link_to "മലയാളം",language_path(lang: "ml"),data: { no_turbolink: true } %></span></li>
+						<li><%= link_to "+More Languages","",id:"moreLang",class:"moreLang"%></li>
+					</ul>
+				</div>
+				<div class="footer-bottom-nav" id="moreLangDiv" style="display:none">
+					<ul>
+						<li><span title="Arabic"><%= link_to "العربية",language_path(lang: "ar"),data: { no_turbolink: true }%></span></li>
+						<li><span title="Chinese Simplified"><%= link_to "简体中文",language_path(lang: "zh-CN"),data: { no_turbolink: true }%></span></li>
+						<li><span title="Dutch"><%= link_to "Nederlands",language_path(lang: "nl"),data: { no_turbolink: true } %></span></li>
+						<li><span title="French"><%= link_to "français",language_path(lang: "fr"),data: { no_turbolink: true } %></span></li>
+						<li><span title="German"><%= link_to "Γερμανός",language_path(lang: "el"),data: { no_turbolink: true } %></span></li>
+						<li><span title="Italian"><%= link_to "italiano",language_path(lang: "it"),data: { no_turbolink: true } %></span></li>
+						<li><span title="Japenese"><%= link_to "日本語",language_path(lang: "ja"),data: { no_turbolink: true } %></span></li>
+						<li><span title="Latin"><%= link_to "Latinae",language_path(lang: "la"),data: { no_turbolink: true } %></span></li>
+						<li><span title="Portugese"><%= link_to "Português",language_path(lang: "pt"),data: { no_turbolink: true } %></span></li>
+						<li><span title="Russian"><%= link_to "русский",language_path(lang: "ru"),data: { no_turbolink: true } %></span></li>
+						<li><span title="Spanish"><%= link_to "Español",language_path(lang: "es"),lang:"es",data: { no_turbolink: true } %></span></li>
+						<li><span title="Turkish"><%= link_to "Türk",language_path(lang: "tr"),data: { no_turbolink: true } %></span></li>
+						<li><span title="Ukrainian"><%= link_to "український",language_path(lang: "uk"),data: { no_turbolink: true } %></span></li>
+					</ul>
+				</div>
+				<hr>
+				<div class="footer-top-nav">
+					<ul>
+						<li><%= link_to "About",about_path %></li>
+						<li><%= link_to "New Adventure!",try_path%></li>
+						<li><%= link_to "Creators",creators_path %></li>
+					</ul>
+				</div>
+				<div class="footer-bottom-nav">
+					<ul>
+						<li><%= link_to "Terms",terms_path %></li>
+						<li><a href="#small-dialog4" class="play-icon popup-with-zoom-anim">Send feedback</a></li>
+						<li><a href="#small-dialog5" class="play-icon popup-with-zoom-anim f-history f-help">Help</a></li>
+						<li><p>© 2016 <a href="http://www.bitnotes.in">BitNotes.Inc</a></p></li>
+					</ul>
+				</div>
+				<div class="footer-bottom-nav">
+					<ul>
+						<li><a href="https://www.facebook.com/BitNotes4U/" title="Follow us on Facebook" target="_blank"><%=image_tag("fb2") %></a> </li>
+						<li><a href="https://plus.google.com/107245586644140617931?hl=en" title="Follow us on Google+" target="_blank"><%=image_tag("google2") %></a></li>
+						<li><a href="https://twitter.com/BitnotesFamily " title="Follow us on Twitter" target="_blank"><%=image_tag("twitter2") %></a></li>
+						<li> <a href="mailto:cwayconnect@gmail.com" title="Mail us" target="_blank"><%=image_tag("mail") %></a></li>
+					</ul>
 				</div>
 			</div>
-			<!-- //footer -->
-		<div class="clearfix"> </div>
-	<div class="drop-menu">
-		<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu4">
-		  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Regular link</a></li>
-		  <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">Disabled link</a></li>
-		  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another link</a></li>
-		</ul>
+			<div class="footer-bottom">
+				<ul>
+					<li class="languages">
+						<script>
+							$.cookie('googtrans','/en/<%= session[:langId] if session[:langId] %>');
+						</script>
+						<div id="google_translate_element" style="display:none;"></div>
+						<script type="text/javascript">
+							function googleTranslateElementInit() {
+							  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+							}
+							</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+						</script>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
 	</div>
+	<!-- //footer -->
+	<div class="clearfix"> </div>
