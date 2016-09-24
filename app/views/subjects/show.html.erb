@@ -68,7 +68,7 @@
 							<% end %>
 						<%end %>
 					</li>
-					<li class="view" title="Views Count"><strong><%=@subject.impressionist_count %> views</strong></li>
+					<li class="view" title="Views Count"><strong><%=@subject.views %> views</strong></li>
 					<% if session[:user_id] && session[:user_id] == @subject.user_id %>
 						<li><%=link_to "Edit",edit_subject_path(@subject),id:"edit_profile_btn" %></li>	
 					<% end %>
