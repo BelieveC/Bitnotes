@@ -17,7 +17,7 @@
 		<small>Submitted <strong> <%=time_ago_in_words(college.created_at) %> ago</strong></small>
 		<ul>
 			<li><p class="author author-info"><%= link_to college.user.phname,  controller:"users",action:"show",id:college.user_id,class:"author"%></p></li>
-			<li class="right-list"><p class="views views-info"><strong><%= college.impressionist_count %></strong> views</p></li>
+			<li class="right-list"><p class="views views-info"><strong><%= college.views %></strong> views</p></li>
 		</ul>
 	</div>
 </div>

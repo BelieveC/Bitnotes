@@ -9,7 +9,7 @@
 	<div class="col-md-8 single-right-grid-right">
 		<p class="wrap" title="<%=examnote.topic%>"><%= link_to examnote.topic,examnote,class:"title"%></p>
 		<p class="author"><%= link_to examnote.user.phname,  controller:"users",action:"show",id:examnote.user_id,class:"author"%></p>
-		<p class="views"><%=examnote.impressionist_count %> views</p>
+		<p class="views"><%=examnote.views %> views</p>
 	</div>
 	<div class="clearfix"> </div>
 </div>

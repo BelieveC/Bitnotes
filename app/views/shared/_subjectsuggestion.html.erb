@@ -9,7 +9,7 @@
 	<div class="col-md-8 single-right-grid-right">
 		<p class="wrap" title="<%=subject.name%>"><%= link_to subject.name,subject,class:"title"%></p>
 		<p class="author"><%= link_to subject.user.phname,  controller:"users",action:"show",id:subject.user_id,class:"author"%></p>
-		<p class="views"><%= subject.impressionist_count %> views</p>
+		<p class="views"><%= subject.views %> views</p>
 	</div>
 	<div class="clearfix"> </div>
 </div>

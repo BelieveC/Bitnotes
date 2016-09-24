@@ -9,7 +9,7 @@
 	<div class="col-md-8 single-right-grid-right">
 		<p class="wrap" title="<%=qpaper.examname %>"><%= link_to qpaper.examname,qpaper,class:"title"%></p>
 		<p class="author"><%= link_to qpaper.user.phname,  controller:"users",action:"show",id:qpaper.user_id,class:"author"%></p>
-		<p class="views"><%= qpaper.impressionist_count %> views</p>
+		<p class="views"><%= qpaper.views %> views</p>
 	</div>
 	<div class="clearfix"> </div>
 </div>
