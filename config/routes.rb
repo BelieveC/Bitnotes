@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   
-  # constraints(:host => /bitnotes.in/) do
-  #   match "/(*path)" => redirect {|params, req| "http://www.bitnotes.in/#{params[:path]}"},  via: [:get, :post]
-  # end
+  constraints(:host => /www.bitnotes.in/) do
+    match "/(*path)" => redirect {|params, req| "http://bitnotes.in/#{params[:path]}"},  via: [:get, :post]
+  end
   constraints(:host => /bitnotes.tk/) do
     match "/(*path)" => redirect {|params, req| "http://bitnotes.in/#{params[:path]}"},  via: [:get, :post]
   end
