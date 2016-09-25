@@ -104,7 +104,50 @@
 					<button id="showLess" style="display:none" title="See less details">Show less</button>
 				</div>
 			</div>
-			<div class="all-comments">
+			<br>
+			<div class="recommended">
+				<div class="recommended-grids">
+					<div class="recommended-info">
+						<div class="heading">
+							<h3>Famous <%=@college.name %> Publications</h3>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+
+					<% i = 0 %>
+
+					<%unless @collegepublications.blank? %>
+						<% @collegepublications.each do |collegepublication|%>
+							<% i = i+ 1%>
+							<div class="col-md-3 resent-grid recommended-grid movie-video-grid">
+								<div class="resent-grid-img recommended-grid-img">
+									<% if collegepublication.avatar.url == "/avatars/original/missing.png" %>
+						                	<%=link_to image_tag("customprofile",alt:collegepublication.phname),collegepublication %>
+						            <% else%>
+						            	<%=link_to image_tag(collegepublication.avatar.url(:small),alt:collegepublication.name),collegepublication%>
+									<% end %>
+								</div>
+								<div class="resent-grid-info recommended-grid-info recommended-grid-movie-info">
+									<h5><%=link_to collegepublication.phname,collegepublication,class:"title" %><br><small>started <strong> <%=time_ago_in_words(collegepublication.created_at) %> ago</strong></small></h5>
+									<ul>
+										<li><%= render partial:"shared/subscribe_form",locals:{fi: i} if current_user %></li>
+									</ul>
+								</div>
+							</div>
+						<%end%>
+					<% else %>
+						<div class="col-md-12 resent-grid recommended-grid movie-video-grid nocontent">
+							<div class="resent-grid-img recommended-grid-img">
+								<%= image_tag("create",height:"100%",width:"100%") %>
+								<p class="NoContentInfo" style="float:left; margin-top:1em; font-size: 2em;"><%= @college.name%> is coming up with awesome contributers!</p>
+							</div>
+						</div>
+					<% end %>
+					<div class="clearfix"></div>
+                </div>
+            </div>
+
+            <div class="all-comments">
 				<div class="all-comments-info">
 					<%= render "disqus" %>
 				</div>

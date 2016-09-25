@@ -15,6 +15,9 @@ class CollegesController < ApplicationController
 		@recentPracticals = Practical.recent.limit(3)
 		@recentQpapers = Qpaper.recent.limit(3)
 		@recentExamnotes = Examnote.recent.limit(3)
+
+		@collegepublications = User.where(college_id: @college.id).order("subscriber_count DESC").limit(16)
+
 	end
 
 	def new
