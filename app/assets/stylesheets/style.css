@@ -1043,8 +1043,9 @@ select.form-control.bfh-countries:hover {
 }
 /*-- history --*/
 .recommended-info p.history-text {
-	   font-size: 15px;
-    color: #777;
+    font-family: 'Cinzel', serif;
+	  font-size: 15px;
+    color: slategray;
     font-weight: 400;
     margin: 0;
     line-height: 1.8em;
@@ -1433,6 +1434,7 @@ span.glyphicon.glyphicon-user {
 	width:100%;
 }
 .about-left-info a{
+    font-family: 'Cinzel', serif;
     font-size: 20px;
     color: #00C2DC;
     margin: 0 0 .5em 0;
@@ -1440,8 +1442,9 @@ span.glyphicon.glyphicon-user {
     text-decoration: none;
 }
 .about-left-info p{
+    font-family: 'Cinzel', serif;
     font-size: 15px;
-    color: #777;
+    color: slategray;
     font-weight: 400;
     margin: 0;
     line-height: 1.8em;
@@ -1557,12 +1560,14 @@ span.glyphicon.glyphicon-user {
   width: 60%;
 }
 .developers-info h3{
+     font-family: 'Cinzel', serif;
     color: #00C2DC;
     font-size: 36px;
     font-weight: bold;
     margin: 0;
 }
 .developers-info p {
+    font-family: 'Cinzel', serif;
     color: #FFF;
     font-size: 17px;
     line-height: 1.8em;
@@ -1605,16 +1610,18 @@ span.glyphicon.glyphicon-user {
     margin-bottom: 3em;
 }
 .creators-grid a{
-	color: #00C2DC;
+   font-family: 'Cinzel', serif;
+	 color: #00C2DC;
     font-size: 24px;
     margin: 0;
     text-decoration: none;
 }
 .creators-grid p{
+    font-family: 'Cinzel', serif;
     font-size: 15px;
     line-height: 1.8em;
     font-weight: 400;
-    color: grey;
+    color: slategrey;
     margin: 1em 0 0 0;
 }
 .creators-bottom{
@@ -1638,6 +1645,7 @@ span.glyphicon.glyphicon-user {
   font-size: 18px;
 }
 .creators-bottom-grid p{
+    font-family: 'Cinzel', serif;
     color: grey;
     font-size: 13px;
     margin: 0 auto;
@@ -1694,9 +1702,10 @@ span.glyphicon.glyphicon-user {
     margin: 0;
 }
 .try-left-info p{
+    font-family: 'Cinzel', serif;
     font-size: 13px;
     line-height: 1.8em;
-    color: #9E9E9E;
+    color: slategray;
     margin: 1em 0 0 0;
 }
 .try-right-info{
@@ -1709,9 +1718,10 @@ span.glyphicon.glyphicon-user {
     margin: 0;
 }
 .try-right-left p{
+    font-family: 'Cinzel', serif;
     font-size: 13px;
     line-height: 1.8em;
-    color: #9E9E9E;
+    color: slategray;
     margin: 1em 0 0 0;
 }
 .try-right-left img{
