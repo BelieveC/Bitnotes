@@ -130,6 +130,7 @@
 								<div class="resent-grid-info recommended-grid-info recommended-grid-movie-info">
 									<h5><%=link_to collegepublication.phname,collegepublication,class:"title" %><br><small>started <strong> <%=time_ago_in_words(collegepublication.created_at) %> ago</strong></small></h5>
 									<ul>
+										<% @user = collegepublication %>
 										<li><%= render partial:"shared/subscribe_form",locals:{fi: i} if current_user %></li>
 									</ul>
 								</div>

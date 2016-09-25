@@ -9,13 +9,13 @@ class CollegesController < ApplicationController
 	end
 
 	def show
+		
 		@recentColleges = College.recent.limit(3)
 		@recentSubjects = Subject.recent.limit(3)
 		@recentAssignments = Assignment.recent.limit(3)
 		@recentPracticals = Practical.recent.limit(3)
 		@recentQpapers = Qpaper.recent.limit(3)
 		@recentExamnotes = Examnote.recent.limit(3)
-
 		@collegepublications = User.where(college_id: @college.id).order("subscriber_count DESC").limit(16)
 
 	end
