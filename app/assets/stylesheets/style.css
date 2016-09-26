@@ -632,7 +632,7 @@ a.btn.btn-primary.btn-lg.see-button.hvr-shutter-out-horizontal {
 }
 .recommended-grid-info a.title{
     font-size: 14px;
-    line-height: 1.3em;
+    line-height: 1.4em;
 }
 .recommended-grid-info h3 {
   margin: 0;
@@ -675,7 +675,7 @@ a.btn.btn-primary.btn-lg.see-button.hvr-shutter-out-horizontal {
     margin-top: 5px;
     height: 1em;
     line-height: 1.3em;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 .resent-grid-info p.views {
     font-size: 13px;
