@@ -21,7 +21,7 @@
 				<span class="header-tip">If Subject not Found,add <%= link_to "here",new_subject_path %></span>
 			</div>
 			<div class='form-data'>
-				<%=f.input :subject_id,collection: Subject.all,prompt: "Choose Subject of Paper",label:false	%>
+				<%=f.input :subject_id,collection: Subject.all.order("name ASC"),prompt: "Choose Subject of Paper",label:false	%>
 			</div>
 		</div>
 		<div class='form-item'>
@@ -30,7 +30,7 @@
 				<span class='header-tip'>If Institute not Found,add Your Institute <%=link_to "here",new_college_path %></span>
 			</div>
 			<div class='form-data'>
-				<%=f.input :college_id,collection: College.all,label:"Institute",prompt:"Choose Institute related to Paper",label: false	%>
+				<%=f.input :college_id,collection: College.all.order("name ASC"),label:"Institute",prompt:"Choose Institute related to Paper",label: false	%>
 			</div>
 		</div>
 		<div class='form-item'>
