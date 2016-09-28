@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
 	has_many :qpapers
 	has_many :subjects
 	has_many :requests
+	has_many :notifications
 
 	# Scopes
 	scope :recent, ->{order("created_at DESC")}
