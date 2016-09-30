@@ -13,6 +13,9 @@
 			</div>
 		<% end %>
 		<div class="col-sm-8 single-left">
+
+			<%= render "shared/adsense" %>
+			<br>
 			<div class="song">
 				<div class="song-info">
 					<h3 title="Subject Name"><%=@subject.name %></h3>	
@@ -108,6 +111,7 @@
 					<%= render "disqus" %>
 				</div>
 			</div>
+			<%= render "shared/advfooter" %>
 		</div>
 		<div class="col-md-4 single-right">
 			<div class="single-grid-right">
