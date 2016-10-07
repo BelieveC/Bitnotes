@@ -39,6 +39,9 @@ gem 'execjs', '~> 2.7'
 gem 'impressionist'
 gem 'figaro'
 gem 'whenever', '~> 0.9.7'
+gem 'will_paginate', '~> 3.1', '>= 3.1.3'
+gem 'bootstrap-will_paginate', '~> 0.0.10'
+
 group :development, :test do
   gem 'byebug'
 end
