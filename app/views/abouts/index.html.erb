@@ -35,6 +35,9 @@
 				<div class="clearfix"> </div>
 			</div>
 		</div>
+		<div class="loadmorepracticaldiv">
+			<%= link_to "Load More",loadmorepracticals_path(page: @practicalpageindex+1),remote: true,class:"loadmorepracticalbtn btn btn-success" %>
+		</div>
 		<hr>
 		<div class="recommended">
 			<div class="recommended-grids">
