@@ -88,6 +88,15 @@ class PracticalsController < ApplicationController
 		@pimage.destroy
 		redirect_to :back
 	end
+
+	def loadmore
+		@practicals = Practical.all.order("created_at DESC").paginate(page: params[:page],per_page: 4)
+		@practicalpageindex = params[:page].to_i;
+		respond_to do |format|
+			format.html{redirect_to :back}
+			format.js
+		end
+	end
 	private
 		/ Strong Params for Rails 4+  /
 		def practical_params
