@@ -31,6 +31,12 @@ Rails.application.routes.draw do
   get 'users/:id/dashboard/qpapers'=>"users#dashqpapers",as:"user_dashboard_qpapers"
   get 'users/:id/dashboard/subjects'=>"users#dashsubjects",as:"user_dashboard_subjects"
   get 'users/:id/dashboard/colleges'=>"users#dashcolleges",as:"user_dashboard_colleges"
+  get 'loadmorepracticals'=>'practicals#loadmore',as:"loadmorepracticals"
+  get 'loadmoreassignments'=>'assignments#loadmore',as:"loadmoreassignments"
+  get 'loadmoreexamnotes'=>'examnotes#loadmore',as:"loadmoreexamnotes"
+  get 'loadmoreqpapers'=>'qpapers#loadmore',as:"loadmoreqpapers"
+  get 'loadmoresubjects'=>'subjects#loadmore',as:"loadmoresubjects"
+  get 'loadmorecolleges'=>'colleges#loadmore',as:"loadmorecolleges"
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
