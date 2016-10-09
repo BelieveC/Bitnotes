@@ -1,5 +1,9 @@
 class AboutsController < ApplicationController
 	def index 
+		@practicalpageindex = 1
+		@assignmentpageindex = 1
+		@qpaperpageindex = 1
+		@examnotespageindex = 1
 		if current_user	&& current_user.college_id.present?
 			@rpracticals = Practical.where(college_id: current_user.college_id).order("created_at DESC").limit(4)
 			@rassignments = Assignment.where(college_id: current_user.college_id).order("created_at DESC").limit(4)
@@ -10,10 +14,10 @@ class AboutsController < ApplicationController
 			@qpapers = Qpaper.where.not(college_id: current_user.college_id).order("created_at DESC").limit(4)
 			@examnotes = Examnote.where.not(college_id: current_user.college_id).order("created_at DESC").limit(4)
 		else
-			@practicals = Practical.all.order("created_at DESC").limit(4)
-			@assignments = Assignment.all.order("created_at DESC").limit(4)
-			@qpapers = Qpaper.all.order("created_at DESC").limit(4)
-			@examnotes = Examnote.all.order("created_at DESC").limit(4)
+			@practicals = Practical.all.order("created_at DESC").paginate(page: 1,per_page: 4)
+			@assignments = Assignment.all.order("created_at DESC").paginate(page: 1,per_page: 4)
+			@qpapers = Qpaper.all.order("created_at DESC").paginate(page: 1,per_page: 4)
+			@examnotes = Examnote.all.order("created_at DESC").paginate(page: 1,per_page: 4)
 		end
 	end
 
