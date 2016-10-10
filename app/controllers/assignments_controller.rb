@@ -10,7 +10,7 @@ class AssignmentsController < ApplicationController
 			@rassignments = Assignment.where(college_id: current_user.college_id).order("created_at DESC").limit(12)
 			@recentAssignments = Assignment.where.not(college_id: current_user.college_id).order("created_at DESC").limit(4)
 		else	
-			@recentAssignments = Assignment.recent.limit(12)
+			@recentAssignments = Assignment.recent.paginate(page: 1,per_page: 8)
 		end
 	end
 
