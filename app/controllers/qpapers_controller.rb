@@ -88,6 +88,14 @@ class QpapersController < ApplicationController
 		redirect_to :back
 	end
 
+	def loadmore
+		@qpapers = Qpaper.all.order("created_at DESC").paginate(page: params[:page], per_page: 4)
+		@qpaperpageindex = params[:page].to_i
+		respond_to do |format|
+			format.html{redirect_to :back}
+			format.js
+		end
+	end
 	private
 		def get_qpaper
 			@qpaper = Qpaper.find(params[:id])
