@@ -5,11 +5,12 @@ class QpapersController < ApplicationController
 	before_action :authenticate_user!,only:[:edit,:new,:create,:update,:destroy]
 
 	def index
+		@qpaperpageindex = 1
 		if current_user && current_user.college_id.present?
 			@rqpapers = Qpaper.where(college_id: current_user.college_id).order("created_at DESC").limit(12)
 			@recentQpapers = Qpaper.where.not(college_id: current_user.college_id).order("created_at DESC").limit(12)
 		else
-			@recentQpapers = Qpaper.recent.limit(12);
+			@recentQpapers = Qpaper.recent.paginate(page: params[:page],per_page: 8)
 		end
 	end
 
