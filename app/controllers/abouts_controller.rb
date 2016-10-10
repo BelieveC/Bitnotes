@@ -3,7 +3,7 @@ class AboutsController < ApplicationController
 		@practicalpageindex = 1
 		@assignmentpageindex = 1
 		@qpaperpageindex = 1
-		@examnotespageindex = 1
+		@examnotepageindex = 1
 		if current_user	&& current_user.college_id.present?
 			@rpracticals = Practical.where(college_id: current_user.college_id).order("created_at DESC").limit(4)
 			@rassignments = Assignment.where(college_id: current_user.college_id).order("created_at DESC").limit(4)
