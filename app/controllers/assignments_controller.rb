@@ -90,6 +90,14 @@ class AssignmentsController < ApplicationController
 		redirect_to :back
 	end
 
+	def loadmore
+		@assignments = Assignment.all.order("created_at DESC").paginate(page: params[:page],per_page: 4)
+		@assignmentpageindex = params[:page].to_i
+		respond_to do |format|
+			format.html{redirect_to :back}
+			format.js
+		end
+	end
 	private
 		def get_assignment
 			@assignment = Assignment.find(params[:id])
