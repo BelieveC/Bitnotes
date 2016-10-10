@@ -91,6 +91,15 @@ class ExamnotesController < ApplicationController
 		redirect_to :back
 	end
 
+	def loadmore
+		@examnotes = Examnote.all.order("created_at DESC").paginate(page: params[:page],per_page: 4)
+		@examnotepageindex =  params[:page].to_i
+		respond_to do |format|
+			format.html {redirect_to :back}
+			format.js
+		end
+	end
+
 	private
 		def get_examnote
 			@examnote = Examnote.find(params[:id])
