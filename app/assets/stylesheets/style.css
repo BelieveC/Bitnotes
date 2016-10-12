@@ -1459,6 +1459,8 @@ span.glyphicon.glyphicon-user {
     margin-top: 4em;
 }
 .about-bottom-grids {
+    display: flex: 
+    flex-wrap: wrap;
     margin-top: 2em;
 }
 /*-- terms --*/
@@ -3222,4 +3224,7 @@ p.NoContentInfo{
 
 .loadmorepracticaldiv{
   width: 100%;
+}
+.loadmoregif{
+  display: none;
 }
