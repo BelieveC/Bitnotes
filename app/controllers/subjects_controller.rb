@@ -25,11 +25,17 @@ class SubjectsController < ApplicationController
 	def create
 		@subject = Subject.new(subject_params)
 		@subject.user_id = current_user.id
-		if @subject.save
-			redirect_to @subject,notice:"Successfully Created Your Subject"
-		else
-			render layout: "form",action:"new"
+
+		respond_to do |format|
+			if @subject.save
+				format.html{redirect_to @subject,notice:"Successfully Created Your Subject"}
+				format.js
+			else
+				format.html{render layout: "form",action:"new"}
+				format.js
+			end
 		end
+		
 	end
 
 	def edit

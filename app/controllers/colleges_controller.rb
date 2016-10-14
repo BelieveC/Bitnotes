@@ -28,10 +28,14 @@ class CollegesController < ApplicationController
 	def create
 		@college = College.new(college_params)
 		@college.user_id = current_user.id
-		if @college.save
-			redirect_to @college,notice:"Successfully created your Institute."
-		else
-			render layout: "form",action: "new"
+		respond_to do |format|
+			if @college.save
+				format.html{redirect_to @college,notice:"Successfully created your Institute."}
+				format.js
+			else
+				format.html{render layout: "form",action: "new"}
+				format.js
+			end
 		end
 	end
 
