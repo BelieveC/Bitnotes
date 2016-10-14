@@ -1,0 +1,7 @@
+$(document).ready(function(){
+	<% unless @colleges.empty? %>
+		var colleges = $('<div class="recommended"><div class="recommended-grids"><% @colleges.each do |college| %>'+'<%=j render partial: "shared/college", locals:{college: college} %>'+'<% end %><div class="clearfix"> </div></div></div>');
+		$('.loadmorecollegediv').before(colleges).fadeIn();
+		$('.loadmorecollegediv').find('a').replaceWith('<%= link_to "Load More",loadmorecolleges_path(page: @collegepageindex+1),remote: true,class:"loadmorebtn" %>');
+	<% end %>
+});
