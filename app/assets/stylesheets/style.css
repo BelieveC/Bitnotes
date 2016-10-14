@@ -1459,7 +1459,7 @@ span.glyphicon.glyphicon-user {
     margin-top: 4em;
 }
 .about-bottom-grids {
-    display: flex: 
+    display: flex;
     flex-wrap: wrap;
     margin-top: 2em;
 }
