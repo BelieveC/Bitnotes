@@ -5,11 +5,12 @@ class CollegesController < ApplicationController
 	before_action :authenticate_user!,only:[:edit,:new,:create,:update,:destroy]
 
 	def index
+		@collegepageindex = 1
 		@recentColleges = College.recent.limit(20)
 	end
 
 	def show
-		
+
 		@recentColleges = College.recent.limit(3)
 		@recentSubjects = Subject.recent.limit(3)
 		@recentAssignments = Assignment.recent.limit(3)
@@ -91,6 +92,15 @@ class CollegesController < ApplicationController
 		@cimage = @college.cimages.find(params[:imageid])
 		@cimage.destroy
 		redirect_to :back
+	end
+
+	def loadmore
+		@colleges = College.all.order("created_at DESC").paginate(page: params[:page],per_page: 20)
+		@collegepageindex = params[:page].to_i
+		respond_to do |format|
+			format.html{redirect_to :back}
+			format.js
+		end
 	end
 	private
 		def get_college
