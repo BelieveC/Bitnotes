@@ -1,0 +1,7 @@
+$(document).ready(function(){
+	<% unless @subjects.empty? %>
+		var subjects = $('<div class="recommended"><div class="recommended-grids"><% @subjects.each do |subject| %>'+'<%= j render partial: "shared/subject", locals: {subject: subject} %>' + '<% end %><div class="clearfix"> </div></div></div>');
+		$('.loadmoresubjectdiv').before(subjects).fadeIn();
+		$('.loadmoresubjectdiv').find('a').replaceWith('<%= link_to "Load More",loadmoresubjects_path(page: @subjectpageindex+1),remote: true,class:"loadmorebtn" %>');
+	<% end %>
+});
