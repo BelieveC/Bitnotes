@@ -5,6 +5,7 @@ class SubjectsController < ApplicationController
 	before_action :authenticate_user!,only:[:edit,:new,:create,:update,:destroy]
 
 	def index
+		@subjectpageindex = 1
 		@recentSubjects = Subject.recent.limit(20)
 	end
 
@@ -91,6 +92,14 @@ class SubjectsController < ApplicationController
 		redirect_to :back
 	end
 
+	def loadmore
+		@subjects = Subject.all.order("created_at DESC").paginate(page: params[:page],per_page: 20)
+		@subjectpageindex = params[:page].to_i
+		respond_to do |format|
+			format.html{redirect_to :back}
+			format.js
+		end
+	end
 	private
 		def get_subject
 			@subject = Subject.find(params[:id])

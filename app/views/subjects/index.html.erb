@@ -17,6 +17,9 @@
 				<div class="clearfix"> </div>
 			</div>
 		</div>
-		<hr>
+		<div class="loadmoresubjectdiv">
+			<p class="loadmoregif loadmoreimage"><%=image_tag "loadmore" %></p>
+			<%= link_to "Load More",loadmoresubjects_path(page: @subjectpageindex+1),remote: true,class:"loadmorebtn" %>
+		</div>
 	</div>
 	<%= render "shared/advfooter" %>
