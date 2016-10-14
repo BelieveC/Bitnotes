@@ -5,6 +5,7 @@ class PracticalsController < ApplicationController
 	before_action :authenticate_user!,only:[:edit,:new,:create,:update,:destroy]
 
 	def index
+		@practicalpageindex = 1
 		if current_user && current_user.college_id.present?
 			@rpracticals = Practical.where(college_id: current_user.college_id).order("created_at DESC").limit(12)
 			@recentPracticals = Practical.where.not(college_id: current_user.college_id).order("created_at DESC").limit(12)
@@ -22,12 +23,25 @@ class PracticalsController < ApplicationController
 
 	def new
 		@practical = Practical.new
+		@subject = Subject.new
+		@college = College.new
 		render layout: "form"
 	end
 
 	def create
 		@practical = Practical.new(practical_params)
 		@practical.user_id = current_user.id
+
+		respond_to do |format|
+			if @practical.save
+				fomat.html{redirect_to @practical,notice: "Successfully created your Practical!"}
+				format.js
+			else
+				format.html {render layout:"form",action:"new"}
+				format.js
+			end
+		end
+
 		if @practical.save
 			redirect_to @practical,notice: "Successfully created your Practical!"
 		else
