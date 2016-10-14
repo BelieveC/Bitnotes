@@ -36,7 +36,8 @@
 			</div>
 		</div>
 		<div class="loadmorepracticaldiv">
-			<%= link_to "Load More",loadmorepracticals_path(page: @practicalpageindex+1),remote: true,class:"btn btn-success" %>
+			<p class="loadmoregif loadmoreimage"><%=image_tag "loadmore" %></p>
+			<%= link_to "Load More",loadmorepracticals_path(page: @practicalpageindex+1),remote: true,class:"loadmorebtn" %>
 		</div>
 		<hr>
 		<div class="recommended">
@@ -61,7 +62,7 @@
 			</div>
 		</div>
 		<div class="loadmoreexamnotediv">
-			<%= link_to "Load More",loadmoreexamnotes_path(page: @examnotepageindex + 1),remote: true,class:"btn btn-success" %>
+			<%= link_to "Load More",loadmoreexamnotes_path(page: @examnotepageindex + 1),remote: true,class:"loadmorebtn" %>
 		</div>
 		<hr>
 		<div class="recommended">
@@ -86,7 +87,7 @@
 			</div>
 		</div>
 		<div class="loadmoreassignmentdiv">
-			<%= link_to "Load More",loadmoreassignments_path(page: @assignmentpageindex + 1),remote: true,class:"btn btn-success" %>
+			<%= link_to "Load More",loadmoreassignments_path(page: @assignmentpageindex + 1),remote: true,class:"loadmorebtn" %>
 		</div>
 		<hr>
 		<div class="recommended">
@@ -111,7 +112,7 @@
 			</div>
 		</div>
 		<div class="loadmoreqpaperdiv">
-			<%= link_to "Load More",loadmoreqpapers_path(page: @qpaperpageindex + 1),remote: true,class:"btn btn-success" %>
+			<%= link_to "Load More",loadmoreqpapers_path(page: @qpaperpageindex + 1),remote: true,class:"loadmorebtn" %>
 		</div>
 	</div>
 	<%= render "shared/advfooter" %>
