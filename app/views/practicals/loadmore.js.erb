@@ -2,6 +2,6 @@ $(document).ready(function(){
 	<% unless @practicals.empty? %>
 		var practicals = $('<div class="recommended"><div class="recommended-grids"><% @practicals.each do |practical| %>'+'<%= j render partial: "shared/practical", locals: {practical: practical} %>' + '<% end %><div class="clearfix"> </div></div></div>');
 		$('.loadmorepracticaldiv').before(practicals).fadeIn();
-		$('.loadmorepracticaldiv').find('a').replaceWith('<%= link_to "Load More",loadmorepracticals_path(page: @practicalpageindex+1),remote: true,class:"btn btn-success" %>');
+		$('.loadmorepracticaldiv').find('a').replaceWith('<%= link_to "Load More",loadmorepracticals_path(page: @practicalpageindex+1),remote: true,class:"loadmorebtn" %>');
 	<% end %>
 });
