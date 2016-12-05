@@ -82,13 +82,13 @@
 })
   </script>
   <script type="text/javascript">
-
-    if(window.canRunAds === undefined){
-      window.location = "http://bitnotes.in/adblockerror.html"
-    } else {
-       console.log("No adblock plus");
-    }
-
+    $(document).ready(function(){
+      if(window.canRunAds === undefined){
+        window.location = "http://bitnotes.in/adblockerror.html"
+      } else {
+         console.log("No adblock plus");
+      }
+    });
   </script>
    
 </body>
