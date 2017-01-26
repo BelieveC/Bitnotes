@@ -104,6 +104,7 @@ Rails.application.routes.draw do
     resources :users,only: [:show]
     resources :abouts,only: [:index]
     get '/result'=>'abouts#result',as:"result"
+    post '/users/user_oauth' => 'users/user_oauth',as: "user_oauth"
   end
 
 end
