@@ -2,6 +2,7 @@ module V1
 	class UsersController < ApiController
 		before_action :get_user, only:[:show]
 		skip_before_filter :verify_authenticity_token
+
 		def show
 
 			images = Array.new
@@ -32,10 +33,13 @@ module V1
 				}
 			else
 				@newUser = User.new(provider: "facebook",name: params[:name],uid: params[:uid],oauth_token: params[:oauth_token],oauth_expires_at: params[:oauth_expires_at],phname: params[:name],intro: "Welcome to my Publication",description: "Welcome to my Publication")
-				@newUser.save
-				render status: :ok, json:{
-					id: @newUser.id
-				}
+				if @newUser.save
+					render status: :ok, json:{
+						id: @newUser.id
+					}
+				else
+					head 500
+				end
 			end	
 		end
 

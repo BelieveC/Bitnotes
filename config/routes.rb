@@ -95,12 +95,42 @@ Rails.application.routes.draw do
 
 
   namespace :v1 do
-    resources :practicals,only: [:show,:index]
-    resources :assignments,only: [:show,:index]
-    resources :colleges,only: [:show,:index]
-    resources :examnotes,only: [:show,:index]
-    resources :qpapers,only: [:show,:index]
-    resources :subjects,only: [:show,:index]
+    resources :practicals do
+      member do
+        put "like"=>"practicals#upvote"
+        put "dislike"=>"practicals#downvote"
+      end
+    end
+    resources :assignments do
+      member do
+        put "like"=>"assignments#upvote"
+        put "dislike"=>"assignments#downvote"
+      end
+    end
+    resources :colleges do
+      member do
+        put "like"=>"practicals#upvote"
+        put "dislike"=>"practicals#downvote"
+      end
+    end
+    resources :examnotes do
+      member do
+        put "like"=>"examnotes#upvote"
+        put "dislike"=>"examnotes#downvote"
+      end
+    end
+    resources :qpapers do
+      member do
+        put "like"=>"qpapers#upvote"
+        put "dislike"=>"qpapers#downvote"
+      end
+    end
+    resources :subjects do
+      member do
+        put "like"=>"subjects#upvote"
+        put "dislike"=>"subjects#downvote"
+      end
+    end
     resources :users,only: [:show]
     resources :abouts,only: [:index]
     get '/result'=>'abouts#result',as:"result"

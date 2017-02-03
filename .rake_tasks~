@@ -1,4 +1,3 @@
-World
 about
 assets:clean[keep]
 assets:clobber
@@ -39,6 +38,7 @@ searchkick:reindex
 searchkick:reindex:all
 secret
 stats
+subscriber:updatecount
 test
 test:all
 test:all:db
@@ -46,3 +46,7 @@ test:db
 time:zones:all
 tmp:clear
 tmp:create
+user:count
+user:first
+user:last
+views:updatecache
