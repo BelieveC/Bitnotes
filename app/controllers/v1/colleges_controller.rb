@@ -6,49 +6,12 @@ module V1
 
 		def index
 			@colleges = College.recent.limit(12)
-			count = 0
-			images = Array.new
-			views = Array.new
-			publications = Array.new
-			@colleges.each do |college|
-				views[count] = college.impressionist_count
-				publications[count] = college.user.phname
-				if college.cimages.count > 0
-					images[count] = college.cimages.first.image.url(:medium)
-				else
-					images[count] = nil
-				end
-				count = count + 1
-			end
-
-			render status: :ok,json: {
-				colleges: @colleges,
-				images: images,
-				publications: publications,
-				views: views
-			}
+			render json: @colleges.as_json(include: { user: { only: [:phname] }, cimages: { methods: [:image_url], only: [] } }), status: :ok
 		end
 
 
 		def show
-
-			images = Array.new
-			count = 0
-			if @college.cimages.count > 0
-				@college.cimages.each do |cimage|
-					images[count] = cimage.image.url(:thumb)
-					count = count + 1
-				end
-			else
-				images[count] = nil
-			end
-
-			render status: :ok, json:{
-				college: @college,
-				publication: @college.user.phname,
-				views: @college.impressionist_count,
-				images: images
-			}
+			render json: @college.as_json(include: { user: { only: [:phname] }, cimages: { methods: [:image_url], only: [] } }), status: :ok
 		end
 
 		def upvote
