@@ -6,4 +6,8 @@ class Eimage < ActiveRecord::Base
 										  :convert_options => {
 										    :thumb => "-quality 50 -strip",:medium=>"-quality 60 -strip",:small=>"-quality 100 -strip" }
   	validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
+  	def image_url
+  		image.url(:medium)
+  	end
 end
